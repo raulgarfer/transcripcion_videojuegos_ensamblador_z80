@@ -1,11 +1,5 @@
-[Música]
-sí
-[Música]
-la cuestión ahora es si yo quiero por
-ejemplo crear un proyecto de cpe
-project - y voy a crear un proyecto para
-dibujar sprites
-vale menos a me sirve para decirle que
+La cuestión ahora es si yo quiero, por ejemplo crear un proyecto de cpc-project. voy a crear un proyecto para dibujar sprites
+Menos a me sirve para decirle que
 quiero que me genere un proyecto que por
 defecto sea de ensamblador y como veis
 él ya le genera un ensamblador con todos
