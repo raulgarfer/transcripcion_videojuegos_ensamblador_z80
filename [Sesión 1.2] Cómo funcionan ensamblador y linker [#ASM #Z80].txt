@@ -1,12 +1,4 @@
-[Música]
-sí
-[Música]
-bien pues vamos a la siguiente parte que
-es el hexadecimal tenemos que entender
-que esa es la única realidad que existe
-es decir nosotros podemos programar
-ensamblador para un programa de ence
-podemos programar en césar en python
+Bien pues, vamos a la siguiente parte que es el hexadecimal.Tenemos que entender que esa es la única realidad que existe,es decir nosotros podemos programar ensamblador para un programa de ence podemos programar en césar en python
 pero el hexadecimal y en última
 instancia código máquina en binario es
 la única realidad que existe es lo único
