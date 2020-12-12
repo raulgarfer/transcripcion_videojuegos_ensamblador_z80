@@ -1,6 +1,4 @@
-[Música]
-sí
-[Música]
+
 hasta ahora
 lo que hemos hecho es directamente
 código máquina o sea yo abro el gwinnett
@@ -138,7 +136,6 @@ vamos a ponerlo
 así
 no hay no hay nada ahora mismo en el
 fichero
-[Música]
 y pues aquí
 pueden ser zoom en principio el editor
 es a decimal muestra la dirección de
