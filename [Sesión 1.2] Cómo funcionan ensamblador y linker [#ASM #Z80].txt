@@ -1,15 +1,13 @@
-[Música]
-sí
-[Música]
-bien pues vamos a la siguiente parte que
-es el hexadecimal tenemos que entender
-que esa es la única realidad que existe
+
+bien pues ,vamos a la siguiente parte que
+es el hexadecimal.
+Tenemos que entender que esa es la única realidad que exise:e
 es decir nosotros podemos programar
 ensamblador para un programa de ence
-podemos programar en césar en python
+podemos programar en C, en python
 pero el hexadecimal y en última
-instancia código máquina en binario es
-la única realidad que existe es lo único
+instancia , código máquina en binario es
+la única realidad que existe, es lo único
 que auténticamente se ejecuta en
 nuestras máquinas por eso es importante
 el paso que hemos hecho de conocerlo en
@@ -27,12 +25,13 @@ podremos usar mejor y esto os lo digo
 por experiencia esto que voy a contaros
 ahora y lo mismo que os he contado hasta
 el momento puede parecer mucha teoría
-rollo pero es que realmente hay una
+rollo.
+Pero es que realmente hay una
 cuestión súper importante que lo noto
-todos los años y es que hay
+todos los años, y es que hay
 errores de concepción en cómo funciona
 la traducción de ensamblador a código
-máquina
+máquina.
 eso es lo que quiero que paguemos en
 esta clase porque si no luego a lo largo
 del curso se ven muchos problemas del
