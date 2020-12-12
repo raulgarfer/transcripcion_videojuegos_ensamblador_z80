@@ -1,13 +1,10 @@
-
-hasta ahora
-lo que hemos hecho es directamente
-código máquina o sea yo abro el gwinnett
-aquí seguramente se verá chiquitito
-como los probamos la semana pasada se ve
-bastante chiquitín
-pero bueno tampoco es muy relevante que
+hasta ahora lo que hemos hecho es directamente
+código máquina,o sea yo abro el Winape.
+Aquí seguramente se verá chiquitito,como los probamos la semana, pasada se ve
+bastante chiquitín.
+pero bueno,tampoco es muy relevante que
 se vea más grande o más pequeño ahora
-mismo sino que esta parte del wing eight
+mismo,sino que esta parte del Winape
 que es el depurador ya la conocéis vale
 aunque no se vea se vea pequeño no me
 importa
