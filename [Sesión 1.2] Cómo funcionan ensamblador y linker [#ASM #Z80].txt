@@ -1,0 +1,1060 @@
+[Música]
+sí
+[Música]
+bien pues vamos a la siguiente parte que
+es el hexadecimal tenemos que entender
+que esa es la única realidad que existe
+es decir nosotros podemos programar
+ensamblador para un programa de ence
+podemos programar en césar en python
+pero el hexadecimal y en última
+instancia código máquina en binario es
+la única realidad que existe es lo único
+que auténticamente se ejecuta en
+nuestras máquinas por eso es importante
+el paso que hemos hecho de conocerlo en
+detalle de trabajarlo de entendernos con
+él porque ahora cuando trabajemos más
+arriba que nos vamos a ensamblador no
+vamos a dejar de imaginar y de entender
+que eso se traduce a código máquina y ya
+sabemos cómo es el código máquina eso
+nos va a permitir ahora en el primer
+paso entender el proceso de traducción
+del ensamblador porque si entendemos
+bien cómo el ensamblador funciona lo
+podremos usar mejor y esto os lo digo
+por experiencia esto que voy a contaros
+ahora y lo mismo que os he contado hasta
+el momento puede parecer mucha teoría
+rollo pero es que realmente hay una
+cuestión súper importante que lo noto
+todos los años y es que hay
+errores de concepción en cómo funciona
+la traducción de ensamblador a código
+máquina
+eso es lo que quiero que paguemos en
+esta clase porque si no luego a lo largo
+del curso se ven muchos problemas del
+hecho de que pensáis que se traduce de
+una manera pero en realidad no es eso lo
+que está pasando y entonces programas
+pensando que pasa una cosa y eso no
+sucede y por tanto lo que ocurre hace
+que no funcione como queréis vale por
+eso esto es tan importante entender el
+yo voy a programar el salvador- sí pero
+como eso llega hasta donde hemos llegado
+ahora cuál es el proceso que sigue como
+lo hace vale para hacerlo a mano sabemos
+pero nos lo van a hacer a máquina
+si hay un ensamblado por detrás que lo
+va a hacer el cómo lo hace
+bien vamos a ello cuando yo ya quiero
+programar ensamblador ya usó un editor
+normal y corriente a un sublime a una
+cosa de este estilo vale entonces ya la
+cosa es un poco más amable poco menos
+gruesa
+y ahora por ejemplo tengo mi game bin
+pero yo quiero programar en ensamblador
+ya uso un archivo de texto y entonces
+creó un game punto s vale mi game punto
+s lo abro ensamblador
+ese no tiene nada
+y yo lo primero que quiero hacer en
+ensamblador es programar como todavía no
+sé en sant dado yo soy un tío del código
+máquina es que voy a hacer voy a
+programar código máquina solo código
+máquina y entonces algo así
+esto es ensamblador ya lo que pasa es
+que como yo sé código máquina puedo
+hacer esto y es y esto puedes hacerlo el
+ensamblador así si mi papel pero
+ensamblador no pones l de ahí estas
+cosas y tantos como poner esto vale
+porque pongo está ahora lo vais a ver
+entre otras cosas la ventaja del
+ensamblador es que esto es un editor de
+texto que se va a traducir a código
+máquina se va a traducir a bytes pinares
+vale pero aquí yo puedo poner las cosas
+de otra manera puedo hacer esto por
+ejemplo
+y puedo hacer esto
+y entonces ya lo he dividido en tres
+instrucciones porque yo ya pero ya puedo
+esto ya es un poco más organizado porque
+aunque sea código máquina como lo estoy
+haciendo un editor y esto ya ahora podré
+copiar instrucciones una a una en líneas
+sigue siendo código máquina
+eso sí como traduzco esto ensamblador
+ensamblador a código máquina bien en el
+cpc telera lo que usa
+en la carpeta de csc vale hay un
+binario y aquí está sd s
+z 80 este es el ensamblador ese es el
+programa ensamblador el que va a leer
+vuestros ficheros de texto en ensamblado
+y lo va a traducir pero los traduce
+directamente al código máquina ahora
+veremos lo que hace vale yo voy a
+hacerme un alias igual que antes esto ya
+es 70-80 para que sea más cómodo y
+rápido si pongo a ese z80 veréis que hay
+un montón de cositas vale
+lo que se hace en cpc tela normalmente
+es un fichero y se le hace en esto
+que tengo aquí yo tengo mi fichero game
+punto s que es el que voy a convertir y
+entonces hago a sz 80 - l menos o menos
+s
+qué.es
+y cuando hago esto verde
+que me aparecen
+un fichero el st un fichero real y un
+fichero si lo que son básicamente el l
+el o que es el rey y el punto es los
+tres cosas que le puesto menos l y menos
+ese es para el sim y el list y el otro
+es el rey y que tienen estos ficheros
+vamos a verlo yo si abro el fichero
+punto lst que es éste
+fijaos lo que haya adquirido aquí está
+mi código lo que yo he escrito y ahí
+está lo que él ha traducido esta es su
+traducción
+esto es una dirección de memoria y esto
+es un contenido aquí pone 0 13 88
+posición 2 porque esta es la posición 0
+y esta es la 1 posición 2 32 000 y
+esto de aquí es porque eso está aquí se
+hace eso es el código fuente posición 5
+vale 2 y 3 vais que ocupado 18 efe
+esa es la traducción pero esa traducción
+no va tal cual a código máquina no ha
+generado un binario en realidad ha
+generado esto que es un fichero punto
+rails
+vale este fichero puntos reales pseudo
+binario esto es lo que estáis
+acostumbrado a ver cuando programa es el
+punto o sólo que aquí se llama punto red
+vale esto es un fichero intermedio no
+llega a ser binario sino que contiene
+binario y alguna cosa más aquí en donde
+veis late vale en esta línea de test la
+traducción vale en la de línea 0 vale
+posición 0 tiene todo esto como
+traducción esto de r lo que sí lo que
+simboliza es lo que se llaman símbolos
+de loca table que son relocalizables qué
+significa esto de símbolos
+relocalizables vosotros cuando programas
+no programas en un fichero que no
+programas en muchos ficheros si me
+habéis visto que yo acabo de traducir y
+traducido un fichero los ficheros se
+traducen uno a uno siempre como se
+traduce en uno a uno cuando estamos
+traduciendo uno no tenemos ni idea de lo
+que hay los demás ficheros
+si yo quiero hacer un programa en el que
+en un fichero tengo una cosa y en otro
+tengo otra y desde un fichero uso lo que
+hay en otros ficheros los ficheros al
+final se juntan en un único programa que
+lo hace el ínter el interés el que junta
+vale pero en esa traducción que hay ahí
+él tiene que saber algo para que luego
+él linker pueda juntar y desde un
+fichero saltes a una función que está en
+otro y cosas así vale como lo hace lo
+hace con esto si yo aquí por ejemplo le
+hubiera dicho quiero que llames a una
+función que está en otro fichero el aquí
+habría puesto la llamada que excede vale
+sí ya sabéis el code para hacer un call
+excede pero la dirección que aquí ya
+está puesta a mano por mí el c 000 la
+hubiera dejado a cero hubiera puesto dos
+ceros y aquí abajo en la r hubiera
+marcado esto de aquí hay que re
+localizarlo para decirle al linker oye
+esto de aquí no sé dónde está
+el usuario me ha dicho que es el símbolo
+llamado tal cosa como por ejemplo el
+nombre de la función vale es el símbolo
+sum la función de suma
+cuando lo link que es con la dirección
+para eso sirven estos ficheros
+intermedios para que podamos tener el
+código separado y luego el cuando junta
+lo que hace es parchear eso que se ha
+quedado a medias eso que en un fichero
+no sabe dónde está porque está en otro
+lo marca y cuando el link que junta dice
+yo sé dónde está esto está la posición
+tal llama aquí por eso además aquí ahora
+esto no está en ninguna posición de
+memoria está en la cero porque todos los
+ficheros cuando se comen se ensamblan se
+ensamblan todos en la posición cero
+salvo que le indiquemos explícitamente
+que eso se puede hacer decir que una
+cosa es posición absoluta esto es lo que
+se llama posición relativa yo estoy en
+la posición cero y luego el link que
+dirá estos siete bytes los voy a poner
+detrás de estos diez con lo cual esto
+que pone aquí posición cero en realidad
+va a ser la posición 100
+y entonces es cuando todo se reubica se
+recoloca vale por eso funciona así
+entonces esto es lo que produce y esto
+el zinc son los símbolos vale que son
+nombres asociados a valores que es lo
+que luego utilizará el link er para
+decir ahora junto este con éste y éste
+con éste vale esto es una tabla
+simplemente
+y esto es para que tengáis una idea de
+lo que nos produce como salida el
+ensamblador genera los bytes pero no
+directamente en un binario sino que en
+esa representación intermedia punto red
+ahora de ahí hay que llegar al binario
+como llegamos desde aquí al binario que
+es que cuál sería el siguiente paso
+qué es el siguiente paso que tenemos que
+hacer con esto lo he dicho y si os
+habéis quedado con la copla cuál es el
+siguiente post
+en linked hay que llamar al link que
+tenemos una representación intermedia
+tenemos que delinquen coge de esta
+representación intermedia y generan un
+binario después de enlazar vale aunque
+sólo sea un fichero es decir lo enlaza
+lo único que lo convierte directamente
+lo que toca el link er normalmente va
+integrado con nuestro propio compilador
+vale podemos llamarlo directamente pero
+se le suele llamar desde el compilador
+cuando llamáis a gcc pues llamáis hace
+la cndh directamente está ahí el link
+que le podéis pasar y lo hacéis le
+pasáis los puntos para que el link que
+estáis llamando solo al link vale cuando
+le pasan los puntos aquí pasa lo mismo
+yo tengo en cpc telera
+el stc el binario el binario de sds ese
+vale
+este es
+el compilador
+y el compilador hace delinquen y
+entonces yo puedo hacer ese de ese game
+punto red pero si hago solo así
+no va a funcionar muy bien
+primera cosa que nos dice oye tú
+o tengo que enlazar esto pero y el mein
+donde está main en tu programa no i'm in
+house además el símbolo que es con un
+subrayado delante porque es como lo hace
+c
+vale c los símbolos globales les pone un
+subrayado adelante por eso me niego en
+subrayado delante vale entonces necesito
+para que me enlace el link care que haya
+un global llamado main si no hay un
+global llamado main esto no enlaza
+porque eso es lo que indica cuál es la
+posición de ejecución ya sabéis que
+necesita una posición de carga y una de
+ejecución quien indica la de ejecución
+main luego hay que definirme y lo defino
+con doble dos puntos para indicar que es
+global vale esto es lo mismo que si hago
+esto en este ensamblador
+estas dos cosas decir el símbolo main es
+global y poner mail con dos puntos y
+ponerlo solo así ambas cosas son
+equivalentes
+acabo de definir un símbolo global
+entonces ahora volveré otra vez a
+ensamblar
+y ahora vuelvo a
+en casa ahora el hincado pero ojo
+si el link o así solo que veréis que
+ahora me salen más cosas empezar un
+fichero de como al hincado me sale esto
+que es el binario resultante vale
+binario un formato de intel llamado hx
+vale esto es un binario ahora veréis que
+es un binario ahora lo veréis vale
+estos son los símbolos el map y el punto
+no y que además veréis muchos vídeos que
+eso no se usa mucho vale por ejemplo si
+abro el game map
+veréis que esto suele ser muy útil
+porque aquí hay un montón de símbolos
+con sus valores algunos que son del
+compilador y no nos interesan pero luego
+hay otros como por ejemplo
+dónde está mail
+en la posición 20 ahí de repente aquí
+hay un club y un éxito
+porque hay un club y un éxito bueno pues
+hay un club y un éxito que dice que
+están definidos en el módulo crt cero
+es aquí que pone módulo crt 0 y main no
+pone módulo porque nosotros no hemos
+definido que me pertenece a ningún
+módulo es esto es que al hincado dos
+cosas al hincado lo que yo le dado con
+una cosa un módulo llamado crt 0 es
+decir no me ha metido mi código sólo han
+hecho más cosas
+vale yo no quería eso el crt 0 es un
+fichero estándar que se suele meter
+porque ese es un compilador para
+embebidos y en los embebidos normalmente
+tenemos una rom y una ram y entonces
+cuando arranca el sistema hay que hacer
+en rom una serie de cosas como por
+ejemplo todo lo que queramos que sean
+variables con un valor inicial hay que
+cogerlas de la rom y copiar las a su
+posición en ram porque en ram no estarán
+pero estarán en la rom procesos como
+esos hay que hacerlos antes de llamar a
+main todos esos procesos que hay que
+hacer antes de llamar a main se hacen en
+el módulo crt cero pero nosotros no
+queremos que se haga nada de eso
+nosotros en amsterdam no tenemos rom
+entre comillas que decir nosotros no
+estamos haciendo una ronda y la ronda el
+sistema pero nosotros sólo tenemos ram
+nuestro juego sólo va en ram no queremos
+ese crt cero pero es que además hay otro
+problemilla en esto que hemos puesto y
+es que si ponemos esto así la salida no
+va a estar en código z80 porque no sólo
+hemos dicho que se dé cc permite
+compilar para distintas máquinas
+entonces
+es decir que quiero que sea para 180
+vale y que no quiero que me ponga el crt
+0
+porque no quiero que me añada eso no lo
+voy a usar para nada de más me molesta
+vale
+ahora me da un warning que no pasa nada
+pero este warning ya me habréis visto en
+algunos vídeos decir lo que hoy es que
+no no hay área de datos
+nada se explica de lo que son las áreas
+más adelante no os preocupéis vale es un
+warning un momento no le vamos a prestar
+mucha atención ahora veréis
+que lo que ha generado el map vale si
+ahora me voy al mar
+ahora veréis que en mis valores sólo
+está mail
+pero sigue habiendo algo un poco están
+200
+porque es también en 200 yo quiero medir
+en 200 la verdad
+no quiero donde lo quiero
+donde quiero que este mail
+en 4000 vale entonces hay que decirle
+que queremos que main esté en 4000 si no
+le decimos que queremos que main esté en
+4000 pues evidentemente algo no va bien
+y en ese de cc
+que no recuerdo el valor exacto
+pero es hay que decirle que el código
+vale que es si no me equivoco es él
+esto es el nombre del code share
+hay que ponerle el que el código esté en
+4000
+ccoo de lo que esto es ahí hay que
+ponerle menos menos de lo que para
+decirle dónde está localizado el código
+vale
+así que hay que añadirle también
+que nuestro código está en la 4000
+valiosa que donde empiezan los bytes en
+la posición 4 mismo y ahora sí con todo
+esto que hemos hecho veis que ahora si
+el código está en 4000 main está en
+cuatro meses vale
+y ahora veremos el aspecto como os decía
+que tienen lo que nos ha generado como
+binario que es el y hx este es el y h x
+el formato binario de intel porque es un
+binario en texto vale esto que veis ahí
+es una representación binaria que podéis
+identificar que es binario porque
+identificará jce nuestro código vale
+nuestro código que empieza aquí
+todo es el código tiene algo aquí al
+final que no es nuestro vale como
+señalizando al final de esta línea tiene
+cosas aquí al principio indicando dónde
+van y cosas de ese estilo esto hay que
+convertirlo todavía a otro formato
+binario mágico esto ya es menos
+relevante pero hay que convertirlo para
+poder llegar hasta acá hasta nuestro
+binario y todos estos pasos que estoy
+haciendo aquí a mano se van a hacer
+automáticos cuando 613 telera tenéis que
+tener en cuenta que pasa todo esto vale
+entonces siguiente parte
+sh x hay que convertirlo a otro formato
+y eso se hace con una utilidad que tiene
+ese presente lera
+que se llama
+estuvimos vale hexadecimal a binario
+esta utilidad es tu vino
+le decimos que el byte de padding estero
+en el game punto
+h x esto es para decirle que el relleno
+que nos meta tiene que ser ceros cuando
+convierta vale al convertir los rellenos
+pueden ser lo que queramos yo creo que
+los rellenos sean cero
+y esta salida si algunos habéis
+utilizado se presente en algún momento
+lo habréis visto y si no a partir de
+ahora os fijáis en ella estas salidas la
+salida del ex tubing cuando convierte el
+h x que hemos generado con el compilador
+a binario que ahora sí este binario
+veréis que está aquí si no me equivoco
+gaming ya está generado a las 6 y 11 y
+este game bean que hemos generado ya es
+el binario nuestro definitivo que si lo
+vemos con ex dun
+veréis que es todo esto para llegar a
+que nuestro programa esté en el binario
+y por supuesto falta el último paso que
+ya sabemos cómo se hace que no lo voy a
+repetir que es el cpc to cdt que nos lo
+conviene o los mete o se nos lo mete en
+el cdt que ojo si no borro primero el
+cdt lo que va a hacer es añadir melo
+porque el cdt es una cinta como cintas
+se pueden añadir ficheros no quiero que
+me lo añada a continuación sino que me
+cree uno nuevo y ya está
+estos son todos los pasos desde el
+ensamblador hasta el binario y en todos
+esos pasos hay una parte
+importante sólo hemos hecho un fichero
+pero podríamos haber hecho más de uno
+podríamos haber hecho dos tres y los
+haremos entonces tenéis que tener en
+cuenta que aquí es cada fichero que
+nosotros hagamos ahora tendremos fichero
+102 fichero 3 cada fichero va a pasar
+por la sct 80
+todos van a pasar por la sct
+individualmente vale todos
+individualmente se convertirán al
+fichero x el vale para el 1 2 3
+se convierte en la real como habéis
+visto todos estos red de aquí
+y luego después se los pasamos al
+compilador juntitos
+a sdcc que produce el yate x
+este h x es el que se convierte a
+binario y este
+no me queda más espacio por aquí sino
+este es el que finalmente se introduce
+en el cdt
+o en el de sk porque este podemos tener
+fichero de disco también cpc telera os
+crea un snapshot de la memoria donde ya
+lo ha puesto en la ram en la posición
+que quedara justo después de cargar el
+cdt vale pero este es todo el proceso
+nosotros habíamos empezado haciéndolo
+todo a mano directamente yéndonos a la
+rama y escribiendo y esto es todo lo que
+hay ahora super importante en este
+proceso es esta parte los ficheros se
+ensamblan por separado por eso nos hacen
+falta los include es
+para qué sirven los incluye
+un include y esto lo he dicho muchas
+veces pero quiero que no tengamos que
+dar un incluye lo único que hace es un
+copy paste
+cuando nosotros ponemos incluye en un
+fichero eso se va a procesar antes de
+ensamblar lo que hace es ponemos incluye
+fichero f 1 punto h entonces él coge el
+fichero f 1 y lo copia ahí y después se
+lo pasa el ensamblador
+vale eso es lo que hace
+por eso los include es lo único que
+hacen es copiar nos una información que
+usamos en varios sitios para no repetir
+lo ponemos en un fichero de cabecera una
+información que la vamos a utilizar en
+varios ficheros y en los demás ponemos
+incluye vale esa es la idea de un
+incluye
+después esto para que ensamblen
+no hay problema pero para que link lo
+que tenéis que tener cuidado es que el
+link que nos dará errores si en un sitio
+decís que llame a una función y en otro
+lado no existe nos dará no encuentro
+esta función porque porque en el
+ensamblador vosotros podéis decirle esta
+función es global y el ensamblador
+cuando hace este paso genera un rel
+pensando sé que esa función existe como
+habéis dicho y como como he explicado
+poniendo dos ceros diciendo el link que
+ya se encargará de rellenar esa llamada
+yo sólo sé que eso existe cuando el link
+que llega dice oye pues esto tú pensaba
+que no existe el error del link que
+habéis tenido errores del inflado alguna
+vez sabéis lo bonitos que son los
+errores del incan o
+son preciosos porque no dicen nada la
+información de dónde está el error y no
+lo dicen por esto
+porque cuando hemos llegado aquí la
+información que había ahí se ha perdido
+no te pueden decir de qué fichero viene
+te dice hoy estoy ensamblando algo o sea
+estoy limpiando algo y aquí dice que
+debería de haber una función sum y no la
+encuentro en ningún sitio
+pues esto es todo lo que nos dice hay
+que tener cuidado con esos errores vale
+visto esto
+ahora es cuando podéis entender mejor si
+yo esto lo transforma en esto
+decidme algo que no entendáis por ahí en
+el chat alguien dice j r punto en clase
+nadie se atrevió a decirme que no
+entiende lo que es jota erre punto
+que puede querer decir jota repuntó
+salto infinito salto a sí misma punto es
+a sí mismo
+y no
+os voy a explicar con lo que hemos visto
+no voy a ensamblar vale entonces veréis
+si el ensamble me vengo aquí y abro el
+fichero que me genera el ensamblado que
+es el punto red
+vale aquí veréis que lo que me ha
+generado es lo mismo exactamente que
+teníamos con lo cual hecho el mismo
+programa pero si me vengo al lsd que es
+donde me dice que ha hecho para
+ensamblar lo veréis que bueno todos los
+comentarios que he puesto aquí arriba
+pues simplemente no los ha traducido por
+nada son comentarios los ha ignorado a
+continuación veréis mails
+y si house que mail
+pone 0 que puede significar esto se ha
+traducido por 0
+qué puede significar traducir me y por
+cero
+y jd repuntó es exactamente lo mismo que
+en wind if jl dólar sólo que éste es
+otro ensamblador no es el de winner
+que calcula la posición en la que está y
+calcula cuánto tiene que saltar vale
+alguno de vosotros que estáis aquí
+presentes pensáis que esto tiene un
+significado lo de poner cero donde pone
+mil
+que es mails
+no es una función
+es una etiqueta correcta
+nosotros llamamos main a toda la función
+pero esto esto en sí mismo es una
+etiqueta que son las etiquetas
+no me gusta esa definición no son áreas
+bien pero es
+más precisión
+una etiqueta es una dirección de memoria
+con un nombre correcto es el nombre que
+le hemos puesto a una dirección de
+memoria por tanto aquí lo que me está
+diciendo es tú estás llamando main a
+cero porque cero
+porque no 4000 porque es cero
+porque estamos todavía en el primer paso
+de la traducción y estamos traduciendo
+un fichero y se ha traducido relativo a
+sí mismo el fichero empieza en cero al
+principio y luego después se va a 4000
+cuando en el link er le decimos quiero
+poner el código en 4000 el código
+solamente es esto no hay nada más por
+tanto el primer byte para 4000 pero cada
+fichero se traduce siempre relativo a sí
+mismo empezando en cero de modo que como
+este es el primer símbolo del fichero
+está en la primera dirección de memoria
+de este fichero si luego estos bytes van
+a parar a la posición 8000 ese cero será
+8000 pero de momento ese cero es el
+principio de este fichero por tanto mail
+cómo está el principio es cero y esto ya
+os da una idea de cómo funciona el
+ensamblador el ensamblador va de arriba
+a abajo traduciendo
+y lleva un contador interno de dirección
+de memoria
+llega un contador interno cuando he
+llegado aquí y voy a traducir cuánto
+vale mail es el contador interno de
+dirección de memoria vale 0 por tanto me
+vale 0
+vale lo que valga el contador de memoria
+actual de por dónde voy cuando llego a
+la siguiente dirección de memoria que es
+aquí sigue siendo 0 es decir esta
+dirección y estas son la misma porque
+main no ha creado ningún código aquí no
+hay código no hay bytes en la memoria
+poner mails no genera nada en la salida
+las direcciones de memoria las etiquetas
+no existen en el código máquina solo
+existen en nuestro mundo de piruleta del
+ensamblador donde podemos hacer magia y
+poner etiquetas pero en el código
+máquina no existen las etiquetas por eso
+ahí no hay nada en el código máquina
+solamente que el ensamblador dice bueno
+pues yo a partir de ahora donde vea me
+pongo cero que es lo que es así vengo
+aquí y sigo estando la dirección cero y
+veo el 88 como se traduce esto en código
+máquina 13 88 por tanto generó dos bytes
+que van a ir al binario final en la
+posición 0 y en la posición 1 mi
+contador aumenta ya estoy en la posición
+2
+si yo ahora aquí abajo pongo una
+etiqueta la etiqueta valdrá 2 porque ya
+llevo 2 bytes emitidos al binario vale
+llego a la siguiente instrucción y la
+siguiente instrucción es la 32 por qué
+porque estoy metiendo en una dirección
+de memoria contenido de a meto en la
+instrucción 3 y veréis que aquí yo he
+escrito la dirección de memoria en el
+orden normal que nosotros manejamos y él
+ya me hace el little indian porque él
+está generando código máquina mientras
+que yo estoy escribiendo en ensamblador
+el ensamblador me puedo permitir el lujo
+de poner las direcciones bien en el
+código máquina son little etnia esto es
+súper importante meterlo en la cabeza
+código máquina es único cualquier
+procesador z80 su código máquina es
+siempre el mismo no puede haber
+diferencias en el código máquina en z80
+sea una muestra de un espectro un msx o
+cualquier máquina que lleve un
+procesador 180 pero el ensamblador puede
+ser totalmente distinto en el
+ensamblador podemos poner podemos poner
+para que la wta si queremos vale da
+igual yo puedo hacer una macro que se
+llame así y luego en la traducida por lo
+que tenga que traducir código máquina es
+único el ensamblador no y de hecho
+veréis diferencias entre este
+ensamblador y al de gwinnett son
+distintos hay ligeras diferencias aunque
+se parezca mucho entonces aquí
+traducimos esto y sale esos tres bytes
+que es lo que esto preocupa por tanto 2
+más 35 la siguiente cosa va la 10 en 5
+traduzco jrr punto y aquí es donde viene
+lo que vale punto punto es el valor del
+contador que yo llevo ahora mismo
+dirección de memoria
+con lo cual yo lo que lo que estoy
+poniendo sj r5 que es lo que vale punto
+cuando estoy aquí y esta es otra
+diferencia entre el ensamblador y el
+código máquina en ensamblador yo cuando
+pongo un salto pongo a donde quiero
+saltar en código máquina si estoy
+haciendo un salto relativo tengo que
+poner la dirección relativa el
+desplazamiento desde esta posición hacia
+donde quiero saltar que es menos 2 - 1 -
+2 vale para llegar al 5 que es lo que he
+puesto aquí aquí he puesto jota r
+5
+porque este punto representa exactamente
+el valor la dirección de memoria donde
+estoy ahora y eso lo podéis ver
+porque es totalmente equivalente a que
+yo haga esto
+cuando yo pongo esto debe de valdrá 5 y
+éste jrr a la dirección 5 lo vais a ver
+ahora que traduzco
+en un momentito
+y ahí veréis que ahora debe de vale 5
+como veis ahí y al poner jrd estoy
+haciendo un j r a la dirección 5 pero
+como jd relativo menos uno menos dos
+para llegar a cinco vale
+se entiende el proceso de traducción es
+súper importante que lo tengáis presente
+o sea esta clase la dedicada entera a
+esto para que tengáis presente el
+proceso de traducción y que eso emite
+bytes pero ojo hay cosas que no emiten
+bytes yo en este ensamblador puedo crear
+constantes
+y cuando hablamos de constantes muy a
+menudo ver a veces que es una constante
+pero no pensamos en las diferencias
+entre el ensamblador y el código máquina
+siempre vamos a producir código máquina
+pero hay cosas que sólo viven en el
+ensamblador las etiquetas solo viven en
+el ensamblador cuando se traduce al
+código máquina solo hay direcciones de
+memoria no hay etiquetas vale lo mismo
+pasa con las constantes si yo quiero
+hacer esto
+yo puedo hacer esto
+y también puedo hacer esto
+hacer esto tal cual sin ningún problema
+y si ahora ensambló el esquema de error
+y cuando me venga aquí veréis color
+igual a 0 x 88 y fijaos esto no me lo
+pone aquí
+por aquí
+porque está ahí y no hay que creer
+cuáles crees que es el motivo de que
+esté aquí y no hay
+no lo sustituye sí pero porque cuando yo
+hago esto él lo pone aquí que ojo esto
+no significa que él haya escrito 0088 en
+el binario resultante porque lo que él
+escribe en el binario está aquí no hay
+vale no ha escrito nada en el binario al
+traducir esto sino que ha dicho
+88 y eso es lo que está diciendo es que
+color vale 88 pero lo pone aquí no allí
+y es porque esto no es la dirección de
+memoria actual donde estoy proceso esto
+es un valor que yo le ha asignado a
+color y que es un valor absoluto
+no es relativo es absoluto mientras que
+esto es un valor relativo de dirección
+de memoria los dos son símbolos pero no
+son exactamente iguales no son la
+constante que yo he definido con un
+valor concreto esto es una dirección de
+memoria que se define en el momento en
+que yo traduzco vale no es exactamente
+igual hay ligeras diferencias vale como
+veis luego después y bajo vais a ver que
+efectivamente donde pongo l dvm él me lo
+traduce por el 0 0 0 y donde puesto el
+eleve color ha puesto al 88 vale así
+creo constantes que son algo que vive
+aquí en el ensamblador no vive en el
+código máquina todo esto hay que hacer
+esa transformación lo mismo si creó
+macros vale yo puedo crear una macro
+esto es una macro y las macros lo que
+son es una sustitución que se realiza
+antes de ensamblar cuando él encuentre
+en mitad del código algo que ponga drop
+pixel esto como esto él lo traducirá por
+lo que pongamos nosotros aquí dentro y
+de hecho yo lo que voy a hacer es esto
+veis allá por donde va
+se entiende lo que acabo de hacer
+vale vamos a ver si funciona
+no se queja y ahora vamos a ver como él
+ha traducido esto fijaos yo aquí pongo
+macro lo veis aquí y aquí está la macro
+definida vale o para ser exactos esto es
+lo que se llama la declaración de la
+macro porque definir es crear cosas esto
+simplemente es decirle al ensamblador
+oye cuando tú veas drop pixel con esto
+entonces esto no genera ningún código
+como veis aquí yo creo una macro y eso
+no genera ninguna salida la salida se
+genera cuando voy más abajo
+y entonces él se encuentra drop pixel
+vale se encuentra drop pixel venden como
+color y entonces genera esto esto de
+aquí es generado por la macro porque si
+os fijáis ya no está en mi código yo
+aquí en mi código ya no tengo sl de esta
+en la macro que ha hecho él cuando ha
+encontrado esto a la hora de traducir lo
+que ha hecho es expandirlo por esto de
+aquí sustituir eso por esto y después
+ensamblar vale así que es lo que ha
+hecho al llegar aquí ha visto drop pixel
+y en la posición 0 ha expandido todo
+esto que es lo que contiene otro píxel y
+todo esto son herramientas que tenemos
+en el mundo del ensamblador que nos van
+a facilitar la vida nos van a permitir
+hacer maravillas que no hacemos
+fácilmente en código máquina pero no
+olvidemos que podemos meter código
+máquina a mano
+es decir yo puedo poner drop pixel y en
+vez de poner este jrr aquí yo puedo
+poner aquí directamente
+esto
+porque va a producir exactamente el
+mismo efecto eso que el jota r
+él va traduciendo y cuando llega aquí
+escribe un 18 y escribe un f en el el
+código máquina resultante y siguió y ha
+puesto un j r punto hubiera escrito un
+18 y un f es exactamente lo mismo él
+traduce y genera bytes de código máquina
+o yo le digo generan este byte
+directamente este que yo quiero que
+generes aquí de modo que si habéis
+llegado algunos al nivel 3 habréis visto
+en algún momento que decimos vamos a
+usar una variable no vamos a usar una
+variable en realidad el concepto
+variable tampoco existe concepto
+variable es un concepto de matemáticas
+que hemos heredado en informática
+variable es matemáticas no es
+informática nosotros le llamamos así
+porque porque a las incógnitas en
+matemáticas se les llama incógnitas en
+ocasiones si no son variables
+pues sólo hemos heredado pero es que
+realmente lo que nosotros queremos decir
+es un valor que almacenamos en la
+memoria que lo hacemos cambiar un valor
+que almacenamos en la memoria tiene que
+estar en la memoria como pongo un valor
+en la memoria pues como está haciendo
+ahora yo pongo debe 0 0 y eso hará que
+antes de todo esto él genere un 0 0 ese
+0 0 se mete en el binario se mete en el
+cdt se carga a la ram y por tanto en esa
+posición habrá un 0 como yo sé que en
+esa posición hay un 0 puedo escribir en
+él porque si en vez de escribir en esa
+posición escribo en esta de aquí abajo
+me cargo el código en el código también
+está en la ram si escribo encima del
+mero cargo
+y todo eso es lo que hago pongo un cero
+y yo sé que ese cero lo puedo usar para
+cosas y para usarlo le pongo una
+etiqueta
+porque así se con esa etiqueta en qué
+posición de memoria se ha generado ese
+cero para acceder a ella y cambiarlo
+vale si en vez de poner un cero con un
+88 y luego lo que pongo aquí es usted
+draw pixel le voy a quitar ya vale para
+que sea más cómodo y entonces pongo
+ld a comas
+y que va a quedar muy bonito
+de otra manera porque si no quedarán
+vale
+y aquí women
+ahora lo que tengo es un valor de color
+que lo tengo almacenado en la rama lo
+leo al aquí a la que es el registro y lo
+escribo en la memoria de vídeo en otra
+posición los llamamos variable si lo
+llamamos variable pero ojo no dejéis
+engañar por el concepto tenemos muy
+interiorizado el concepto de variable
+como una especie de símbolo donde
+metemos cosas y que cambia pero en
+realidad lo único que existe es ram
+donde cambiamos valores
+cuidado con eso porque en muchos años he
+visto y pasa en el curso del sembrador
+que por llamar a eso variable mucha
+gente se confunde solo por llamarlo
+variable porque quien ha programado
+antes y coge un código de alto nivel
+hace cesar paixón lo que sea y está
+acostumbrado a usar variables cuando yo
+digo que esto es una variable se
+confunde y deja de interpretar que esto
+es una etiqueta deja de interpretar que
+esto no hace más que escribir un byte en
+una posición de un binario que luego va
+a la ram eso queda como detrás del
+concepto variable y no hay que dejar que
+eso pase porque si no nos confundiremos
+meteremos la pata
+que todo esto hay que tenerlo claro
+fijaos ahora que cuando yo traduzca esto
+a ver que no estoy mirando el chat
+tiene alguna desventaja la macro porque
+si no podemos crear nuestro lenguaje de
+mayor nivel las macros no tienen ni
+desventaja como tal que decir tienen
+ventajas e inconvenientes una macro es
+una sustitución y de hecho las macros ya
+las habéis utilizado no en ensamblador
+pero sabéis usar un c define que genera
+macros define no es una constante es una
+macro es cuando veas esto lo sustituye
+es por esto sólo es una pre sustitución
+desventaja de las macros el problema
+cuando fallan cuando hacéis una macro
+eso hace una sustitución agnóstica que
+se llama las macros no saben ensamblador
+la macro sólo estuve es esto lo
+sustituye es por esto otro y si este
+otro que le habéis puesto ahí es la
+letra de una canción con la pondrá en
+mitad del código y cuando el ensamblador
+vaya a ensamblar dirá no entiendo nada
+vale sea la macro es agnóstica podéis
+poner lo que queráis aunque esté mal
+vale luego después nos dará error no la
+macro sino el código que la macro ha
+generado una vez por eso es importante
+que conozcáis los ficheros lst porque
+cuando una macro falla vais a tener que
+ir allí a ver qué sustitución ha hecho y
+qué error ha causado
+porque el 88 de x lo pones directamente
+y el de color lo pones con 0 x vale
+porque me he equivocado simplemente
+puesto 88 y no es que lo ponga de una
+manera o de otra
+no se tiene hecho ahora
+no me deja escribir
+[Música]
+si yo pongo esto y si pongo esto vale
+porque lo estáis preguntando en el chat
+no es lo mismo vale me simplemente me he
+equivocado quería ponerlo de abajo y
+ahora pongo los dos para que lo veáis
+vale porque voy a ensamblar vale y
+entonces veréis en el ensamblador
+la diferencia entre uno y otro en el
+byte que emite en memoria
+está claro que no es lo mismo no
+esto es 88 en decimal estos 88 en
+hexadecimal como las salidas en
+hexadecimal 88 - a decimal es 88 en
+hexadecimal pero 88 en decimal g58 en
+hexadecimal vale cuidado con eso ya
+habéis visto que simplemente estoy
+hablando o contando lo y se me ha
+escapado pues ya esto va a pasar vale os
+va a pasar pero bueno aquí veis que es
+fácil de ver el error
+por tanto esto era así y esto es propio
+de este ensamblador en muchos otros
+ensambladores esto se pone de otra
+manera en wind up es se pone así aquí
+creo que también deja vale si queréis
+poner en este ensamblador creo que
+también no no le gusta no le gusta así
+el otro se pone con el anverso para
+decir que es hexadecimal aquino y lo
+mismo que lo pongo así puedo hacer esto
+como este color vale 88 sé si mal puedo
+ponerlo aquí
+y ya está y se ensambla
+y como veis
+podemos combinarlo de una manera de otra
+vale tenéis ya con esto un
+digamos una introducción fuerte al tema
+de cómo va el ensamblado y cómo va la
+traducción sólo queda un detalle que lo
+veremos más adelante poco a poco y es el
+tema del link erdem último múltiples
+ficheros vale pero bueno también tenéis
+en los primeros vídeos de años
+anteriores alguna referencia a esto y
+ahí os explico también el tema de
+linkedin
+la macro qué
+y si la macro no puede crear duplicidad
+de código que es decir que cada vez
+cada vez que sustituye a una macro
+vuelve a generar lo que la macro genera
+es así yo uso la macro tres veces vale
+eso es otra potencial desventaja de las
+macros según para lo que queráis charla
+vale si yo aquí hago imaginemos drop
+pixel y pongo en 0 x 0 0 0
+pongo 88 y ahora o así y hago otro pixel
+tropics entró pixel y escribo en el 1 y
+en el 2
+y escribo 80 y 0 8 por ejemplo vale si
+yo ahora esto lo ensambló
+veréis que básicamente
+lo que me va a hacer es que cada drop
+pixel me ha generado ld a como a lo que
+sea l de 0 x 0 0
+ld a como lo que se está generando una
+sustitución de código es como si yo
+hubiera escrito tres veces a mano y
+derecho copy-paste solo que claro a ver
+la ventaja de la macro es que yo leo
+esto y es como bastante más claro no lo
+que estoy haciendo es bastante más
+evidente pero eso está generando código
+cuidado y esto me ha generado tres veces
+el código si yo estoy aquí en vez de ser
+dos líneas fueran 20 de aquí habrían 60
+y a lo mejor me tengo que plantear en
+vez de una macro una función para
+pasarle parámetros y que sea más cómodo
+eso depende de lo que penséis hacer que
+en algún momento es más útil generar
+macros y en algún otro momento es más
+útil hacer funciones cada cosa para lo
+suyo
+vale como diciendo ya tenemos claro cómo
+funciona esto vale
+antes de acabar hoy con todo esto vamos
+a hacer una
+pequeñita cosa vale que esto todo lo
+hemos hecho a mano vale todo esto lo
+hemos hecho a mano y ya hemos visto los
+ficheros que se generan y tal todos
+estos ficheros en cpc telera se generan
+en la carpeta o bj de nuevo cuando con
+pilas y ensambles concepto etcétera
+todo esto va a parar a la carpeta bj y
+podéis mirarlos ahí mirar el punto map
+mirar los lst mirar las cosas para saber
+qué ha pasado durante un ensamblado
+ahora que ya los entendéis
+ya podéis mirar nos vale

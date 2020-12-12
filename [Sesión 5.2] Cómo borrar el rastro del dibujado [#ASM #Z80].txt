@@ -1,0 +1,518 @@
+[Música]
+todos sabéis ya cómo borrar la anterior
+posición de un sprite
+es pero no lo habéis hecho ya esto no
+debería de costar mucho como lo haríais
+decirme o cómo lo habéis hecho y yo lo
+hago igual
+como borro la anterior posición del
+sprite
+yo tengo que modificar que añado que
+hago porque no quiero que se vean esos
+rastros
+podría borrar la pantalla entera pero
+solo borrar la pantalla entera llenarla
+de ceros me cuesta dos fotogramas y
+medio llenar la pantalla de ceros
+guardar el puntero donde pintas y luego
+pintar de color de fondo es una opción
+puntero previo en esto ya lo conocéis
+muy bien pues esto necesito guardar el
+puntero previo para cada entidad así que
+me voy al entities punto h y fijaos y es
+que yo aquí ya tenía las cosas hechas
+tenían un puntero tenía dos punteros
+previos por si acaso no vaya a ser que
+con uno no tenga suficiente vale así que
+me voy a quedar con un puntero previo el
+otro no
+y así dejó la entidad en tamaño 6 porque
+aquí veis que este mide 2 otro día os
+contaré también cómo no hacer esto a
+mano que es un poco para hacer una macro
+para que yo simplemente vaya creando
+campos y idea solar a las imágenes ponga
+los valores no pasa nada vale así al
+estilo de una estructura
+bueno pues ya tengo el premio es pointer
+pues lo voy a guardar
+el puntero lo calculó aquí vale aquí
+tengo en h l el puntero a la memoria de
+vídeo justo después de calcular lo que
+voy a dibujar yo me lo tendría que
+guardar para que la siguiente vuelta s
+previews pointer yo lo utilice para
+borrar
+creo que no he cambiado el soft
+66
+36
+4 bytes y 2
+si no me equivocado
+bien como tengo en hl el puntero previo
+yo quiero guardarlo en la entidad
+guardar en la entidad es fácil tú
+teniendo el puntero y equis porque yo
+puedo guardar en identity previos
+pointer y equis pero si yo hago esto
+esto va a funcionar
+está bien así
+me dejara
+esto lo veis bien
+sino lo lógico en previos pointer guardo
+el valor bajo vale porque estoy en línea
+de memoria guardo primero el valor bajo
+y luego el valor en alto entre los
+puentes más uno sí
+esto compila si llego con piel o
+si con pila no me puede servir no se
+queja no dice nada vale está guardando
+qué es lo que traduce
+2 instrucciones desde 75 db 74
+04 las instituciones de 3 está guardando
+ahí hl sin mayor problema
+vale ahora que estoy salvando mi puntero
+yo dibujo en spray pero todavía solo lo
+estoy salvando no estoy borrando decidme
+que tengo que hacer para borrar porque
+yo ahora mismo las entidades si os
+fijáis no tienen el por defecto el
+puntero debería de crearle un puntero
+por defecto puedo poner este
+debería poner este tengo dos países para
+el puntero un premio
+qué hago ahora aquí en render para
+asegurarme ya tengo guardado el puntero
+al anterior como lo borro
+como borró el rastro cuando borró el
+rastro tendrá que borrar antes de pintar
+mi spray después de pintar después hay
+que asegurarse que esta inicial izado es
+lo que acabo de hacer no he puesto los
+valores de inicio
+las entidades por defecto están aquí
+aquí hago la creación de entidades y
+copio los valores por defecto a las
+entidades
+y ya está inicial izado
+entonces ahora la pregunta con esto es
+donde añado yo ahora el código para
+borrar la anterior
+antes de dibujar el nuevo sprite y
+después de llamar después de llamar a
+physics
+y actualizar posición buena ver ignacio
+hasta donde yo sé y recomiendo todo lo
+que tenga que ver con render que hacerlo
+en el render
+no tiene nada que ver con physics
+desde render no sé si me llaman antes si
+me llaman después me tendrán que llamar
+cuando quieran llamarme pero yo no tengo
+que saber nada de physics hola mi
+physics no existe soy render y como soy
+render yo render hizo yo render hizo
+pinto spray calculó posición salvo esa
+posición para luego borrar y cuando
+borro
+donde borro
+puedes tener una fase antes de render
+que sea clear podría tener una frase una
+fase antes de render que fuera clear
+pero no quiero hacer dos recorridos
+enteros de las entidades porque además
+tampoco quiero borrar todas las
+entidades de la pantalla y luego
+pintarlas todas sino borró una pintó una
+borró una pintó una borró una pinta una
+porque si por lo que sea me pilla a
+mitad del cuando las he
+borrado todas puede que no se vea
+ninguna valiosa u2 imaginaros que yo
+estoy borrando entidades en la memoria
+de vídeo la trazado pasa pinta lo que
+hay en memoria de vídeo que es justo
+cuando yo terminado de borrar entonces
+empieza a escribir en el medio de vídeo
+pero como el rastreo ya ha pasado ha
+pintado lo que queda después de que yo
+haya borrado no se ve ninguna entidad
+vale
+camelia el tran dice que yo borraba
+antes de dibujar y borraba dibujando un
+cuadrado del tamaño del spray del color
+de fondo bien antes de dibujar es justo
+antes de esto lo puedo poner aquí porque
+totales antes no
+tengo ya una función que es
+que la ha hecho para la ocasión del sol
+y box de 32 por 16 es igual que la del
+spray pero pintando un color constante
+la tengo aquí arriba vale no la voy a
+tampoco contar porque es lo mismo pero
+sí que tengo aquí lo que le tengo que
+dar como input vale
+porque funciona igual que el draw solid
+box de pecera pero con este input tengo
+que poner la memoria de vídeo en hd le
+vale entonces para el hdl tendré que
+poner
+el puntero a la memoria de vídeo que no
+sé qué es
+en veces le tengo
+a poner el anterior alto que de momento
+los tengo fijos vale entonces mi ancho y
+mi alto es alto 16 ancho 4
+y el patrón de color en nada que es el
+color de fondo
+ld a 0 color de fondo 0 si me falta
+poner aquí el puntero a la memoria de
+vídeo donde tengo que borrar que
+punteros hice
+de dónde saco el puntero
+puntero que me guardado no pero no es
+donde apunta y x ojo y x apunta a la
+entidad no no es el puntero a dónde
+tengo que borrar y x está apuntando a
+los datos de la entidad y en los datos
+de la entidad me almacenado un puntero
+vale me lo he almacenado en estos dos
+vice de la entidad vale previos pointer
+y entonces tendría que hacer aquí uno
+l como previos pointer y x
+h
+previews pointer
++ 1 así es como llaman a mi constante
+primer puente
+hola
+adrián se está adelantando a algo que yo
+esperaba que pasase dice ojo pero apunta
+a 0 0 porque apunta a 0 0 si os fijáis
+esto es lo primero que yo voy a hacer
+haciendo el sis render 40 y ti cuando yo
+arranque me juego la primera vez que
+llegué aquí el valor que hay en las
+entidades a las que apuntó con i x es el
+valor por defecto todavía no se ha
+evolucionado ni ya se ha modificado es
+el valor por defecto que es el que yo
+puesto a mí y en el que yo he puesto
+aquí es cero y puesto que el puntero
+premios pointer vale cero eso significa
+que yo voy a escribir un spray en cero
+en la memoria voy a modificar 0 0 800 en
+la memoria lo que sea que hay allá y voy
+a empezar a escribir ahí en medio de la
+nada que claro si hay hubiera código
+datos o lo que fuera me los voy a
+cepillar directamente vale claro
+entonces carlos dice la solución sería
+sólo llamo
+en caso de que el puntero no sea nulo
+pues podría ahora h l aquí y decir
+si es null me saltó esto pero no quiero
+hacer eso por una razón porque es a esa
+comprobación de aquí de si el puntero es
+nulo se va a hacer para todas las
+entidades todos los renders de todo el
+juego y solamente se va a cumplir una
+vez la primera vez que yo arranco el
+resto es una comprobación vacía que
+nunca más se cumple
+y ese tipo de cosas hay que intentar
+evitarlas y la forma de evitarla es muy
+sencilla en esta versión que yo tengo
+ahora vale en una versión más complicada
+lo que haría es que a esto se le llame
+un un render first time por decirlo
+alguna vez y que se llamen renders first
+time la primera vez y luego señalan el
+render guanentá it y esto sería la
+opción para evitar la comprobación pero
+en este caso yo mi fondo siempre es
+negro entonces si yo la primera vez
+relleno de negro un fondo que ya es
+negro no pasa nada así que puedo poner
+mis punteros iniciales a lo que quiera
+mientras esté apuntando a la memoria de
+vídeo no como aquí que estoy apuntando a
+la posición 00 de memoria que ahí de
+hecho está el vector de interrupción y
+me lo voy a cargar vale así que no lo
+suyo es que mis entidades por defecto
+estén en 0 0 0 0
+vale que es el principio de la memoria
+de vídeo sin más y entonces si yo la
+primera vez que hago escribo un cuadrado
+negro en el principio a la memoria de
+vídeo en mi memoria de vídeo garantizo
+en negra no pasa nada y me ahorro el
+resto de veces añadir una comprobación
+que no se hace
+la diferencia
+pero qué pasa si tienes algo pintado ahí
+a ver como digo esta solución la estoy
+adoptando porque mi fondo es negro al
+principio entonces me sirve pero si no
+como decía como pregunta antón mi
+solución si yo no pudiera hacer esto
+sería llevarme esto a una función
+llamada sis render one and it y first
+time que la llamaría la primera vez y
+que esa misma cambiaría el puntero como
+ya habéis visto es decir yo lo que haría
+es esto de aquí y fijaos
+aquí yo cargo en h l
+si render one en ti pues yo lo que haría
+sería cargar si sender one en tití first
+time y existen del 40 y first time lo
+que haría es no borrar vale la primera
+vez y saltar directamente a la otra pero
+cambiaría estos datos de aquí para que a
+partir de la segunda llamada ya mí al
+sis render one en ti ti porque ya lo
+hemos visto aquí esto es un el vih l
+esto es un 21
+entonces yo tengo 21 y los dos datos de
+la función me creó una función que la
+primera vez no borra vale simplemente
+escribe en pantalla y lo siguiente que
+hace es cambiar esa función cambia este
+valor para que a partir de esa llamada
+al resto se llame ha sido en derogar en
+ti
+y así se llama una vez al render
+freestyle y luego todas las demás al
+render one en tití y eso evita hacer una
+comprobación todo el rato de esta la
+primera vez es esta la primera vez es
+esta la primera vez todo el juego
+vale
+y nació y se podrías inicializar las
+entidades con el valor del puntero que
+calculé la posición de memoria en
+función de las coordenadas con las que
+no lo entiendo
+que lo lea otra vez podrías inicializar
+las entidades con el valor del puntero
+que calculé la posición de memoria en
+función de las coordenadas que inician
+avales quiere decir que la primera vez
+que cálculo inicial hice pero claro eso
+es que no he borrado antes tendría que
+hacer ese cálculo primero y tendrían que
+tener una posición primera que a lo
+mejor es variable me resulta más fácil
+hacer eso mismo que tú propones pero con
+un render one en tití fairstein vale
+para que la primera vez se haga eso las
+demás no
+en rendering podrías no en red de mini
+lo que haría sería establecer esto
+también para que la primera vez llame al
+first aid
+no sé si se ha entendido más o menos de
+esta explicación vale ahora mismo si
+esto todo va
+ya deberíamos de tener unas 120 siguen
+titís vale
+que van a estar muy bien
+mis entidades entidades de votantes
+qué pasa si en medio del loop del juego
+creas unidades en qué momento se
+inicializa el puntero vale es una buena
+pregunta pero sí creo entidades puedo
+hacer en la propia creación de entidades
+que la inicialización del puntero se
+haga a la posición donde va a ser
+pintada por primera vez la entidad lo
+puedo hacer en la creación de entidades
+que es corresponde al juego no en la
+creación del sistema entidades sino que
+el juego cuando las cree las cree con
+ese punto inicial izado como proponía
+ignacio por ejemplo o bien tener lo que
+digo ese puntero por entidad ahí se
+pueden hacer muchas variantes estoy
+explicando ideas lo que sí que tenéis
+que tener en cuenta que estas preguntas
+me parecen súper bien por una razón
+estáis pensando posibilidades y eso me
+parece genial tener en cuenta que
+dependiendo de cómo sea el juego que
+estáis haciendo las soluciones son
+mejores unas u otras en este caso para
+mí la solución de pintar el cuadrado
+primero ahí arriba que no se ve es una
+solución perfecta porque me ahorra de
+todo me resulta fácil no tiene costes
+perfecta en otro juego no sirve
+y lo propuesto en otro juego time en
+otro juego podría no servir entonces
+tenéis que buscar precisamente lo que
+estáis haciendo estas preguntas de qué
+pasa si que pasa así qué pasa si para
+buscar lo que más se adecua a vuestro
+propio juego que no siempre tendrá por
+qué ser lo mismo
+adrián dice
+y dos posiciones de memoria basura para
+que borren sin problema y no cambia del
+código hombre es un problema la
+exposición de memoria basura porque
+estamos escribiendo memoria de vídeo y
+escribimos salteado porque la memoria de
+vídeo no es servida que salteada es
+buscar posiciones basura las tendríamos
+que poner salteadas en algún sitio sería
+no pero es que no sólo es una variable
+es que el problema es que yo estoy
+escribiendo un espray de entero vale 3
+ese problema si fuera sólo una variable
+no sería un problema
+vale esto os recuerdo además antes de
+terminar ya que esto está ralentizado
+que tenemos aquí
+hoy tuve 5 veces voy a hacer un wing
+tuve 5 una sola
+para que veáis cómo va esto en su
+velocidad normal en la velocidad 50
+fotogramas
+que veréis que va algo más fluido
+es así como ya le he comentado algunos
+cuando hagáis gravedad una de las cosas
+que tenéis que hacer muy probablemente
+con vuestras gravedad es es tener una
+velocidad terminal que yo aquí siempre
+estoy sumándole 1 a la velocidad de las
+cosas pero deberíais de tener una
+velocidad máxima a partir de la cual ya
+no se incrementa aunque estés afectado
+por la gravedad pero podéis poner la
+velocidad en que se 64 o en 8
+dependiendo del juego tenéis una
+velocidad máxima de caída y eso haría
+que esto por ejemplo si vais a tener
+colisiones pues no podéis ir a una
+velocidad de menos 16 que es el tamaño
+del spray y eso significaría que les
+país se mueve entero un bloque de 16
+podría llegar a saltarse un bloque de 8
+que estuviera por el medio cosas de ese
+estilo vale entonces una velocidad
+terminal en según qué juego de viento
+poner con esta altura igual aquí no
+haría falta y podría venir bien pero
+vamos en un juego normal sobre todo si
+tiene scroll vertical donde tenéis que
+poner una velocidad terminal
+vale con eso como digo que como quiero
+dedicar más tiempo a los grupos yo por
+mí término por hoy salvo que tengáis
+alguna duda concreta que me queráis
+contar ahora si queréis alguna duda mas
+o algo más de lo que estábamos hablando
+de esto del borrado de entidades del
+render one entity fairstein que por
+cierto en los vídeos de del año pasado
+creo que es la técnica de render
+guarente y first time la explico o sea
+que él la implementó la podéis ver
+dudas preguntas cuestiones súplicas
+ah vale tú lo que dices que sí a la hora
+de borrar tengo un fondo en vez de tener
+plano vale cuando a la hora de borrar
+tienes un fondo eso hay un vídeo del año
+pasado también en el que os explico
+distintas técnicas que les explico a
+nivel teórico vale que la idea es si tú
+tienes un fondo lo que tienes que hacer
+en vez de pintar como un pintor yo aquí
+un cuadrado negro es pintar el fondo
+encima del spray para que vuelva vuelves
+a restaurar el fondo pero de restaurar
+el fondo normalmente se hace teniendo el
+fondo hecho a base de times de modo que
+tú cuando pintas un spray puedes saber
+encima de que tal es esta y entonces lo
+que hace ser re pintar eso styles para
+borrar el sprite y dejar el fondo
+cuando los paquetes estatales en varios
+talleres tienes que repintar todos los
+que tocan
+básicamente hay técnicas distintas según
+el juego es tu vas sprite x sprite
+puedes mirar los sprays que tienen
+debajo y repintar los o si tienes 20
+sprays moviéndose igual te interesa
+tener una lo que se llama una lista de
+talles tocados nuevo gana tú pintas un
+spray dices el tile 27 28 31 32 41 47
+están tocados y así si pintas otro
+sprite que toca a los mismos tales no
+los repites en la lista y luego después
+cuando tienes que borrar borras todos
+los talles que están tocados y si tienen
+muchos sprays moviéndose pero la técnica
+es básicamente restaurar el fondo encima
+un spray
+hay otras técnicas como decía cuando vas
+a pintar un spray antes de pintar lo
+coges el fondo y te lo guardas en otro
+sprite entonces luego lo re pintas el
+fondo eso es otra posibilidad y en la
+última posibilidad que lo explico
+también el año pasado es utilizar lo que
+se llama el modo x oro
+ya sabéis que si a un número vosotros le
+aplicase x or con otro número lo que
+hace es intercambiar los bits y si
+volvéis a aplicar otra vez x or con el
+mismo número se restaura el primero
+la operación x short es auto semejante
+entonces yo aplico x or a un número
+binario con otro número binario el
+resultado que sale le vuelvo a aplicar x
+or con el mismo número binario al que le
+había aplicado antes y vuelve a salir el
+primer número
+no le quiso necesario si tú pintas con
+sprite mezclándolo usando x or con el
+fondo si luego vuelves a aplicar x sobre
+otra vez con el fondo te vuelve a salir
+el fondo lo único que ocurre es que
+cuando haces eso la operación x o mezcla
+el valor del fondo con el del prime de
+modo que se puede se puede producir un
+efecto de mezcla de club de colores
+entre el fondo y el spray
+entonces con esa técnica en crudo se
+mezclan los colores si tú lo que haces
+es diseñar una paleta específica para
+que las mezclas de colores de los
+colores que tú quieres y eso es lo que
+explicó en el vídeo que tenéis sobre
+pintado con x ahora puedes tener un
+spray que son lo que se llamarían
+colores de primer plano y un fondo con
+colores de fondo de modo cuando se hace
+eso siempre predominan los colores del
+primer plano sobre los del segundo plano
+pero tú sigues usando lo mismo es cuando
+vas a pintar un sprite en vez de copiar
+a memoria lo que hace es que coges un
+byte del sprite un byte de memoria acs x
+oro y lo escribes en memoria vale y eso
+tenéis una función de cpc tener a que lo
+hace es el dron sprite blended me
+permite mezclar
+entonces son distintas técnicas y cada
+técnica tiene ventajas e inconvenientes
+dependiendo de que vayáis a hacer en
+vuestro por la técnica de x org es más
+sencilla vale o puede introducir menos
+complejidad es un poquito quizá más
+lenta a veces depende de si usáis
+máscara o no en la otra técnica puede
+ser más rápida que he pintado con
+máscara en fin
+tenéis variantes

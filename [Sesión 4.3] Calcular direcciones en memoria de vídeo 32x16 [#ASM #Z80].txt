@@ -1,0 +1,423 @@
+[Música]
+y ahora si ponemos con esto y vamos a
+calcular calcular tiene sus cosas vale
+esta función que te screen pointer lo
+que podríamos hacer es mirar la por
+ejemplo os voy a dar una primera
+aproximación que podéis usar cuando
+necesitéis modificar este tipo de
+funciones modificar este tipo de
+funciones uno puede irse y el
+código de la función y copiarlo y
+pegarlo y modificarlo vale entonces si
+yo aquí por ejemplo hago así abro otro
+terminal
+más grande y hago cd cpc te paz me voy a
+donde está el padre cpc telera y aquí
+hago ls veréis que tengo la carpeta
+fuentes esas son las fuentes de cpc
+telera yo ahora entro en ese rc
+y aquí tengo un montón de cosas para las
+fuentes en particular yo lo que quiero
+es aquí donde pone vídeo vale que eso es
+donde está el get screen pointer
+ls veréis que hay un montón de cosas y
+aquí está que veis que también está la
+función que acabamos de hacer set crc
+red ya venía hecha pero haberla hecho un
+bola más y aquí tenéis goethe screen
+pointer
+junto a sm y veréis que además debe de
+screen pointer asm hay 27 screen pointer
+asm binding y c binding estos dos
+ficheros son los que en realidad se
+ensamblan este no pero los dos lo que
+hacen es un incluye del asma con lo cual
+el as se ensamblan esos dos y veréis que
+si yo editó este el asm binding vale no
+voy a
+y lo voy a editar
+rápidamente
+solo para que lo veáis aquí está todo lo
+que es el comentario pero cuando
+llegamos aquí veréis que lo que hace es
+un include de lo que es el vídeo mode
+que son las constantes y aquí veréis la
+etiqueta de la función y simplemente
+incluye el punto a ximo con lo cual todo
+el código de la función en ensamblador
+está en el punto as vale hay algunas
+funciones de presenten era en las que
+esto de aquí también tiene alguna cosa
+para enlazar la función siempre os vais
+a esto lo miráis y miráis a ver si tiene
+código y él incluye y ya está y con eso
+ya aquí como está todo dentro del asm yo
+lo que voy a hacer es abrir el cpc t
+77
+the screen pointer
+a veces
+lo abro
+aquí y entonces veréis que aquí está
+todo el comentario de la ayuda vale está
+todo aquí y aquí abajo está el código
+este es el código entonces yo ahora
+seleccionó el código lo copio y me lo
+traigo aquí y me hago una función
+scr pointer
+para 32 por 16
+ahora ya no tengo por qué llamar a la
+función de cetrería ahora llamo está
+ahora mismo hace lo mismo pero ya tengo
+el código aquí con todos sus comentarios
+que me explican lo que hace
+y con esta explicación de lo que hace yo
+ahora podría modificar esta función
+para decir bueno pues si tengo que hacer
+un cálculo de un tipo tendré que hacer
+un cálculo de otro tipo y cambio los
+cálculos que hace y ya está me calcula
+bien lo que yo quiero ahora la pregunta
+es cómo hago ese cambio de cálculos
+tenemos en cuenta la geometría original
+que eso es lo que hay que ver ahora y
+esto es lo voy a poner ahora como
+ejercicio así que presta atención porque
+ahora va a tocar hacer esto
+cada uno de estos bloques hitos
+lo que teníamos antes que eran todos los
+caracteres de una línea vale entonces
+esta es la primera fila de caracteres la
+segunda fila de caracteres la tercera
+fila de caracteres la cuarta fila de
+caracteres como la hemos visto antes en
+memoria de vídeo si no es cada fila de
+caracteres son ocho líneas lo voy a
+poner así para que lo veáis esta es la
+línea cero
+entonces voy a poner
+6 4 5 6 7 y 8 entonces son la 1 las 2 3
+4 5 6 7 y 8 vale 8 filas de píxeles por
+carácter y cada uno de estos es un
+carácter de modo que si lo veis como
+estaba al principio en memoria de vídeo
+esto empieza en 0 0 0 esto empieza en 0
+50 que básicamente es sumándole 50 en
+hexadecimal que viene a ser 80 bytes
+vale con lo cual esto es de 0 a 0 esto
+es 0 f 0 y así sigue vale
+básicamente sumo 50 y llego al siguiente
+primer carácter sin embargo cuándo voy
+hacia abajo entonces es cuando sumó 0 0
+0
+y entonces este 800 de 800 de 800 vale
+así
+y si tengo que hacer esto
+cuando parto del 50 pues el de abajo es
+850 800 tal si esto lo cambio por lo que
+tenemos ahora yo lo único que he
+cambiado es el ancho de cada una de
+estas partes he cambiado la geometría de
+ancho y he tenido ahora tengo menos
+líneas de caracteres con lo cual tengo
+menos por aquí más estrechas y menos
+antes tenía 25 ahora tengo 16 y cada una
+de esas 16 ha pasado de ser de 50 de
+ancho en esa decimal a ser de 40 de
+ancho en hexadecimal eso es lo que ha
+cambiado a la hora de calcular la
+posición en memoria de vídeo
+con lo cual esto de aquí es 80 esto se
+vale y por eso se me desplazan las cosas
+cada vez que bajó ocho filas se me están
+desplazando porque estoy sumando demás
+ahora si a mí me dicen que yo tengo una
+posición de pantalla que es la posición
+por ejemplo 20 en x 37 me vale
+x igual a 20 y igual a 37
+dónde está esa posición aquí
+calcular y ahí es donde está la posición
+20 en x 37 en y
+como lo calcular y es
+la y es la más difícil pero podemos
+calcular la ojo la y
+podemos contar 37
+esta es la fila 0 la 12 la 34 567 el
+puesto 8 esto está mal hay que quitar
+una nadie me ha dicho nada
+son de 0 a 7
+esta es la 7
+esta de aquí es la 8 9 10 11 12 13 14 15
+estas de aquí es la 16 17 18 19 20 21 22
+23 24 25 26 27 28 29 30 31 32 33 34 35
+36 37 está
+es la 37
+23 48 por 4 32 32 33 34 35 36 la de
+abajo 37
+esta es
+la fila 37 vale y está si os fijáis
+fila de caracteres 1 2 3 4 5 la quinta
+fila de caracteres y entonces tengo que
+bajar a la quinta fila de líneas de la
+quinta fila de caracteres vale como
+llegó del 37 a ese 5 y 5
+si os fijáis en lo que he hecho podréis
+ver el cómo a partir del 37 es algo que
+es la quinta fila de caracteres y de esa
+quinta de fila de caracteres la quinta
+línea
+aunque esto es fila 0 y la 1 y la 2 y la
+3 y la 4 de caracteres fila 0 fila 1
+fila 2 y la 3 y la 4 fila 5
+de píxeles dentro de esa fila de
+caracteres
+como he llegado ahí
+cuántas filas de píxeles estáis haciendo
+cálculos pero nadie me está explicando
+lo que yo pregunto y ahí ponéis 1 800 un
+40 no sé lo que significa cada cosa
+como es como sabemos que está en la
+columna
+tampoco y en la habitación cojo
+a parte columna que la parte de vaca 200
+habría que sumar los rojos que pasa sí
+pero ese momento estás calculando me la
+dirección de memoria si yo todavía estoy
+diciendo cómo he llegado desde que la y
+es 37 a deducción el animal debe
+alimentar tanto ya es pasado
+traspasado al siguiente punto mayor como
+he deducido que de a partir del 37 estoy
+en la cuarta contando el 0 vale quinta
+pero cuarta el número cuatro en filas de
+caracteres porque recordemos que esto es
+una fila de 32 caracteres 32 más 32 más
+32 más y 32 más una fila de 32
+caracteres y dentro de esa fila de 32
+caracteres he bajado cinco filas que eso
+es toda la línea que os había pintado
+antes vale entonces como he deducido es
+lo primero
+cada uno tienen ocho filas
+las primeras ocho están aquí las
+segundas ocho están aquí las terceras
+ocho están aquí las cuartas ocho están
+aquí las quintas ocho están aquí esto
+hay una operación matemática que me
+permite saber en qué bloque de ocho
+estoy que efectivamente lo que está
+haciendo josé nivel 37 entre 8 vale pero
+la división entera si yo hago la
+división entera de 37 entre 8 es 8 por 4
+que es 32 vale cual me da la fila 4 que
+es donde estaba vale desde fila 0 1 2 3
+4 fila 4 de caracteres y aquí me sobran
+5 que es el resto el resto es
+exactamente la fila el número de filas
+dentro de la fila de caracteres el
+número de fila de píxeles por qué porque
+cada ocho filas de píxeles es una de
+caracteres luego el resto es exactamente
+cuántas filas de píxeles me he quedado
+antes de llegar a la siguiente fila de
+caracteres sólo es una división
+si divido la y entre 8 me dice que tengo
+que estar en la fila 4 de todas estas y
+la fila 4 de éstas ahora sabiendo ese 4
+y ese 5 es cuando de ahí puedo decir
+pues hombre si la primera fila
+40 en hexadecimal vale que vienen siendo
+64 en decimal pues si tengo estoy en la
+cuarta fila multiplicando por 64 vale
+que sería 64 64 64 64 y llego aquí
+4 x 64 o si lo pongo en ese sin al 4 por
+0 40
+y ahora para bajar de ahí aquí abajo
+siguen siendo cada una de esas filas
+2048 800 porque la memoria sigue
+ocupando 2048 de largo así que a esto le
+tengo que sumar esas cinco filas
+multiplicadas por 800 en hexadecimal
+y con eso habré llegado al principio
+vale 1 2 3 4 aquí al principio de esa
+fila de píxeles
+que eso es la esquina izquierda de esa
+fila de píxeles porque esto ya es una
+fila de píxeles y ahora para desplazarme
+en la x
+operación tengo que hacer
+porque yo he llegado a la fila y a la
+que quería llegar cuál es en memoria de
+vídeo
+ahora como de la fila y pasó al byte x
+exactamente que quiero
+si este baile de aquí es donde está la
+coordenada y igual a cero
+y 37 x igual a 0 donde está 37 1
+vamos a poner más fácil
+esto es la 001
+dónde está la x1 y 0
+como dice miguel ángel el siguiente más
+uno
+en x siempre dentro de la misma fila en
+x siempre la decisión desplazando 1
+porque las filas son continuación
+memoria
+si yo estoy en la y 200 x 0 con la x 1
+es el siguiente la x2 es el siguiente la
+x 36 en siguiente la x 4 es el siguiente
+baile sólo me estoy desplazando a la
+derecha cuando aumentó la x
+es la y la que es complicada por la
+geometría de pantalla de 30 x x
+solamente es sumar 1 para moverme a la
+de al lado lo habéis hecho desde los
+primeros vídeos de dominando ensamblador
+de 180 como veis desde 000 hace 001 para
+cambiar de una x a la siguiente
+pues si tengo que pasar a la x 20 + 20
+sumo la equis y ya está
+al 4
+pero me falta una cosita
+para calcular todo esto me falta sumarle
+el inicio de la memoria de vídeo a todo
+esto lo tengo que sumar 0 0 que es donde
+empieza la memoria de vídeo
+y entonces es cuando parto del origen y
+le sumó la parte del bloque la parte de
+la línea y luego la equis
+esto esto es el cálculo que está
+haciendo la función que te escribo inter
+por vosotras vale entonces esto se
+resume en
+el principio de memoria de vídeo
+principio de la memoria de vídeo
+más
+lo que es la y / 8 vale en valor entero
+x 40 en este caso
+o lo que es el ancho de el número de
+caracteres que tiene una fila de
+caracteres más que el resto de dividir y
+partido por 8 vale esto es el resto
+a este lo multiplicó por 800 para bajar
+las líneas más x
+esta es la fórmula
+y siguiendo todo lo que hemos explicado
+ahora hemos visto cómo se calcula bueno
+pues esta fórmula ésta es la que
+implementa este código ese código está
+implementando exactamente esta fórmula
+pues ahora lo que voy a hacer es que os
+voy a dar 10 minutos
+que cojáis el código de get screen
+winter todos vosotros que intentéis
+adaptar este código para que lo que haga
+sea exactamente esta fórmula y la única
+diferencia si os habéis fijado como yo
+lo único que he cambiado es el ancho
+porque aunque tengo menos líneas eso da
+igual lo que lo único que cambia es el
+ancho lo que cambia de la fórmula
+original de get screen point era esta
+única y exclusivamente es el número de
+caracteres que ocupa cada una de estas
+que antes ocupaba 0 x 51 para hacer x 40
+o sea que esta es la que implementa el
+código que tenéis delante y ésta es la
+que necesitáis
+así es que tenéis que cambiar esto por
+esto aquí
+tenéis que mirar este código ver cómo
+hace el cálculo y conseguir que en vez
+de añadir x 0 x 50 lo haga x 0 x 40 es
+decir en vez de multiplicar por 80 en
+decimal tiene que multiplicar por 64
+entendido
+lo tenéis claro dudas preguntas una
+fórmula por la otra en ese código así
+que os vais al código de goethe string
+pointer lo leéis
+a ver si alguien me dice que cambio le
+tengo que hacer para que cambie eso de
+ahí recordar claro que la gracia de todo
+esto está en que el z 80 no sabe
+multiplicar las multiplicaciones no
+están hechas utilizando una instrucción
+de multiplicación están utilizando sumas
+así es que mirarlo
+y tenés 10 minutos
+álex miras
+entonces
+multiplican el lugar
+64
+tras todas las operaciones que sacan
+aquí
+es eso
+cuyo comentario dice que esta operación
+lo que hace es sumar 64 veces y prima
+más 16 y prima para obtener 80 y prima
+no esa ciudad que ya nos hemos quedado
+en el anterior dice
+64
+o sea comentamos esto sí sí vamos a
+comentar
+básicamente con eso sería suficiente
+nada más que con eso ya tenemos el
+cálculo hecho porque esto va a hacer
+exactamente el mismo cálculo cambiando
+multiplicar por 50 por multiplicar por
+40 en esa decimal que es multiplicar por
+80 decimal con multiplicar por 64
+decimal simplemente nos sumamos yo haría
+un pequeño cambio más porque una vez
+hacemos este cambio estas dos líneas de
+aquí arriba que sirven para almacenar en
+bc 16 y que se usa luego al final como
+ya no lo usamos ya no es necesario que
+nos guardemos aquí el 16 y que vamos a
+usar al final para sumar
+así que con esto básicamente esta
+función ya sirve para la nueva geometría
+como veis el cambio es mínimo no cuesta
+nada
+mínimo cambio una vez hemos entendido lo
+que hace
+ya tenemos la función adaptada a la
+nueva geometría esto mismo lo podéis
+hacer con muchas otras funciones de cpc
+telera si cambiáis la geometría de la
+pantalla muchas veces lo único que vais
+a necesitar cambiar es esto la suma de
+40 la suma de 50 y muchas de las
+funciones de cpc teller a la suma de ese
+40 y ese 50 es explícito prácticamente
+pone más 40 o más 50 o más 30 50 cambiar
+eso es tan sencillo como cambiar una
+constante
+básicamente entonces muchas funciones se
+pueden adaptar así sin más directamente
+y esto ya funcionaría porque ahora mismo
+la función hace lo mismo y yo ahora
+mismo en vez de llamar a que te screen
+pointer el de cpc telera yo ahora este
+call lo hago con los mismos parámetros
+de todos porque es la misma función
+mccall magic & screen pointer de 32 x 16
+y ya tengo la dirección correcta vale
+ahora mismo siempre y cuando no haya
+metido la pata esto de aquí abajo ahora
+debe de ser la dirección correcta pero
+claro sigo sin tener un dibujar sprite
+que lo haga bien
+ahora mismo veréis que ya sale algo
+diferente
+vale ya ya parece que va medio bien solo
+porque hemos calculado la dirección bien
+ya no está pintando en sitios raros vale
+pero ahora claro cuando pinta 16 de alto
+unos cuántos salen donde hemos puesto y
+los siguientes salen desplazados qué es
+lo que está pasando ahí vale entonces
+nos faltaría ahora adaptar lo que es el
+draw sprite y podríamos seguir la misma
+estrategia

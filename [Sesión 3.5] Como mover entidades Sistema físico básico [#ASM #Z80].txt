@@ -1,0 +1,371 @@
+[Música]
+sí
+[Música]
+esos dos monigotes que hemos creado
+va a haber que hacer algo con ellos
+moverlos
+en el sistema de física y en física como
+veis yo tengo aquí lo mismo vale que
+llamó al update guarente man entity for
+all vale y eso me va a llamar aquí al
+physics update one en tití que como veis
+ya digo aquí que recibe un puntero en i
+x vale ya tenía el comentario puesto ahí
+en el otro no vale
+si tengo una velocidad en la posición en
+xy otra posición en y qué puedo hacer
+está claro lo que puedo hacer mis
+entidades tienen x velocidad
+sumar y sumar a la equis la velocidad en
+x difícil si solo tengo velocidad en y
+es decir con velocidad en x podría sumar
+en x pero solo tengo velocidad en y
+vale entonces
+cómo puedo sumar la velocidad
+en mis entidades tienen es vx en su vi y
+vii
+estos son las tres constantes que he
+definido para que a través del puntero y
+x yo pueda la velocidad de una y
+de otra y ahora lo que quiero es
+actualizar claro lógicamente la y como
+ala
+le sumo la equis que hago
+a la sociedad
+cargo y como lo cargo que pongo aquí
+2 y porque pongo 2
+puedo poner dos pero si pongo dos para
+qué narices quiero unas constantes
+no
+la tienes escrita tibás
+aquí
+no
+lo que voy a cargar es la iv o la ub que
+cargo
+y ahora qué
+no no
+bueno tú dime lo que harías
+puedes probar
+[Música]
+como trabajo
+puedo probarlo sin más
+a la instrucción a cuando se le aplicase
+el acumulador cualquier instrucción que
+se aplica al acumulador que sea
+aritmética no hace falta ponerla
+componer esto se sobreentiende que es el
+acumulador no siempre porque el
+acumulador es el único con sable que se
+pueden hacer operadores operaciones
+aritméticas salvo algunas específicas en
+y x
+hl
+pruebo esto a ver qué pasa
+para el filtro es enorme
+en el registro pero tampoco existe el
+registro
+porque lo bien que pongo
+y x vale cuántos tenéis dudas respecto a
+este caso de código alguien que la
+entienda lo que estoy haciendo aquí
+quién está hablando de memoria que desde
+que esto vaya a funcionar
+bueno
+suponiendo que funciona esto que hemos
+hecho aquí quien tiene dudas quien no
+entiende algo que haya puesto aquí
+tiene a les falta algo sobre algo algo
+que no entendáis
+con esta primera instrucción
+y x está apuntando a la entidad esto es
+lo mismo que poner y x + e iu que valdrá
+2 o valdrá lo que sea con lo cual y x +
+2 es una dirección de memoria de ahí
+metemos en a su valor claro esto nos
+sirve para saber que eso a lo que
+estamos refiriéndonos la dirección de
+memoria es lo que contiene la y de
+nuestra entidad vale a continuación
+sumamos de lo que hay en y x + v y que
+puede ser 3 en este caso con lo cual de
+iu x + 3 le sumamos a lo que hemos
+cargado en el valor pero el resultado de
+esto queda en el registro y no en
+memoria la memoria no ha cambiado sólo
+hemos cargado de memoria y hemos vuelto
+a cargar de memoria para sumar en a no
+ha cambiado la memoria
+aquí es donde cogemos a y el resultado
+es que hemos calculado lo escribimos en
+la posición y x +
+si esto cumplirla y ensambla y todo y
+tal a lo mejor se mueven las cosas no
+probamos
+ensambla
+se moverá
+se mueve
+uno más rápido que el otro y en algún
+momento cáscara probablemente
+a mejor con suerte no pero bueno es un
+bonito efecto no
+si ponemos unos cuantos más y le ponemos
+almohadillas será como matrix estar bien
+se mueve muy bien
+vamos a suponer ahora que queremos
+simular la gravedad simular la gravedad
+significa que ahora mismo se están
+moviendo con una velocidad concreta
+hacia abajo
+pero la gravedad lo que hace es una
+aceleración las aceleraciones no suman
+la posición sino a la velocidad es una
+segunda derivada entonces como podemos
+simular una gravedad de una unidad por
+tiempo
+qué puedo hacer para simular aquí la
+gravedad
+sumarle a la velocidad sumarle la vida
+vale pues vamos a repetir esto y voy a
+meter el a la velocidad
+y lo que voy a hacer es sumarle 1 a 1
+y luego escribo en
+v y x como por ejemplo
+parece bien
+esto funcionará eso sí yo os recomiendo
+que uséis esto otro que también funciona
+porque justo como quiero sumar 1 tengo
+la instrucción inc que en este caso
+igual que en unos pocos con h l
+incrementa lo que hay en memoria sin
+cargarlo en un registro es una de las
+pocas cosas que se pueden hacer
+directamente en memoria poco más amable
+que lo anterior no pero porque quiero
+sumar 1 es si quisiera sumar otra cosa
+ya ya no en este caso vale así
+incremento la velocidad
+es una trompada por ejemplo si fueses a
+sumar siempre un valor fijo que por
+ejemplo sea 3
+es más rentable sumarle tres veces y
+depende
+eso es fácil de medir quiero decir si tú
+coges las instrucciones si miras el
+código máquina generado puedes ver
+cuántos países te ocupa y luego hay
+tablas donde puedes ver cuántos
+microsegundos que ocupa que no hace
+falta que vayas a las tablas y te coges
+el depurador de gwinnett gwyneth tiene
+un medidor de tiempo al lado que lo
+puedes poner a cero y pulsas f8 para
+pasar una instrucción y te dirá cuántos
+microsegundos han pasado entonces ves
+los microsegundos que tarda una
+instrucción y lo puedes probar con unas
+y con otras entonces dice si pongo esta
+versión cuantos microsegundos tal así
+como esta cuántos microsegundos tarda
+vale entonces sabes cuál es más rápida
+de las dos y también cuál te ocupa más o
+menos de las dos que puede que una cosa
+sea más rápida y ocupe más o más lenta y
+ocupe menos eso varía
+vale
+bueno con esto vamos rápido ahora lo que
+vamos a hacer es ponerle un tope para
+que choque con la parte de abajo que es
+200 entonces yo lo que quiero hacer
+ahora es un
+y la y es mayor que 200
+bueno si no si es menor que 200 red y
+entonces aquí debajo pondría el sí
+es mayor que 200 vale
+como puedo hacer ahora para saber si la
+i es mayor que 200 que es el hecho no
+voy a usar 200 porque como esto mide 16
+de alto vale usaremos 184 vale que es lo
+que ocupa el sprite
+cómo puedo saber si la y ha pasado de
+184 que es el límite de abajo para que
+no se salga y haga cosas raras sino por
+ejemplo para que llegue abajo y rebote
+cómo puedo saber si ha llegado a 184
+como se si el valor es mayor o menor que
+184
+al sumarle la diferencia hasta 256
+diversidad el carry o sea sumar 256
+menos 184
+y se lo sumamos a que es donde tenemos
+ahora mismo por ejemplo haríamos esto
+256
+- 184
+qué es lo que teóricamente falta para
+llegar al límite y si la suma de carrie
+es que te has pasado de 184 porque si no
+has llegado a 184 a sumar esto no
+pasamos de 184
+si el esperábamos que iba a ganar
+bueno es una posibilidad y entonces yo
+aquí tendría que volver en qué caso en
+qué caso volvería
+en el caso de que haya carrió en el de
+que no haya carril
+si no hay carril vale cuántos no
+entendéis esto
+yo no lo entiendo vale lo voy a explicar
+con una línea que quedará más claro esto
+es el cero
+todo esto son los valores hasta 256
+vale
+tengo un valor de y que puede ser este
+vale esto es light conforme la i se va
+incrementando se va hacia la derecha y
+tengo un tope que es este que es 184
+vale no quiero que pase de aquí 184 sí
+si me vale esto y yo le sumo esta
+distancia no llego a 256 vale si yo sumo
+esto a cualquier y que esté aquí debajo
+nunca llegó a 256
+y qué tiene de especial 256 que si yo
+hago una suma y la suma da más de 256 no
+cabe en 8 bits y por tanto necesitaría 9
+bits para representar el 205 7 858 759
+el noveno bit que se tiene que poner a
+uno es el carry el acarreo que viene a
+ser el me llevo uno cuando sumo cuales
+es el acarreo entonces si me y hasta
+aquí y yo sumo esta distancia paso de
+256 el número resultante red requeriría
+un bit más para representarse por lo
+tanto genera carr y por tanto cuando yo
+paso del 184 toda suma que haga de esto
+a la y estando aquí pondrá el carry a 1
+mientras que toda suma que yo haga con y
+que están aquí abajo no llega al 256 se
+puede representar con un solo bit o sea
+con 8 bits y el carry estará a 0
+se entiende
+todos porque tienes lo que es la pasión
+lo último que es caravana correcto tengo
+una posición de este valor le sumó esta
+distancia que esa distancia es 256 mil
+184 nuestros estados será sumo ahí si
+está en esta zona no llega a 256 en
+cuanto pasa de aquí pasa de 256
+requieren un noveno bit que es el carril
+esa suma dará card y cuando esté en esta
+zona
+mala relación si entiendes cuándo
+vale
+entonces puedo hacer esto y ver si
+funciona y entonces cuando esté aquí
+abajo es que ha habido carry vale si hay
+carry llegó aquí si no hay carry
+salgo vale así que aquí estoy cuando ya
+estoy en la zona del mayor que el 184
+que hago si me he pasado de 184 que dos
+operaciones podría hacer por ejemplo
+se os ocurre alguna para que rebote
+cambiar la velocidad y ponerla negativa
+como pongo la velocidad negativa
+dime jorge
+no pero la velocidad puedo ponerle un
+valor el que yo quiera la velocidad
+ahora mismo si la velocidad puede ser
+ahora mismo cuando llegué abajo más 8
+más 20 pero yo puedo poner una concreta
+no para que sea más fácil una velocidad
+negativa menos 8 o menos 12 nos parece
+bien como pongo venga más voy a poner a
+lo loco menos 16 venga estoy que lo tiró
+hoy quién da más
+como pongo -16
+pero como es correcto yo ahora mismo
+cuando haga rebote le pongo -16 y en
+cada ciclo irá haciendo menos 15 menos
+14 menos 13 o sea que yo lo tiró para
+arriba fuerte pero irá va cayendo
+después
+como le pongo -16 a la velocidad
+como escribo menos 16 gb
+cómo
+v y x menos 16 más
+por ejemplo
+os suena a la instrucción está
+suena
+no suena esta instrucción
+esta instrucción de los debería de sonar
+está en la instrucción 36 guardar en
+donde apunta h l un valor concreto en la
+instrucción 36 la estáis usando desde el
+código máquina esta instrucción existe
+con h l en la instrucción y esto tenéis
+que asumir que x es asimilable a hl pero
+con algunas funcionalidades adicionales
+por eso puede hacer esto vale me
+conformo con esto ya está
+qué pasa si no estoy exactamente en 184
+y he llegado al 190 y pinto en 190 a la
+mitad del spray se va para afuera no
+tendré que evitar que eso pase así que
+voy a poner también que si me he pasado
+voy a quedarme en 184 como mucho
+porque yo sé que estoy en más de 184 no
+que estoy en 184
+vamos a probar esto a ver si funciona
+parece
+ya veremos si funciona o alto esto que
+hemos hecho está na no funciona
+habéis visto algo
+se llega a ver
+estáis viendo lo que hace
+está rebotando y tiene gravedad
+lo que no ha costado tanto no hacer una
+gravedad y te rebote
+bien ahora mismo va despacio porque lo
+hemos ralentizado mogollón si esto lo
+pongo a velocidad 50 hertzios va a hacer
+así para pegar botes como un loco
+pero ya veis que tenemos una gravedad
+muy simple
+no nos ha costado mucho ahora claro
+habría que hacer el borrado y esas cosas
+para que no deje rastro todo esto vale
+pero esa parte vamos a tener que hacer
+más adelante porque si no se nos alarga
+mucho
+cosas importantes de esto esto cabe esto
+que hemos hecho aquí funciona esto es
+una forma de pensar pero claro hay otra
+forma de pensar lo mismo vale y en vez
+de hacer una suma y ver si me pasó de
+256 puedo hacerlo al revés con una resta
+y ver si paso de cero que es lo mismo el
+acarreo en la resta se pone a 1 cuando
+pasó de cero porque lógicamente
+necesitaría para representar el negativo
+un bit negativo a 1 vale entonces si yo
+en vez de hacer esto lo que hago es
+restar
+cuando restó 184
+tengo lo contrario a lo de antes los
+valores de 0 a 184 al restarle 184 este
+3 184 vale de 0 a 183 todo lo que reste
+da menos de 0 y por tanto está acarreo y
+de 184 para arriba da más de 0 0 o más y
+por tanto no hay acarreo vale entonces
+aquí volvería si hay acarreo porque
+estoy en por ejemplo el valor 100 menos
+184 está menos 84 esos acarreo sí estoy
+en el 200 menos 184 da 16 no haya carril
+vale
+y esto tiene que funcionar igual que lo
+de antes para que veáis dos formas de
+pensar lo mismo por ejemplo
+ahí lo veis cómo rebota
+esto algunos queríais hacer juegos de
+plataformas que ésta casi no le falta
+mucho
+yo veo un plataformas y vosotros no veis
+un plataformas

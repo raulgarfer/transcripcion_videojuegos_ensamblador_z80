@@ -1,0 +1,437 @@
+[Música]
+sí
+[Música]
+hasta ahora
+lo que hemos hecho es directamente
+código máquina o sea yo abro el gwinnett
+aquí seguramente se verá chiquitito
+como los probamos la semana pasada se ve
+bastante chiquitín
+pero bueno tampoco es muy relevante que
+se vea más grande o más pequeño ahora
+mismo sino que esta parte del wing eight
+que es el depurador ya la conocéis vale
+aunque no se vea se vea pequeño no me
+importa
+sabéis que vosotros os venís aquí y os
+vais a la posición 4000 vale
+por eso que no hace falta que se vea
+mucho y aquí escribís directamente a
+mano en la memoria es lo que hemos hecho
+en el curso de código máquina esto es
+como si tuviéramos la máquina real
+delante y nosotros la tuviéramos
+pinchada en la rama y tuviéramos desde
+fuera algo que nos permitiera modificar
+la rama es lo que estamos haciendo aquí
+en modificar la rama a mano
+venimos a dar 4000 el clásico programa
+4000 y pongo 13 88 32 00 00 18 efe pongo
+el pc en 4000 nuestro clásico programa
+y f9 ejecutó y ahí el chiquitín está mi
+píxel vale
+básicamente pixel de color rojo hasta
+aquí dominad y ximo esto lo hemos hecho
+todos muy bien pero es que la realidad
+no funciona así
+nosotros cuando nos dan un juego no nos
+dan una hoja con un montón de líneas de
+código máquina y nos vamos a nuestro
+ordenador y lo escribimos en ram para
+poder jugar o no esto no lo hacemos sino
+que lo que ocurre es que cargamos
+cargar es básicamente leer de disco y
+poner en ram es lo mismo que acabo de
+hacer yo a mano pero he hecho de forma
+automática por un programa que un
+programa ejecuta y al ejecutar lee
+y copia a la rama y cuando termina de
+copiar en rama lo que hace es hacer un
+jump a una posición eso es cargar
+simplemente y nosotros queremos que
+nuestros juegos carguen no tienen que
+cargar de algún sitio es decir no hemos
+aprendido todavía cómo podemos crear
+algo físico fichero que la máquina pueda
+leer y acordaos que os dije que estas
+máquinas no tienen como nuestras
+máquinas modernas un disco duro sino que
+se les mete una casete eso significa que
+lo que nosotros queramos cargar en la
+máquina real tiene que estar en una
+casete y la máquina real tiene que leer
+de esa casete y copiar a ram y luego
+saltar así que nosotros cuando queramos
+ahora crear un juego lo que tenemos que
+crear es un fichero
+no tenemos que escribirlo en ram vale
+primera parte para poder crear un
+fichero cómo podría yo con esto que
+hemos hecho hasta ahora cómo podría yo
+crear un fichero para meter el mismo
+programa vale el programa que hemos
+hecho todo el tiempo en el programa de
+pintar un píxel como lo creo en un
+fichero para luego cargarlo en el
+gwinnett que haríais
+ocurre
+si eso ocurre algo yo por ejemplo lo he
+hecho parando el programa del depurador
+y poner las instrucciones y que esa es
+una opción de guardar lo que has hecho
+entonces es guardar un snapshot
+no sé
+vale pero eso un snapshot en este caso
+porque tienes un emulador vale y el
+emulador te permite guardar toda la ram
+y el estado de los de los registros en
+un fichero y luego lo restaura y
+continua por donde iba que es lo mismo
+que hacemos cuando y berna mos la
+máquina es perdón snapshot y luego
+volver a restaurarlo
+ahora y roberto hice mk project - a
+nombre del programa no eso es crear un
+proyecto de cpe siete letras todavía ni
+siquiera estoy hablando de cpc telera
+estoy hablando de mucho antes quiero
+dejar de escribir directamente en rne y
+crear un fichero que luego yo pueda
+cargar en la rama qué tipo de fichero
+puedo crear para luego meterlo en ram
+que quiero guardar en ese fichero
+se guardarían si queréis guardar
+un binario dice carlos pues eso un
+binario si es que yo quiero guardar un
+byte otro byte otro byte de un byte que
+exprese un byte 388 es un binario vale
+como creó un fichero binario
+como crearía es un fichero binario
+sí pero si no tengo ninguna memoria como
+creo un fichero binario quiero crear
+sí
+no tengo la varita
+ya compilar lo que no sabéis crear un
+fichero binario sin compilar por ahí
+nikoláy dice que con un editor
+hexadecimal por ejemplo bueno yo la
+forma más fácil de crear un fichero que
+a mí se me ocurre es hacer así
+ya está ya he creado un fichero es
+binario porque le he puesto ping podría
+no ser binario igualmente lo mismo da
+pero bueno el caso es que ahora mismo
+tiene cero bytes o sea que da igual de
+lo que sea puede ser binario puede ser
+klingon da igual quiere decir tiene cero
+bytes vale he creado un fichero ahora
+eso sí quiero meter binario en ese
+fichero quiero que sea un fichero
+binario entonces para meter binario lo
+lógico es que tengo que escribir cosas
+bytes baita byte en el fichero entonces
+me interesa un editor hexadecimal no si
+tengo aquí instalado no no tengo
+instalado pero lo puede estar en el
+momento
+vamos a ponerlo
+así
+no hay no hay nada ahora mismo en el
+fichero
+[Música]
+y pues aquí
+pueden ser zoom en principio el editor
+es a decimal muestra la dirección de
+memoria vale en un lado aquí se supone
+que está mostrando es al final que el
+beneficio está vacío no hay nada y ahí
+mostraría en todo caso elastic porque
+normalmente se suele poner el editor ese
+decimal con lo que contiene en asti al
+lado porque solemos meter también aquí
+en los ficheros esas cosas se ven
+entonces yo ahora puedo escribir y como
+veis estoy escribiendo en la parte del
+asta y entonces él me pone aquí en este
+lado en hexadecimal los valores del 3 y
+el 2 que puesto en asti pero si yo
+quiero poner hexadecimal me pongo aquí
+entonces pongo 13 8 8 32 000 18 efe
+pero estoy guardando en un editor
+hexadecimal y entonces esto lo puedo
+guardar con el control ese y ya está
+guardado
+vale y ahora veréis que gaming tiene 7
+bytes como puedo yo comprobar que
+efectivamente lo que hay en el game bean
+ha guardado lo que yo quiero bueno tengo
+una utilidad de línea de comandos vale
+x2 y con esto sí que puedo mostrar el
+contenido vale que como veis si lo hago
+así me saca el contenido en hexadecimal
+ya veo que tengo esos bytes directamente
+que son lo que yo quiero aquí en este
+lado veréis lo que os decía esto es
+elastic que lo está poniendo aquí
+repondrá que no me cabe en la pantalla
+porque la tengo muy agrandada ya tengo
+el fichero binario ya puedo programar
+con un editor esa decimal no tengo
+porqué estar en el wing ey esto me
+permitirá hacer cosas como copypaste muy
+útiles salvar bueno ya es una ganancia
+hemos empezado que ya tenemos un binario
+creado claro ahora el binario si lo
+quiero cargar
+vale tengo que hacer algo
+igual no del todo cómodo vale pero lo
+vamos a ver algo igual no del todo
+cómodo para cargar este binario
+es que yo cuando ya lo tengo programado
+sin haciendo el sueño tengo que venir
+aquí y tengo que irme a la posición de
+memoria donde quiero meterlo pues hombre
+voy a 4000 como siempre vale aunque no
+se vea no os preocupéis que es voy a la
+posición 4000 y cuando estoy en la
+posición 4000 ahí quiero meter mi
+binario y entonces con el win bloqueado
+botón derecho y hacer un load que pone
+aquí
+y entonces ya puedo ir a la carpeta que
+está
+por aquí
+y cargo de gaming y al cargar el binario
+me pone ahí el 13 88 32 claro en la
+dirección de memoria donde se carga el
+binario la he tenido que elegir yo a
+mano tenido que ir a la memoria y
+decidir aquí
+y ahora para poder ejecutarlo me tengo
+que ir aquí y decirle al pc como siempre
+es ponte en la 4 mil ejecutados vale así
+que tengo que ponerme aquí y poner 4000
+vale hemos ganado algo no pero
+pero igual no
+antes de ejecutar ya tenemos el píxel y
+ahora hemos programado en binario pero
+en un fichero y ya tenemos ese fichero
+todavía no es esto lo que queríamos no
+es decir esto mejora un poquito lo
+anterior y ahora podemos guardar
+ficheros podemos hacer cosas tal pero
+todavía necesitamos más
+no es así ahora si queremos analizar
+cosas pues ya es más cómodo que estar
+mirando la nombre de willy y pital
+podemos usar otras herramientas más
+potentes eso si no queremos esto
+queremos algo un poco más avanzado
+queremos seguir pegados a la máquina
+pero con capacidades
+siguiente cosa todavía no he cargado de
+verdad el juego lo he metido johan vaca
+en la nave esto es un hack decir yo con
+un fichero binario no no llegó y lo meto
+a mano en la rama sino que la máquina
+tiene que cargar llamar lo visteis la
+semana pasada que yo llegaba metía un
+juego y ponía run acordáis no run en
+realidad es una orden que lo que hace es
+saltar a un programa que está en la roma
+hay un programa que está en la rom cuyo
+cometido es encender la cinta de
+cassette y empezar a leer de la cinta de
+cassette el audio transformarlo en datos
+y esos datos si están en el formato que
+él entiende meterlos en la ram eso es lo
+que hace run es un programa lee de la
+cinta meten run pero para poder hacer
+eso ya habéis visto que necesita más
+cosas que el binario
+con solo el binario él no sabría dónde
+ponerlo en la rama
+nos podría poner en cualquier sitio no
+tiene sentido mi programa tiene que ir
+en 4000 vale lo he diseñado para que
+sean 4000 no lo puedes poner en
+cualquier sitio 3 que además una vez lo
+haya cargado en la ram tampoco sabe
+dónde tiene que ejecutar porque yo puedo
+hacer un programa que tenga un montón de
+cosas y no tiene por qué estar al
+principio el main salió mi mail podría
+estar más adelante y al principio a ver
+datos esos dos datos de donde cargas el
+programa y dónde empieza la ejecución
+son necesarios que estén disponibles por
+tanto cuando yo meto un fichero en una
+casete además de eso también le voy a
+poner un nombre porque yo querré cuando
+me pongo pongo run ya visteis que la
+semana pasada ponía lo ha de imprimir
+porque yo estoy cargando prince of
+persia como sabe que se llama prince en
+el binario no pone nada
+mal el binario como habéis visto no es
+más que todos los bytes que yo quiero en
+ram seguidos
+eso es el binario no tiene ninguna otra
+cosa
+entonces que tengo que hacer lo que se
+hace habitualmente es construir un
+fichero que lleva una cabecera con los
+datos de donde quiero que lo cargues
+donde empieza la ejecución como se llama
+este fichero y luego vienen los datos en
+crudo del binario vale esa cabecera en
+amstrad se llama cabecera ams-2 porque
+es del sistema operativo de amster es lo
+que le dice al sistema oye lo que viene
+a continuación es este fichero con estos
+datos conectar y eso se tiene que
+guardar en cinta
+todo ese proceso hay que hacerlo pues
+ahora para guardar en cinta el binario
+que yo tengo tendría que ponerle la
+cabecera ams-2 y meterlo en un fichero
+que emula una cinta que las cintas por
+cierto lo que contienen es audio
+es decir los datos cuando metéis una
+cinta se oye como un módem porque están
+codificados en audio pulsos altos y
+bajos de audio que representan unos y
+ceros vale básicamente entonces yo ahora
+quiero llegar a ese punto como meto esto
+en cinta y una utilidad en cpc telera
+vale que es la utilidad cpc tú cdt
+esta utilidad yo voy a hacer mon al jazz
+para poder
+y ejecutarlo cómodamente
+si yo pongo esto me sale la ayuda y éste
+cpc tú tdt lo que nos permite es crear
+un fichero de cinta cdt a partir de
+ficheros que nosotros queramos como por
+ejemplo el binario que acabo de crear y
+esto lo que vamos a hacer es
+efectivamente meter nuestro binario con
+su cabecera en una cinta para que esa
+cinta se pueda mandar al emulador y el
+programa run lo lea lo ponga en ram lo
+que he hecho yo a mano lo haga
+automáticamente
+entonces esto si veis aquí
+con los parámetros de pc tu cdt yo
+obtengo menos ere para poner el nombre
+de fichero para que cuando esté cargando
+pues salga lo a dyn
+tal cosa que eso va en la cabecera y
+entonces esto lo voy a moment game por
+ejemplo
+my game maíz
+mais láctico te queda muy vale vale
+y ahora le tengo que decir las dos cosas
+esenciales donde quiero que lo cargos en
+memoria y dónde empieza la ejecución
+vale menos el que es de lo a 4.000 menos
+x 4000 vale el fichero que voy a meter
+game punto bin y el fichero que sale
+game punto cereté
+vale
+la cual le doy y este programita
+ahora veréis que me ha generado un game
+cdt que pasamos de tener 7 bytes a las
+577 porque porque eso guarda aparte de
+la cabecera toda la información de la
+cinta de hecho si lo editó
+si le evitó así no se ve nada no voy a
+voy a hacer un ex ducto
+y así lo vemos
+le veréis que el cdt
+tiene un montón de información al
+principio veis que pone zx tape y tal
+veis el beige el my lucky games vale lo
+veis ahí en asti está metido aquí en
+esto que es la cabecera y más abajo
+veréis una cosa que seguramente vais a
+identificar aquí
+vale
+esto seguramente lo identificase este es
+nuestro programa al empieza aquí lo que
+hay adelante pues toda la información de
+la cabecera y de esas cosas que hemos
+añadido van entonces ahora que ya tengo
+un cdt sct es como la cinta que meto en
+el emulador
+y como ya sabéis para ejecutar un cdt se
+lo tenemos que pasar a rv m
+les digo menos hace y ya me coge el el
+cdt que hay aquí heinze de té
+se está ejecutando
+a veces que carga veis el my lucky games
+y cuando carga
+si veis el pixel ahora si tenemos el
+proceso
+entero hemos creado un fichero binario
+con ese fichero binario hemos creado una
+imagen de cinta y esa imagen de cinta ya
+la podemos cargar en el emulador como si
+fuera una cinta y si quisiéramos
+cargarla en la máquina real también
+podríamos porque sct podemos convertirlo
+en web
+audio y directamente ese audio lo
+podemos meter en la casete que va en la
+máquina real de modo que nuestro
+programa así ya lo podemos ahora sí
+ejecutar en la máquina real ya tenemos
+el proceso que nos faltaba porque hasta
+ahora estábamos haciendo trampa nos
+íbamos a la ram y decían ja esto lo
+cambia yo mire es mi ram yo hago con
+ella lo que quiero claro porque tienes
+un emulador la máquina real esto no se
+puede es bien hasta aquí alguna duda
+alguna cosa
+en el chat tenéis alguna duda alguna
+cosilla
+algo que
+sí no
+ya habéis visto además que para que
+pueda cargar tiene que estar en un
+formato concreto es decir tenemos que
+tener un tipo de cabecera que el audio
+habrá que generarlo de una manera
+concreta porque eso es lo que entiende
+el programa room lo que le damos es los
+datos en el formato que reúne entiende
+ni más ni menos
+pero que tengáis dudas vale
+lo que yo te decía no era el hecho sino
+que en el depurador igual que ha cargado
+el arte culinario sí porque la
+instrucción es que quieras ir así
+también puede crear al final
+sí claro evidentemente de ahí puedes
+hacer un correcto puedes puedes desde el
+gwinnett puedes hacer safe igual que
+hemos hecho lo puedes hacer las dos
+cosas eso es sin problema
+y sigue siendo trampa quiero decir que
+no lo puedes hacer en el ordenador real
+vale eso decía que nosotros lo podemos
+hacer pero sigue siendo trampa y además
+aunque nos ahorra algo de trabajo
+tampoco es para tanto vale tenemos
+todavía tenemos un pequeño camino que
+recorrer vale bien hasta aquí todo bien
+ahora la siguiente parte es no estáis un
+poco hartos del código máquina
+a ver con sinceridad quién quién está ya
+como como si el chat hay gritos de
+clases quiero decir que alguien podría
+decir yo es que ya yo sachs y ya estoy
+harto de escribir números en esa decimal
+no mola más cuando pongo void mind y
+está esto ya lo empezó a echar de menos
+no

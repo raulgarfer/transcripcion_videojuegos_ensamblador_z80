@@ -1,0 +1,471 @@
+[Música]
+sí
+[Música]
+para empezar nuestro game engine
+queremos hacer nuestro array de
+entidades vamos a suponer que nuestras
+entidades por ejemplo lo que queremos es
+que tengan una posición x una posición y
+una velocidad en x una velocidad en y
+por ejemplo lo que sería lo típico y ya
+está con eso tenemos suficiente porque
+hacemos que nuestras entidades sean
+píxeles y ya está ponemos eso y listo
+pues cuánto espacio de memoria
+necesitaríamos para eso
+cuanto dedicaría es para que podemos
+poner lo que queramos nuestra posición
+en x pues le podemos poner infinitos
+decimales ya lo mejor nos ocupa 100
+bytes la posición en x pero no es muy
+práctico cuánto espacio dedicaríamos
+para eso
+alguien que me diga cuánto espacio nos
+pueden ocupar una entidad que tiene una
+equis una y una v x 1 b y cuánto puede
+ocupar
+si quiero guardar una posición x cuánto
+espacio puedo necesitar mi pantalla
+cuantos bytes tiene de ancho
+cuando os vais tienen gancho la pantalla
+estándar pregunta al que deberíais
+dominar
+[Música]
+80 muy bien 80 cuánto espacio de memoria
+necesito para guardar números que vayan
+de 0 80
+necesito mucho espacio por ejemplo 10
+bytes con 10 vice tengo suficiente para
+guardar números de 80 o
+o me estoy pasando
+cuántos bytes usarías para guardar
+números que van de 0 80
+40 bytes 40 vais para guardar números
+que van de 0 80
+yo quiero guardar un número que puede
+ser el 1 del 5 al 7 el 20
+álex dice un byte de yeda para 256 pues
+si eso es lo que esperaba que me dijera
+jce que con un byte yo guardo cosas de 0
+a 255 entonces si quiero guardar de 0 80
+con un byte me sobra no
+digo yo
+no
+y cuanto cuanto de alto está mi pantalla
+cuantas cuantas líneas de alto tiene mi
+pantalla
+256 las líneas no no son 256 líneas de
+pantalla 340 tampoco youtube
+menos mal antonio ya ha dicho lo
+correcto 200 pero no sé si es que
+estabais intentando acertar hay 200
+líneas tiene la pantalla esto uy que va
+a costar empezar nos va a costar vale
+200 si quiero almacenar una cosa que va
+de 0 a 200 cuántos bytes
+1 bien pues nada así para mí aquí se
+necesita un país y para mí y necesito un
+byte dos bytes y para la velocidad pues
+hombre vamos a suponer una cosa puede ir
+a unas velocidades de más uno más dos
+más tres más 5 - 1 - 2 mestre menos 5
+cuantos vais necesito para almacenar
+algo que va de menos 5 + 5 más o menos
+como velocidades por ejemplo
+o sea que sobra con un byte para cada
+uno pues si sobra con un byte para cada
+uno no necesito más dicho sobraría con
+menos incluso pero para no complicarme
+mucho como el acceso a memoria se hace
+en bytes pues hombre un byte un byte un
+byte un byte así que 4 bytes
+4 beige o lo que ence serían cuatro
+charts
+son cuatro bytes básicamente vale un
+byte para cada uno
+pues eso serían mis entidades supongamos
+que quiero diez entidades vale
+como hago yo
+para que en mi binario
+haya espacio para diez entidades
+necesito 40 países necesito que dan 40
+bytes en un sitio de la memoria al que
+yo voy a acceder para ir escribiendo
+cómo
+como género 40 bytes
+en la memoria la memoria los valles
+están ahí pero como digo estos cuarenta
+bailes voy a usar para escribir
+entidades una detrás de otra como a
+hueso
+dv
+dw y está preguntando en wind up esconde
+ve que hace de vez
+decidme qué hace debe
+escribe directamente
+sería una forma de decirlo pero es un
+poco voy a probar no vamos a probar qué
+hace
+voy a poner aquí debe por ejemplo y
+pongo debe 88 valen hexadecimal qué va a
+pasar ahora cuando compila
+yo compito
+no se queja no
+me dice que ha habido un cambio voy a
+actualizar
+un cambio vale
+miramos en el mail punto el st a ver qué
+ha hecho con ese tv
+lo miramos porque como el main lst nos
+muestran cómo traduce el lo que nosotros
+hacemos
+vamos a ver qué ha hecho
+qué ha hecho con el bebé
+os fijáis lo que ha hecho con el debe
+lo ha traducido literalmente a código
+máquina bueno es que no es que lo haya
+traducido literalmente es que debe
+significa design bites y design by test
+yo digo quiero un 88 aquí y entonces él
+pone un 88 cuando yo pongo con diseños
+finger él sabe que college cede y que
+hay que poner dos pero cuando yo le digo
+por un 88 es lo que estoy diciendo con
+tv él pone un 88 ni más ni menos eso es
+lo que hace debe yo puedo hacer el
+programa entero un código máquina
+poniendo debe y empieza a poner los
+bytes y ya está es código máquina esto
+de aquí abajo el col
+yo puedo poner debe cd coma 05 40 y
+generó lo que quiero directamente vale
+porque es porque debe es un mes esto 88
+claro si yo pongo un 88 esto va a parar
+al binario
+si yo lo abro ahora
+veréis en el binario el 88 al principio
+lo veis
+ahora hay 188 solo que ahora si os
+fijáis bien diré bueno claro pero si
+ahora va a ejecutar cuando empieza a
+ejecutar ejecutará 88 en vez de cdn lo
+que quiera que sea que signifique 88
+pero no porque si os fijáis bien veréis
+que ahora esto ha cambiado aquí pone
+cargar en la posición 4000 ejecutar en
+la 4000 1
+porque salta al principio de donde está
+mail
+vale porque tenemos un símbolo main aquí
+que dice main y main es aquí eso
+significa que ahí es donde tiene que
+empezar a ejecutar y no aquí hay pero
+ese debe 88 ya nos da a entender cómo
+podemos hacer espacio para guardar cosas
+porque yo puedo hacer así por ejemplo
+le voy a poner así
+y esto serían 4 bytes 4 bytes que los
+pongo como
+para mirarlo ahora cuando yo compila
+miro el binario y los veo rápidamente
+vale me da igual que sean ceros o que
+sean otra cosa pero con ab puedo mirar y
+lo veo
+y me voy al binario veis los ave ave ave
+como yo empiezo a ejecutar aquí ahora sé
+que en la posición 4000 de memoria tengo
+4 bytes en los que pone a poner podría
+haber puesto ceros pero lo pongo como
+avda igual ya tengo cuatro bytes ahí que
+no son el código y que sé que están ahí
+pero yo ya puedo escribir mes os vais lo
+que me dé la gana ya están reservados
+porque porque cuando esto se carguen
+memoria memoria pondrá a bbb y yo puedo
+empezar a escribir ahí lo que yo quiera
+en esos países porque esos vice no se
+usan para ninguna otra cosa no voy a
+romper nada si cambio su país eso es
+cómo lo reservo luego pongo bytes y a
+partir de ahí ya puede usarlos ya está
+es así de sencillo vale
+si ahora quiero crear 10 entidades como
+esta puede hacer así pero esto esto es
+un poco
+a vosotros nos duele
+sí verdad
+ahora quiero crear 100 entidades es
+verdad
+si no no no no me parece que esto sea
+muy triunfal vale tenemos opciones por
+ejemplo está
+órdenes que le doy al programa
+ensambladores repite 10 veces esto esto
+sería una opción vamos a ver si le gusta
+no parece que se queje
+y ahora me tengo aquí
+es que tengo 10 veces esto es más
+práctico que ponerlo a mano pero en
+realidad hecho lo mismo porque esto
+solamente es traduce esto 10 veces de
+hecho cuando lo veáis en el st en la
+traducción veréis que él ha puesto los
+10 había vía via.b yo he dicho repite
+esto 10 veces 10 veces la que tú quieras
+cariño no hay problema
+vale es así de sencillo vale lo ha
+repetido diez veces solo que yo no tengo
+que escribirlo
+y más cosas que existen en el salvador
+que podamos hacer hay otra opción con
+esto que es la opción punto de s
+y esta opción punto de s voy a hacer un
+un pequeño truco primero voy a poner un
+debe a 88 pero que vamos y a
+continuación voy a poner un de ese en el
+que yo tenía 4 bytes y 10 entidades
+porque claro esto sigue siendo un
+programa ensamblador el que traduce si
+yo al traductor le doy dos constantes y
+una multiplicación enlace la
+multiplicación y luego ya poner el
+resultado lo cual a mí me viene bien
+porque yo aquí lo pongo indicado se lo
+que estoy haciendo 4 por 10 vale 4 bytes
+por 10 entidades pero no tengo que poner
+el resultado final él ya lo calcula
+antes de traducir y de s
+es definir un string
+no un string un stream de bytes y una
+ristra de bytes de qué tamaño de 40
+quiero que define es 40 bytes vale ahora
+os diré por qué he puesto el debe 88 ese
+que habeis visto ahí vale yo defino la
+ristra y fijaos que por cierto unidad al
+principio no pone 88 verdad que no
+con el 58
+ahora alguien que me diga por qué pone
+58 mientras os fijáis que he puesto en
+ceros porque lo has puesto en decimal
+creo correcto así que puesto debe 88 10
+x 88 te el puesto en decimal
+pero en el hexa decimal 88 es 58 claro
+así que cuidado con estas cosas que si
+quiero un 88 tengo que decir que quiero
+un 78 hexadecimal si no si lo pongo en
+decimal pues evidentemente es otra cosa
+vale
+muy bien fijaos que con el de ese el día
+reservado 40 bytes me ha metido 40 ceros
+en bytes y ya puedo meter mis 40 vice ya
+pude empezar a meter entidades ahí ya
+todo lo que había dicho antes de ahora
+una entidad de esta posición pongo los
+datos en esta posición ya lo puedo
+empezar a hacer todo lo que tenía antes
+porque ya tengo el espacio ya puedo
+meter código que diga aquí pongo cosas
+aquí quito cosas yo ya puedo hacerlo
+para hacerlo más fácil puedo poner aquí
+una etiqueta
+que diga el dis esto es una etiqueta
+entonces ahora ya en mi código podría
+y decir en entities escribo no se
+queden titís más 5 escribo no sé cuántos
+ya puedo empezar a hacer cursos pero
+porque he puesto este 88 aquí qué pasa
+si lo quito
+habrá alguna magia vamos a hacer un
+truco fijaos voy a que lo veáis voy a
+hacer aquí una instrucción que
+simplemente haga que le dé hl entities
+entities
+una etiqueta las etiquetas son un nombre
+para una dirección de memoria con lo
+cual cuando yo aquí pongo l dhl coma
+entities lo que está metiendo en h&r es
+la dirección de memoria está esta
+dirección de memorias que metiendo una
+chile sin más eso es lo que va a hacer
+esa instrucción vale vamos a ver cómo me
+traduce esto
+compiló cst me voy a ver fijaos veis el
+88 esta es la posición 0 relativa a mi
+fichero el entities fijaos que al lado
+pone que está en la posición 1 por tanto
+entities vale 1 y eso es lo que pasa
+aquí cuando pongo l dhl coma entities
+que crea un 21 0 1 0 0 porque está
+metiendo la dirección de editis el 1 en
+h&m vale
+y esto a continuación son 4 por 10 que
+si os fijáis que está en la posición 1 y
+aquí paso en mail a la posición 29 en
+hexadecimal vale 29 en hexadecimal son
+la posición 41 vale traen la 141 40 más
+vale deja un espacio de 40 y empiezo a
+crear más cosas porque he hecho esto me
+voy a ir al binario vais a ver el
+espacio y vais a ver mi instrucción vale
+este es el l de hl no veis 21 0 140 vale
+quiere decir que estoy metiendo en h l
+la dirección 4000 uno porque la
+dirección 4000 uno es ésta donde empieza
+entities porque esto está justo antes
+vale estoy cargando en h l la dirección
+4000 uno de acuerdo
+hasta ahí todo bien qué pasa si ahora
+quito el 88 apuestas
+alguien que me diga qué va a pasar ahora
+cuando quite el 88 que esperaría es que
+pasa a ser con esta nueva versión
+entonces algunos están expresando no voy
+a contestar porque esto es muy
+misterioso parece muy simple pero seguro
+que hay un misterio detrás
+así
+o si estoy tomando el pelo y es tan
+simple como parece
+mira al 4000 pero seguirá siendo el
+principio de editis es lo esperable no
+eso estaba en el by 4000 lo quito
+entonces como entities empezaban 4001
+ahora entities empezará en 4000 no
+empieza en el lugar en el lo hace es la
+posición del lugar es la posición de
+memoria donde se carga a nuestro binario
+porque como veis nuestro binario solo
+tiene la información de código máquina
+no hay más información de ningún tipo
+esto es una copia en un fichero del
+código máquina de una porción de memoria
+pero no hay más información o sea si a
+mí me dan solo esto yo no sé dónde lo
+tengo que poner entonces normalmente por
+eso esto se mete a su vez en otro
+fichero que es el que lleva una cabecera
+que dice el stream device que viene a
+continuación lo tienes que cargar en la
+posición 4000 y después tienes que
+saltar la posición tal vale eso se hace
+cuando este fichero se mete en otro pero
+este como veis no llevaba nada
+vale
+qué pasa
+no saber esta magia fijaos también aquí
+que cuando antes estábamos haciendo
+cargamos en 4000 y ocupamos hasta la 45
+de vale
+voy a compilar
+bueno
+no sé si es salvado no no es salvado por
+eso no me ha compilado
+sin hacer un make no solo un clic señor
+más ahora
+notáis alguna ligera diferencia entre lo
+que pone ahí que ponía antes fijaos
+mirad mirad aquí otras aves y no taiz
+alguna ligera diferencia
+empieza en 40 28 porque empieza en 40 28
+si yo te estoy diciendo que quiero que
+empiece en 4000 porque empieza en 40 28
+hechos más fijaos
+tengo que desplazar un poquito
+de compilación que es esta
+vale aquí es cuando ensamble fijaos que
+aquí pone con el lock 4000 estoy
+diciendo que quiero que el código vaya a
+4000 el área esa que hemos visto como
+área code es esto quiero que esté en la
+4000 vale y abajo él me dice ah no no no
+no no que eso es la 4.028 de 4000 tú has
+dicho 4000 me importa un bledo 4.028
+porque a mí me gusta más la 4 y fica 428
+es especial es un número que utilizaban
+los antiguos los antiguos brujos isabel
+4.028 me gustaba
+porque los ceros los interpreta como no
+información me gusta esa teoría me
+granjel me gusta esa teoría vamos a
+verlo
+fijamos la traducción primero vamos a
+ver cómo ha traducido fijaos la
+traducción se parece mucho a la de antes
+tenemos el de 28 comentado por tanto no
+lo traduce el entities efectivamente
+pasa a la posición 0 y por tanto aquí
+hay 40 bytes que 40 bytes en esta
+decimal
+es un 28 qué casualidad ahora el 40 28
+empieza a tener sentido verdad y en 40
+28 igual empieza a mail y fijaos ahora
+el binario
+para el binario no tiene ceros
+ahora el binario empieza donde empieza
+este l dhl coma en titís vale empieza
+ahí
+y dice también porque se ha reservado
+antes la lista de las entidades lo que
+ha hecho es una cuestión muy sencilla si
+yo quiero cargar en la posición 4000 y
+lo primero que quiero es un espacio de
+40 bytes y a continuación va mi código
+en lugar de generar un binario que tiene
+esos 40 bytes y mi código yo genera un
+binario que ya no tiene sus 40 bytes
+solo mi código y en vez de cargar en
+4000 lo cargo en 4 mil 28 con lo cual
+los 40 vice anteriores están sin tocar
+no les pongo nada lo que hay ahí seguirá
+estando es decir si hay había
+información seguirá habiendo lo que haya
+pero no me importa porque tú lo que me
+has pedido cuando has dicho de ese es
+reserva este espacio reserva lo no pon
+cosas ahí reserva espacio vale entonces
+es ese espacio no lo uso y la forma más
+fácil de no usarlo es en vez de cargar
+en cuatro mil cargó en cuatro mil 28 y
+por tanto lo que hay de cuatro mil 428
+está sin tocar
+y tú lo usas para lo que quieras esto es
+lo que ha pasado y por eso había puesto
+yo el 88 antes porque cuando pongo el 88
+eso ya no lo puede hacer porque si tiene
+que poner un 88 al principio y dejar 40
+vais detrás como el 88 ese tiene que
+estar ya no hay forma de desplazarme
+hacia adelante salvo metiendo ceros o
+cualquier otra cosa porque como habéis
+visto un binario no tiene ninguna otra
+información que paita byte lo que tiene
+que ir a una posición de memoria
+entonces no hay más narices si queremos
+meter algo más adelante que añadir bytes
+vale
+todo esto que estoy contando es súper
+útil y lo vais a notar cuando empecéis a
+hacer vuestros juegos cuando empezáis a
+hacer nuestros juegos aparte de la parte
+de entidades que ya habéis visto cómo
+podéis reservar el espacio y cómo podéis
+empezar a manejarlo cuando empecemos a
+hacer vuestros juegos os vais a
+encontrar situaciones en las que haréis
+cosas que de repente requieran que algo
+esté en la posición 40 de memoria
+ocupará 100 bytes y la siguiente cosa
+que tenéis vuestro código en la posición
+4000 y si hacéis eso vuestro binario
+tendrá un saco de ceros en el medio
+saco de ceros que no hacen falta para
+nada pero que ahora en vuestro binario
+mucho más grande vale esto es algo que
+tendréis que mirar es tan sencillo como
+abrir el binario y si veis una ristra de
+ceros enorme algo no estoy haciendo bien
+aquí falla algo vale entonces eso
+tenerlo en cuenta porque si no claro una
+ristra de cero es que no usáis ese
+espacio de memoria que podrían usar para
+otra cosa

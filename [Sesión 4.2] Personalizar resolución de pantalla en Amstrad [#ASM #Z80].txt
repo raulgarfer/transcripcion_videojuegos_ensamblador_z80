@@ -1,0 +1,290 @@
+[Música]
+porque esto lo hecho a mano yo he
+llegado aquí he cambiado cosas pero como
+programo yo para que esto que acaba de
+pasar aquí pase en mi código que yo le
+diga desde el código oye cámbiame el
+ancho el alto el bajo y lo que yo quiera
+de la pantalla vale
+esto cómo se hace
+un detalle importante
+nuestra cpu vale el z 80 vosotros habéis
+visto en el curso de ensamblador la
+parte más básica que es que está
+conectada por un bus de direcciones y
+por uno de datos con la memoria si de
+esto os acordáis todos siempre que yo
+quiero leer o escribir memoria pongo una
+dirección en el bus de direcciones y por
+el bus de datos o mando un dato o recibe
+un dato sí
+bueno pues nuestra cpu tiene otro bus
+que se llama el bus de entrada salida
+otro bus de 8 bits tenemos 16
+a 8 bits para los datos que van y vienen
+de memoria
+y otros 8 bits que están conectados en
+la placa a distintos dispositivos en
+este caso están conectados al teclado al
+al chip de audio de la y a otro chip que
+es el pp y que conecta con varios
+dispositivos y también está conectado al
+ser etc vale es cuando queremos mandarle
+información al ser etc
+nosotros no lo hacemos utilizando el bus
+normal de direcciones no lo podemos
+hacer con ld ni con estas instrucciones
+porque todo eso utiliza el bus de datos
+y el de dirección es lo que hacemos
+normalmente nosotros es poner una
+dirección en el bus de direcciones que
+eso hace que a quien le estemos diciendo
+algo se entere y en el bus de entrada
+salida poner el dato que queremos mandar
+eso se hace con una instrucción
+ensamblador que es la instrucción out
+la instrucción out lo que hace es
+escribir en el bus de direcciones una
+dirección para que uno de los
+dispositivos sea el que sepa que tiene
+que contestar porque el bus de edad de
+entrada salida está conectado a todos
+los dispositivos y en el bus de datos
+pone el dato que le queremos enviar el
+cr tc es un chip que está conectado a
+ese bus de entrada salida y al bus de
+direcciones y él en concreto tiene dos
+direcciones que utiliza me explico
+nosotros tenemos que ponerle como
+dirección
+tenemos que poner de c en hexadecimal de
+la dirección de un bus o sea de un bus
+quiero decir de un dispositivo es un
+byte en realidad vale no son dos veces
+lo que hace es decirle lo que se llama
+el comando de selección de registro y me
+explico
+con esto le decimos al cr tc que
+registro vamos a modificarlo
+se hace de la siguiente manera yo pongo
+en el registro p
+la
+dirección veces vale
+que esto es lo que va a ir al guste
+direcciones
+y ahora lo que hago es por ejemplo poner
+en el registro ce
+11
+y esto será equivalente a
+seleccionar registro el comando veces y
+seleccionó el registro 1 para después
+modificarlo y entonces hago la orden out
+cómo hacer que esto puede parecer raro
+vale esto puede parecer raro y lo
+explico
+esto en realidad simbolizaría en un
+dispositivo z80 común y corriente sino
+simbolizaría que yo utilizo el registro
+ce como el valor que voy a poner para la
+dirección donde envío que sería en este
+caso el bc que yo quiero y entonces todo
+lo que uno esperaría es haber puesto
+esto
+lo que uno esperaría voy a mandar el
+comando ve que va por el bus de
+direcciones y voy a mandar el dato ce
+que va por el bus de entrada salida para
+que le llegue al dispositivo bc1 en este
+caso el dispositivo abc es el crt ce
+comando seleccionar registro vale es
+mandarle ese comando al ser etc pero en
+el amsterdam hay un diseño que está
+hecho en la placa es un poco particular
+la placa base del amstrad tiene un
+un airecillo extraño en el sentido de
+que esta instrucción
+digamos que no hace nada sino que
+siempre es el registro ve pongamos lo
+que pongamos siempre es el registro ve
+el que se envía por el bus de
+direcciones por eso hay que poner en el
+registro p esto y por eso se suele poner
+out si hacéis se pone por porque sí pero
+es de él que se envía y entonces
+mandamos c es un 1 lo mandamos a el
+dispositivo bc que es el crt c comando
+seleccionar registro y eso significa que
+le hemos dicho al ser etc
+oye voy a usar el registro 1
+sí sí lo pongo esto en una sola
+instrucción
+voy a usar el resto vale después de
+decir le voy a usar el registro 1 lo
+siguiente que hay que hacer es mandarle
+el valor que queremos escribir en el
+registro 1 y eso se hace de la misma
+forma pero en vez de empecé en el
+siguiente puerto que se llaman puertos
+esta dirección en vez de que es
+modificar el registro vale mandón bc
+selecciono registro de modificó el
+registro y como el registro 1 habíamos
+dicho que queríamos ponerlo a 64 vale
+que en este caso es 32 teníamos 40 32
+caracteres 64 bytes un 20
+estaba en 28 de inicio que eran 40 lo
+hemos movido a 30 caracteres que son 64
+bytes
+hasta aquí no sé si me estáis siguiendo
+o si hay alguna duda habéis entendido
+esta parte estas dos cositas que
+escribimos aquí es selecciona un
+registro mandó su valor registro 1 del
+ser etc le mandó un 20 y entonces es lo
+que he hecho al principio modificar el
+ancho de 40 a 32
+un pelín complicado pero se entiende si
+tenéis dudas preguntarnos que deis a
+medias vale vamos a esto sería registro
+r 1
+r 1 y 32 que esto es el ancho mostrado
+en caracteres
+vamos a hacer lo mismo con el registro 2
+el registro 2 es donde se muestra el h5
+vale el h sin que lo hemos desplazado
+hacia la izquierda vale que lo vamos a
+poner antes lo habíamos puesto en el
+carácter 2a que es el 42
+inicio de h 5
+en el carácter 40 entonces esto de aquí
+es seleccionó el registro 2 comando
+veces que selección de registro registro
+2 es el que seleccione lo mandó al bus y
+aquí lo que tengo que poner es 2 a que
+es el 42 vale he pasado esto tenía 2 ha
+repasado 2 a para moverla hacia la
+izquierda
+esto lo voy a poner todo junto
+aquí en el render init y así cuando
+inicializa el render
+veré si ha funcionado
+vamos a poner un mini gráfico
+y vamos a ver si lo hemos hecho bien
+porque puede que no lo hayamos hecho
+bien
+vale si os fijáis
+el ancho de los bordes es mayor el ancho
+de la pantalla es menor y los caracteres
+nuestros sprites los estamos pintando
+igual que antes pero no se ven igual
+porque si os fijáis cuando los pintamos
+en una zona concreta este trozo si se ve
+igual pero luego es como que el
+siguiente está desplazado algo que ya
+habíamos visto antes le pasaba al basic
+porque porque yo pinto esta parte aquí y
+cuando tengo que pintar la siguiente que
+iría debajo ahora me drogué sprite está
+sumando 80 en vez de sumar 64 para
+saltar de un trozo de caracteres al
+siguiente ahora tengo que sumar menos
+que antes ya no son 80 bytes que es 0 x
+50 vale sino que ahora son 32 32 60 y 40
+x 40 vale y por eso salen las cosas en
+un orden inapropiado pero esto
+evidentemente ha funcionado bien lo
+hemos hecho bien
+ahora vamos a repetir lo mismo pero para
+el vertical
+y el vertical son los registros 6
+y lo hemos visto antes lo tenemos aquí
+registro 6 número mostrado en vertical
+de caracteres vale que originariamente
+es 25 y que yo lo he cambiado antes a 16
+así que al registro número 6
+tengo que cambiar al valor 16
+r 6 16
+en caracteres
+y ahora para que eso se después bueno lo
+voy a dejar sin desplazar y así vimos
+cómo se hace
+y que luego lo desplacemos y si vemos si
+está bien
+vale es que la pantalla ya es más
+chiquitita he cambiado el valor
+ahora voy a repetir con el registro 7
+que es el de la posición del v 5 que lo
+tengo que mover hacia arriba tras la
+posición del v 5 inicialmente está como
+veis aquí en el carácter 30 vale que 30
+es uno y lo voy a bajar hasta el 1 vale
+que sería en este caso 26
+registro 7
+ahora tengo una pantallita más
+chiquitita más coqueta muy mona como
+decía antes ahora puedo hacer efectos de
+tembleque es de cosas con esa pantalla
+puedo hacer cierres aperturas puede
+hacer cosas con ella lo que yo quiera
+pero ahora tengo un problema
+o problemón según se mire las funciones
+de dibujado de sprites ya no me sirven
+porque las funciones de dibujado sprays
+de cpc telera están pensadas para la
+geometría base de la pantalla y esta
+geometría no funciona es distinta
+entonces ahora lo que tenemos que hacer
+es las dos funciones que estábamos
+usando el de calcular el puntero a la
+memoria de vídeo y el de
+a dibujar sprite hay que rediseñar las
+hay que hacerlas nuevas
+pero no es tan complicado como parece
+vamos a hacer dos aproximaciones una
+primera aproximación
+y esto primero lo voy a organizar un
+poquito vale como veis aquí esto
+se me ha quedado un código un poco
+chusco
+una ristra de cosas aquí voy a hacerme
+una función que lo haríamos como set
+cr tc vale
+que me sirva como función para ocupar
+poquito la tenéis hecha en cpc teleras
+pero queda bien si la hacemos a esto le
+pongo un red y entonces ahora lo que
+quiero es que el valor que hay en c
+varíe pero no me hace falta que esté en
+c porque yo os he dicho que normalmente
+se utiliza hace aquí como estándar
+aunque siempre es de lo que se envía al
+registro pero este valor de aquí podemos
+cambiarlo lo que nosotros enviamos
+el dato que nosotros enviamos lo podemos
+cambiar así que podemos hacer algo como
+éste aquí mando de aquí mando y esto me
+lo ponga 0 me da igual y entonces aquí
+como lo único que necesito es cambiar
+veces por b de eso es lo mismo que sumar
+1 ave
+puedo hacer inc
+y eso cambiará veces porque de porque
+empecé no espere vale entonces ahora lo
+único que hago es que de va le meto
+registro
+y valor
+ahora esto de aquí lo cambio por ld
+d
+0 x 0 120
+vale y entonces algún corto
+setzer etc
+o sea un poquito más limpio ligeramente
+22 al que le pongo 22
+y he aquí
+pongo el 6 10
+el 71
+71 queda ligeramente más claro un poco
+menos de espacio como probar que
+funciona
+y sigue igual y ahora si ponemos con
+esto y vamos a calcular

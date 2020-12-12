@@ -1,0 +1,181 @@
+[Música]
+sí
+[Música]
+en próximas clases aprenderemos una cosa
+adicional que no he contado otros años
+pero esto ya va a ser para la siguiente
+vale porque todo esto
+nos va a servir para este año hacer
+cosas más especiales si queréis que
+además valdrán puntos podéis elegir por
+esta parte técnica una de las partes
+técnicas que podéis hacer es que la
+memoria de vídeo vale si yo pongo el
+border 0
+la memoria de vídeo ahora mismo estáis
+viendo lo que se dibuja estos son los
+en este caso 320 x 200 píxeles que tiene
+el modo 1
+pero esto es como la memoria de vídeo
+viene configurada por defecto el
+firmware la configura así amstrad tiene
+flexibilidad para definir toda la
+memoria de vídeo como nosotros queramos
+que sea y me explico lo vais a ver de
+forma práctica rápido y el próximo día
+veremos cómo se programa esto que veis
+aquí que son las herramientas de debut
+de
+de rv m nos muestra aquí es muy
+pequeñito vale no lo vais a ver desde
+casa no lo puedo ampliar fácilmente sino
+ahora veré pero lo que muestra aquí es
+el crf esto de aquí es el valor de los
+16 registros que tiene dentro del chip
+de rtc y que controlan la geometría de
+la pantalla
+y esto de aquí es el contenido del gate
+array que entre otras cosas controla
+como veis la paleta de colores no esto
+es la paleta de colores
+si yo estos registros de aquí los
+cambios
+o cambiar la geometría de esa pantalla
+de ahí de la memoria de vídeo esa
+memoria de vídeo que habéis visto que
+tiene más 800 y más 50 y todo eso se
+puede cambiar se puede hacer que los
+caracteres en vez de tener ocho líneas
+de alto tengan una se pueden hacer que
+tengan siete que tengan cuatro se puede
+hacer que el ancho sea más estrecho por
+ejemplo hay un registro que es este de
+aquí que desde casa no lo veis pero lo
+digo esto es el registro r uno de los 16
+que lo que controla es el ancho visible
+este ancho de aquí y ponen hexadecimal
+28 alguien que me diga 28 en ese animal
+cuántos en decimal
+unos 28 en esta décima con tres en
+decimal
+he visto más rápidas 40 están diciendo
+les vale correcto 40 osuna de algo el 40
+son 40 caracteres lo que esto tiene de
+ancho que son 80 bytes más
+porque cada carácter son 8 píxeles son 2
+bytes en este modo luego son el número
+de caracteres que tiene de ancho la
+pantalla si yo ahora en vez de poner 28
+ahí lo cambio que esto me deja y pongo
+20
+la memoria de vídeo se hace más estrecha
+de repente y ahora tengo 32 caracteres
+de ancho en vez de tener 40 el reducido
+el tamaño de la memoria de vídeo el
+siguiente que es lr2 me permite cambiar
+la posición donde está la aquí hay aquí
+en este lado de la pantalla hay una cosa
+que se llama el sincronismo horizontal
+igual que uve sin que está aquí abajo
+aquí hay un señor que se llama h cinc
+que le dice a la pantalla cuando tiene
+que saltar a la siguiente fila siguió
+este ciclo cambio de posición puedo
+mover la pantalla ahora me pone que está
+en 12 lo cambia 2 a de nuevo la pantalla
+del sitio
+esto diréis bueno pues sí es muy
+gracioso pero para que tiene una
+pantalla más pequeña pues hay un motivo
+muy particular para que hernán de hecho
+en esta hay dos motivos para crear una
+pantalla más pequeña primero si hacemos
+la pantalla más pequeña qué pasa con la
+memoria de vídeo
+ocupa menos
+quitamos espacio que está ocupando
+memoria de vídeo lo dejamos como espacio
+para nosotros o sea al hacerlo la
+pantalla más pequeña tenemos más memoria
+para otras cosas pero además esto tiene
+una ventaja que tiene de especial el 32
+qué tiene de especial el 32 que el 40 no
+tiene
+es 12 elevado a 5 es potencia de 2 sí
+si este es el carácter 0 y este es el 31
+este es el 32 el siguiente es el 64
+vales y sumó 2 más me voy a 128 si sumo
+cuatro más
+me voy otra vez al cero sí
+si yo cada línea sé que ocupa 32
+caracteres o lo que es lo mismo 64 bytes
+de ancho y sé que la primera empieza en
+cero yo lo que sé es que eso que
+habíamos dicho antes de que podamos
+tener la posición cero ff os acordáis
+que habíamos dicho que estoy pintando y
+puedo estar en la posición cero ff eso
+en esta memoria no puede pasar si yo
+estoy pintando un sprite aquí en medio
+nunca va a ocurrir que sumando uno se me
+modifique el byte alto de la dirección
+de memoria nunca va a ocurrir porque
+porque esto va de 0 a 31 esto va de 64
+donde de 32 a 62 63 64 y siempre el
+salto que va de ff a 00 es
+efe efe aquí 0 0 aquí nunca en medio
+porque pilla justo en todos ellos eso
+qué ventaja tiene tiene una ventaja
+crucial a la hora de pintar sprites aquí
+estamos haciendo inc
+hl porque hl podría ser ccf
+pero si estamos en el medio podemos
+cambiar esto por hacer esto
+y esta instrucción es más rápida que
+ésta
+y eso sabéis lo que significa de bueno
+es más rápida si pasó de un microsegundo
+a dos microsegundos en una destrucción
+claro pero es que pintar sprays es de lo
+que más tiempo lleva y cambiar dos
+microsegundos por uno en una cosa que se
+va a repetir miles de veces en nuestro
+bucle es ganar miles de ciclos miles de
+microsegundos sólo eso es un cambio en
+la memoria de vídeo puede suponer cosas
+como esta por eso veréis que hay muchos
+juegos en a lustrar que usan esta
+resolución si buscáis juegos de
+hampstead vais a ver algunos que son
+estrechos como esta y es porque han
+puesto este modo que este es el modo de
+32 caracteres de ancho que tiene
+ventajas a la hora de pintar sprites
+también tiene ventajas a la hora de
+hacer escorias de otras cosas
+precisamente por ese 32 de ancho
+bueno pues esto es un adelanto veremos
+más cosas que se pueden hacer con la
+memoria de vídeo veremos que se pueden
+hacer más trucos y que eso nos puede
+permitir hacer cosas más chulas en
+nuestros juegos vale decirme si tenéis
+alguna duda de lo que hemos contado
+visto hoy o lo que sea
+alguna última cosa de cierre y si no
+damos por terminado por hoy
+podremos codificar más colores se puede
+codificar más colores en amstrad hay
+trucos para codificar más colores puedo
+contaros algunos básicos los más
+avanzados
+son muy avanzados para hacer en 7
+semanas junto con el juego
+pero algunos básicos se pueden hacer y
+no son muy difíciles y pueden hacer
+cosas chulas
+de hecho se puede tener a la vista la
+pantalla con distintos modos podemos
+tener aquí una zona en modo 1 y otra
+zona en modo 0 perfectamente y con
+distintos colores

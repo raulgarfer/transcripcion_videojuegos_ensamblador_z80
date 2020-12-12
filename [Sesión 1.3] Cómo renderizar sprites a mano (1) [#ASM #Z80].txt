@@ -1,0 +1,898 @@
+[Música]
+sí
+[Música]
+la cuestión ahora es si yo quiero por
+ejemplo crear un proyecto de cpe
+project - y voy a crear un proyecto para
+dibujar sprites
+vale menos a me sirve para decirle que
+quiero que me genere un proyecto que por
+defecto sea de ensamblador y como veis
+él ya le genera un ensamblador con todos
+los ficheros que necesito ya me lo pone
+en 4000 ya pone todas estas cosas vale
+ya genera una carpetita sprite donde ya
+tengo
+mis carpetas ordenaditas ni make file
+vale si yo ahora pongo make
+vais a ver cosas que os sonarán
+vale fijaos
+está llamando al ensamblador con menos
+elementos o menos s está añadiéndole un
+menos y porque esto sirve para la ruta
+de include es porque si queréis incluir
+cpc telera h él incluye esto dónde
+puedes incluirse ps3 y para poder hacer
+incluye de los de las cosas que hay en
+tu carpeta de src le añade esto también
+y entonces coge y genera vj main punto
+red a partir de main punto s sólo tengo
+un fichero pensando a un fichero y
+genera un punto real a continuación pone
+linkin habéis aquí y el link in que hace
+llamar a ese de cc como veis mz 80 no
+crt 0 le añade el code lo que aquí en
+4.000 el data lock en cero porque habéis
+visto antes que teníamos un warning por
+no crear un área data vale pues eso esto
+de aquí es que el inca con cpc telera
+punto live que un punto live no es más
+que todos los puntos red juntos en un
+fichero es solamente eso
+el punto live los red que tenéis ahí
+escojo los puntos red los pongo todos
+seguidos
+fichero pongo una un índice arriba para
+saber dónde está cada uno y es un punto
+limpio de esta con lo cual enlazar con
+ellos lo mismo que enlazar con un punto
+real enlazar con muchos de ellos están
+ahí pues enlazó con la librería coge mi
+mail punto real y género lh x como veis
+aquí vale
+a continuación le añade el fichero ams-2
+que es lo que os he dicho que tenemos
+que meter en el cdt y aquí veis el
+estudio
+a continuación crea el casete aquí no
+veis el comando que hace pero
+básicamente está usando cpc tú tdt para
+crear el casete vale todo eso lo está
+haciendo cpc telera automático vale
+luego lo último que no hemos visto que
+lo que genera el de seca y el sn ah
+también pero básicamente todo lo que
+hemos hecho nosotros a mano es lo que
+están haciendo automático sus máquinas
+con la ventaja de que a mano nosotros
+ahora sí tenemos 20 ficheros tendríamos
+que ir uno a uno ahora en la carpeta src
+si creamos ficheros en los coge
+automáticamente los ensambla y los añade
+vale entonces ya que tenemos esto yo
+ahora me puedo ir a mi carpeta sprite
+src al mail que está aquí
+veis que tiene el incluye de cpc telera
+eso sirve para que se copia ahí y lo
+vais a ver ahora literalmente cuando
+digo lo que se copie vale esto define el
+área data que no es necesaria
+utilizarlas y definirla vale simplemente
+lo voy a dejar definido y bueno ya
+habéis visto que si no la defino el área
+data me da un warning tampoco se queja
+mucho todo esto de aquí ya sabéis lo que
+es decirle punto global
+estos son símbolos globales que son de
+cpc telera que por tanto están en el
+link de cpc telera no están en este
+fichero 9 cuando yo ensambló este
+fichero al ensamblar el lip no existe
+sólo existe este fichero y si yo hago
+esto cold cpc te disable firmware punto
+as este fichero si no sabe quién es eso
+va a dar un error como le digo al
+fichero que sabe que sepa quién es eso
+pues poniéndole esto es un símbolo
+global de servicio dice vale es un
+símbolo global
+pongo un 0 0 alcohol y el link que se
+encargará
+es así lo que hace vale
+entonces aquí todo esto es para dibujar
+un string no me hace falta y una forma
+de evitar me definir los global que ya
+lo dije el año pasado la voy a quitar
+vale voy a dejar el diseño del firmware
+nada más
+bucle infinito que además ya sabéis que
+puedo hacerlo así
+y para que esto no me de error que si yo
+ahora con pilot me va a dar error lo
+veréis
+símbolo no definido para eso estaba el
+punto global para decirle hoy esto es
+global vale ya no ya no es decidido bien
+tenemos una opción que se le puede pasar
+al link er
+aquí en la carpeta de configuración hay
+un fichero llamado config que es la
+configuración de la compilación
+publicado todo esto no lo hace
+automático pero todo esto que hace
+automático lo podemos configurar a mano
+antes hemos puesto nosotros esto a mano
+o suena no
+- l menos o menos s estos son los flags
+que le ponemos al ensamblador para
+generar así que le puedo añadir un flash
+más y decirle este que es menos ag menos
+g le dice oye cuando tú te encuentres un
+símbolo no definido como el que hay
+ahora asume que es global y así me
+ahorro tener que estar poniendo punto
+global punto global punto global a
+cambio lo que voy a tener es que cuando
+me equivoqué con un símbolo el
+compilador no me va a avisar y será el
+link el que me diga no lo encuentro vale
+ahora que hago eso sí con pilot esto
+pérez que ya compila sin tener que poner
+el punto de lugar
+ya tenemos esto hecho
+vamos a pintar en spray sabéis pintar un
+spray ya no
+a ver en el chat cuantos sabéis pintar
+un spray mientras leo lo que tenéis
+puesto ahí con todo esto ya podemos
+hacerlo del game engine oh sí claro ya
+podéis hacerlo the game engine cuantos
+sabéis pintar un spray alguien dice que
+que spray maya
+muy mala ciencia
+estamos en clase de razonamiento segunda
+sesión vale había que hacer un espray os
+acordáis depende del spray vale sí muy
+bien todo es perfecto hay espray pues
+vamos a pintar un spray pero vamos a
+pintar que sprite muy básico con spray
+de mono color ya vemos lo cuadrado
+por ejemplo vale cómo puedo pintar eso
+qué haríais para pintar un cuadrado
+decidme que me diga cómo pinto un
+cuadrado
+donde los pinto
+esto es muy complicado algo más fácil
+como empiezo a pintar un spray
+empiezo a pintar un spray
+escribo en la vida de lo común
+calculando las posiciones de los
+piscinas no necesito ver cuál es la
+posición más fácil de todas para pintar
+un cuadrado
+la primera si me pongo yo esa posición
+para si quiero ir pintando en esa donde
+la meto por ejemplo
+que podría ser donde donde pongo yo esa
+posición
+tengo yo esa posición
+le puedo poner en una variable no me
+gusta me gustan hay cosas que me gustan
+más que las variables que están dentro
+del procesador y se llaman registros
+no sé qué registro podríamos usar para
+guardarnos la posición donde vamos a
+escribir
+se te ocurre algún registro por ahí en
+el chat de hl porque h l
+esto guardamos en h l 00 hl
+en la tele me caben don paypal es una de
+las razones pero hay más razones porque
+hay más registros donde me caben dos
+bytes por ejemplo me caben en mi x o me
+caben en bc o me caben en de o me caben
+en la f lo que pasa que esta instrucción
+no existe vale pero me caben porque h l
+con una razón hl es el registro más
+flexible de todos para poder acceso
+hacia el acceso indirecto a memoria hl
+me permite hacer cosas como esta
+y como esta
+por ejemplo puedo poner
+porque me sale más puedo hacer esto o
+puedo hacer esto
+por ejemplo esto puedo hacerlo con hl
+pero esto no puedo hacerlo ni con de ni
+con veces
+condé y convence puedo hacer esta
+instrucción escribir lo que hay en a en
+de y en bc y con h l incluso puedo hacer
+esto
+yo puedo hacer esto con hl pero no lo
+puedo hacer ni con de ni con veces sólo
+con h l vale hl es la más flexible de
+todas para poder utilizarla como puntero
+vale qué pasa si pongo l de a ve así
+a ver qué pasa pues que el ensamblador
+me dará error porque esta instrucción no
+existe en el procesador y esto viene a
+colación de uno de los errores más
+comunes que veo en ensamblador y es que
+estamos muy acostumbrados a pensar en
+lenguajes de alto nivel y entonces vemos
+esto como si fueran funciones y nos da
+la sensación de que podemos poner
+cualquier parámetro pero esto no son
+funciones
+estos son instrucciones del procesador y
+en el procesador solo existen las
+instrucciones que tenéis en la tabla de
+instrucciones si una instrucción no
+existe aunque yo aquí la pueda escribir
+en ensamblador como esto de aquí no
+tiene sentido porque en el procesador no
+existe esa función y porque existen unas
+y otras no pues muy sencillo si tenemos
+una tabla de 256 o code es que es la
+básica cabe en 256 no puedo poner 2
+millones
+entonces no puedo poner todas las
+posibilidades tengo que elegir algunas
+por eso el procesador se diseña así vale
+bien con esto puedo escribir un sprite
+vale no lo podemos escribir efe efe me
+gusta que es color rojo puedo hacer un
+inc no por ejemplo hl y hacer así
+con esto estamos escribiendo medio
+sprite más o menos lo probamos
+o make esto con pila
+me voy a poner con rv m
+vale para ver qué tal sale
+así me ha quedado bien
+no está mal no no sé si lo veis en el
+vídeo se ve ahí la línea rojita que me
+ha salido mal pintado unos cuantos
+píxeles cuántos píxeles he pintado
+los píxeles son eso
+12 correcto
+4 por 3 cada byte 4 píxeles porque estoy
+en modo 1 sí
+muy bien bebé el chat muchos sabéis que
+a 12 vale ahora quiero pintar la segunda
+fila la fila de abajo del spray que hago
+sumarle 8 h está bien pero
+pero tiene un pequeño inconveniente lo
+de sumar 8 h eso funciona porque estoy
+en 0 0 0
+si en vez de estar entre 0 00 estoy en
+una posición que esté cercana al borde
+imagínate que estuviera en c 0 efe efe
+cuando yo empiezo a escribir si yo aquí
+estoy en 0 efe efe y esto tenéis que
+tener cuidado con ello cuando haga en
+caché l en qué posición estoy en
+hace 100 y cuando haga otra vez en
+carteles y otra vez en caché el estar en
+102
+si le sumó 8 h me voy a hacer 902 y la
+posición original que era esta era de 0
+efe efe
+con lo cual tendría que haber ido hace 8
+efe efe
+no hace 90 2
+vale cuidado con eso
+queda claro el porqué lo de modificar h
+puede ser peligroso vale sabiendo que
+modificar h puede ser peligroso que no
+lo es porque yo estoy entre 0 0 0
+vale supongamos que esté 0 00 luego me
+lo pueden dar como parámetro y puede ser
+cualquier cosa que tengo que hacer aquí
+para saltar a la siguiente fila
+la operación en genérico no me digas
+ensamblador que operación en genérico
+tengo que hacer no es no es exactamente
+800 tengo que sumar 800 pero no
+exactamente 800 tengo que sumar 800
+menos
+33 8 803 como le sumó cl 800 menos 3
+h l sumándole h 8 h l como le sumo puede
+sumarle cosas a hl directamente
+conocéis alguna instrucción para sumar
+cosas a hl
+no vale pues os digo una
+por ejemplo esta instrucción existe
+puedo sumarle a h lbc vale que hago
+ahora para poder sumar 800 menos 3
+cargo en veces
+800 ó 800
+presentes en hexadecimal
+al menos 3
+797 dicen por ahí está mal eh no es 797
+800 menos tres en hexadecimal no es 797
+cuidado mal en el chat decían
+hl de que también existe también podemos
+utilizar a hl coma de además de bc vale
+como puedo sumar el menos tres el resto
+tres luego
+una vez hecho el cálculo cuánto da 800
+menos 3 por ahí lo están diciendo 7 fcc
+si es correcto es 7 f c
+si queréis saber si es correcto y es
+fácil yo le sumo eso y a continuación
+pinto otra línea
+y vemos a ver la voy a pintar de otro
+color y vemos a ver si se ha puesto
+debajo aparece
+se pondrá debajo
+las decisiones
+no sé si lo estáis viendo ahí vale
+pero no llega
+lo voy a poner un poco
+para que sea se vea más grande
+veréis que hay vaya algo verdad
+hay falla algo no
+por ahí alguien dice 77 efe de el 7 f c
+porque es lo que está fallando ahí que
+ha podido pasar
+porque me faltan 4 píxeles
+porque me faltan 4 píxeles
+800 si el resto 1
+si el resto 1 800 cuánto sale 7 cf si el
+resto 2
+7 fe silvestres
+7 fe de si le restó 7 fcc que es lo que
+hecho es quitarle 4 con lo cual me he
+ido uno más atrás y he empezado a pintar
+antes pero claro estamos haciendo un
+poco es tonto
+tenemos un ensamblador y los dos valores
+el 800 y el 3 son constantes
+porque queréis que hagamos el cálculo a
+mano cuando podemos hacer esto
+es un programa ensamblador programas
+ensamblador es igual que los
+compiladores las constantes le molan
+mogollón calculan con ellas vale
+entonces pones así y ya está
+y además esto tiene una ventaja y es que
+cuando yo vea 800 menos 3 tengo una idea
+mejor de qué es eso vale que si veo 7
+efe de no
+ahí lo veis que ya están las dos filas
+en su sitio
+dos veces la misma posición antes lo que
+nos pasaba es que habíamos sido una más
+atrás y en vez de pintar en c800
+habíamos pintado en c7 efe que está
+fuera de la pantalla básicamente no se
+ve está en la zona es porque se llama
+que no se ve vale bien ya he pintado dos
+filas pero voy a pintar así
+ocho filas voy a pintar un sprite así
+si quiero pintar ocho filas que hago
+repito ocho veces este código
+bucle vale dentro de esta afirmación hay
+un poquito de trampa vale efectivamente
+si quiero pintar como hemos dicho un
+cuadrado de un color aquí viene bien un
+bucle pero si yo quisiera pintar un
+spray donde todos los pixeles son
+diferentes esta aproximación a priori
+sirve también pero entonces sí que tengo
+que poner todo
+tengo que ponernos uno a uno porque
+estos valores son diferentes
+y esto tiene una ventaja es que esta es
+la forma más rápida que existe de pintar
+un spray en las condiciones de pantalla
+originales
+esto es más rápido que leer el sprite de
+un sitio y copiar la memoria lo que pasa
+es que ocupa mucho espacio vale a esto
+esto tiene un nombre a esto se le llama
+sprites pre compilados porque es un
+código que pinta el sprite y no un
+código que pinta cualquier sprite es un
+código que pinta solo un sprite concreto
+vale pero puede tener una ventaja si
+vosotros tenéis un juego donde hay un
+sprite que se pinta muy a menudo y se
+tiene que pintar todos los frames tal a
+lo mejor ese en concreto conviene
+tenerlo así para que sea más rápido es
+una opción pero bueno vamos a suponer
+que no que queremos hacer como la
+función draw solís box pintar un
+cuadrado vamos a hacer un bucle pues no
+como hago un bucle
+para pintar esta segunda fila por
+ejemplo
+vale
+como hago el bucle
+guardo un contador un registro vale en
+cuál
+vale donde pongo dime el número de línea
+donde escribo y que escribo
+lo que quieras tiene un número
+por ejemplo 8 que nos gusta el 81
+vale
+qué más
+por ahí alguien dice jump ya mí me gusta
+el jump también que más
+ya tengo el número de iteraciones en
+en un contador que más hago con él
+mientras la primera línea de la israel
+decremento en el punto quinto la primera
+donde aquí donde aquí se puede poner al
+principio de incrementar el hospital
+pero qué poco yo pondría la cuarta y 1
+4141 decrementar él
+se incrementará aquí incrementará aquí
+valen que más vale que más
+mira
+ya abajo del todo en la 46 en la 46 que
+46 como prueba sí sí
+es igual a cero
+pero esto es la exclusión creo que es
+cuidado con esa receta
+jrm gt jrm z 1 así
+como tickets de etiqueta
+donde pongo la etiqueta
+arriba de él dime una línea
+en la 34 pongo la etiqueta aquí
+etiqueta así
+existe la instrucción con el nuevo com
+no
+existe una llamada pse pp en el
+ensamblador
+me gusta lo que estás diciendo y de
+hecho me gusta tanto que voy a ejecutar
+este código
+a ver qué narices hace
+misterio
+y visto lo que hace
+ha pintado ocho líneas
+parece no
+verdad
+ha funcionado
+por qué
+porque tú estabas diciendo una cosa en
+la que tenías razón
+alguien dice está en un bucle infinito
+yo no sé no parecía que está que estará
+en el bucle infinito esté aquí abajo
+aquí
+pero
+tú estabas diciendo que yo aquí
+decremento ah y qué ocurre
+aquí sí al decrementar a en ese momento
+a es 0 se activa el flash z que es el
+flash que hace que esto haga el salto el
+flag zeta
+pero estas operaciones de aquí en medio
+podrían modificar el flag z y de hecho
+una instrucción de a que hay alguien
+medio debería d
+podría modificar el plan z no
+verdad
+pero no parece que haya hecho eso no
+es un misterio terrible no modifica
+alguien se ha entretenido en mirar los
+flags que modifica el add h el bc esta
+instrucción en concreto porque claro la
+gracia está en si esa instrucción
+modifica o no modifica el flash z
+vamos a ver
+vamos a la tabla
+y en la tabla se les dejo un barra table
+hl y aquí veréis que tenemos el hada che
+lbc y aquí cuando nos ponemos encima nos
+dice óptico de 0-9 baleada l veces 09
+groupon byte vale tiene 11 ciclos y a
+continuación dice el carry se modifica
+tal cual está definida la instrucción el
+flag n de negativo se modifica tal cual
+está definida la instrucción y a
+continuación el flag h también pero los
+flaps dv z y ese no se ven afectados
+estos señores es lo que se llama
+programar por chiripa
+porque que yo sepa cuando estabais
+diciéndome que hiciera esto nadie estaba
+pensando en la posibilidad de que esta
+instrucción modificase justamente los
+planes que no nos importan vale
+tener mucho cuidado con el programar por
+chiripa porque lo suyo es que
+programemos sabiendo lo que hacemos
+entre otras cosas porque si hacemos esto
+esto a lo mejor funciona pero este tipo
+de código es susceptible de que dentro
+de una semana alguien quiera añadir una
+funcionalidad nueva venga meta algo aquí
+en medio y entonces la liamos porque se
+modifique el flag entonces empiezan a
+pasar cosas raras y qué pasa y ya
+tenemos un misterio y es que habíamos
+hecho algo que era extraño entonces para
+solucionar eso el tec al lado del j r lo
+que modifica el flag al lado de lo que
+comprueba el flag vale salvo que
+tengamos algún motivo poderoso para no
+hacer eso
+sé que hemos programado por chiripa pero
+bien con esto ya tenemos lo que sería el
+equivalente a una función para pintar
+cuadrados de ancho 3 vale porque tenemos
+un ancho 3 aquí tendríamos que hacer
+otro bucle si quisiéramos que el ancho
+fuera variable
+pero sin hacer ese bucle yo voy a
+esto así así
+y esto molesta y me voy a llevar aquí y
+en vez de llamar a esto etiqueta lo voy
+a llamar dropbox
+por ejemplo y ahora él dropbox como
+hemos dicho que hl es tan flexible en
+vez de que pinte efe que pinte por
+ejemplo lo que hay en ti
+vale
+y entonces aquí tenemos
+cl
+yo intento en sí
+igual a number of lines
+que sería el alto
+e igual a color para acá
+y ahora me falta al final cuando esto
+termine poner un insecto
+y ahora ya puedo poner
+en la ép orej emplo un patrón de color
+distinto
+desde cero y entonces ahora un col
+box
+esto funcionara debería quien quien dice
+que funciona y quien dice que no alguien
+que diga que no va a funcionar
+nadie se atreve a ser asesor tu
+funcionará claro para si usted que han
+funcionado
+un box
+y esta ya hemos hecho la función dropbox
+es nuestra función perfecta
+o no
+cuando podemos todavía deprimir pensando
+que esto no vale para todos
+qué pasa si lo hago de un tamaño mayor a
+8 buena pregunta
+probamos
+qué pasa si le pongo 32 por ejem
+qué va a pasar voy a empezar por 16 32
+iguales muchos 16
+apuestas qué va a pasar
+de la octava línea como el salto de
+memoria son 50 en vez de 800 récord
+agrarias
+bueno pues ahí tenéis la respuesta que
+está pasando
+tiene pinta eso de tener 16 filas de
+alto
+cuantas filas veis
+así a ojo
+y métrica visual me dice que siguen
+habiendo 8
+no sé a vosotros
+a lo mejor es que el 16 no le gusta voy
+a parar con 32 mensaje antes 32
+32 suena más verdad
+estudios 30 y 27 llenan 10 16 nada será
+flojo
+[Música]
+deja de pintar a partir de ponerte 64
+venga abajo vamos a ver
+si le pido más seguro que no
+nos parece que pasa nada raro no
+como lo veis y si le pido unos 628 igual
+ya son 200
+estoy grabando cada vez que si no es
+grabado en todo este rato y está
+escribiendo
+estoy compilando lápiz
+tengo ahí no
+hoy eso ha hecho una línea y ya sabéis
+cómo pintar líneas vosotros hacéis una
+función de pintar cuadrados ponéis
+números aleatorios y al final salen
+líneas
+no qué está pasando
+alguien que no siempre hay que sumar a
+700/800 está claro no siempre hay que
+sumar 800 está claro de hecho es más os
+voy a hacer la suma empezamos a 11 000
+vale si empezamos en c 000 y sumamos 800
+este 800 si volvemos a sumar de 0 0 y
+esto se repite vale porque esto es así
+porque 800 es justamente la mitad de mil
+en hexadecimal porque 1000 se los
+recuerdo que en esa decimal son 16
+dígitos si yo tengo 8 por 2 es 16 con lo
+cual 800 es la mitad decimal la mitad es
+5 en hexadecimal la mitad es 8 con lo
+cual esto es sumar la mitad y esto es
+sumar la mitad y cuánto me da
+efe 800 más 800
+pero técnicamente técnicamente me da
+esto
+lo que pasa es que este bit que es un
+bit extra va al carry porque las
+direcciones de memoria sólo almacenan en
+los registros y particularmente en h l
+16 bits así que me voy a 0 y cuando esto
+valga 0 aquí voy a seguir haciendo esto
+escribiendo en 0 0 1 0 2 y luego en 800
+800 1 700 y luego en mil 1000 1 1000 2
+por toda la memoria
+voy a ir escribiendo cosas
+aleatoriamente hasta cuando hasta que
+posiblemente cuando he metido muchos
+llega y da la vuelta llega hasta mi
+código otra vez me lo sobre escribe y
+hace cosas raras
+vale
+porque porque efectivamente después de
+efe 800 lo siguiente que tenemos que
+hacer para ir a la siguiente línea de la
+anomalía de vídeo no es eso habría que
+como dice álvaro efectivamente sumar 50
+pero sumar 50 aquí hace 000 la siguiente
+aquí es de 0 50
+salto 800 800 800 800 pero cuando estoy
+de la primera fila del primer carácter a
+la primera fila del segundo carácter hay
+50 porque cuando termina justo la
+primera fila del primer carácter empieza
+la primera fila del segundo carácter
+entonces esto tiene que hacerlo mi
+función cuando yo me pase de efe 800 00
+tengo que volver a esta donde estoy más
+50
+y eso es lo último para hacer ahora en
+esta función y si me decís cómo se hace
+lo hacemos y si no lo dejo como
+ejercicio para casa
+cómo puedo yo saber cuando tengo que
+sumar ese 50
+mirando el tarde y se podría me has oído
+decir que cuando el paso de 800 insumo
+el uno va al qarni verdad
+es un detalle que he dejado por ahí
+despistan cómo puedo comprobar si ha ido
+uno al carro y después de hacer el adba
+porque antes hemos comprobado que la y
+no sé si os acordáis que la de hl que lo
+teníamos aquí decía que el carry es
+afectado como está definida la función
+afecta más defile es decir que la suma
+afecta al carry cómo afectan las sumas
+al carry cuando el resultado de la suma
+no cabe en los bits que tienes el bit
+que te falta vall card y es un 1
+vale de modo que esta suma en este tipo
+de pantalla y ya lo están diciendo
+alejandro está diciéndole chat cuando
+esto se pase de la memoria exceda de ff
+va a dar uno en el carry y yo eso lo
+puedo controlar con un jrr
+carrey
+puedo saltar a
+yo que sé
+vuelta por ejemplo
+que es que ha dado la vuelta y tengo que
+volver otra vez al 000 si les puedo
+poner aquí una etiqueta vuelta
+que lo que tiene que hacer es oye yo
+estaba en ese 800 se suma de 800 me ido
+al 0 en realidad tendría que haber ido a
+50 como después de haber hecho esa
+operación de salvo la operación y me voy
+a 50 que tengo que hacer aquí que
+operación hago ahora para ir a donde
+tengo que ir de haber visto yo he
+empezado de cero de 800 de cero de 800
+que cero de 800
+efe 0 efe 800 100 y luego 0 0
+como algo que ahora que cuando llegó
+aquí a vuelta que estoy en 00 como algo
+que eso vaya a hacer 0 50
+y bueno ojo no solo en este caso en
+todos los casos que tengo que hacer
+ahí hay un cálculo más sencillo
+y venden más 50 y guardarlo en hl pero
+es que eso sólo me vale si yo empecé en
+0000 roberto si yo me sprite o mi caja
+la estaba pintando en 0 40 si hago eso
+no se va a pintar donde debe yo tengo
+que volver a mi casa donde empezaba más
+50 cuál era la posición de mi casa
+cuando yo empezaba a dibujar el sprite
+guarda las posiciones en algún registro
+para guardarlo no me hace falta
+guardarla
+o si no de 800
+vale vale que básicamente sería voy a
+meter en vez de lo que quiero sumar y
+hago otra vez esto
+y lo que quiero sumar qué es
+si yo he sumado ocho veces ochocientos
+pues yo quiero quitar ocho veces 800 no
+y luego sumar 50 verdad
+meto en bc cincuenta menos ocho veces
+800 y se lo sumo hl ocho veces 800 como
+hacía en el chat es 4000
+o no
+que algunos por ahí dice 5000
+800 hemos dicho que es la mitad de mil
+muchas veces 804.000 si si yo ahora hago
+esto y después aún jrr
+ah
+dropbox
+debería funcionar o no
+esto está bien
+dime
+no había que regresar a los 16 altos y
+por qué
+porque si no vuelve a empezar la función
+no es que vuelva a empezar la función al
+final esto es a dónde salta esto el jrc
+está que tenemos aquí
+pero no estoy decretando a eso es lo que
+pasa si yo ahora en esta función tal
+como lo ha decidido le digo que dibuje 9
+me va a dibujar 10
+porque en una de ellas no decrementar al
+suelo justo cuando salta vuelta entonces
+qué puedo hacer puedo hacer esto
+si no hay carril no vuelta
+y entonces aquí pongo la vuelta y me
+ahorro saltar a un lado y saltar a otro
+solamente pongo esto aquí en medio pero
+esto
+solamente ocurre cuando hay carril
+cuando no hay carril salto aquí abajo
+cuando hay carril
+hago esto y el j r dropbox este que
+tengo aquí ya no hace falta porque ahora
+cuando termine eso hago de acá
+su nación las hay mejores que esta
+personación funcionará esto ahora
+confiáis en que esto que hemos hecho
+funciona
+lassec ha pintado 200 tenemos una
+casualidad cuántas líneas tiene la
+pantalla
+cuántas líneas de alto tiene la memoria
+de vídeo en su estado normal
+la resolución que tenga 200 justamente
+200 exactamente gel a la memoria de
+vídeos son 160 x 200 320 en el caso del
+modo 1 para pintar la mitad la
+aplicación
+a ver qué pasa
+podemos pintar 100 bien
+esto es lo que quería hacer hoy como
+introducción vale el tema de dibujar un
+spray nosotros en lugar de utilizar las
+funciones de draw sprite para esto que
+hemos hecho es más fácil que dibujar un
+spray vale nos hemos hecho una función
+que dibuja un cuadrado de ancho 3 y de
+alto variable a partir de aquí podéis
+hacer que el ancho sea variable o no
+pero ojo ten en cuenta toda la
+flexibilidad que le metéis a una función
+la hace más costosa todo esta lógica que
+hemos metido aquí tiene un coste
+superior para quitarla y hacer fijo la
+cantidad de cosas que pintamos si la
+cantidad de cosas que pintamos es fija
+toda lógica la eliminamos todos esos
+saltos se quitan y ganamos tiempo y
+espacio y buen espacio no porque si lo
+multiplicamos un punto más
+esto lo digo porque en vuestros juegos
+depende de lo que queráis hacer usar
+directamente las funciones de pintado de
+cpc telera puede no ser la mejor opción
+si tenéis que pintar mucho puede que
+queráis haceros una función propia de
+pintado que haga cosas especiales como
+por ejemplo si todos mis sprites son
+todos del mismo ancho
+prefiero tener una función donde el
+ancho sea fijo a llamar a la de cpc
+telera que sirve para anchos variables y
+entonces esa función tiene un coste que
+es el de controlar el ancho variable si
+se lo quitó mi función de dibujado es
+más rápida
+preguntas cosas de última hora o lo
+damos por cerrado por hoy o del pp igual
+a guaminí antes era porque cargaba todos
+repite por qué por qué por qué el
+contador de programas y el contador de
+programas puede seguir siendo cuatro
+miembros para generar no tiene que
+seguir siendo cuatro más
+es decir lo hemos puesto en 4000 por
+4000 tiene ventajas como dirección de
+memoria porque está en el segundo banco
+de la memoria y nunca se puede solapar
+con una rom pero eso es una cosa aparte
+pero no tiene por qué seguir siendo 4000
+de hecho si yo lo cambio que eso lo
+tenéis aquí en el vil confía y lo vais a
+ver lo cambio en un momento y veréis que
+no pasa nada aquí en el bill config al
+principio está esta constante de aquí
+que es lo que se pasa en la línea de
+compilación que me habéis visto a mí
+antes por el menos - ccoo de lo que vale
+que se le ponía 4000 es esto de aquí por
+eso se llama 180 code lock si yo en vez
+de poner aquí 4000 pongo 2000 por
+ejemplo y recopiló
+esto era bueno si recopiló haciendo que
+sé
+que se limpie porque como ha cambiado
+como lo que ha cambiado es un make file
+si no limpio no se entera vale ya veréis
+ahí arriba estás viendo ya que está en
+la posición 2000 ya no está en la 4000 y
+código
+vale
+no tiene por qué estar en la 4000
+a la posición más baja digamos cómoda
+que podéis usar es la 00 40 porque justo
+los 64 bytes anteriores son lo que se
+llaman al vector de interrupción y
+también se pueden usar pero ya hay que
+hacer un poco más hay que conocer un
+poco más lo que tiene valiosa de 40 en
+adelante
+podéis usarlo y el único problema que
+podéis encontrar si usáis cosas por
+debajo de 4000 es cuando vayáis a pintar
+strings que veréis que tengo unos
+cuantos vídeos dedicados específicamente
+a pintar texto y strings porque las
+definiciones de los caracteres que veis
+en pantalla los caracteres que salen por
+ahí están en la rom no están en la ram
+lógicamente y están en una zona de la
+rom que está en 3.800 para poder leer en
+3.800 de la rom tienes que activar un
+flash que hace que todo lo que leas por
+debajo de 4000 se le dé rom en vez de de
+ram pero claro si justo tú estabas
+leyendo tu programa de la ram en la
+posición 2000 activas el flash para que
+se empiece a leer a partir de rom el
+siguiente byte que vayas a leer de tu
+programa ya no lo lees de la ram no lees
+de la rom de lo que hay en esa posición
+entonces tu programa casca si haces es
+entonces si vas a usar esas funciones y
+vas a manejar la rom por ejemplo para
+pintar caracteres
+tienes que tener cuidado de que las
+cosas que hay por debajo de 4000 nunca
+sean y tu función de pintado de sprites
+de ofra te sprite dé strings ni la
+función de pinta de caracteres ni las
+propias de los propios strings de
+caracteres porque si no no se pueden
+leer
+es el único motivo vale por lo demás no
+vas a tener ningún problema poniendo las
+cosas en 4000 en 40 en 100 en 200 no hay
+problema

@@ -1,0 +1,1105 @@
+[Música]
+vamos con el render
+esto de aquí
+esta voy a compilar y voy a ejecutar
+y veréis que ahora mismo está
+un poquito de start al balón
+un poquito no se va a dar una sensación
+un poco extraña
+no sé cómo de extraño lo veis
+ahora es ligeramente como feo muy
+desordenado
+da la cosa vale esto no tiene buen
+aspecto a qué se debe esto es como se
+quedó más o menos el martes pasado que
+empecé a implementar un sistema de
+render avanzado los que hayáis visto el
+vídeo de la clase de la semana pasada
+veréis lo que tenga implementado aquí
+que tengo un sprite de un guerrero de
+tamaño 8 por 16 píxeles y una paleta y a
+continuación esto que tengo aquí es que
+me hice una función propia para poder
+calcular el puntero a la memoria de
+vídeo sabéis que representa tiene
+presente que te screen pointer pero esa
+función a para la memoria de vídeo tal
+como está por defecto en amistad que son
+40 caracteres de modo uno de ancho por
+25 de alto pero eso como ya habréis
+visto en las explicaciones se puede
+cambiar y eso tiene límite lo tengo
+cambiado en esta parte este código
+de aquí lo que hace básicamente es
+cambiar las dimensiones de la pantalla
+la pantalla normalmente tiene 40 de
+ancho 25 de alto y esto lo cambia a 32
+de ancho por 16 de alto eso termina
+haciendo una pantalla que ocupa
+exactamente 8 casas en vez de los 16 mil
+bytes que ocupa la pantalla original es
+una pantalla más pequeña pero además al
+ser más pequeña como tiene otras
+dimensiones también hace falta que
+tengamos otras funciones porque no
+funcionan las de césped ya que están
+pensadas sobre todo por el ancho para 40
+caracteres no para 32 por eso tuvimos
+que modificar la función de 10 screen
+point para que el cálculo lo hiciera
+bien vale aquí veis que tengo puesta la
+fórmula que se utiliza pero no lo veis
+mucho la verdad
+que se ve un poquito
+esta es la fórmula que es el principio
+de la memoria de vídeo más la y dividido
+por 8 el valor entero de esa división
+multiplicado aquí por el ancho de la
+pantalla que tengo ahora que son 64 vale
+64 bytes porque son 32 caracteres esto
+es lo que normalmente en antes serían 80
+bytes de ancho que son los 40 caracteres
+que tiene la pantalla vale y aquí tenéis
+el 800 que ya conocéis por línea que hay
+que sacar el resto de esa división entre
+8 para saber en qué línea de caracteres
+estamos para bajar a esa línea todo eso
+está explicado en el vídeo de y si al
+final sumamos la equis para esto lo
+implemente ayer vale y no hice más que
+modificar la que viene con cpc telera
+que hacía el cálculo multiplicando por
+80 entre 64 y cambie esa multiplicación
+para que multiplicará por 64 y ya está
+no me quede a medias con esto que es lo
+que no estamos usando y que es
+precisamente lo que nos falta porque la
+función de dibujar sprites que tiene cpc
+telera dibuja sprites teniendo en cuenta
+40 x 25 en pantalla pero aquí tenemos 32
+x 16 nuevamente así que tenemos un draw
+spline de 32 x 16 que está a medio hacer
+y no lo estamos usando entonces como lo
+que está pasando en este código es que
+llamamos al otro sprite de cpc telera
+y este utiliza las dimensiones de una
+pantalla de 40 x 25 cuando se pone a
+pintar hace cosas raras no nos pinta
+bien entonces vamos a hacer a terminar
+de crear el código de dibujar un spray
+en 32 x 16 vale entonces vamos a lo
+práctico
+primera parte si yo quiero dibujar un
+spray voy a hacer la parte más sencilla
+la parte más sencilla es dibujar la
+primera fila del sprite que solamente es
+copiar los países la cosa es que más o
+menos si yo tengo que copiar un spray
+vale imaginemos que estos son los bytes
+de mi sprite yo tengo mi sprite
+por filas
+pero esto sí lo tengo en memoria en
+realidad lo tengo seguido así en morir
+entonces yo una de estas filas si la
+quiero copiar a la memoria de vídeo y
+esto es la memoria de vídeo que empieza
+aquí en algún punto de la memoria de
+vídeo yo voy a tener que copiar uno dos
+tres cuatro seguidos y luego en la en la
+misma memoria de vídeo el 5 6 7 8 puede
+que lo tenga de copiar 800 más abajo
+vale o no tenga que copiar
+si estoy en la última fila de un
+carácter a lo mejor no tengo copiar 50
+hacia el lado en este caso 40 vale pero
+siempre tengo que copiar una fila serida
+porque una fila y luego la siguiente
+fila está 800 más abajo o 40 más
+adelante sí
+entonces lo más fácil es copiar una fila
+la primera fila del sprite
+copiar la primera fila del sprite que
+sería esta si yo tengo el punto en spray
+es saber el ancho del espray en bytes
+que son 4 y entonces copiar 4 bytes
+desde donde están guardados en el sprite
+a lo que viene siendo la memoria de
+vídeo como esos punteros ya los tengo
+que los tengo aquí tengo un puntero al
+sprite en hl y un puntero a la memoria
+de vídeo en d porque me los pasan como
+parámetro la forma de hacer la copia es
+utilizar una instrucción que ya
+conocemos que es el editor con la
+función elegir la instrucción el edil
+copia dhl a de tantos bytes como yo le
+diga en bc si yo pongo empecé como tengo
+ahora por ejemplo como veis aquí un 4 y
+llamó a el edil y me han pasado en hd
+legend de los dos punteros por lo que
+voy a copiar es cuatro bytes
+el primero de hdl a del segundo el
+segundo el tercero al tercero así que
+esta función la puedo hacer muy fácil
+haciendo así
+ya esta red no es simplemente cumplió la
+primera fila del sprite y eso
+teóricamente tiene que funcionar porque
+yo ya estoy apuntando a la posición del
+avión de no copiar y estoy apuntando a
+la posición del strike así que voy a
+probarlo
+si teóricamente tiene que funcionar pero
+tiene que funcionar
+vosotros creéis que funcionará hacemos
+apuestas
+y sí no
+llamó al duro spray
+vamos a ver qué pasa cuando llame adro
+spray
+para hacerlo
+vale veis lo que sucede
+solo estoy copiando una fila del spray
+pero ya veis que ya no pasa lo que
+pasaba antes que se me veían cosas fuera
+porque se me veían cosas fuera antes
+porque si yo ahora sólo copió la primera
+fila como no salto de una fila a la
+siguiente ya no me equivoco en el
+cálculo porque dentro de una misma fila
+los vice siempre están seguidos en eso
+no hay problema entonces ahí no meter la
+pata metía la pata antes cuando lo que
+estaba haciendo es que yo pintaba una
+fila y luego tengo que pintar la
+siguiente y en memoria de vídeo la
+siguiente puede estar en más 800 o puede
+estar en más 40 pero draw sprite cuando
+tiene que sumar más 41 más 50 entonces
+se lo lleva 10 más adelante y por eso
+nos sacaba las cosas de sitio vale muy
+bien ya tenemos una fila ya hemos
+empezado esto el otro sprite funciona
+ahora tenemos que hacer el resto
+si con esto puedo copiar una fila ahora
+tendré que repetir eso pero tengo que
+saltar a la siguiente fila no necesito
+saltar a la siguiente fila
+antes de saltar a la siguiente fila yo
+para volver me volveré cuando se me
+acaben las filas no como se cuando se me
+acaban las filas donde tengo yo
+guardadas las filas
+incluso antes que esto me sprite tiene
+que ser de 4 de ancho
+en las cuantas cosas que hacer
+si yo me sprite no es de 4 de ancho que
+es de 6 por ejemplo
+como lo hago para que esto pinte un
+spray de 6 porque no sé si habéis dado
+cuenta ya mí el ancho y el alto me lo
+pasan en beige aquí arriba en 20 me pasa
+en el ancho y delante pero cuando haga
+esto esto necesita que ve este acero
+para tener el ancho en vez de cero
+porque necesito todo ese con lo cual no
+lo voy a poder utilizar para guardar el
+alto todo el rato lo voy a tener que
+quitar de ahí si quiero usar esto y lo
+segundo es que cuando esto termina bc
+está a cero se pierde el valor que tenía
+antes de modo que este l de que puesto
+aquí está con toda la intención porque
+es para que cada vez que yo pinté una
+línea se vuelva a meter el ancho en bc
+porque se habrá perdido después de
+pintar la anterior
+pero como puedo hacer yo que este 4 de
+aquí
+se corresponda con el ancho de mi sprite
+como puedo hacer yo que ese 4 de ahí no
+siempre sea 4 que a veces sea 4 oa veces
+6
+como lo hacemos se puede
+lo guardo en otro registro
+podría guardarlo en otro registro y
+restaurarlo en cada iteración pero tengo
+un problema me quedan pocos registros
+entonces como me quedan pocos registros
+cuando quedan pocos registros porque hl
+lo esté usando de los que usando en
+veces donde tengo los datos sólo me
+queda pero además a lo voy a necesitar
+luego para hacer cálculos con lo cual
+tampoco me queda entonces de aquí ya
+tendría que pensar bueno y si lo meto en
+y x
+colom y toni o incluso en los registros
+alternativos que también los tengo pero
+este tipo de cosas
+ya no me molan entonces cuando ya no
+tenemos registros la otra opción es usar
+la memoria
+qué hago
+para que este 4 de aquí
+a veces sea 4 y a veces 6 alguien se le
+ocurre que podría hacer
+y yo aquí sé que sé
+a quién se tengo delante
+pero yo lo que quiero es que aquí lo voy
+a escribir bien una sola vez
+yo lo que quiero es que aquí se vuelva a
+meter en bc ese valor que tengo piense
+cada vez
+voy a darnos una pista porque veo que
+nadie me responde pero a ver si a
+alguien se le ocurre cuando he compilado
+el render renove j me voy a ir aquí y
+voy a poner el render punto rst
+y voy a buscar la instrucción de lbc
+coma 4
+aquí es todo esto no es más arriba
+aquí
+él debe 04 vale adrián dice que usemos
+pósito sería una opción quiero decir yo
+puedo meter en bc el valor que quiero
+hacer push y luego hacer pop en vez de
+hacer el dbc sería una opción pero eso
+lo voy a tener que hacer con varios
+registros porque voy a tener que estar
+restaurando varias cosas por ejemplo sin
+embargo aquí hay otra cosita que yo
+puedo hacer fijaos
+en la línea 42 4b de la memoria que por
+eso he abierto les resiste y es donde
+está guardando se está traduciendo el
+rbc por la instrucción 1 como veis no
+y qué es esto que hay aquí al lado de la
+instrucción 1
+qué es lo que hay al lado de la
+instrucción 1
+esto es el fuego
+no es una dirección de memoria es el
+valor inmediato como dice jorge vale el
+valor inmediato 4 que yo he puesto aquí
+de 16 bits porque a veces un registro de
+16 bits y por tanto la instrucción
+cargar en el registro pc requiere 16
+bits a continuación el inmediato 4
+corregirme si me equivoco estos 24 y 0
+donde van a ir
+a dónde se van a apropiar porque esto se
+ha traducido y va a parar a un binario y
+'seminario se carga en memoria
+esto de aquí es la dirección 424 de
+memoria y está este 4 en qué dirección
+de memoria está
+en la 424 c
+pero esto es memoria no es un baile en
+la memoria verdad
+editar el dato en tiempo de ejecución
+que es lo que está diciendo nikoláy
+exactamente esto es un dato en la
+memoria es lo mismo que cuando nosotros
+vamos a un sitio en la memoria ponemos
+punto debe 5 sólo que aquí hay un cuadro
+que se ha traducido de aquí pero es un
+dato que está en una celda de memoria en
+la 424 c
+y como es un dato que está en una celda
+de memoria yo puedo escribir en esa
+celda de memoria en la 42 40 y poner en
+vez de un 4 16 si yo pongo un 6 aquí y
+pondrá el mvc 6 en vez de 4
+y así puedo utilizar el mismo inmediato
+de la instrucción como si fuera una
+variable en memoria cambio el mismo
+inmediato y cuando se ejecuta la
+instrucción en vez de poner l de 4
+pondrá l de 6 como hago eso
+cómo puedo cambiar este valor inmediato
+ahora yo ya sé que esto se traduce por 0
+1 0 4 0 0 vale esta es la traducción
+vale eso quiere decir que en esta
+posición de memoria que es la 424 b
+habrá un 0 1 un 0 4 y un 0 0 ahora como
+lo cambio
+cómo cambió esa dirección de memoria
+cómo puedo saber dónde está ese sitio
+porque si yo quiero escribir un 6 podría
+hacerlo a sí no
+6 y ahora escribir en la dirección la
+que sea tendremos que ver cuáles escribo
+a
+creas una etiqueta que apunte esa
+dirección de memoria le suba su no hace
+falta que la cree
+no veis ninguna etiqueta por aquí
+veis una etiqueta en algún lugar
+the next line no
+next line está justo antes de lbc luego
+por tanto está en la dirección de
+memoria 424 vez que hemos visto antes
+next line nos dará 424 be y de hecho
+lo veis aquí next line 424 b lo vais a y
+eso es lo que vale
+justo entonces más 1
+la dirección de memoria next line
+si yo pongo un slide estoy cambiando esa
++1 estoy cambiando la 424 c
+si estaré cambiando este 4 por 16
+queréis que lo comprobemos que eso
+funciona así
+vamos a verlo
+voy a hacer primero solo
+y me vuelvo aquí para que veamos
+424 d
+que ahora ya no es eso ahora esto está
+desplazado porque hemos metido más bytes
+fijaos ahora la next line porque hemos
+metido vais aquí en medio vale del
+código que acabo de escribir next line
+ahora es 42 50 así que estos 42 50 por
+tanto estos 42 51 sí fijaos lo que pone
+aquí 306 meto un 6 en a y aquí pone 32
+42 51 lo veis estoy escribiendo que el 6
+en la dirección 42 51 que es ésta estoy
+metiendo un 6 ahí
+de modo que este código modifica este
+dato y cuando esto lo haya modificado lo
+siguiente que ejecutó es eso que ya no
+pone un 4 por un 6
+esto
+a código auto modificable básicamente y
+es lo más básico del código auto
+modificable porque yo puedo modificar
+cualquier celda de la memoria si en
+particular modificar la primera de aquí
+la de next line que es el 01 que dice l
+de pc como a lo que sea podría poner
+otra instrucción porque estaría
+cambiando el dato que hace referencia
+cuando pasa el procesador ahí a esa
+instrucción es el procesador cuando lo
+leyera en vez de leer 0 uno podría leer
+13 y entonces hacer una carga en el en
+el acumulador en vez de en pc vale pero
+la forma más normal de utilizar el
+código auto modificables esta es
+modificar los inmediatos para
+utilizarlos como almacenamiento porque
+el inmediato es un almacenamiento en sí
+mismo o sea aquí estoy almacenando un 4
+que es lo que se carga en desee y lo
+puedo cambiar porque está almacenado ahí
+vale y es una forma más práctica de usar
+la memoria de modo que yo en esta
+instrucción en este en esta función al
+principio de la función modificó una vez
+este dato y ya no tengo que hacer push
+pop
+todo a la vez estoy haciendo esto porque
+push y pop implica salvar guardar además
+en la pila que estoy ocupando dos país
+en la pila y luego recuperar los de la
+pila y entonces el fusil por ser siete
+microsegundos más los dos vice que uso
+de la pila mientras que esto sólo son
+estas dos instrucciones de aquí es toto
+país de aquí que los cambios y a partir
+de ahí son tres microsegundos cada vez
+que hago el l vertele debe de ser
+vale ahora sí quiero que esto sea el
+wish en vez de poner 6
+solo tengo que poner aquí
+porque tengo el we sense
+antes había metido un 6 a mano pero
+ahora me suena el wish que es el que
+tengo en set y ya estoy metiendo aquí el
+wish que sea directamente si ahora me
+pasa en un spray que tiene un wing de
+ocho meter aquí un 8 y si metes uno de
+20 meter a que un 20 porque me lo pasan
+en c donde truena y de ahí a next line
+más uno para no tener que andar con este
+más uno aquí en medio hay otra cosa que
+podemos hacer por comodidad nuestra y es
+esta
+esto que acabo de hacer
+es crear una constante esto es una
+etiqueta que ya sabéis que es la
+dirección de memoria de don de la
+etiqueta este esto es una constante y el
+valor se lo pongo yo pero el valor le
+pongo punto que es la dirección actual
+de memoria donde el ensamblador está
+traduciendo más 1 punto es la misma que
+aquí más 1 ya es esto entonces arriba en
+vez de poner un ex line + 1 que puede no
+tener significado para mí ya le pongo el
+nombre que tiene
+y ancho del sprite y lo guardo ahí y no
+tengo que andar poniendo aquí el más
+duro metal lo pongo aquí para el que ya
+apunte a la dirección que toca porque
+además aquí si esto está a 20
+instrucciones del otro sitio yo ese más
+uno más no me puedo equivocar aquí veo a
+lo que se refiere estoy viendo a la
+siguiente vale si compiló está ahora
+veréis aquí
+a ver si soy capaz de buscar bien sprite
+with lo veis aquí
+vale
+fijaos esto es muy curioso
+93
+de 93
+este 93 está bien
+esperaríamos hay un noventa y tres
+qué valor tendría que tener esto
+qué valor dónde en qué dirección de
+memoria estamos escribiendo con qué
+dirección de memoria queremos escribir
+para ser exactos en la 42 50 como dice
+jorge correcto esta es donde queremos
+escribir 424 efe aquí 4 250 pero aquí
+dice que espere width punto más 1 vale
+93
+pero aunque aquí diga que valga 93 está
+haciendo la traducción que nosotros
+queremos o no dónde podemos mirar si
+está haciendo la traducción que nosotros
+queremos
+qué línea tengo que mirar para saber si
+está traduciendo lo que yo quiero o no
+sabéis qué línea tengo que mirar
+en la que escribo no la línea en la que
+yo estoy escribiendo en la posición cuál
+es la línea en la que yo estoy
+escribiendo para modificar el 4 qué
+línea hace la operación de escribir para
+modificar el 4
+de todas las líneas que hay aquí
+qué línea es
+da 185 de estar aquí
+parece como tiene varios números 185
+ld sprite with como si spray with the 93
+esto debería de traducirse por un 32 93
+0 0
+pero no se traduce por 32 42 50 que es
+lo que queremos no
+pero aquí dice que va de 93 esto no
+a qué se debe esta discrepancia que esto
+valga 93 y sin embargo cuando lo ponemos
+aquí vale 42 50
+porque 93 era la posición relativa o
+absoluta correcto ignacio muy bien eso
+es exactamente eso el ensamblador cuando
+llega aquí este esta etiqueta que no es
+una etiqueta esto es una constante este
+constante local usa el punto que es
+local y este valor de aquí no lo ha
+traducido al valor absoluto
+esto es 93 es relativo al fichero esto
+ya son valores relativos y absolutos de
+la traducción de memoria de hecho es más
+es fácil de ver me voy a venir al render
+y voy a poner el l7 que es en el que no
+me sale esto y veréis fijaos aquí lo que
+pone en el st
+veis el 93
+es el valor relativo en el fichero la
+posición relativa 93 porque aquí esto es
+la 92 y esto es la 93 pero cuando eso lo
+traducimos a valor absoluto a memoria ya
+no estamos por colocando a partir de la
+4000 y entonces este 93 que sigue
+poniendo aquí es un valor relativo a
+veces hay que tener cuidado con estos
+detalles
+para no confundirse pero ya tenemos
+hecho lo que queríamos hemos cogido el
+ancho y lo hemos guardado aquí y ahora
+ya cada vez que yo pase por aquí en
+veces se mete el ancho y esta técnica la
+puede utilizar para meter los valores
+que yo quiera directamente en una rutina
+de hecho esta técnica la puede utilizar
+para algo que me faltaba aquí aquí si
+veis tengo este código que sirve para
+saltar de una fila a la siguiente vale
+cuando yo pinto el sprite yo estoy
+pintando por ejemplo en la posición de 0
+20 vale posición c 0 20 y pinto 1 2 3 y
+4 vale de modo que esto es 0 20 21 22 y
+23 y ahora tengo que pintar el 5 aquí
+debajo y eso es más 800 vale así que me
+tengo que ir a la c 820
+pero yo ahora mismo estoy apuntando aquí
+aquí es donde estoy apuntando yo ahora
+porque hl y de esta van a bueno de en
+este caso que es el destino estaba
+apuntando aquí hace 0 20 y se queda
+apuntando hace 0 24 que es 20 más el
+ancho del espray porque he copiado 4
+bytes y de ese ha incrementado 4 al
+copiar esos 4 país y ahora tengo que
+saltar de aquí aquí y eso no es más 800
+más 800 sería aquí
+si yo subo 800 me vengo aquí y entonces
+pintaría la primera fila del split aquí
+la segunda aquí si yo tengo que sumar
+800 y restar el ancho para volver a
+colocar esto aquí sí entonces 800 menos
+el ancho en hexadecimal va a dar 0 7
+algo vale si el ancho es 107 efe ser
+anchos 207 cc si el ancho es 307 fd vale
+entonces tengo que aquí que lo veis yo
+lo tenía puesto con el menos cuatro con
+efe
+y esto lo vemos igual podemos aplicar la
+misma técnica y decir yo sprays de ancho
+de 256 no voy a asumir que mis sprays me
+los dan con un ancho que viene en un
+solo registro porque vienen se hice es
+de 0 a 255 en un valor entero por tanto
+el ancho máximo que yo voy a restar el
+255 nunca voy a restar más de modo que a
+800 cualquier cosa que le reste de un by
+me va a dejar un resultado 07 lo que sea
+de hecho fijaos si le restó 1 me quedara
+ese efe que es menos 1 si le restó 2 me
+quedara s
+- 2 de modo que en realidad
+si os fijáis aquí me voy a ir a la
+traducción otra vez
+1
+un poco más abajo
+aquí en la traducción veréis que es la
+misma instrucción el dbc nl de veces
+tengo que cargar 07 ss
+pero si yo lo que quiero cargar es 800
+menos 1 aquí tendría que poner 07 efe
+efe efe si fuera 800 menos 2 sería 07
+efe
+efe y si fuera menos 3
+fd y si fuera menos 4 como ahora etc
+de modo que el único byte que cambia es
+este
+si yo cambio este byte ya tengo 800
+menos lo que ponga ahí en negativo si
+pongo el menos 1 800 menos 1 si pongo
+menos 2 800 menos 2 vale os queda claro
+esto que estoy explicando ahora se
+entiende que ahora para poner que cargue
+nl de 800 menos algo yo pongo aquí 07 y
+aquí el valor ese algo en negativo
+se entiende lo que lo que es sí vale
+entonces voy a hacerlo lo mismo aquí yo
+tengo esto pues como el biker de nuevo
+sprite ancho negativo
+y esta es la posición de memoria actual
+que es donde está el l de bc más 1
+porque como veis aquí es la posición de
+memoria 4 256 está más 1
+este es el vice que tengo que cambiar
+vale así que esto tiene que ser el ancho
+en negativo menos el ancho
+yo aquí eran sólo tengo en a porque ya
+lo movido de ser como un convierto lo
+que tengo en a en negativo y lo escribo
+correcto corneja es directamente me
+convierte en menos tal cual y ahora ya
+puede escribirlo
+con estas instrucciones de aquí yo antes
+de empezar la rutina de copia del spray
+pongo aquí el ancho y pongo aquí abajo
+800 menos el ancho
+y los pongo ya en su valor concreto
+almacenados al lado de donde se cargan
+en bc y ya me sirven para operar con
+ellos ya no tengo que estar guardando
+menos en registros haciendo push y pop
+los pongo ahí y ya está por cierto esta
+operación de aquí está hecha así porque
+le tengo que sumar esto a de no a hl
+como se lo tengo que sumar a d lo que
+hago es intercambiar dhl meter en vez de
+lo que tengo que sumar y sumar se lo hl
+y luego lo vuelvo a intercambiar
+entonces para poder hacer la suma de lo
+muevo hl hago la suma y lo vuelvo a
+poner ente vale y así hago la suma como
+veis aquí de 800 menos el ancho para
+saltar de una fila a la siguiente vale
+me falta aquí un detallito en el red
+veréis que tengo yo aquí apuntado
+que lo que tengo que hacer es
+restarle 1 al alto y hacer red si estero
+o sea yo vuelvo pero no vuelvo como
+ahora en la primera línea sino cuando se
+me han acabado las líneas de altura
+claro ahora sí que interesa que tengamos
+ese valor en un registro pero aquí nos
+cargamos el registro a el registro ve
+nos lo cargamos cada vez que usamos bc
+y lo necesitamos de modo que no podemos
+usar no podemos usar veces no podemos
+usar hl no podemos usar d
+donde me meto el ancho para poder
+restarle 1 aquí guardando me lo en un
+registro y comprobar si ha llegado a 0
+que registro usaría es porque ahora si
+no no es imprescindible a 2 pues podemos
+seguir leyendo de memoria volviendo a
+escribir pero para no hacer ese trasiego
+todo el rato ahora si este valor que es
+algo modificable todo el tiempo no como
+el otro que son constantes este lo vamos
+a guardar en un registro en que registro
+cuál elegiríais porque no puedo usar a b
+c y d ni hl que registro metros
+y aquí es dice ignacio probamos por
+ejemplo no y equis
+vamos a hacer un pequeño experimento
+porque x no es un registro tradicional
+por decirlo así
+entonces si yo quiero meterlo ni aquí es
+yo no puedo meter en y aquí es lo que
+tengo en vez yo esto no esto no puedo
+hacerlo
+esta instrucción no existe yo no puedo
+pasar lo que tengo de ahí x
+como lo pasa
+jorge dice que usemos a prima vale lo
+que viene siendo el registro alternativo
+de a pero el registro los registros
+alternativos para empezar es mejor que
+no
+para no utilizarlos de costumbre y si se
+pueden utilizar en algunas ocasiones
+pero no nos vamos a meter ahí porque
+requerir
+así que de momento no tocamos los
+registros alternativos
+el bus
+aquí no me no me triunfa porque no
+quiero estar guardando y restaurando
+cosas quiero meterlo en un registro que
+lo tenga todo el rato para ir restando
+pero esto no lo puedo hacer como lo meto
+en
+se puso para meterlo en vez entonces
+tenía que hacer
+vale jorge dice que haga esto
+ld
+y xl de y esto precisamente que lo veis
+aquí que lo pongo así es porque esto es
+lo que se llama una instrucción no
+documentada del cch el zeta 80 tiene
+instrucciones que aparecen en la
+documentación en el manual oficial del
+180 y otras instrucciones que puede
+ejecutar pero que no aparecen en ese
+manual esta es una de ellas
+la instrucción existe y se puede usar y
+de hecho es más esto es lo mismo si me
+voy a verlo por ejemplo
+no voy a la web que siempre os estoy
+diciendo vale
+se le reformar a table
+y en esta web yo miro y x vale entonces
+me voy a todo lo que tiene
+está aquí abajo
+pequeñito me imagino
+y veréis que hay una serie de
+instrucciones que están en rojo
+las instrucciones que están en rojo son
+lo que se llaman instrucciones que
+existen que funcionan perfectamente en
+el procesador pero no están documentadas
+entonces no están tampoco en este
+ensamblador si nosotros escribimos esta
+instrucción de y xh o ldl xh un valor
+que nos va a dar un error porque no la
+reconoce pero las instrucciones nosotros
+sabemos que en realidad no son más que
+un mnemonic o que le ponemos para que
+luego se convierta en código máquina de
+modo que si no lo traduce él podemos
+darle la traducción directamente
+poniendo dos puntos de ves porque aquí
+como veis esta instrucción es de 26 si
+yo pongo punto debe de de 26
+escribo eso en el binario y estoy
+metiendo esta instrucción a mano en vez
+de que me lo traduzca en el salvador le
+doy la traducción ya hecha como si antes
+en ld efe lo hubiera puesto debe 0 10
+400 habría escrito yo a mano
+01 04 00 en vez de pedirle de sembrador
+que me traduzca el l de 4
+si puedo estas instrucciones meterlas yo
+a mano y la que queremos estar por aquí
+estos y exactos
+aquí veréis que hay y x h y x l y xl es
+la parte baja de y x y x h es la parte
+alta de y x
+y aquí veréis que tenéis un montón de y
+xl coma de y estar aquí es y xl coma b
+descargar en la parte baja de iu x el
+registro ve esa de allí y esa es de 68
+vale así que yo si quisiera poner esto
+podría ser así
+esto es el edén y xl coma
+ve
+en vez de ponerlo el de la instrucción y
+que me lo traduzca el ensamblador pongo
+la traducción directamente y eso me hace
+la misma instrucción pero en cpc telera
+veréis que tenemos esto de aquí que es
+una simple macro es una macro que lo que
+tiene es eso se traduce por eso de ahí
+claro por eso es por lo que yo uso esto
+porque a mí me gusta más leer y xl que
+leer desde 68 quiero decir ya tenéis
+experiencia leyendo código máquina vale
+ya lo habéis hecho a mano y es mucho
+mejor leer código un poco humano que el
+código máquina vale un poco más amable
+no que no podamos pero es más amable
+entonces si yo hago esto ahora veréis
+que si yo hago make
+y me vengo aquí
+y busco ld y xl como veis aquí está la
+macro que me la ha incluido y veréis que
+es con un dw el de 68 puestos revés
+porque es de w vale pero es lo mismo
+ld y xl
+me falta un subrayado
+y lo veis que tengo mi sprite net como
+el xl como lo traduce por esto y emite
+desde 68 ahí lo veis vale así que
+podemos poner esa instrucción y con eso
+podemos cargar b/g/ny xl
+y ahora ya podemos utilizar y xl porque
+también hay instrucciones que hacen un
+deck ahí xl vale podemos hacerle de
+directamente hay xl y lo tenemos en
+macro también de modo que podemos hacer
+aquí deck
+y x1 y xl vale y si es cero hacemos una
+receta
+vale
+pongo el comentario
+y menos menos
+igual a cero
+reto
+esto es lo que hemos hecho aquí hago un
+si restarle 1 al alto me da 0 vuelvo lo
+tengo guardado ni xl que es un registro
+que no toco en éste
+en esta función ahora es importante es
+así
+que apunte aquí que modificó y x
+si alguien usa y xy llama esta función
+me lo voy a cargar cuidado
+y ahora ya sí que puedo estar pintando
+todas las líneas vale
+aquí abajo está prácticamente completo
+vale esto explique el otro día
+sirve para que cuando ya hemos pasado
+las ocho líneas de un carácter y hay que
+volver a la primera línea es mar 40 vale
+esto se hace hacia abajo
+entonces ahora con esto
+llega make
+rm
+si no nos hemos equivocado
+porque algo pasa no
+esto no se mueve no
+se queda un poco paralítico verdad
+porque puede ser que se haya quedado
+paralítico después de pintar un sprite
+entero
+qué podría pasar
+en una función como esta todo lo que
+hemos tocado y ahora no tenemos ni idea
+de que ha podido pasar
+hemos escrito un montón de cosas y todo
+esto y ahora de repente si yo ejecuto lo
+voy a ejecutar con wi name
+lo primero con estas cosas siempre es
+asegurarse de que no hemos tocado nada
+en los ficheros de cabecera aunque no lo
+hemos hecho no sea que al re compilar
+un fichero de cabecera que hayamos
+tocado pero no hemos tocado ningún
+fichero de cabecera o sea que esto no
+tiene pinta de ser el problema
+no se mueve os habéis dado cuenta
+si se pinta
+en el asterisco map el fichero punto map
+voy a buscar draw sprite
+que está en 424 b de hecho nos suena en
+este sitio así que voy a poner el break
+point en 424 b
+con un break point
+ahora ejecuto ya estamos ahí y lo voy a
+poner para que lo veáis
+valencia
+está un poco ancho
+más o menos así se ve si no podéis verlo
+vale
+un postrecito para qué país
+un santo esto
+más o menos podemos ver la pantalla si
+yo ahora ahí lo que hago es ejecutar
+vale veréis que meto en a
+un 46 que metido en a un 4 que es el
+ancho y lo voy a escribir en 42 57 que
+es aquí es el 44 256 y el 57 es ahí que
+ya hay un 4 por defecto vale porque es
+el mismo ancho así que yo le doy y veis
+que no se modifica porque he modificado
+este de aquí y he puesto un 4 por un 4
+ahora a burnett
+y tengo fce que es el menos 4 y el menos
+cuatro lo escribo en 4 260 que es aquí
+donde ya tengo lfc este es 42 60 porque
+es 34 25 efe modificó eso ya tengo los
+anchos y ahora veréis que aquí no hay
+nadie pone lo que nosotros ya hemos
+llamado y xl el valor bajo de x lo pone
+como el x vale pero es lo mismo en la
+instrucción de de 68 con la que meto
+nx en la parte baja como veis aquí he
+metido un 16 que es el alto del sprite
+entonces he metido el 16 y ahora esto es
+la instrucción que copia una fila del
+sprite con lo cual me meto un 4 en vez
+de le doy a elegir y entonces veréis que
+hl y de que son dónde está el sprite y
+la zona de memoria donde lo quiero
+copiar estas dos van a incrementarse en
+4
+cuando pase la instrucción
+es de 8 segundos a un incremento en 4
+porque he copiado de la una a la otra si
+miras en la memoria vería que se ha
+hecho la copia ahora decremento para
+contar uno menos y entonces ya tengo
+cero efe que es lo que me queda receta
+no hemos llegado al cero es una una fila
+y entonces como hecho una fila ahora
+tengo que ver si hago la siguiente fila
+la siguiente fila es estoy en tengo que
+cambiar en de veis que estoy en uno y le
+tendría que sumar 800 para ir a en 900
+vale menos 4 con lo cual tendría que ir
+a el 9 de 4 así que esta suma la voy a
+ir pasando rápido para ver si me da
+en nueve de cuatro lo veis aquí y ahora
+lo vuelvo a cambiar porque estoy
+cambiando hl por de para hacer la suma
+en nueve de cuatro mal así que hasta ahí
+todo bien ahora mismo tengo que saber
+que todavía no me he pasado vale todavía
+simplemente hago meto un 38 aún al
+estornuda 0 valiosa que no estoy todavía
+en la pasado de la fila 8 de un carácter
+así que como esto no es cero
+repito siguiente línea y así iría
+repitiendo y voy a ir poniéndome aquí
+en la cima
+me voy a ir no a la suma sí no
+me voy a ir al receta
+vale y voy a ir ejecutando hasta el
+reset habiendo lo que vale en cada
+momento de vale vamos a ello me voy ese
+9
+me voy a la receta y veo que de ahora
+mismo está en en nueve de ocho si
+ejecutó otra vez
+efe uno de ocho vemos que va saltando
+800 y estoy copiando cada línea vale
+esto va incrementándose en ocho cada vez
+pero en cuatro cada vez porque estoy
+copiando cuatro vice del sprite en cada
+línea
+efe 9 de 8 y ahora cuando subo 800 s 800
+es el que tiene que dar la vuelta porque
+800 más esto me pasó al 0 lo vais a ver
+ahora abajo
+ahora hago la suma y cuando haga la suma
+veréis que me sale 0 1 de 4 he dado la
+vuelta ahora esto tiene que detectar que
+he dado la vuelta el and debería de dar
+0
+y de acero como veis con lo cual sj nz
+no se hace y entonces hago la operación
+para deshacer el hecho de que ya he
+pasado ocho filas de sprite tengo que
+volver a la fila 1 del carácter para
+saltar más 40 hacia el otro lado y eso
+de aquí es esa instrucción de aquí que
+es lo que en el código era menos 8 por
+800 más 40 que suma de 0 40 entonces yo
+a esto le sumó de 0 40
+y cuando haga la suma veréis que me he
+vuelto al principio de la memoria de
+vídeo ves que estoy en c2 14 que es lo
+que había hecho sumando en en el f
+ene efe 9 y he llegado a c 2 vale porque
+dado la vuelta
+sigo ejecutando filas del spray me
+quedan estoy en y x estoy
+d
+porque es ponerte
+porque poner tan pocas filas llevamos me
+quedan 11 todavía
+a 987 y aquí veis que estoy en la f2
+efe y me quedan 4 salto a otro siguiente
+carácter c 2 vale me quedan tres me
+quedan dos me queda una
+y termino el sprite y ahora que esto da
+0
+el receta me devuelve al después del col
+del 2 price técnicamente he pintado un
+sprite todo ha ido bien voy a poner un
+break point aquí
+a ver si pintó el siguiente sprite
+llegó hasta el pintar el siguiente
+sprite entro
+y voy a repetir que ya tengo el break
+point en receta veréis estoy copiando de
+4 1 c 1 porque es el mismo sprite está
+apuntando al mismo sitio pero ahora
+estoy copiando en la dirección de a 9
+vale y tengo que pintar como veis aquí
+15 porque ya he pintado una vale así que
+pinto
+de c y veis que aquí va un va sumando 8
+vuelve hace 2
+de dos especiales plaza no sé por qué
+5 4 3 2 1 llegó al cero
+le doy y estamos en el med ha pintado
+dos sprays todo ha ido bien no parece
+que esté fallando nada que haríais ahora
+ahora sí esto que hemos hecho parece que
+todo funciona bien
+hoy a efe 9 otra vez y llegó atravesada
+2 prime
+qué es lo que está pasando
+si todo esto funciona bien
+alguien me puede dar una explicación
+si todo esto funciona bien y se pintan
+los sprites
+porque ahora no se mueven
+y doy una pista
+la aplicación le ha dado yo antes
+ha habido un momento en que modificado
+un comentario inocentemente
+en el que he dicho esto lo voy a apuntar
+aquí porque si alguien llama aquí
+que esto que puede estar pasando
+lo que está pasando hoy es enrique es
+que aquí estoy cambiando y x y ojo
+atención yo llamo a draw sprite quien
+llama draw sprite
+pero spray
+quiero buscar sprite se llama aquí
+vale esta llamada se produce desde el 6
+render whalen tití que si os fijáis
+recibe y x
+como parámetro de puntero
+con el componente de red de la entidad
+que se está pintando esta es la entidad
+y esto además viene de una función que
+es la función
+de aquí abajo la de en city for all que
+la función en tití for all lo que hace
+es ir metiendo en y que es la siguiente
+entidad y pasándose la a alguien pero
+además pone que tengo que llamar a
+funciones que no modifiquen y x espera
+que no modifiquemos y x sigue modificado
+y x
+así que con estas cosas os va a pasar
+mogollón
+de hecho habéis visto que a nadie se le
+ha metido algo y había otra cosa por ahí
+xh claro porque estoy recorriendo con iu
+x las entidades y yo llego y utilizo el
+registro alegremente y me lo cepillo y
+entonces cuando vuelve otra vez a
+lentini for all y suma el 6 de una
+entidad
+pues bad things happen básicamente
+ciervo y dragones así es qué solución
+puedo usar y no fue usar y efectivamente
+podría salir pero la solución es como
+dice carlos salvar y x y recuperarlo
+después ya que dro sprite modifica y x y
+yo en render 40 y dice que no tengo que
+modificar y x
+lo que voy a hacer aquí es
+para salvarlo antes de usarlo y
+recuperarlo después en cuanto haga esto
+veremos
+si el problema era ese
+como veis
+os lo he dicho justo antes de modificar
+y dicho lo pongo aquí en el comentario
+porque aquellos que llegan tienen que ya
+habéis visto lo que pasa esto os va a
+pasar
+si no os ha pasado ya veces que
+modificase un registro y cuando de
+repente todo se vaya al garete y es
+porque no teníais que haberlo tocado la
+función que llama no espera que eso se
+ha modificado vale hicieron los
+monigotes se van un poco para abajo
+porque esto estaba hecho para la otra
+resolución
+entonces en el sistema es física
+teníamos puesto aquí
+184 de píxel para comprobar pero claro
+es ahora cuando la pantalla medía 200
+pero ahora mide 128 de alto y 128 menos
+16 que lo que hay aquí por 112
+y este menos 16 que va a ser mucho lo
+voy a cambiar con menos 14 para que no
+rebote y se vaya afuera de la pantalla
+por arriba es ahora debería rebotar más
+o menos normal y me falta borrar vale y
+lo último que voy a hacer hoy con esto
+ya borrar para que se me quede esto
+ordenadito pero quería que vierais
+terminar el dibujado de sprites
+en una resolución distinta en esta
+resolución distinta a lo siguiente que
+nos faltaría es hacer doble va a ser el
+doble buffer que lo haré mañana será
+cuando tengamos que pintar un montón de
+entidades que el pintar un montón de
+entidades no de tiempo a pintar las
+antes de que nos pille el raster vale
+donde pondrías esas constantes para el
+tema de físicas en physics punto h y
+luego utilizas te refieres a las
+constantes de velocidades aceleraciones
+y demás si no puedes poner énfasis punto
+h o puedes hacer que alguien las tenga
+que crear antes de usar zisis punto h en
+fin como estáis haciendo juego vosotros
+sentís punto h es lo más fácil son
+constantes y así pueden estar en todas
+partes
+tampoco es muy relevante para este caso
+concreto el donde pongáis la constante
+donde sea más común al fin y al cabo no
+son más constantes locales
+dicho esto nos falta solo que no se vea
+el rastro borrar

@@ -1,0 +1,573 @@
+Música]
+voy a crear un proyecto con cptm project
+tenemos la opción menos a que nos
+permite crear un proyecto de tipo
+ensamblador vale si no lo ponemos así
+nos lo crea en c que son el mismo tipo
+de proyectos solo que la plantilla que
+pone es un fichero mail.com punto s ya
+está la única diferencia y lo vamos a
+llamar algo por ejemplo
+no sólo llamar a vuestro programa algo
+es lo habitual
+no podéis podemos hacer una encuesta de
+cómo llamáis a vuestros programas cuando
+no sabéis cómo llamarlos podría ser
+divertido
+alguno igual no se atreve a decir cómo
+los llama prueba buena prueba es común
+si está bien test
+vale vamos a ver
+aquí tengo mi algo no no veréis bien lo
+de la izquierda me imagino que esto está
+bastante sobreexpuesto como para que lo
+veáis bien verdad ahí no no se ve un
+pimiento me parece a mí
+los que estáis aquí en clase igual sí
+pero pero sólo dos si yo pero hay uno
+grande no no veo nada por dios si es
+verdad que no se ve y no pasa nada vale
+a un ls y aquí se ve bien porque esto es
+tan negro vale se nos ha creado unas
+carpetas vale de estas carpetas en un
+proyecto de cpe ctl era el código fuente
+se suele poner en fuente como su nombre
+indica se vale lo que tiene ese pc
+telera que es que hace magia vale yo
+estoy ya digo que lo explique ayer pero
+la magia que hace el cpc teoría está en
+este mail de aquí que apunta a los made
+files que hay en la carpeta cpc telera
+vale y lo que hace es ver todos los
+ficheros que hay en la carpeta es rc
+todos aunque cree y subcarpetas y cosas
+en los coge todos todos los que tienen
+la extensión punto ese punto ce
+considera que son ensamblador hice y los
+compila automáticamente o los ensambla
+si son ensamblador o si son c de modo
+que si creáis ficheros ahí dentro en los
+va a ensamblar y los va linkar en el
+proyecto directamente sin que hagáis más
+nada porque él lo recorre todos
+la carpeta cfg que tenéis aquí arriba es
+la carpeta de configuración del proyecto
+y ahí tenéis una serie de ficheros
+si la voy a listar para que lo veáis
+la carpeta de baile no lo veis claro así
+porque está el cuadrado mágico de esto
+estoy aquí es el cuadrado mágico que es
+la pantalla que está en el medio del
+proyector
+el cuadrado mágico entonces esto que
+veis aquí son ficheros que tienen
+extensión punto de mica porque son del
+made file vale son son básicamente parte
+del made file solo que está dividido en
+ficheros para que sea más cómodo ir a
+buscar el que queréis éste bill con fija
+es la configuración general de la
+compilación ahí se configuran las cosas
+de cómo queréis que compila o ensamble
+el proyecto que estáis haciendo incluso
+podéis cambiar las extensiones si no os
+gusta que sea punto es lo que él busque
+pues podéis poner punto miguel porque me
+gusta que se llamen los ficheros como yo
+son todos punto miguel pues bueno pues
+podrá disponer eso no pasa nada
+funcionaría igual
+las demás cosas que tenéis aquí en el
+made file son para la gestión de los
+ficheros cdt que para él como genera el
+fichero de cassette vale ahí podéis
+configurar el nombre que le pone al
+fichero en el cassette y algunas cosas
+esto es para poder comprimir vale para
+que automáticamente si tenéis assets o
+tenéis gráficos mapas o lo que sea
+imágenes que queréis que se compriman y
+se guarden comprimidas en el binario
+para que ocupen menos espacio se usa eso
+esto es para convertir automáticamente
+imágenes durante la compilación de modo
+que decís tengo aquí unos png si quiero
+que se conviertan a sprites
+automáticamente no te no vais a tener
+que estar haciendo lo de hacer los
+sprites a mano como habéis hecho en
+código máquina vale que hasta ahora
+habéis estado diciendo bueno este pixel
+esto aquí pues 84 nuestro a ojo si
+tenéis que hacer sprays grandes duele
+vale entonces no es una cuestión de
+estar haciéndolo así sino que le decimos
+oye convierte lo que yo ya pero del
+código máquina ya lo pasé en el primer
+nivel ahora convierte tu que es que tú
+sabes hacerlo mejor
+señor automático vale
+lo mismo para la música aquí tenéis para
+que podáis poner música y se convierta
+en datos que uséis en el juego y lo
+mismo para timelapse es la idea de la
+configuración
+esto es lo que se os crea cuando creáis
+un fichero se presentará y dentro de
+fuentes
+tenéis un main punto s que es un ejemplo
+para que podáis entonces a partir de ahí
+podéis en el fuentes y empezar a crear
+vuestros ficheros que serán
+automáticamente ensamblados y compilados
+vale si ponemos make entonces veréis
+todo el proceso de ensamblado y
+compilado los comandos que se hacen y
+finalmente veréis que os va a crear un
+binario vale el algo punto bin vale y a
+continuación un fichero de disco es
+decir este binario es básicamente lo que
+se pone en memoria lo que nosotros
+teníamos nuestros 13 88 3200 esto está
+aquí en el binario el código máquina
+está ahí en el binario desde ese código
+máquina para que sea cargado en memoria
+se mete en un fichero que emula un disco
+se mete en un fichero que emula una
+casete que no tenéis aquí veis como pone
+que algo bien se mete en algo punto cdt
+vale y también se mete en un snapshot
+que básicamente un snapshot es como
+cuando y bernays vuestro ordenador es
+una imagen de la rmi del
+la cpu y de los registros guardada en un
+fichero de modo que el emulador cuando
+arranca vuelve a poner eso como estaba y
+continúa entonces esa imagen es como si
+ya tuviera es metido en la ram lo que
+habéis creado en el binario de modo que
+se ejecuta automático esa es la idea
+todo eso es lo que celebramos de hecho
+e insisto una vez más ayer expliqué este
+proceso cómo funciona para que tengáis
+claro qué cosas hace qué pasos sigue qué
+conversiones produce porque luego en
+algún momento vais a estar programando y
+necesitaréis mirar algunas de esas
+conversiones para que hagan lo que
+vosotros queréis y si no sabéis cómo
+funcionan podéis hacerlo vale hay otro
+detalle importante aquí en el cdt que lo
+veréis aquí a continuación que pone
+carga 4000 y aquí pone run
+4000 la dirección 4000
+estoy seguro de que os suena bastante
+verdad entonces esto significa que este
+código binario vale porque un binario
+solamente es los bytes de larra no lleva
+más datos es el 13 88 0 0 no tiene más
+nada cuando lo metemos en el cdt tenemos
+que decir
+estos bytes los cargos en la dirección
+4000 de memoria y cuando los hayas
+cargados os vais en edición de 4000 de
+memoria entonces saltas a la edición
+4000 eso es lo que pone aquí quiere
+decir que esto cuando se me está ahí
+creará un fichero nuevo que además de
+tener los bytes que tienen que ir a la
+ram también tendrá esa información de
+dónde cargar esos bytes y adónde saltar
+vale ese fichero que se mete en el cdt
+tiene toda esa información y además
+también tiene como veis aquí el nombre
+del fichero se llama game vale nombre
+muy original
+bien todo eso proviene
+de nuestro mail ese que es el único
+ahora mismo que tenemos esto vale
+esto es el main punto s me imagino que
+tampoco llegáis a ver el nombre a
+privada de mi punto es verdad no se ve
+pero que éste es el fichero main punto
+ese y veréis que incluye la cabecera de
+cpc telera vale y voy a empezar a quitar
+todo lo que sobra porque vamos a
+programar nosotros no queremos un
+ejemplo que ya viene hecho sino que
+vamos a quitar comentarios y os voy a
+explicar un par de detallitos tontos y
+nos ponemos a programar este string que
+a mí no me dice nada fuera esto lo voy a
+dejar esto
+de momento lo voy a dejar ya veremos lo
+nuestro
+esto no me gusta fuera
+esto tampoco me gusta este tampoco me
+gusta esto para qué lo queremos nosotros
+queremos hacer las cosas nosotros verdad
+porque ahora que vamos a querer todo lo
+demás ya está se ha quedado mucho más
+adelgazado en este
+este fichero es más delgado
+vale explicaciones básicas
+esto que pone punto área
+lo que significa veréis en lo que
+explique ayer que cuando compila cuando
+ensambla el ensamblador esto y lo
+convierte en una especie de código
+máquina porque la conversión del
+ensamblador no va directa a ser código
+máquina sino que pasa un paso intermedio
+hace una conversión a medio código
+máquina por decirlo de alguna manera
+estas áreas lo que le dicen es todo este
+bloque de aquí es un bloque y este es
+otro bloque este se llama data y este se
+llama code
+podemos crear tantas como queramos y
+entonces son como bloquecitos que luego
+el ensamblador puede decidir ponerlos en
+distinto orden en el binario final que
+genera y podríamos tener aquí unos datos
+y hay unas funciones y que en vez de
+estar está en la posición 4000 y esto en
+la 5000 que fuera al revés vale porque
+el ensamblador puede colocar los bloques
+por eso se llaman áreas son como si
+fueran distintos ficheros no os
+preocupéis por ello no es relevante solo
+lo explicado para que sepáis lo que es
+el ensamblador y el link que en este
+caso que usamos que es ese de cc por
+defecto espera que existan estas dos el
+área data y el área code
+y yo lo que hago habitualmente como veis
+es esto defino el área de datta vacía
+defino el área code y lo pongo todo
+dentro y así lo que hay en el área code
+está en el orden que quiero yo está así
+seguido no hay más vale entonces no hay
+que preocuparse de ello sólo que sepáis
+que eso es así ya está cuando pongo esto
+le estoy diciendo al ensamblador que el
+ensamblador por cierto va de arriba
+abajo ensamblando te lo digo al
+ensamblador oye existen dos etiquetas
+ojo porque algunos no habéis llegado al
+nivel 3 de ensamblado pero estos son
+etiquetas que es un nombre que no existe
+en código máquina evidentemente estas
+cosas no existen en código máquina esto
+solo existe aquí en el ensamblador vale
+y sirve para que traduzcamos a código
+máquina como queremos pero estas dos son
+globales que es lo que significa eso de
+ahí para qué sirve lo de son globales
+sirve porque yo esto de aquí no lo he
+definido en ningún sitio
+esto está definido en el código fuente
+de cpc telera en otro sitio vale
+entonces yo le digo oye yo voy a hacer
+como hago aquí llamar saltar a esta
+etiqueta a la etiqueta disable firmware
+este call está diciendo salta a donde
+está la etiqueta disable firmware pero
+aquí no hay ninguna etiqueta disipó el
+firmware
+existe aquí y los ficheros se ensamblan
+uno a uno este fichero main punto s
+cuando yo ensamble se ensambla el solo
+sin nada más no existe ninguna otra cosa
+cpc telera no existe cuando eso se
+ensambla realmente entonces qué hago yo
+le digo oye disable firmware es una cosa
+que existe en otro sitio tú te lo crees
+que esto es lo que significa el global
+tú te lo crees lo que yo te diga esto
+existe en otro sitio ensambla lo que ya
+el link que él se encargará de buscarlo
+esto literalmente lo que hay pone
+entonces el ensamblado cuando ensambla y
+lo vais a ver ahora yo le voy a
+ensamblar
+y en el ensamblador ensambla aquí arriba
+vale aquí está es la orden de ensamblar
+esa orden que pone esa idea sz 80 l
+menos hombres eso es la orden de
+ensamblar y lo veréis porque aquí está
+como parámetro el fichero main punto s y
+como salida el fichero o bj main punto
+red
+vale vamos a ver esa salida ese punto
+real qué aspecto tiene vale
+voy a abrirlo aquí
+y ya veréis qué risa
+voy a ver aquí mail.ru
+es la salida que ha producido el
+ensamblador a partir del fichero que
+tengo aquí de este fichero ha salido
+esto
+no sé si entendéis algo
+alguien que haya llegado que me diga
+en hexadecimal en código máquina como se
+dice con cuál es la orden con vale la
+instrucción con cómo se codifica en
+código máquina muy bien alex cede beige
+cede en algún sitio
+y si veis cde en algún sitio con un
+salto a algún sitio también seguramente
+podéis estar viendo por ahí un bucle
+infinito al que también veis un bucle
+infinito
+se ve verdad al final hay un 18 efe
+viene el col es este aquí pone con algún
+sitio y ahí eso de ahí abajo es un bucle
+infinito vale
+os explicaré por qué eso es un bucle
+infinito pero eso es un bucle infinito
+entonces ahí está el código máquina
+generado col
+a una dirección a 0 cola a la dirección
+0
+y luego después de hacer cola la
+dirección 0 bucle infinito que eso es lo
+que pone aquí realmente pero a ti pone
+con adicción firmware y luego bucle
+infinito entonces la conclusión que
+sacamos es ésta dice y bolt firmware en
+la posición 0
+tiene mucho sentido eso la verdad no
+tienen mucho sentido realmente veréis
+que aquí abajo hay otra línea otra fila
+que pone r
+esto te viene del ensamblador text que
+significa lo que directamente es el
+código máquina vale aunque se llame text
+es por otra cosa esto de aquí es una
+cosa la r significa re localizable
+y el re localizable viene por esto aquí
+hay unos detallitos que no os voy a
+explicar lo que son pero se están
+refiriendo a esto de aquí a estos dos
+países el ensamblador cuando ha
+ensamblado se ha creído como le hemos
+dicho nosotros que existe una cosa
+llamada disable firmware y él ha dicho
+vale yo sé que disable sin firmware
+existe en algún sitio por tanto voy a
+traducir esto de aquí pero yo no sé
+dónde está diseño firmware entonces qué
+hago al traducir col-cd aquí pongo dos
+ceros y pongo una marca aquí abajo que
+no voy a traducir pero esta marca que
+hay aquí abajo le dice al link er oye yo
+aquí he puesto dos ceros
+tú encárgate de buscar que esos dos
+ceros con que hay que rellenar los
+porque no sé con qué hay que rellenarlo
+yo sé que a mí me han dicho que existe
+una cosa llamada disable firmware la he
+llenado con dos ceros luego tú ya te
+apañas y pones ahí lo que tendría que
+poner
+por eso esto es un código intermedio por
+eso esto no es el código definitivo
+porque el ensamblador no puede saber esa
+dirección de memoria es el link en el
+que sabe dónde están todas cuando junta
+el programa entero con todos sus
+archivos vale
+se entiende este pequeño proceso para
+que lo veáis con más detalle
+hay un tipo de fichero que es el fichero
+punto ls el mail el st el mail punto el
+e7 que me viene al final ahora ahora
+volvería al principio ahora el mail
+punto el st termina así
+fijaos que aquí pone línea 29 col
+disable firmware lo veis ahí
+esto es nuestro código y el jd punto lo
+veis aquí vale y entonces aquí si os
+fijáis sale justo al lado la traducción
+esto es ensamblador y esto es la
+traducción a código máquina que ha hecho
+el entonces aquí vemos exactamente cómo
+traduce a código máquina lo que nosotros
+estamos poniendo el traduce col por cd 0
+0 y el traduce jota r por 18 efe lo veis
+aquí y al lado pone la dirección de
+memoria donde él ha puesto eso él ha
+puesto este en cero y está en tres pero
+es que ese 0 y ese 3 es relativo al
+propio fichero vale porque él sólo tiene
+un fichero entonces no sabe ni dónde va
+ese fichero ni nada así que lo pone a
+cero y luego ya el link querida pues si
+esto en vez de estar en cero están en
+esta en mil pues lo vuelve a colocar mil
+más abajo y ya está
+fijaos nuestro fichero tiene gracia
+porque me veis cuántas líneas tiene este
+fichero
+pero si yo tenía dos líneas porque tiene
+dos mil este fichero
+2006 27 27 que parece algo especial
+porque será 27 27 seguro que es algo
+judeomasónico vale pero dejamos las
+conspiraciones a otro lado
+no la miréis mucho vale pensad que
+quiero dominar el mundo pero no sabéis
+cómo ahora mirado un poco para arriba y
+decidme por qué este fichero tiene
+tantas líneas
+porque si no nosotros no tenemos tantas
+hemos hecho un fichero tenemos 30
+miserables líneas de donde han salido
+2000
+porque hay dos mil líneas esto lo que ha
+traducido de ojo el él ha traducido a
+código máquina intermedio dos mil líneas
+por para definir los globales de cpc
+telera
+no no
+es porque estás enlazando no no estoy
+enlazando a este fichero es antes de
+enlazar este fichero solo es cuando
+ensamble o solo es ensamblado este
+fichero eso que veis en el l7 es el
+resultado de ensamblar esto sin linkar
+sin nada de nada solo ensamblado esto
+nada más y ha salido esto 2700 líneas
+porque si bueno en realidad sólo ha
+producido 5 bytes 2.700 líneas que
+producen 5 bytes de código máquina
+magnífica no si para cada 5 bytes
+tenemos que hacer 2 mil 700 líneas esto
+es va a crecer muy pronto porque hay una
+pequeña instrucción se produce eso aquí
+pasa como desapercibida como no está ahí
+pero nadie le presta atención es como el
+patito feo de la programación
+la gente no suele mirarla mucho
+él incluye dice nuria si él incluye es
+el culpable éste incluye incluye es el
+que hace en la magia de convertir 30
+líneas en dos mil 727
+porque porque incluye hace literalmente
+lo que su nombre indica incluye
+e incluir es exactamente eso lo que vais
+a ver aquí es que todo esto que hay aquí
+es lo que hay en la cabecera cpc tele
+era punto a punto s porque a su vez es
+esa cabecera hace presente el era punto
+h punto s incluye otras y como veis
+todas esas
+lo que se hace antes de ensamblar es
+cogerlas copiarlas al fichero generar un
+fichero de 2.700 líneas y luego
+ensamblar
+esto es lo que hace incluye y esto es lo
+que se incluye aquí en el ensamblador
+ence y hacemos más
+cuando vosotros ponéis incluye los trim
+vuestro fichero pasa de tener 10 líneas
+a tener 30 y tantas mil
+directamente
+y sólo por poner incluyo string el
+tiempo que tarda en compilar cómo tiene
+que parchear todo esto el tiempo que
+tarda a compilarse más más pasa
+habitualmente de 2 o 3 milisegundos a
+200 porque has pasado de 10 líneas
+a 30.000 vale así que
+como decía él incluso suele ser no se le
+presta mucha atención pero hace esto un
+club de hace esto vale bueno ahora que
+ya lo tenemos claro veis como veis saber
+lo que produce en los distintos ficheros
+es útil porque así podemos ver si está
+traduciendo lo que queremos y no
+hospital vale eso luego después enlaza y
+termina produciendo el binario fijaos en
+el binario no se sigue aquí el binario
+veis algo en el binario que se parezca a
+lo que nosotros hemos hecho antes
+es muy largo no no no hemos dicho que
+teníamos 5 bytes
+dónde están nuestros 5 bytes
+si alguien ve los 5 países que menos
+escriba a los 5 países concretos en el
+chat
+los 5 bytes que hemos producido con
+nuestro call y nuestro
+un bucle infinito
+los paisas
+no están muy escondidos en tan poco
+al existe que están al principio cuáles
+son
+- hablando
+de los 10 000 negras que ha cambiado por
+la agregación entiendo de traducida ha
+cambiado del incorrecto
+exactamente correcto por eso es bueno
+05 40 que es 40 05 porque están little
+indian vale en este caso ahí lo tenéis
+el 18-f y el cd y la dirección de
+memoria que antes era 0 ahora es 40 05
+porque porque cuando enlazamos le
+decimos queremos que esto vaya a la
+posición 4000 y por tanto él cuando hace
+call ya sabe que quede cual es la
+dirección donde está dice
+film wear la dirección donde está diseño
+el firmware es 40 05 eso significa que
+si os fijáis es si esto es la 4 mil a 4
+mil 14 mil 23 45
+vale aquí empieza el código the disabled
+firmware básicamente estaban haciendo
+cola y ya veis cómo podemos leer en
+binario tranquilamente nuestro código
+generado abro el binario y lo leo y veo
+mi código y veo dónde empieza a servir
+ue lo siguiente que más disimulo firme y
+hay alguna cosilla más que ha pasado el
+proceso del hincado ha sustituido es el
+0 0 0 que teníamos por la dirección real
+al formar el binario porque el binario
+final sí que tiene el diseño el firmware
+de cpc tele era incluido y una vez se
+incluye ya se sabe que empieza aquí y ya
+puedo sustituir ese 000 por la dirección
+real porque esto va a ser cargado en
+4000
+queda claro entonces luego el proceso
+final es cuando esto se mete en la cinta
+y yo le digo al emulador cargarlo
+entonces el emulador coge todos estos
+bytes que veis que solo son los bytes de
+la memoria y lo que hace es copiarlos a
+la posición 4000 y cuando ya los ha
+copiado a la posición 4000 entonces hace
+un jump aquí a la posición 4000 que es
+donde empieza y empieza a ejecutar
+nuestro call y luego el bucle infinito
+vale
+muy bien
+claro entonces todo el proceso que
+tenemos para producir sí
+un poquito de ensamblador
+tenemos un poquito de cpc telera con
+todo esto
+el start fill se tiene que hacer con
+esto esto sí ensamblador es lo que es
+esto sí vale yo prefiero llamarlo
+ensamblador vale esto me parece un poco
+despectivo pero mejor ensamblado albal
+si se le da tampoco la llamo esto vale
+pero si él era así
+no puedes hacerlo sin cpc telera pero
+igual te cuesta más vale esto va a ser
+un poco más cómodo ya visto que te hace
+toda la magia de cogerte los ficheros y
+tal

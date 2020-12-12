@@ -1,0 +1,337 @@
+[Música]
+sí
+[Música]
+algo que os estoy comentando a todos y
+quiero que tengáis en cuenta para los
+juegos de amstrad como un primer
+experimento de game design ya os lo he
+comentado a todos que cuando hacéis un
+juego uno de los puntos más esenciales
+del juego es el control de vuestros
+propios personajes el control del
+personaje depende de cómo diseñen las
+físicas del movimiento el movimiento del
+personaje los tipos de movimiento los
+tipos de acciones todo eso que son las
+acciones de un personaje y el como
+vosotros interactuamos para conseguirlas
+eso es esencial que tenga un feeling
+bueno que el jugador juegue y lo note
+suave lo note que responde a lo que el
+jugador quiere hacer note que puede
+controlar al personaje bien que a lo
+mejor requiere habilidad controlar al
+personaje pero que es una cuestión de
+hacerse al mando pero que se nota suave
+se nota que funciona bien por lo digo
+porque esto es es uno de los lastres
+mayores la mayoría
+juegos que he visto la mayoría de juegos
+que he visto que se han hecho en años
+anteriores un principal lastre es hacer
+saltos ortopédicos es hacer movimientos
+lineales es no tener inercias no tener
+rozamientos no tener aceleraciones no
+tener velocidades no tener determinadas
+cosas todo este tipo de cosas hacen que
+el control del personaje se resienta y
+que estamos acostumbrados a juegos que
+tienen muchas cosas de estas muy pulidas
+y vamos a tocar un juego que lo hacemos
+nosotros y resulta que esto está sin
+pulir que está está cómo sale del horno
+que esto está pues pongo ya se mueve ya
+está si lo dejáis así dará mala
+sensación si la mala sensación del
+control del personaje con el resto del
+juego
+no vale para nada y esto lo vais a ver
+ahora que os he pedido ya que la semana
+que viene tengáis un juego elegido
+los juegos de años anteriores y probad
+los ahí saber que hay juegos donde el
+control del personaje va bien y otros
+donde el control no va bien no responde
+como debería no se siente suave no
+pensad en analizarlos y en ver qué pasa
+y cómo queréis que es el vuestro porque
+es el punto esencial y la semana que
+viene cuando empecemos el game engine en
+equipo deberéis recoger la mecánica
+principal de vuestro juego y vuestro
+personaje o lo que sea que tengáis si es
+uno o varios personajes depende del
+juego e implementarla y eso implica la
+interacción entre vosotros y el jugador
+del juego que esa parte esencial la
+semana que viene tenemos que intentar
+conseguir que sea buena que sea de esas
+que dicen si hago un salto siente
+natural si hago un movimiento o se
+siente natural se siente como yo quiero
+que se sienta y si no pulirlo hasta que
+se siente añadiendo inercias
+aceleraciones rozamientos saltos
+gravedad cosas de este estilo vale
+tenéis que experimentar con eso porque
+es esencial os imagináis un mario bros
+donde el personaje salta se cayese
+linealmente así
+no imagináis
+quiero decir si yo me siento a jugar a
+mario y cuando saltó hace
+[Música]
+es como
+qué juego tan bonito clic voy a poner
+otro vale
+queda claro no es decir porque jugamos a
+determinados juegos precisamente porque
+se dejan jugar y esto es una clave del
+rhein design es súper súper clave que el
+jugador tenga buenas sensaciones
+solamente con el control de su personaje
+sea lo que sea solo con eso sin
+interactuar con el juego sin hacer más
+cosas solo con el control del personaje
+la sensación debe de ser buena si no lo
+es
+el resto probablemente se resienta tanto
+como lo mala que sea la sensación del
+personaje
+esto lo vais a ver vais a ver que hay
+juegos de años anteriores donde el salto
+está implementado lineal subo subo sube
+sube sube bajó bajó abajo abajo baja
+esto lo vais a ver en algunos juegos y
+cuando probéis un juego así veréis que
+por mucho que el juego tenga cosas
+porque algunos de ellos son juegos de
+plataformas que tienen media aventura
+con algunas cositas que hay que superar
+y tal veréis que no que por mucho que el
+juego tenga cosas
+no mola vale
+así que este es el primer consejo de hoy
+the grand design focalizados al inicio
+en tener un muy buen control del
+personaje el personaje o lo que sea
+porque podéis tener una nave si a lo
+mejor hacéis una nave y se mueve pues es
+una nave lo que sea que tenéis que
+controlar tiene que tener un feeling de
+control muy bueno hay que responder bien
+y en este sentido un truquito que suele
+haber vale en el mismo orden para los
+que vayáis a hacer juegos de plataformas
+que entiendo que muchos vais a hacer
+juegos de plataformas
+si hacéis un juego de plataformas hay
+una cosa clásica que pasa en los juegos
+de plataformas voy a intentar hacer un
+dibujito de lo que pasa en los juegos de
+plataformas yo tengo una plataforma vale
+y tengo otra plataforma
+y entonces tengo un personaje que está
+aquí
+loyo con mi personaje voy avanzando en
+esta dirección
+cuando llegó al borde tengo que saltar
+para llegar a la otra plataforma es un
+típico juego de plataformas el llegar de
+un sitio a otro con un salto ajustado
+pero muy típico bien pues los saltos
+ajustados tienen un pequeño problema y
+además el problema se agrava con los
+monitores modernos los ordenadores
+modernos y los emuladores con todo es el
+problema se agrava
+hay un lag bastante grande entre
+que se procesa un fotograma que se pinta
+en pantalla que lo ve el usuario que
+reacciona pulsa una tecla y la tecla es
+detectada todo eso tiene un lag grande
+bastante grande vale pues todo esto
+significa que si queremos saltar al
+borde de una plataforma es decir yo
+estoy avanzando como veis aquí y
+entonces llegó justo al borde y cuando
+veo mi personaje al borde es en ese
+momento cuando yo quiero saltar y pulso
+para saltar ocurre que la orden de
+saltar cuando llega al procesamiento mi
+personaje ya no está ahí mi personaje ya
+está aquí o incluso aquí cuando la orden
+llega porque yo realmente he pulsado
+cuando el personaje lo estaba viendo al
+borde y soy muy fino como jugador y
+pulso exactamente ahí pero la orden ya
+llega para otro fotograma porque hay un
+lazo de por medio
+si soy fino de darle exactamente al
+borde la orden llega tarde
+esto lo vais a notar en algunos juegos y
+particularmente en muchos juegos en el
+cpc retro de vais a notar que si
+intentáis saltar al borde o caisse y
+pasa por esto por este motivo si jugáis
+a casi cualquier juego moderno y hacéis
+un vídeo y lo veis a cámara lenta os
+daréis cuenta de que no prácticamente no
+hay ningún juego moderno en el que no
+esté implementado el salto con retraso
+es decir que puedes saltar en el aire
+en casi todos los juegos modernos tú
+pulsas cuando ves al jugador aquí la
+orden llega cuando el jugador está ahí
+pero el salto se produce
+saltas aunque estás fuera de la
+plataforma aunque ya no estás en
+contacto con el suelo igualmente tu
+personaje salta aquí en muchos juegos
+incluso aquí
+bastante fuera de la plataforma vale hay
+un margen y ese margen es precisamente
+para tener en cuenta esto que se estaba
+diciendo el feeling de control porque al
+fin de cuentas el jugador si ha
+respondido en el momento que debía y
+debido al lado esto no funciona
+y pedirle al jugador que se acostumbre
+en realidad en vez de pulsar al borde a
+pulsar aquí es un error
+el jugador no lo va a ver natural el
+jugador no va a ver natural tener que
+pulsar mucho antes para que salte al
+borde jugador va a ver natural pulsar al
+borde para saltar al borde entonces este
+tipo de cosas hay que diseñar las con
+ese control en mente esa figura ese que
+él se sienta natural lo que uno quiere
+hacer en esa misma línea de consejos
+iremos viendo unos cuantos pero otro
+consejo importante de game design
+es que nunca utilicéis el ancho y alto
+de un personaje como bound in box
+no sé si sabéis lo que quiero decir
+vale me explico imaginemos que tengo yo
+un personajillo
+como soy tan buen dibujante lo voy a
+dibujar así no lo voy a intentar dibujar
+porque lo mío es intentar no es dibujar
+tengo un personajillo
+es un poco chungo todo hay que decirlo
+mi personaje parece algo raro
+se bueno es bonito
+un personaje llamémoslo personaje vale
+bueno pues este personaje tiene un bound
+in box vale el bound in box
+aproximadamente estaría por aquí sí
+vale
+y esto significa que si a mí me disparan
+si yo calculo las colisiones con el
+bound in box que es básicamente lo que
+vais a utilizar prácticamente todos en
+amstrad vale si yo calculo las
+colisiones con el gong de inbox y me
+disparan una flecha vale imaginaos una
+flecha que viene por aquí
+cuando esta flecha llega aquí
+colisiona con mi bound inbox
+la colisión me mata voy a morir antes de
+que la flecha realmente me toque en el
+bound in box
+esto
+se puede resolver utilizando colisiones
+al píxel y utilizándolo aun de inbox
+para descartar es decir yo primero
+cálculos de colisión con el round in box
+y si hay colisión con el bondi inbox
+lanzó una segunda comprobación para ver
+si ha tocado algún píxel pero esa
+segunda comprobación de colisiones al
+pixel que es muy precisa suele ser muy
+costosa no se suele utilizar vez de
+utilizar las colisiones al pixel lo que
+se usa es otro tipo de bound inbox que
+es el bound in box ventajoso
+el bound in box ventajoso es un bone
+inbox en el que en vez de ponerlo
+rodeando exactamente al personaje lo
+ponemos aquí
+vale esto es el bowling box ventajoso
+este bound inbox interno que acabo de
+pintar en caracteres cuesta más pero
+vale esta cajita interna al contrario
+que la externa que habéis visto antes
+esta cajita de aquí no cubre todos los
+píxeles de mi personaje
+esto significa que si la flecha me da
+aquí no me va a dar porque yo las
+colisiones las calculó con esto
+pero sabéis que ocurre que si en los
+bordes de un personaje al tocar un píxel
+no te mata al jugador no le va a
+aparecer mal le va a parecer bien
+porque tiene ventaja mientras que es
+todo otro de que toque aquí y te mate le
+va a parecer muy mal
+se va a cabrear mucho con tu juego si le
+dan sin haberle dado sin embargo si no
+le matan habiéndole dado no le va a
+parecer muy mal vale también es verdad
+que si la flecha te atraviesa por el
+medio y no te mata va a decir pues esto
+falla vale pero si es un píxel
+probablemente ni lo note pero lo que sí
+que va a notar es que solo le matan
+cuando verdaderamente le han dado aquí
+en medio vale y aquí aunque sea este
+píxel de aquí ahí ya no se nota está más
+constreñido esto es una de las cosas que
+tenéis que intentar hacer para favorecer
+al jugador y hacer que la jugabilidad
+sea más amable utilizar un don de inbox
+favorable al jugador y esto va en la
+misma línea le va a producir muy buenas
+sensaciones el hecho de que las
+colisiones le afecten más cerca no le
+afecten en el borde aunque toca algún
+pixel y eso le va a dar ventaja que
+además le va a hacer sentir bien y le va
+a hacer disfrutar más del juego
+y si miráis vídeos por ejemplo de
+youtube es muy típico en los vídeos de
+youtube cuando se analizan juegos retro
+o juegos de amstrad o juegos de
+plataformas clásicas ver youtubers que
+juegan a un juego y que os dicen las
+condiciones de este juego son muy
+agresivas la descripción de colisiones
+agresivas es esta etnia toca o aquí me
+han matado
+eso es una colisión agresiva vale esto
+es una colisión imperceptible el usuario
+la percibe como normal solo me matan si
+me han dado bien dado vale eso son
+detalles súper importantes de 26 tenéis
+que tener en cuenta control del
+personaje la interacción con el mundo
+todo esto es principal mucho antes que
+las mecánicas si estos detalles fallan
+podéis tener unas mecánicas súper chulas
+y un juego que no termina de molar
+no termina de molar por estos detalles
+vale así que esto lo primero de todo
+vale centrados cuando empecemos la
+semana que viene en pensar en hacer este
+tipo de interacciones el control del
+personaje la aceleración el movimiento
+del tal y el feeling el feeling que
+tiene todo esto vale
+algún comentario alguna cuestión
+pregunta
+crítica pues a mí me gustan más las
+colisiones agresivas me encantan los
+juegos agresivos voy a hacerla un dibujo
+más grande para que sea más agresivo ya
+vosotros podéis hacer los programas

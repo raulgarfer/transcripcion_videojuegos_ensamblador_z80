@@ -1,0 +1,239 @@
+[Música]
+sí
+[Música]
+lo principal que estoy viendo en general
+son problemas de gestión de memoria y
+problemas de entendimiento de la
+relación entre ensamblador y código
+máquina
+hay una cosa que sucede y que es
+misteriosa pero sucede salís del código
+máquina os vais a ensamblador y
+misteriosamente es como si olvida 6 que
+todo lo que hay en ensamblador se
+traduce a código máquina y que lo único
+que se ejecuta es el código máquina el
+ensamblador solo es una herramienta para
+que nosotros podamos expresar cosas que
+luego son traducidas a código máquina y
+si algo en ensamblador no existe en
+código máquina no existe en código
+máquina y esto cuesta verlo porque he
+recibido preguntas sobre etiquetas y
+sobre lo que las etiquetas significan si
+las uso de una manera que las uso de
+otra vale he recibido preguntas de este
+estilo y en esto a ver por ejemplo he
+recibido muchas preguntas de la
+diferencia
+entre esto
+y esto
+para poner la etiqueta aquí
+se ve bien
+vale esto de aquí abajo además se puede
+poner así
+qué diferencia hay
+en el primero lo que se está haciendo es
+guardar al registro h de la dirección de
+memoria de la etiqueta etiqueta y en el
+segundo lo que haces es guardar en
+adquiere el contenido de la dirección de
+memoria de etiqueta acá vale esa sería
+una descripción correcta me falta
+solamente un detalle y es que esto y
+esto el problema principal que que me
+encuentro es que lo veis desde el punto
+de vista de los lenguajes de alto nivel
+y me explico el punto de vista de los
+lenguajes de alto nivel es que esto lo
+veis como si fuera una función si yo
+llamo a una función en c
+y vosotros podéis poner aquí por ejemplo
+una variable
+o podéis hacer así
+y le pasó la dirección de memoria por
+ejemplo
+eso serían dos llamadas entonces muchos
+veis estas dos cosas las estáis viendo
+igual que estas dos cosas
+y no son iguales son muy diferentes
+porque esto no son funciones son
+instrucciones y la diferencia es que si
+esto que estoy yo representando aquí es
+una instrucción del ensamblador se puede
+traducir al código máquina y si no no se
+puede por ejemplo
+si yo en vez de poner esto
+pusiera
+esto de aquí parece exactamente igual a
+lo de arriba
+porque tengo esto aquí claro y si lo
+veis desde este punto de vista sólo es
+un parámetro lo que diferencia a esto de
+esto pero la realidad es que esto de
+aquí se puede ensamblar y esto no
+porque no existe ninguna instrucción en
+el procesador que tenga la capacidad de
+cargar de lo que hay en una dirección de
+memoria
+si etiqueta supongamos que valiese
+4000 por ejemplo esto y esto
+son lo mismo
+estoy estos son lo mismo si etiqueta
+vale 4000 y esto lo que está diciendo es
+voy a meter en ve lo que hay ahora mismo
+en la dirección 4000 esto no existe no
+hay ninguna instrucción de la cpu que
+haga es ninguna
+pese al oído igualito que se ve algo de
+arriba porque no son funciones vale a
+cuantos os ha pasado confusiones de este
+estilo decidme por qué yo estoy he visto
+más de uno
+nadie se atreve a decirlo
+esto lo he visto y he visto dudas ahora
+nadie se atreve a decir yo fui voy a
+compilar
+y si os fijáis cuando con pilot me sale
+este error
+este error si lo traducimos en la línea
+35 dice
+esto es una forma de direccionamiento de
+máquina específico
+a modo de direccionamiento está
+incompleto aquí vale porque creo que una
+vez más no he desplazado el proyector
+direccionamiento específico de máquina o
+modo de direccionamiento error es decir
+es un error porque hemos puesto un modo
+de direccionamiento o modo específico de
+máquina incorrecto qué significa esto
+del modo de direccionamiento alguien
+sabe qué es lo del modo direccionamiento
+alguien podría decirme que es el modo de
+direccionamiento
+por siempre
+eso es más o menos picado así como dice
+además nicole hay memoria directa o
+indirectamente el caso es que yo aquí
+cuando hago esto lo que estoy haciendo
+es que tengo 3 bytes en memoria vale que
+son el país 21 y 2 bytes que vienen a
+continuación que esos dos bytes son lo
+que se va a meter en hl eso es
+direccionamiento directo yo le estoy
+diciendo mete nhl y a continuación te
+doy los dos vais de lo que tienes que
+meter en hl
+esto sería direccionamiento indirecto
+porque yo te digo tienes que meter en hl
+pero no lo que viene justo a
+continuación en memoria sino lo que
+viene justo a continuación es una
+dirección de memoria a la que te tienes
+que ir a leer y lo que leas allí lo
+metes en hl
+esas dos instrucciones significan esas
+dos cosas y esto él como yo dirección no
+los bytes que vienen a hl eso es el modo
+de direccionamiento directo porque lo
+que tengo a continuación de la
+instrucción son los dos países voy a
+meter o indirecto porque lo que le estoy
+dando es una dirección de memoria donde
+tiene
+el valor que tiene que meter vale pues
+cuando el ensamblador me está diciendo
+error de modo de direccionamiento esto
+de aquí en realidad me está diciendo
+esta instrucción no existe no hay ese
+modo de direccionamiento no existe yo no
+puedo decirle al ensamblador mete en be
+algo de lo que yo ahora te voy a dar una
+dirección de memoria que tú vas a buscar
+la lees allí lo metes en be eso no
+existe no puedo hacerlo vale y eso es lo
+que me está diciendo aquí en esta línea
+35 como veis vale en la línea 35 me dice
+que no puede hacer eso porque porque
+esto se puede hacer con h l se puede
+hacer con a se puede hacer con d y con
+bc vale hay instrucciones
+para hacer esto
+pero no se puede hacer con b por ejemplo
+si yo hago todo esto
+y con pilot
+veréis que compila
+y veréis que si me voy como ya sabéis a
+la carpeta o bj y me voy al mail
+vale
+y voy al final ahí vais a ver el de hl
+etiqueta
+21 03 00 por qué porque 0 300 es lo que
+vale etiqueta
+entonces he metido un 21 que le dice
+mete en h l lo que viene a continuación
+esto
+y este es no es 21 es 2a porque estas
+dos cosas aunque parecen lo mismo son
+dos instrucciones diferentes la
+instrucción 21 y la instrucción 2 y la
+instrucción 2a no dice mete esto en hl
+dice ve a ver a esta posición de memoria
+voy a ver lo que hay y lo que haya en
+esa posición de memoria lo metes en hl
+si os digo eso que será lo que entren hl
+mirando ahí decidme qué
+es el valor que tomara hl tras ejecutar
+esa instrucción
+21 no es correcto 21 03 no es correcto
+03 21 eso es h l cuando cargo que algo
+16 bits pero recordemos que es little
+indian este 21 irá a él y este 03 irá h
+por lo tanto 03 21 porque estos son los
+dos bytes que hay en la posición 3 y
+aquí estoy diciendo meten h l lo que
+haya en la posición 3 que es esto y esto
+vale
+y como veis las siguientes de ibc son
+dos instrucciones gorditas éstas cuando
+la veáis veréis que cuestan más ciclos
+de ejecución que ésta y aquí tenéis el
+porqué si os fijáis la instrucción con
+hl es la 21 y la 2a pero para poder
+cargar en d y en bc el contenido de la
+memoria las instrucciones son de 5 b 10
+de 4 vez son instrucciones de 2 bytes
+son instrucciones extendidas se llaman
+así precisamente por eso porque llevan 2
+bytes no 1
+así que estos son cuatro bytes en vez de
+tres como arriba y leer 4 gbytes de
+memoria cuesta más tiempo que leer 3 con
+lo cual solo leer la instrucción es más
+lento por eso estas dos instrucciones
+aunque se vean iguales que las de arriba
+son más lentas y eso es porque son
+instrucciones diferentes y esta que veis
+aquí abajo la deberías conocer también
+la 3a que es que cargo en la dirección
+de la memoria y la inmediata a 3a
+también deberíais de saber cuál es os
+debería de saber de memoria
+elop code de la que es la versión
+inmediata de esta cual es
+porque esta es la indirecta pero la
+versión directa o inmediata cuales 13
+correcto vale con 13 le pongo al lado el
+valle que quiero meter en a con 3 a lo
+que le pongo al lado de la dirección de
+memoria donde tiene que ir a buscar el
+byte y esta de aquí sí que metería en él
+a un 21 porque como es un registro de 8
+bits me vengo aquí a la dirección 3 que
+es lo que marca esto y aquí hay un 21
+que es lo que me vale
+todo esto se entiende
+instrucciones diferentes por tanto
+cuando de un error la instrucción no
+existe no son funciones

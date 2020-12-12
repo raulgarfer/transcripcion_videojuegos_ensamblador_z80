@@ -1,0 +1,186 @@
+[Música]
+sí
+[Música]
+preguntas cuestiones como la función a
+la que no entiendes como he hecho lo de
+la inversión de control ensamblador la
+llamada a la acción media normal
+hay muchas formas de hacerlo muchas
+la primera es entender que el
+ensamblador y el código máquina
+solamente es uno que produce el otro la
+segunda es entender que en código
+máquina tú las instrucciones son también
+datos están en la memoria
+si yo tengo que poner esto
+por ejemplo
+me lo puedes poner en código máquina
+[Música]
+alguien que me ponga este un código
+máquina
+c 9 y se de vale eso es cd 00 40 la
+destrucción col y la dirección de
+memoria sí
+lobezno
+bueno pues aquí vamos 0040 que está en
+dos países de la memoria porque tú
+cuando traduzca lo de arriba pues
+tendrás un 13 por ejemplo tienes 13 88
+32
+por ejemplo y luego cede 0
+en mitad de la memoria de por ejemplo la
+518 efe
+esto es código máquina está ahí
+que te impide cambiar estos dos bytes
+cuando tú quieras y poner otros
+qué más da están en la memoria ocupan
+dos vice de memoria tú puedes cambiar
+este byte de memoria como cambiase este
+o como cambiar cualquier otro solamente
+coges ese ballet que esto si estos
+cuatro mil 1 2 3 4 5 6 y 7 4 mil 64 mil
+7 los cambios y la siguiente vez que se
+ejecute eso pone otra cosa
+directamente esto se llama código auto
+modificable tu puedes modificar esa
+parte de la rama directamente la ram es
+toda tuya hecho eso puedes hacerlo
+puedes hacerlo con cualquier cosa pues
+cambiar el código al del tiempo de
+ejecución y luego saltará a modo de
+tener que guardarlo para la instrucción
+para cuando escribas para sobrescribir
+ese código
+es muy fácil mirar es fácil mira si
+pones una etiqueta aquí
+esa etiqueta está apuntando al cde
+esta dirección de memoria es la
+dirección del cde la siguiente de q1 es
+donde están el 0 0 y el 40 y si quieres
+hacerlo más fácil en vez de una etiqueta
+hazte una constante y pones esta
+dirección de memoria que es donde estoy
+ahora punto más 1
+y entonces te cv directamente es un
+valor que es la dirección de memoria
+actual donde está hace de uno o sea
+directamente eso y ya puedes cambiar eso
+vale eso es una forma pero es que tienes
+otra hay una instrucción muy bonita que
+es esta
+que también tiene otra versión existe
+esta y también existe ésta
+y eso lo que hace es saltar a la
+dirección de memoria h l sí hl es 4000
+eso salta 4000
+en esa inversión no pueden hacer lo que
+hace cualquiera que es tú cuando haces
+red
+lo que hace red es ir a la pila y
+los dos primeros bytes y saltar ahí
+red vuelve porque en la pila has
+guardado la dirección de memoria de la
+siguiente instrucción entonces si tú
+aquí tienes una
+una etiqueta tú puedes hacer esto
+ld
+h l coma siguiente
+por ejemplo en vez de usar h l vamos a
+usar por ejemplo lo guardo en la pila
+bus d
+y lo que estoy guardando en la pila con
+esto es esta dirección de memoria
+a continuación hago jp hl y si en ese
+salto que alguien hace red el red cogerá
+lo que he metido con este pus que es
+esta dirección y saltará ahí
+de hecho es más esto de aquí
+si yo hago esto la ejecución ejecuta
+esto luego esto luego esto y luego lo
+que viene a continuación
+porque red lo único que hace es de
+la pila la primera dirección que haya
+los primeros dos bytes y saltar ahí si
+yo he metido esta dirección porque cargo
+esta dirección de la meto en la pila y a
+continuación hago red con lo cual salto
+aquí que es justo la dirección a
+continuación
+vale
+tienes muchas formas de hacer que esto
+no es sólo la inversión de control sino
+saltos a direcciones de memoria
+indirectas que no la tengas que poner tú
+a mano si no la metes en el código
+modificando usas jp hl jp y equis jp y
+final un col no es más que un salto un
+jp
+pero habiendo metido justo antes en la
+pila la dirección de retorno
+bueno más cosas más dudas más preguntas
+muy bien
+[Música]
+o
+no te llegan a entender porque me
+gustaba oírte carlos ahora sí te oigo
+pero cuesta un poquillo vale ahora sí sí
+me vale que tenga como ves tú cuál es la
+mejor forma de guardar ha venido por si
+tienen contigua está memoria otra
+dirección de negocio
+qué
+tengo que tiene y guardar en dos
+posiciones contiguas de memoria otra
+dirección no lo entiendo otra dirección
+de memoria
+pero es que no sé guardar direcciones de
+memoria es guardar direcciones de
+memoria o sea la dirección 4000 por 0 0
+40
+pero tú a lo que te refieres es que si
+tienes una dirección de memoria guardada
+como recuperarla quieres decir
+o sea yo tengo por ejemplo aquí en
+memoria
+vale
+dirección esto es una etiqueta y pongo
+bebé
+0 0
+c 0 por ejemplo en una dirección de
+memoria
+que no sé cuál es porque es variable y
+lo quiero recuperar
+por ejemplo haces así hl o mejor por
+ejemplo con esto haces y x
+es la dirección de memoria no
+y entonces yo puedo hacer ld
+y coma
+y x
+y el ede
+de coma 1 y x
+vale
+por ejemplo esto sería una opción vale
+me cojo los dos bytes y los meto en su
+orden correcto en d
+por ejemplo otra opción
+si lo quiero meter en h l h l y usando h
+l además hl es la dirección de memoria
+cargo en a
+hl vale y eso me metería el 0 en a
+a continuación incremento h l
+y eso hace que hl esté apuntando al
+siguiente valor y entonces ahora meto en
+h hl y en el método
+claro esto que hago primero lo hago aquí
+porque si aquí meto en él lo que hay en
+h&m cargo el propio hl y no puedo usarlo
+para lo siguiente
+en ella
+pero así de sencillo uso el propio cl
+para una dirección a donde se le
+está apuntando
+no sabía que en una instrucción si lo
+haces
+fijo puedes hacerlo
+claro si lo tienes fijo si es variable
+ya no

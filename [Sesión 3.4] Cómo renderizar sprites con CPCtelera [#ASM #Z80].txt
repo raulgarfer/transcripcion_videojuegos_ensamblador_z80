@@ -1,0 +1,423 @@
+[Música]
+sí
+[Música]
+así que me hago mi bucle principal y
+aquí tengo mi hijo te reconoce nada
+otros hago un look
+y un jd reloj
+y entonces tendré que llamar
+al
+si se venderán update
+y al cis physics update
+porque así render hizo mis entidades y a
+continuación llamó al sistema físico
+después me hago un pequeño bucle de
+espera para que esto no vaya muy rápido
+que esto ya lo hemos visto con el pct
+white
+v 5
+más
+y como ya sabéis esperar a nubes inc
+si lo que aguarda es muy rápido esto no
+me va a garantizar que la siguiente vez
+que venga aquí abajo haya terminado la
+señal de uve 5 así que si hago dos veces
+esto en realidad va a tardar lo mismo
+que si alguna vale así que lo que voy a
+hacer es esto
+y esto lo repito
+lo repito cinco veces como que esto es
+lo mismo que poner falsas esperanzas
+esperado y cinco así cuando termina eso
+esperado cinco veces a nubes inc me
+espera 25 fotogramas es la
+ejecución vale todo esto en principio
+ahora no debería hacer absolutamente
+nada
+además de fallar estrepitosamente porque
+dice que no encuentra un símbolo en la
+línea 54
+vale vamos a ver esto
+si lo compiló
+voy a ver mi mail
+que no me estoy haciendo nada raro
+vale
+el repite este de aquí
+no parece que esté haciendo nada verdad
+os fijáis
+aquí no se genera código a partir del
+look
+esto es bastante misterioso verdad
+porque no se genera código a partir del
+lucro
+a lo mejor este 5
+a ver esto que estoy poniendo del repeat
+no sé por qué
+no le gusta en 52 ahora se queja de que
+no tengo guay tuve cinco y antes no se
+estaba quejando
+os habéis fijado antes no se quejaba de
+que no tengo y que no tienes
+vale
+ahora esto compilará espero
+y ahora igual es que antes lo estaba
+haciendo bien
+repetir 5 veces
+fin de la macro
+y lo que se estaba quejando de ser el
+way to be seeing solo que me lo estaba
+poniendo en la línea de abajo os habéis
+fijado
+me decía yo me he fijado mal ahora sí
+como veis esto me genera los hearts y
+los cds como debería antes no
+he visto que a veces las cosas hay que
+mirar lo que se genera
+para hacer las dos llamadas
+y quería hacer esto y vamos a ver si
+ahora compilar
+y no revienta
+vale si os fijáis con una cosa tan tonta
+como ésta uno puede estar dando mil
+vueltas y si no mira lo que nos ha
+generado a ver si es lo que debería nos
+habríamos quedado un montón de horas
+probando cosas que no son
+vale vemos que esto ya funciona
+ahora mismo ya no nos hace falta tanto
+brillo
+ya que tenemos menos luz
+primero de todo él no necesita al
+registro con la dirección a la que se va
+a escribir y el registro bc para saber
+cuánto quiere eso todo todo eso ya lo
+hemos hecho no sea álvaro si atrás
+quedado con una idea equivocada de lo
+que estaba explicando pero aquí he
+explicado que cuando llamamos al man and
+it y craig
+manent y nos devuelve ende y en vez de
+lo que necesitamos no tenemos que
+ponernos nosotros y ya cuando vuelve de
+la función ya está en esos registros los
+valores que queremos solamente ponemos
+en h l es gran falta porque ya está en
+puntero a la entidad que acaba de crear
+y en bc el tamaño de esa entidad con lo
+cual no tenemos que ponerlo ya viene de
+la función
+vale y ahora es cuando hacemos el render
+vamos a crear el render
+en el sistema me vengo al render
+aquí tengo mi sprite y aquí tengo render
+one equity
+en el que sabemos que nos van a dar en y
+x la entidad
+vale
+muy bien si tengo en y x un puntero a
+una entidad y mi entidad tiene como
+habéis visto definidos es un rayado x es
+un rayado y y es un rayado vi como pintó
+un sprite
+para esa entidad para esa posición de
+pantalla
+como podría pintar un spray para la
+posición de pantalla x y de la entidad
+que tengo ni x qué funciones usaríamos
+para empezar
+[Música]
+necesitamos la dirección de memoria de
+vídeo te refieres donde debemos pintar
+como convirtiéndose más
+con el presente desde el 50 al esp ctt
+string point es así
+estado
+y si yo no sé cómo funciona hacer
+presente gente screen pointer como la
+uso
+qué puedo hacer para saber cómo funciona
+-alejandro
+te vas a iniciar de nada simplemente
+vela
+la ayuda de aceite ctl era que la tengo
+aquí
+esta ayuda de cpc telera cuidado no la
+miréis en la web porque la ayuda que
+está en la web es decir presente lega
+1.4 punto 2 de la estable de hace dos
+años vosotros estáis usando la cepa 715
+esta ayuda la tenéis dentro de la
+carpeta deteriora en docs hay un blindex
+no abrigo en el navegador y tenéis que
+ayuda entonces en esta ayuda si me voy a
+dar al capítulo vídeo dentro del vídeo
+tengo que te escribo intereses
+pues aquí tengo en cereté screen pointer
+más grande
+veréis que me dice la definición en ce y
+abajo me dice los parámetros que tiene
+de entrada y aquí me indica en qué
+registros
+vale aquí me dice que necesita el
+puntero al principio de la memoria de
+vídeo llamado es cristal ente y tengo
+que poner de el valor de donde empieza
+la memoria de guiño en que tengo que
+poner el valor de x y en vez tengo que
+poner el valor de y vale como véis abajo
+el call en el ensamblador lo pone aquí
+que pone
+cpc tlc string pointer asma y ojo
+esto lo vais a necesitar mucho
+aquí ponen restricciones de los
+parámetros y os dicen los rangos y los
+valores que podéis poner en cada
+parámetro las funciones de cpc calidad
+no hacen ninguna comprobación de que los
+parámetros que le metéis sean valores
+válidos si yo le digo que quiero pintar
+en la posición 256 en x
+se lo va a tragar
+pero la posición 256 en x no existe mi
+memoria de vídeo normalmente tiene
+valores de 0 a 80 y luego veremos que se
+puede modificar para poner otros pero de
+0 80 para empezar nada más
+lo tenéis claro esto es necesario es ahí
+de hecho que pone de 0 a 79 0 a 199 como
+veis aquí todo esto tiene unos valores
+concretos y eso pasa con todas las
+funciones de gps tener a cuando vayáis a
+usar una tenéis que leer la ayuda para
+no meter la pata y ya os aviso la meter
+es porque pasa vale porque usaremos
+alguna sin leer la ayuda suponiendo
+cosas en vez de leerlas esto pasa pero
+está ahí en la ayuda los parámetros que
+podáis y luego también tenéis la carpeta
+ejemplos de gps tener a donde hay
+ejemplos de uso están en ce la mayoría
+pero os vale para este tipo de detalles
+vale importante
+esto vale entonces sabemos que tenemos
+que poner en d
+vale tengo que poner el principio de la
+memoria de vídeo que supongo que lo
+sabéis no
+el principio de algo de anillo y ahora
+tengo que poner empecé
+porque necesito en la x y la i pero
+claro si luego pongo así no puedo
+en vez
+que lo vea aquí
+en bbva la y en c x vale así que voy a
+poner aquí en b
+la y donde tengo que poner mi sprite
+como estoy manejando una entidad mi x
+tiene posiciones x e y como cargo en vez
+la posición
+y la posición de mi entidad
+esto es una instrucción que es por la
+cual el zeta 80 es un procesador muy
+usado precisamente y x es un registro
+llamado registro índice si yo esto
+es muy parecido a hacer esto
+puedo cargar en vez aquello a lo que
+apunta el cl o aquello a lo que apunta y
+x pero y x tiene una ventaja respecto a
+hl de algo que se puede hacer con mi x
+pero no con h l en muchos ensambladores
+se hace así
+se le puede añadir x un valor de
+desplazamiento entre menos 128 y más 127
+de modo que si tenemos si x apuntando a
+un sitio con ese puntero podemos
+256 valores alrededor de donde apunta y
+x poniendo esto pero ojo esto es una
+constante cuando esto se pone como
+constante en este ensamblador esto que
+estoy poniendo aquí se pone así
+esto significa y x5 la posición de
+memoria de y x 5 y como es de 5 es una
+constante
+podemos utilizar cualquier constante
+definida con nombre en lugar del número
+porque da igual con el número poner la
+constante y en particular yo tengo
+definido a qué distancia del puntero a
+la entidad está la y
+esto significa carga
+lo que hay apuntando la memoria por ti x
+más lo que valga y que si me voy aquí
+en litis
+h
+aquí veréis que está definido y dice que
+es igual a 2 de modo que esto me sirven
+para decir que el banco cero es el
+tiempo el 20 1 es la equis el byte 2 es
+line el 93 es la velocidad y luego con x
+yo digo coge y x0 y x1 y x2 x + 3 y cojo
+los distintos valores de mi entidad
+queda claro lo que significa esto
+alguna duda
+para lo mismo que hago esto lo puedo
+hacer también para el valor de la
+equis
+entonces ahora le pasó en bcs y el
+puntero al principio del vídeo y ya
+nuestra función y esa función calcula
+esa xy a qué dirección de memoria
+corresponde pero claro ahora necesito
+saber cuándo es lo calcula donde lo
+devuelve o cómo lo devuelve vale
+entonces me voy aquí y veréis que poner
+valor de retorno aquí abajo restan vale
+y pone es un puntero a bike y que está
+en h el cual eso no sé si lo veis pero
+aquí pone h m significa que cuando la
+función termina y vuelve el h l
+tengo la dirección de memoria donde
+tengo que escribir si quiero escribir en
+la coordenada xy
+así que aquí h él es
+mi idioma
+muy bien
+así que ahora tengo que ver cómo pinto
+en esa dirección de memoria un spray
+concretamente el sprays que tengo arriba
+qué es este spray cuatrimestral
+tal y como pinto guardián sprite
+en esta dirección de memoria
+sino a veces
+se podría hacer con nada de mí
+rodilla el otro día estuvimos viendo
+aquí cómo pintar un spray pero en
+realidad hemos dibujado un cuadrado de
+color
+pero empecé telera nos permite usarla
+una técnica muy similar a lo hicimos el
+otro día para pintar nuestra
+qué es básicamente utilizar algo
+parecido a lo que acabamos de ver ahora
+para rellenar los valores de una entidad
+pero ir rellenando las filas en memoria
+de vídeo
+eso mismo que hicimos el otro día pero
+copiando en vez de poner el mismo
+valores copiando esos valores
+y eso es
+este presente drop spray
+se presente dentro sprite
+que está en la categoría específica de
+sprites aquí
+nos dice que copia un spray desde una
+raya hasta la memoria de vídeo
+básicamente lo que ya sabéis que es
+dibujar un spray que es escribir en la
+memoria de vídeo los valores del empress
+solamente lo que sustituyendo lo que hay
+hubiera
+aquí nos da los parámetros y entonces yo
+me cojo los parámetros
+me los tengo aquí
+así los tengo los parámetros
+y me dice qué edad se le tiene que estar
+el puntero al spray
+y el de tengo que tener el destino es
+decir donde quiero pintarlo ahora mismo
+tengo en acceder a él donde quiero
+pintarlo no lo tengo en d
+como puedo ponerlo
+con la pila puedo ponerlo con la pila
+pero no se te ocurre formas más fáciles
+porque claro si quiero poner lo que hay
+es excelente como lo constató la pila
+es
+dhl
+esto escribe aquel en la pila y lo otro
+es lee
+lo que hay en la pila y lo ponen de nos
+ocurre otra forma de hacer esto porque
+esto además de gastar la memoria de la
+pila que escribe en memoria de la pila
+está en memoria y estamos escribiendo en
+memorias ocupa siete ciclos 72 segundos
+hoy microsegundos perdón pero hay
+algunos están diciendo esto otro
+de como él
+que esto en realidad viene de exchange
+es intercambiar
+entonces lo que hacemos con esto esto de
+aquí tarda un microsegundo esto de aquí
+si no recuerdo mal el pop son tres y el
+pool son cuatro
+esto no escribe nada en memoria tarda un
+microsegundo lo de arriba escribe en
+memoria y tardas 7 microsegundos y esto
+de aquí en realidad no hace una copia
+sino que los intercambien y me pone lo
+que hay en hd y los gallos de nhl es
+pero como lo que hay de no me importa
+puedo usarlo y después de esto tendré el
+de exactamente lo que tiene que haber
+aquí que es el destino el puntero la
+memoria de vídeo ahora tengo que cargar
+en hll sprites comprobado
+que pongo para cargar en el instante
+hacer coma
+[Música]
+hasta
+7
+como lo llama
+4
+la dirección donde empieza el array en
+spray
+este es fijo cuales es para decir un
+tamaño concreto puedo hacer así
+entonces el ancho y el alto como son
+8 píxeles de ancho y 26 de alto que
+tengo que poner aquí para poner otro
+píxeles de alto y 16 de ancho teniendo
+en cuenta que el borrado
+el ancho alto e mail entonces en vez de
+tengo que poner los 16 píxeles
+los píxeles que pongo
+tenemos los ojos de jugadas preparadas
+de ella
+16 de alto 8 de ancho
+por ahí alejandro dice que 8 10 08 10 04
+porque 10 04
+la natura
+y mantener a
+y bien
+10 es 16 de mixta decimal que va a ver y
+por tanto lo que metemos es un 16 y en c
+tenemos que poner 8 píxeles que como
+estamos en modo 0
+son 4 baños 0 4 y el 0 4
+bueno si es sopa ya deberíamos de ser
+capaces de pintar
+en memoria de vídeo las entidades
+funcionará
+pues os
+brilla la pantalla
+esta varilla de más
+no hemos puesto que como siempre
+i
+si no está declarada como global
+no puede avanzar lógicamente
+por qué
+tb
+tenemos un par de monigotes
+pintados en sus distintas posiciones
+tenemos dos entidades que las hemos
+creado son dos monigotes y están en sus
+distintas posiciones ahora
+estos dos monigotes que hemos creado va
+a haber que hacer algo con ellos
+moverlos antes de que terminemos la
+acción de removerlos así que para no
+vernos ya estamos llamando al
+actualizado de esto ya habíamos visto
+que se llama para cada actividad ahora
+hacemos lo mismo en el sistema de física

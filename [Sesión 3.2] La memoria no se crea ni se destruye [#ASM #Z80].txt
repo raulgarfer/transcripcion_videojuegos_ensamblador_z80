@@ -1,0 +1,289 @@
+[Música]
+sí
+[Música]
+hay un problema principal que tenéis
+todos y proviene de haber estado tiempo
+usando lenguajes de alto nivel
+el problema que tenéis todos es la
+costumbre de utilizar new y delete malo
+y free o cualquier versión de cualquier
+lenguaje de reserva libera
+la costumbre en mental que se adquiere
+con un reserva libera es como si yo pido
+memoria
+y suelto memoria y entonces tenéis
+costumbres de pensar en eso como memoria
+que existe y deja de existir
+la memoria
+existen y deja de existir siempre está
+ahí siempre es liberar una zona de
+memoria no es hacer una operación sobre
+esa zona de memoria cuando liberamos una
+zona de memoria lo que estamos haciendo
+es simplemente yo tengo unos bytes en
+algún lugar por ejemplo ya habéis visto
+que me puedo crear un array entonces
+creo un array que lo que hago
+simplemente crear una etiqueta que me
+indica dónde empieza a la raíz porque
+esto no es crear un array es una
+dirección de memoria dónde va a empezar
+el array y entonces ahora pongo de s
+distribución nos lo pone de ese y le
+pongo 100 pues tengo 100 bytes en la
+memoria 100 bytes que empiezan en la
+etiqueta raíz
+y ahora dice alguien yo es que quiero
+liberar esa memoria en qué consiste
+liberar esa memoria simplemente en dejar
+de usarla eso es liberar la memoria
+cuando vosotros estáis acostumbrados a
+reservar y liberar
+es básicamente lo que habéis visto ahora
+mismo en los dos vídeos del star field
+reservar es yo aquí tengo 100 bytes
+y yo voy a empezar a usar los 10
+primeros bytes para un enemigo porque
+quiero tener su posición x su posición y
+una puntero a su comportamiento quiero
+poner varias cosas 10 bytes los 10
+primeros bytes los voy a empezar a usar
+para un enemigo que se crea ahora qué
+hago para reservar esa memoria
+simplemente en algún sitio yo me apunto
+que estoy usando esos 10 bytes y eso
+como lo hago por lo habéis visto
+utilizando punteros que indican la parte
+que estoy usando y la parte que no lo
+podemos acceder con un contador que diga
+cuántos bloques de 10 bytes de estos 100
+estoy usando pero es soy yo quien me
+apunto en un sitio lo estoy usando
+para que la única finalidad es que no
+venga luego en el programa y sin querer
+esos datos que yo he puesto en los
+primeros 10 vais de una entidad yo mismo
+me los sobre escriba porque me cargaría
+esos datos y no quiero cargarme los los
+estoy usando entonces me apunto en algún
+sitio de los 10 primeros país los estoy
+usando los otros 90 no no los estoy
+usando por tanto están libres
+estar reservado no es lo mismo que esto
+de aquí que es que yo simplemente he
+dicho este espacio lo voy a usar para lo
+que quiera el ensamblador no escribe ahí
+y yo cuando ejecuto tengo 100 bytes ahí
+es lo que digo uso 10 uso 20 uso 30
+destruye una entidad pues esté usando 30
+pasó a usar 20 pero soy yo quien me lo
+apunto simplemente para saber que estoy
+usando de los bytes que tengo no hay
+ninguna operación en la que yo diga voy
+a liberar esa memoria y haga pge y la
+memoria desaparezca la memoria no
+desaparece si esto de aquí cae en la
+posición 1000 pues hay 100 bytes desde
+la 1000 a la 1100
+y ya está y están ahí siempre no van a
+dejar de estar ahí no puedo liberar y
+decir ya no hay mil bytes de la mil a la
+1100 no están ahí y solamente es los
+estoy usando o no los estoy usando y
+esto no es porque sea una amstrad en un
+pc pasa exactamente igual lo único que
+ocurre en un pc es que el entorno es más
+complejo porque aquí no hay procesos
+aquí sólo sois vosotros el único hilo de
+ejecución es vuestro código por tanto no
+hay otros programas que vayan a escribir
+ahí y pixar os el sembrado ningún otro
+programa va a venir y os va a romper los
+datos porque no hay otros programas en
+ejecución pero empecé si empecé en un
+sistema operativo hay muchos programas
+en ejecución a la vez que son procesos y
+por eso la memoria que la comparten
+todos tienen que reservarla para que
+para que yo utilizo alguien que le digo
+oye dame memoria que no esté siendo
+usada la memoria está ahí simplemente me
+da un puntero a una zona que nadie está
+usando
+entonces yo escribo en esa zona en la
+que nadie está escribiendo y además se
+marca que ya lo estoy usando yo para que
+otros procesos no escriban ahí esa es la
+idea de reservar y liberar la memoria
+existe siempre simplemente administro su
+uso ahora uso esto ahora eso es todo
+dentro esto no lo estoy usando y esto si
+ya está eso es reservar y liberado
+tenéis alguna duda respecto a esto que
+acabo de contar se ha entendido el
+concepto hay algo de lo que he contado
+que os suene extraño
+digáis pero si a mí me han deseado toda
+la vida que yo creía que
+pero se llamaba s
+no esto sabes por qué te pasa
+en una misma posición de memoria puedes
+tener varios símbolos
+si tú tienes un array la etiqueta
+definida por ejemplo en la misma
+posición de memoria donde empieza el
+código el código empieza en la misma
+etiqueta que subrayado code subrayado
+data donde empiezan los datos vale si yo
+por ejemplo mira voy a hacer para que lo
+veas me llevo el array aquí ves el área
+data
+voy a crear aquí en vez de la rai voy a
+crear una etiqueta que sea prueba para
+que nos quede claro le hago lo global y
+pongo que sean pues unos bytes y si
+vamos a hacer así
+para que luego lo identifiquemos en
+memoria
+esto este patrón cuando lo veamos en
+memoria está bastante claro
+y el principio el primer byte es la
+dirección prueba yo esto lo compiló
+ensambló para ser exactos porque esto no
+se compila y entonces ahora si abro el
+fichero map
+el game apple
+veréis que en el game map nos dice que
+tenemos la etiqueta s code en la 4000 la
+etiqueta s data en la 42 ede vale si
+ahora me voy a ver dónde está mi hija
+ray-ban aquí tengo muchas más cosas pero
+me voy a buscar el prueba fíjate dónde
+está prueba
+prueba vale 4 12 de ese data vale 4 12 d
+son dos símbolos dos etiquetas que valen
+lo mismo pues cuando te vas al depurador
+en ensamblador en el gwinnett elige una
+de las dos normalmente la que primero se
+ha definido con lo cual te pone ese data
+pero también es la misma dirección que
+prueba es la misma no pasa que coinciden
+simplemente vale
+álvaro dice una cosa qué diferencia hay
+entre dw 000 y hacerlo con debe porque
+yo pensaba que si ponías el valor daba
+igual vale es muy fácil este tipo de
+cosas de qué diferencia hay entre de w y
+de b son cosas que vosotros podéis
+probar vale y lo voy a hacer para que lo
+veáis voy a poner
+esto con db y voy a poner esto con dw
+ahora poniendo esto que veis ahí vale
+porque bites esto es un byte y esto es
+un word word son dos bytes vale -define
+world y find byte un byte y un world war
+2 bytes byte un byte vale eso me define
+4 bytes decidme cuando yo miré en
+memoria esos 4 bytes que va a salir en
+esos 4 bytes
+decidme exactamente qué voy a ver en
+memoria qué patrón de 4 bytes va a haber
+en memoria
+ignacio dice a bb a bb y adrián dice a
+bebe bebe
+votad esas dos opciones o una tercera si
+queréis voy a ensamblar
+parece un soneto bueno si esto lo
+intentamos poner como un soneto
+seguramente nos trataran de locos de ahí
+para arriba
+vamos a ver la traducción del mail en el
+st
+abajo y fijaos la traducción que la
+tenéis aquí
+cuando yo traduzco aquí yo estoy
+diciendo de fin un byte
+y a continuación un byte pp por tanto a
+pp porque definido el by primero como el
+segundo como bb y ahora digo quiero
+definir una palabra un word de dos bytes
+como abb y la salida es bb.aa porque
+estamos en little indian acordaos
+entonces si yo quiero definir un valor
+de 16 bits los valores de 16 bits se
+tienen que poner como valor bajo valor
+alto esto de aquí son 16 bits pero yo lo
+estoy definiendo como dos valores de 8
+por tanto el primero a primero el
+segundo a segundo son dos valores de
+ocho pero esto es un valor de 16 y los
+valores de 16 es la parte baja primero
+la parte alta después de pesar la
+diferencia entre usar dw y usar debe que
+si yo por ejemplo quisiera con este
+formato
+definir la dirección de memoria donde
+empieza la memoria de vídeo lo tengo que
+hacer así con dw o lo tendría que hacer
+así
+si lo hago con db
+porque claro lógicamente si quiero el
+mismo resultado tengo que hacerlo de una
+opción o de la otra si yo quiero definir
+un valor de 16 bits a mano usando bytes
+tengo que poner primero el bajo y luego
+el alto si no para eso le digo a -define
+word delfino el valor a 16 bits y
+entonces él ya me lo ordena como
+corresponde vale queda claro
+estos son detalles
+como digo era súper importante el más
+importante es el tema de reserva y
+liberación de memoria la memoria siempre
+está ahí vale cuando haya definido una
+etiqueta ray eso cae en una posición
+1000 a 2000 la que sea y hay 100 bytes
+entonces yo uso y desuso los vice como
+yo quiero pero para saber cuáles estoy
+usando y cuáles no si quiero reutilizar
+entonces es cuando necesito hacerme mi
+propia gestión claro si esos vice son
+constantes y no se reutilizan sino que
+siempre tienen el mismo valor o siempre
+están activos y no hay que reutilizar
+entonces no hace falta gestionar reserva
+y liberación necesitamos gestionar
+reserva liberación porque porque en 100
+bytes metemos todas las entidades que
+están activas en el juego y caro las
+entidades que están en el juego son
+cosas que se crean y se destruyen que
+aparecen y desaparecen entonces yo no
+quiero tener un millón de bytes para no
+reutilizar nada y siempre ir poniendo
+todas las posibles entidades que van a
+salir ahí si no me sobra con tener cien
+y cuando tengo tres entidades en
+pantalla pues tengo treinta en uso y
+cuando entran cinco más tengo 80 y
+cuando
+3 pasó a tener 50 vale porque voy
+reutilizando esos 100 esa la idea de
+reservar y liberar nada más
+estas son las principales dudas que me
+encontrado vale ya os insistir la semana
+pasada en lo extremadamente relevante
+que es que tengáis claro la relación
+entre ensamblador y código máquina que
+el código máquina es lo que se ejecuta
+de verdad y el ensamblador que es lo que
+tenéis aquí solamente es una forma
+cómoda para nosotros de programar para
+que se transforme en código máquina vale
+eso es súper relevante que lo tengáis en
+cuenta porque así es como ahora ya
+habéis visto lo que hago yo quiero saber
+lo que hace una cosa lo que hago otra
+les digo al ensamblado que traduzca y
+miro a ver el código máquina generado y
+entonces entiendo lo que está haciendo

@@ -1,0 +1,1087 @@
+[Música]
+sí
+[Música]
+vamos a por más pues queremos hablar un
+poquito de game engine snow cuando
+hablamos de game engine es el concepto
+base en un game engine son las entidades
+pero al final si tenemos un juego
+nosotros lo que consideramos es que una
+bala es una entidad que un personaje es
+una entidad que un enemigo es una
+entidad consideramos que un obstáculo
+que se mueve es una entidad una
+plataforma que se mueve es una entidad
+vale entonces las entidades son como
+objetos que tienen vida propia y que
+requieren que en cada instante de tiempo
+que pasa en el juego se les pueda hacer
+cambios pueden cambiar de posición
+pueden cambiar de forma pueden crearse
+destruirse todo lo que está vivo por así
+decirlo en el juego todo lo que se
+actualiza normalmente tiende a ser una
+entidad entonces nosotros lo que hacemos
+es que para cada entidad en un juego
+almacenamos sus datos en los datos
+típicos de la entidad
+suelen ser suposición xxi su velocidad
+su ancho y su alto
+a lo mejor el comportamiento que tiene
+ahora si tiene una máquina de estados
+podemos guardar datos el color que tiene
+el sprite que tiene el estado de su
+animación todo eso son datos que
+requerimos para una entidad así
+necesitamos tener 20 o 30 entidades
+necesitamos espacio para tener los datos
+de 20 ó 30 cosas y además asumimos que
+las entidades no son constantes es decir
+yo no tengo 20 entidades desde el
+principio hasta el final del juego sino
+que en un momento dado tengo 5 en otro
+momento tengo 15 en el blog vuelvo a
+tener 7 luego tengo 18 se crean y se
+destruyen
+eso significa que crear y destruir
+requiere que re aprovechemos la memoria
+no tendría ningún sentido que yo cuando
+voy a crear entidades diga tengo espacio
+para 200 entidades porque si yo creo una
+en una zona de memoria y se destruye ese
+trozo de memoria no lo vuelvo a usar
+nunca más
+no hago que la memoria se rehúse si no
+yo creo una entidad las creo todas al
+principio y entonces cuando una se muere
+simplemente pongo que está muerta y ya
+esa memoria no la uso para nada este es
+perder el espacio tirarlo a la basura
+no nos sobra la memoria tenemos 64 casas
+y tenemos que darle un poco a la ram de
+vídeo entonces el principal motor que
+hay detrás de un videojuego es la
+gestión de esas entidades el componente
+más esencial del game engine es la
+gestión de entidades es como guardo en
+memoria las entidades y qué hago cuando
+creó una nueva que hago cuando borró una
+entidad que hago cuando una entidad se
+actualiza como decidido cuales actualizo
+y cuáles no eso es la parte esencial
+esto es lo que vais a ver
+el vídeo de gestión de entidades pero
+antes de llegar al vídeo de gestión de
+entidades vamos a hablar un poco de cómo
+eso se organiza desde dos puntos de
+vista el primero teórico porque os voy a
+explicar teóricamente y así por encima
+las ideas de tres tipos de gestión de
+entidades y esos tres tipos de gestión
+de entidades sobre los que yo os
+propongo que elijáis uno de ellos para
+vuestros juegos son tres tipos desde el
+más sencillo el estándar y el más
+complicado y de hecho los dos primeros
+que menciono son los que tenéis en los
+vídeos de game engine vale
+tenéis uno básico bueno de hecho el que
+voy a proponer básico completo es más
+básico todavía y tenéis uno estándar y
+os voy a proponer otro más avanzado
+porque hay determinadas características
+que podemos querer en nuestros juegos
+vale entonces voy a dibujar lo que
+seguramente será
+más fácil de ver vale
+entonces el primer tipo de gestión de
+entidades es que nosotros normalmente
+las entidades las vamos a tener en
+memoria
+sabéis que mi arte pictórico es regulero
+verdad
+o muy regular o
+vale esto pretende ser una raíz
+vale os imagináis que es una reina
+entonces yo lo que tengo en un array
+normalmente son aquí a lo mejor cada
+cachito de estos puede estar ocupando me
+de 10 bytes por ejemplo que sea lo que
+ocupe una entidad entonces tengo un
+array que empieza en algún sitio éste es
+el array de entidades
+esta es la primera esta es la segunda
+está en la tercera y tengo entidades
+entonces yo lo que tengo inicialmente
+cuando el juego empieza solamente tengo
+el array en memoria y el array es
+espacio memoria bytes que no estoy
+usando para nada
+cuando hablamos de reservar memoria de
+lo que hablamos es de dejar un espacio
+en memoria que no se usa para otras
+cosas eso es lo que es reservado al
+igual que el reservar en la vida diaria
+es decir yo reservo una cosa solo lo uso
+yo los demás no pueden entonces esto es
+igual la memoria está ahí yo digo este
+trozo no voy a poner ahí código no voy a
+poner ahí datos no voy a poner nada para
+que cuando yo quiera usarlo para meter
+entidades esté disponible
+eso es reservar nada más es decir de
+aquí aquí lo uso para otra cosa ya está
+no hace falta más nada entonces nosotros
+suponemos que tenemos un hueco una zona
+de memoria donde tenemos el array el
+espacio para meter
+cuando vamos a crear entidades lo que va
+a ocurrir es que vamos a decir oye
+mis entidades ahora mismo en el array no
+tengo ninguna está el espacio para puedo
+llegar a tener hasta 20 pero no tengo
+ninguna que hago cuando tengo una yo
+puedo llevar una cuenta puedo llevar un
+contador vale de entidades que el
+contador de entidades es cero
+entonces yo en algún momento dado crearé
+una entidad y crear una entidad es decir
+bueno yo tenía a cero entidades lo cual
+quiere decir que todo esto está vacío yo
+tengo sólo el espacio de memoria
+entonces el contador entidades pasa a
+ser uno y entonces aquí en la primera
+posición yo aquí marco de alguna manera
+con un 1 que aquí tengo una entidad
+relleno estos datos y a partir de ahora
+esos datos de ahí son una entidad
+y tengo una cuando luego añado una
+segunda entidad
+tengo dos y entonces marco en esta
+segunda entidad aquí que estos datos
+están ocupados y lo relleno y ya tengo
+dos entidades lo mismo voy haciendo con
+mi vector voy metiendo entidades y
+marcando
+que están ahí hasta que tenga por
+ejemplo ocho entidades llega un momento
+que tengo ocho entidades y entonces una
+de estas entidades
+puede ser que sea una bala
+una de estas entidades una bala que yo
+he disparado y entonces lo que ocurre
+con la bala es que llega un momento en
+que sale de la pantalla cuando la bala
+sale de la pantalla deja de existir al
+dejar de existir yo tengo que eliminarla
+de mi raid porque la eliminó pues para
+poder reutilizar ese espacio que estaba
+ocupando la bala y que sirva para
+utilizarlo para otra entidad por ejemplo
+si la bala era esta de aquí esta entidad
+era mi bala que hago yo ahora en un
+motor básico aquí habéis visto que yo he
+puesto un 1
+pues yo puedo poner aquí un cero
+para indicar y aquí ya tengo 7 para
+indicar que esto ya no está ocupado no
+le habéis visto que yo he estado
+poniendo unos
+que indicaban que la entidad está viva o
+está en uso y ahora esa le pongo un cero
+entonces ya sé que eso es espacio libre
+no es una entidad en uso es la forma más
+fácil de tener un espacio y decir éste
+está en uso éste no éste está en uso
+este no y eso sirve para que si ahora
+creó una nueva entidad porque por
+ejemplo un enemigo entre en la pantalla
+y se va a crear la octava entidad porque
+ahora tenía 7 después de destruir la
+bala ahora vuelvo a tener 8 porque entra
+un enemigo en pantalla y en vez de
+ponerlo aquí lo pongo aquí porque esto
+está libre vuelvo a poner un 1 aquí
+relleno esto con los datos del enemigo y
+re utilizó esa memoria vale eso que
+estoy haciendo yo en la gestión de
+memoria hecha por mí a mano vale y que
+simplemente decidir aquí pongo esto
+porque tengo espacio aquí tengo esto
+este espacio lo liberó este espacio lo
+ocupó a mano vale esto por debajo es muy
+parecido a lo que hacen new y de lt con
+la memoria del sistema
+hay más complejidad pero en realidad lo
+que hacen new y deleite es que hay un
+montón de espacio en algún sitio y tú le
+dices de ese espacio dame 1000 bytes y
+él dice bueno pues aquí tengo 1000 toma
+estos 1000 los usas tú y él se apunta
+que éstos están usando tú para que no
+los use otro simplemente eso es reservar
+la memoria está ahí y lo único que haces
+es esto lo voy a usar yo y mientras yo
+lo uso no lo usa otro sólo que en
+amstrad no hay otros procesos en pc
+vosotros estáis compartiendo en un
+programa el proceso con otros muchos
+procesos que se ejecutan a la vez y que
+todos usan la ram por eso necesitan
+reservar para que si yo voy a usar un
+trozo de la ram no venga otro proceso y
+escriba encima y me chafée mi memoria
+por eso reservo vale pero en austral no
+estás tú sólo la memoria entera es para
+ti no hay nadie que vaya a chafar tus
+datos salvo tú mismo vale que podáis
+descubrir y descubrir muy rápido que es
+fácil equivocarse al hacer el juego y
+chafar de tus propios datos
+sin querer vale esto pasa muy a menudo y
+es
+es la fuente habitual de que los
+programas petén vale bueno ya habéis
+visto el proceso general muy sencillo
+una ristra en memoria donde tengo mis
+bytes y pongo un 110 para indicar que
+uno está ocupado entonces con esto es
+con lo que puedo crear entidades y si
+imaginamos el proceso de crear una nueva
+entidad el proceso de crear una nueva
+entidad es tomar nota de que ahora tengo
+más una y venirse aquí recorrer el
+vector hasta que encontremos la primera
+entidad que tiene un cero cuando
+encontramos la primera entidad que tiene
+un cero la ponemos a 1 y ponemos ahí los
+datos y ya está con eso creamos una
+nueva entidad
+si queremos destruir una entidad
+simplemente es ir a esa entidad y donde
+hay un 1 por un 0 y ya la hemos
+destruido y luego cuando queramos
+actualizar las entidades que eso va a
+ser lo que hagan nuestros sistemas del
+sistema físico por ejemplo va a querer
+las entidades una a una y decir tú
+estás en la posición 5 lleva velocidad +
+1 pues pasas a la posición 6
+y eso lo va a hacer con todas las
+entidades una una entonces hace falta
+recorrer las entidades pero por supuesto
+hace falta recorrer las entidades que
+están vivas las las que están en uso
+entonces necesitaremos hacer un vector
+un vector digo yo bucle que nuevamente
+recorra esto linealmente en esta
+dirección pero que vaya diciendo esta
+tiene uno si se la paso al sistema ésta
+tiene cero no se la pasó al sistema ésta
+tiene uno si solo pasándole las que
+tienen un 1
+para este tipo de sistema como veis es
+muy sencillo extremadamente sencillo es
+básico pero es totalmente operativo con
+esto tan sencillo como tenéis ahí podéis
+tener la base de un game engine para
+hacer juegos para mostrar e incluso para
+pc se podría usar perfectamente para pc
+es muy sencillo pero funciona entonces
+ventajas e inconvenientes vamos con las
+ventajas
+es sencillo
+es muy simple se implementa muy rápido
+es conceptualmente fácil y es más
+difícil equivocarse al hacer esta
+gestión porque es muy fácil de manejar
+vale
+problema
+problemas es lento
+esto es de todas las opciones
+probablemente la más lenta porque es la
+más lenta por la forma de recorrer el
+array vamos a tener que estar todas las
+veces que queramos actualizar entidades
+borrar entidades añadir entidades vamos
+a tener que estar recorriendo el array
+entero hasta que encontremos lo que
+buscamos y cuando vamos a actualizar las
+entidades siempre hay que recorrer el
+array entero aunque tengamos dos
+entidades porque no sabemos si tenemos
+hombres si podéis hacer con el contador
+de entidad es decir bueno yo recorro
+hasta que ya haya acogido las dos que
+hay vivas
+sería una pequeña optimización pero
+igualmente si las dos entidades que
+tengo casualmente una está aquí y la
+otra se ha quedado aquí porque he
+borrado todas las del medio
+sigo teniendo que recorrer el rey entero
+vale con lo cual esto es lento es
+bastante lento tiene otra ventaja que
+echaréis de menos en el estándar vale
+este es el básico pero en el estándar
+está la de sales de menos la ventaja que
+tenéis es que esto tiene las entidades
+inmóviles
+el inglés
+el tener las entidades inmóviles es una
+propiedad que también se le suele a
+conocer matemáticamente como una la
+estabilidad del orden
+la estabilidad del orden significa yo sí
+creo una entidad de esta posición
+mientras la entidad esté viva mientras
+no se destruya siempre va a estar ahí en
+esa posición de memoria
+esto diréis y para qué qué más da qué
+problema hay si la entidad deja de estar
+ahí pues hay un pequeño problema y es
+que si imagináis que tuvierais una zona
+del código distinta para una zona del
+código que estuviera por aquí por
+ejemplo y aquí hay un programa y aquí
+hay otros datos si aquí en esta zona de
+la memoria guarda 6 un puntero a vuestra
+entidad para poder decir es que esta
+entidad es especial es el jugador por
+ejemplo y entonces en un sistema que
+solo tiene que actualizar el jugador yo
+lo que hago es que me guardo un punto
+del jugador y en vez de recorrer la raya
+entero
+solamente actualizo el jugador me viene
+muy bien porque porque sé que este
+puntero siempre está apuntando esta
+dirección de memoria y en esa dirección
+de moneda siempre está el jugador bien
+pues esto no se da en todos los tipos de
+game engine en el próximo game engine
+que vamos a ver en el game engine
+estándar que es el que normalmente hay
+que terminar es implementando la mayoría
+en ese esta propiedad no existe es decir
+las entidades según lo que suceda pueden
+cambiar de posición y eso
+si el jugador está aquí en un momento
+dado y por ejemplo deja de estar ahí
+imaginemos que en un momento dado
+de aquí se quita el jugador y se pone
+aquí
+si yo no actualizó la dirección que hay
+aquí que decía que estaba ahí a partir
+de ahora cada vez que yo intenté usar
+desde aquí esta entidad esa entidad ya
+no es el jugador con lo cual puedo
+empezar a hacer cosas rarísimas porque
+ya no estoy actualizando los datos del
+jugador que ahora mismo están aquí en
+vez de donde yo había apuntado que
+estaba vale entonces en este tipo de
+game engine básico esta propiedad
+funciona las entidades son inmóviles por
+tanto el orden de las entidades está
+siempre fijo y por tanto puede usar
+punteros a las entidades pero en los
+siguientes game engine si eso no se da
+vale
+bueno
+vamos con la siguiente versión del game
+engine vale
+si puedo
+siguiente versión
+siempre vamos a tener un array de
+entidades pero lo que cambia es la forma
+en lo que vamos a gestionar este raid
+entidades
+vale vamos a hacer una segunda versión
+en la que yo en realidad no voy a ir
+apuntando si las entidades están vivas o
+no como tenía antes yo tenía un flash
+que decía esta entidad está en uso está
+no lo que voy a hacer ahora es dividir
+el vector en dos en la raya en dos
+partes y voy a decir que esta primera
+parte
+son las entidades que están en uso las
+que están vivas
+y este espacio de aquí podría decir que
+es el espacio que está libre
+de modo que yo sé que mis entidades
+todas están seguidas empiezan aquí y
+llegan hasta aquí
+ventajas que tiene esto si yo hago el
+sistema para que funciona así cuando
+tengo que recorrer las entidades ya no
+tengo que estar preguntando y esos
+parecen a una tontería pero es que
+añadir un if que se va a ejecutar para
+todas las entidades y para todos los
+sistemas todas las iteraciones en todas
+las ejecuciones es mucho código es mucha
+cpu está todo el rato preguntando tú si
+tú no tú si tú no tú si tú no todo el
+rato estáis perdiendo el tiempo en este
+sistema eso desaparece porque porque
+todas las entidades que están vivas
+están juntas ya no hay que preguntar
+todas están vivas solamente tengo que
+recorrer de aquí hasta aquí si recorro
+de ahí hasta ahí sé que todas las
+entidades son válidas son las que estoy
+usando ahora y entonces cojo una se la
+paso el sistema cojo está se la paso que
+otra se la paso ya está no tengo a
+preguntar si está o no está
+problemas ventajas e inconvenientes vale
+esto cuando yo empiezo y creo entidades
+siempre que creo entidades las creo aquí
+en este espacio que hay justo a
+continuación de las entidades que están
+vivas cuando no hay ninguna entidad viva
+la creó al inicio de la raid y cuando
+hay entidades vivas siempre al final de
+las entidades vivas con lo cual va
+creciendo pasa que ahora cuando tengo
+que eliminar una entidad si tengo que
+eliminar esta entidad que está aquí en
+medio
+ahora tengo un pequeño problema si borro
+la entidad que está en medio crearía un
+agujero en el medio y mi sistema no
+puede tener agujeros en el medio porque
+yo no puedo preguntar si una entidad
+está viva o no entonces para corregir
+ese agujero del medio yo tengo dos
+posibles estrategias la estrategia
+número uno
+todo este cachito de aquí lo muevo todo
+hacia atrás
+para juntarlo con lo anterior y eso
+significa copiar baita byte todo hacia
+atrás porque tengo que llevarme todos
+los bytes a una posición anterior de
+memoria
+él
+eso que está diciendo yes es la segunda
+opción vale esta primera opción no nos
+arregla el problema que habíamos dicho
+antes de que una entidad pueda cambiar
+de posición esto sigue estamos moviendo
+las de sitio por tanto una entidad que
+antes estaba aquí ahora está aquí ha
+cambiado de posición en la memoria vale
+se ha ido una entidad hacia atrás pero
+si hacemos esto mantenemos el orden en
+las entidades si fuera necesario
+mantener el orden sólo tendríamos esta
+estrategia si el orden de las entidades
+no es importante
+es decir el por qué el orden luego si
+vamos a recorrer las el orden de
+actualización es el orden en que las
+recorremos cuidado con eso si el orden
+no es importante entonces la segunda
+opción es lo que dice yes
+a ver si lo hago bien yo tengo estas
+entidades el hueco y estas entidades
+vale y una entidad al final y a
+continuación las que están libres esto
+es lo que está libre esta es la última
+ésta es la que ha muerto y todo esto son
+entidades que están vivas entonces yo lo
+que puedo hacer es la última entidad en
+y vector copiarla aquí esa solo claro
+esto es mucho más rápido copiar una sola
+entidad para cubrir el hueco que se ha
+quedado es mucho mucho más rápido que
+copiar las todas pero me desordena el
+array si el orden fuera importante esto
+no podría hacerlo en cualquiera de las
+dos opciones
+cada vez que yo eliminó una entidad las
+entidades pueden cambiar de sitio y si
+cambian de sitio si yo tenía un puntero
+a una entidad es el puntero puede que ya
+no esté apuntando a la misma entidad
+apunta a la misma dirección de memoria
+pero es que es a mi madre de una memoria
+puede que ya no esté lo que estaba antes
+entonces este segundo sistema es el que
+vais a tener como estándar vale es el
+clásico es sencillo de implementar un
+poco más complicado que el anterior vale
+tiene un poquito más de dificultad pero
+es manejable y funciona bastante bien es
+bastante rápido porque ahora cada vez
+que hagamos un recorrido valente sus
+ventajas cada vez que tengamos que
+recorrer tenemos todas las entidades
+seguidas nos ahorramos tener que
+preguntar su identidad está vivo no
+solamente recorremos las que queremos y
+además a este se le pueden hacer mejoras
+adicionales porque si yo quisiera
+recorrer solo algunas entidades puedo
+tener lo que se llaman pre cacheos me
+explico el tema de esto es real ocacion
+verdad no no es exactamente real ocacion
+esto vale no no intentéis asociarlo
+exactamente a los términos que más o
+menos conocéis porque esto es estamos
+gestionando la memoria nosotros en mano
+tenemos un cachito de memoria dio aquí
+pongo entidades aquí las quito que las
+pongo aquí las quito
+pero tendrás que recorrerlo para saber
+cuál es la entidad que se ha muerto y
+colocarla otra no me hace falta no tengo
+por qué recorrer para saber la que se ha
+muerto porque normalmente cuando una
+entidad se muere es porque algún sistema
+la está actualizando si algún sistema la
+está actualizando tiene la dirección de
+memoria de esa entidad si no no podría
+acceder a ella por tanto cuando yo vaya
+a marcar una entidad como muerta es una
+entidad que estoy usando en ese momento
+y por tanto sé dónde está no tengo que
+buscarla
+la última tampoco tengo que buscarla
+porque si yo ya sé mi array lo que ocupa
+sé dónde está la última está justamente
+al final en la dirección yo tengo que
+tenerlo controlado si no lo tengo
+controlado no sé cuánto ocupa esta parte
+de vivas y esta parte de libre si yo sé
+que eso cuánto ocupa yo tengo controlado
+dónde está la última es donde estaba que
+quiero destruir con lo cual no tengo que
+buscarlas vale antes si tenía que buscar
+porque sólo las tenía marcado y si la
+última está ocupada también qué quiere
+decir si la última está ocupada no
+entiendo lo decirlo la última viva está
+ocupada eso siempre no sé lo que quieres
+decir jose miguel con la última la
+última ocupada
+lo que quiere decir que si en él
+un espacio para entidades vivas lo que
+estás haciendo es que estoy copiando la
+última viva para machacar con ella la
+que ha desaparecido entonces este
+espacio este espacio de memoria me ha
+quedado libre porque la he destruido al
+destruir esta entidad el espacio queda
+libre vale entonces como ese espacio
+queda libre y yo no puedo dejar huecos
+aquí en medio porque asumo que todas
+tienen que estar continuas yo cojo la
+última de las vivas y me la llevo allí y
+entonces dejó libre esté libre y esa es
+la cosa de decir yo en vez de hacer el
+hueco de libre aquí lo hago aquí y me
+llevo esa que estaba viva y la pongo
+aquí y sigue estando viva pero ahora la
+he puesto aquí en vez de tenerla aquí
+para cubrir el hueco de la que se ha
+muerto vale
+antonio dice para solucionarlo de
+recorrer toda la raya es posible asignar
+un índice a cada entidad no sé qué
+problema estás exactamente queriendo
+solucionar y cómo lo soluciona un índice
+sí sí es algo así espero explícamelo un
+poco más a ver si entiendo lo que
+quieres decir
+iván dice en el primer caso el agujero
+se colocaría al final no sé cuál es el
+primer caso vale pero el único caso que
+hay aquí es se te muere una del medio o
+se te muere la última si se te muere la
+última no tienes que hacer nada es la
+última dejas el hueco libre tal cual
+sistema una del medio copia es la última
+vale
+antonio digo que por ejemplo si tú
+tienes un índice asignado a la dirección
+de memoria
+simplemente vale cantidad
+la dirección de memoria por ejemplo es
+probable que te esté enviando por una
+razón porque puedes tener índices
+asociados a dirección de memoria eso
+sería hacer un mecanismo de acceso
+indirecto pero precisamente en este
+sistema es una mala idea por lo que
+estamos diciendo porque si tú quieres
+tener índices que se asocian la
+dirección de memoria para acceso
+inmediato cuando necesites acceso
+inmediato que de momento lo que yo he
+puesto hasta ahora no lo necesitas
+cuando necesites acceso inmediato a
+través del índice el problema que tienes
+es cada vez que hagas cambios aquí de
+destruir una entidad y copiar una sobre
+otra
+tienes que actualizar también los
+índices y los punteros porque cambian
+y si no y si no tienes un doble puntero
+en el sentido de cuando destruyó una
+saber quién me estaba apuntando para
+actualizarla a él tengo que recorrer
+entero el vector de inicio para ver
+quién apuntaba ahí vale entonces no es
+tan fácil como parece
+barea
+muy bien pues esto que os estoy contando
+vale esto este momento la versión
+estándar tengo a un lado las que son
+entidades vivas a un lado las que son
+libres y simplemente lo gestionó para
+mantenerlas todas juntas y que eso me
+permita ser mucho más óptimo en el
+sentido de que ya no tengo que recorrer
+entidades que no existen y estar
+preguntando si éstas están vivas o no el
+recorrido lo hago más óptimo esto es
+bastante más rápido como digo se pueden
+añadir cachés y cosas que harían esto
+más rápido pero no vamos a entrar en
+esos detalles porque no tenemos tanto
+tiempo para eso vamos al tercer tercera
+propuesta que si gabriel
+pero como controlas tu cuál es la última
+que queda viva porque imagínate que se
+quedan cuatro balas seguidas en las
+cuales la última es muy fácil controlar
+cuál es la última la forma de controlar
+cuál es la última es que tú tengas un
+contador de cuántas tienes por ejemplo
+10 y entonces sabes que si esta es la
+primera posición vale pues la primera
+posición más 10 por el tamaño de las
+entidades es la última eso es solo con
+una posición pero es que tienes alguna
+forma más fácil si quieres te puedes
+guardar un puntero a la última te
+guardas un puntero a la última y lo
+actualiza cada vez que cambie el tamaño
+del vector y ya está y siempre estás
+apuntando a la última osea que forma de
+saber igual a la última son muy fáciles
+cualquiera de ellas quiere decir porque
+si no vamos a ver la última tienes que
+saber cuál es porque si no te va a ser
+imposible meter nuevas
+si no lo sabes no no es que no puedas
+borrar es que no puedes meter nuevas
+meter nuevas el saber dónde está la
+última entonces lo puedes saber mente
+mediante el tamaño o mediante el puntero
+si tú sabes que llevas diez entidades
+pues la siguiente es la 11 si tú sabes
+que la última está en esta posición pues
+puedo añadir aquí y pasar a que la
+última sea y yo cosas así es una
+variable auxiliar donde guardar es la
+última vez esto es gestionar tu memoria
+con lo cual eres tú quien lleva la
+cuenta de las que están ocupadas de las
+que no la cuenta la puedes llevar con un
+número la puede llevar con puntero la
+puede llevar como quieras vale
+en esta parte como veis tiene ventajas
+en cuanto a óptima lidad en cuanto a
+funcionamiento pero el inconveniente
+principal de que no podemos utilizar
+punteros para acceder a las entidades o
+para guardarnos una referencia a una
+entidad porque esa entidad puede cambiar
+de posición y nosotros podemos seguir
+apuntando a la misma posición donde la
+entidad ya no estaba entonces no nos
+vale para hacer eso si eso es importante
+en nuestro sistema es decir que nuestro
+juego requiera que algunos sistemas
+digan esta entidad es importante y tengo
+que mantener una referencia a ella para
+hacer cosas con esa entidad esto puede
+no ser apropiado vale entonces tercera
+opción que podríais implementar
+y que puede ayudar a tener una solución
+a estos problemas de este segundo
+sistema manteniendo una eficiencia alta
+vale la tercera opción y esto ojo esta
+tercera opción sólo en amstrad empecé
+esta opción aunque ahora puede aparecer
+buena empecé esta opción es pésima y ya
+veremos por qué pero en amstrad no en
+alestra de esto es una buena opción esta
+buena opción significa en lugar de
+gestionar mi array como un array
+continuo sin más yo lo que voy a
+gestionarlo es como si fuera una lista
+enlazada
+yo lo que voy a hacer es mi array está
+vacío no tengo entidades añado una
+entidad nueva le añado al principio vale
+yo tengo un puntero al principio de mi
+array vale sé dónde está la dirección de
+memoria donde empieza la raíz
+entonces yo llego aquí y añado una
+entidad y mi entidad al final lo que va
+a tener es un puntero a la siguiente
+entidad vale que como ahora no hay
+siguiente entidad esto apunta a cero
+porque no hay siguiente entidad vale
+entonces yo ahora sí quiero añadir una
+nueva entidad lo que voy a hacer es
+añadir la nueva entidad donde yo tenga
+espacio y ahora veremos cómo sabemos lo
+de tener espacio que ahora mismo lo
+tengo aquí
+añado una entidad y entonces este
+puntero que estaba apuntando a 0 como
+estaba detrás algo que este puntero
+apunte aquí vale
+y este ahora apunta a 0
+entonces tengo las entidades enlazadas
+yo tengo una entidad y al final de la
+entidad un puntero a la siguiente una
+entidad y al final un puntero a la
+siguiente y para el espacio libre hago
+lo mismo que es lo que se llama una free
+list una lista de espacios libres es
+decir yo ahora mismo debería de tener a
+su vez un puntero que esté apuntando
+aquí
+y cada uno de estos elementos a su vez
+debe de estar apuntando al siguiente
+porque todos están libres
+de modo que esto es el puntero a la free
+list y esto es el puntero a mis
+entidades si yo quiero recorrer las
+entidades a través de este puntero me
+voy a esta entidad la utilizo a través
+de puntero llego a la siguiente la
+utilizo llego al nulo determinado lo
+mismo que si quiero introducir una
+entidad nueva este puntero me dice dónde
+está la primera libre me voy a ésta y la
+relleno hago que la última de las que
+están en mi lista enlazada apunte ahí y
+entonces ésta apunta a 0 y ahora el
+puntero free tiene que apuntar a la
+siguiente de este que es la siguiente
+que estaba libre
+vale pues tengo dos listas de elementos
+que están encadenados una es las
+entidades y otras los espacios libres
+los huecos y entonces cuando yo quiero
+meter una nueva entidad me voy a la
+primera de las que son huecos libres la
+utilizo y hago que la primera del hueco
+libre sea la siguiente a la primera de
+los huecos libres cuando ahora eliminó
+una entidad
+esto es una lista enlazada eliminar una
+entidad significa que yo tengo que
+quitar esta entidad en medio y hacer que
+este puntero de aquí apunte a la que
+estaba apuntando está a la siguiente y
+este que queda libre me lo voy a poner
+al final
+de la lista de libres o al principio si
+quiero que lo puedo poner como el
+primero y ponerlo al final pues poner al
+principio son dos políticas diferentes
+entonces puedo hacer que apunte el
+último le apunte a él y éste apunta
+anual o este apunte al principio y el
+otro apunte al segundo vale es pasó los
+huecos de una lista a la otra se
+entiende más o menos pues esto qué
+ventajas tiene ventaja número uno sigo
+sin tener que preguntarme si una entidad
+está viva o no porque todas las
+entidades vivas aunque ahora estén
+separadas en la memoria yo las voy a
+recorrer porque cada una apunta a la
+siguiente viva hasta que llegó a una que
+ya no apunta a nadie vale así tengo una
+lista enlazada de entidades vivas
+tengo acceso directo al espacio libre
+sin tener que buscarlo porque tengo un
+puntero que me apunta donde empieza el
+espacio libre de nuevo cuando quiero
+usar espacio libre me voy a ir y cojo a
+dónde está apuntando el primero y lo uso
+no tengo que buscar el espacio libre lo
+tengo enlazado luego después aunque en
+la memoria las entidades estén en unas
+posiciones altas no van a cambiar de
+lugar mientras viven porque no hay
+necesidad de moverlas de sitio al no
+cambiar de lugar esto me permite que
+otros sistemas puedan apuntar a esas
+entidades porque sé que no van a cambiar
+de sitio de modo que se puede apuntar a
+ellas desde fuera y usarlo como
+referencia vale jose miguel brotóns
+pregunta porque esto sólo para amstrad
+por una razón muy sencilla porque
+amstrad no tiene memoria caché
+a cpc es una máquina de 8 bits muy
+primitiva comparada con las que tenemos
+ahora y no tiene memoria caché en un pc
+moderno digamos que la optimización más
+grande que tú puedes hacer de todas es
+ser lo más estructurado posible para
+aprovechar la velocidad de la memoria
+caché si tu programa no aprovecha la
+velocidad de la memoria caché en pc
+todas las optimizaciones demás que hagas
+muy probablemente no valen para nada
+porque la optimización de la memoria
+caché es el patrón en que tú accede esa
+memoria si hace que las la mayoría de
+las veces lo que tú estás leyendo se
+puede a cachear primero y tú lees de
+caché en vez de ram
+la diferencia entre leer de caché y leer
+de ram es 200 a 1 empecé la caché es
+doscientas veces más rápida que la ram
+entonces si la mayoría de veces que tú
+lees o escribes en memoria lo haces en
+caché en vez de en ram en pc tú estás
+ganando 200 a 1 en velocidad
+hay muy pocas cosas empecé que puedas
+hacer que te den ese nivel de
+optimización con lo cual esto empecé es
+destructivo porque normalmente cuando tú
+lees una zona de ram en un pc lo que
+hace la caché hoy en día son más
+sofisticadas pero básicamente lo que
+hace es si yo estoy leyendo las
+direcciones de memoria 0 1 y 2 entonces
+él asume que lo más probable es que leas
+las que vienen a continuación las 3 4 5
+6 7 8 entonces te va a cargar una línea
+entera en la caché cuando tú pides la
+dirección 0 si tú haces recorrido en
+línea les empecé de leo 0 1 2 3 4 5 6 7
+8 como el motor que teníamos justo
+anterior
+eso es rapidísimo porque la primera vez
+que le es se pide a la rama pero las
+siguientes las leyes de caché porque ya
+te las ha metido todas en caché
+sin embargo si tú haces esto tú lo que
+vas a estar pidiéndole direcciones
+aparentemente aleatorias de la rama o
+sea tú lees esta y luego a lo mejor les
+está y luego a lo mejor está y luego lo
+mejor está y luego lo mejor está y la
+caché se va a volver loca porque la
+mayor parte del tiempo lo que tú pides
+no es lo que ha cargado en caché y estás
+todo el rato pidiendo sólo a la rama
+entonces eso haría en un pc ir muy lento
+esto en un pc es muy lento en una
+amistad no porque no hay casi todos los
+accesos a una ram no te tienes que
+preocupar con lo cual da igual que
+saltes o que no en una amistad no
+importa queda más o menos claro
+muy bien estos son los tres tipos de
+game engine que yo os propongo hay
+muchísimos más valiosos se pueden hacer
+muchas virguerías con la memoria este
+tiene una ventaja que no habíamos dicho
+antes y es que este tiene la posibilidad
+de que si en un momento dado esta
+memoria ram que has reservado para esto
+no es suficiente y la llenas como esto
+va con punteros si tuvieras otros
+espacios de memoria disponible tú
+podrías hacer que el último apuntar sea
+un nuevo espacio y continuar porque no
+tiene por qué estar seguido mientras que
+los anteriores si los teníamos que tener
+seguido y si no cabe no cabe vale
+entonces otras ventajas pero esto como
+digo esto en amstrad bien empecé no
+empecé las dos anteriores son mejores
+las dos incluso la primera de arriba
+empecé es mejor que ésta vale la de
+poner ceros y unos
+puedo volver a explicar lo de los
+punteros y si van entero quiere decir
+que lo explique todo otra vez
+una versión rápida
+cuando una entidad punto vamos a hacer
+una versión rápida vamos a suponer
+que esto de aquí son nuestras posibles
+entidades y vamos a tener hasta 5 vale
+entonces esto de aquí es un puntero que
+apunta a esta otra entidad
+esto es un puntero que apunta hasta esta
+otra entidad
+un puntero que está apuntando aquí
+y un puntero que está apuntando aquí
+cinco entidades que cada una de ellas
+ocupa todo este espacio vale esto es una
+entidad
+ocupa todos los datos de la entidad y un
+puntero a la siguiente vale entonces
+tenemos un puntero que es el puntero
+freak
+como ahora no hay entidades está
+apuntando a la primera todas están
+libres tenemos otro puntero que es el
+puntero a entidades que ahora mismo está
+apuntando anula porque no tenemos
+ninguna entidad
+voy a insertar una nueva entidad vale
+meto la primera entidad y entonces me
+voy aquí al free y digo pues en esta la
+primera de las libres y me cojo este
+puntero de aquí y me lo llevo aquí para
+que para que el frío ahora apunte a la
+siguiente libre donde estaba apuntando
+está si ahora free ya no apunta ahí las
+entidades ya no apuntan a null ahora
+apuntan donde estaba apuntando free
+porque ahora tengo esta entidad de aquí
+ocupada
+queda claro hasta aquí se ve se ve fácil
+y esta entidad que está ocupada ahora
+apuntan un porque es la última ya no
+tengo más entidades sí
+llega una segunda entidad porque esto ha
+sido un enemigo que ha aparecido aparece
+otro enemigo me voy al free y digo cuál
+es la primera libre está aquí meto mi
+nuevo enemigo y este puntero es el que
+me cojo para que sea frío ahora ahora
+fría apunta
+aquí ya no apunta aquí vale está
+apuntando a la primera libre que es
+aquella de allí porque lo tenía aquí
+como he metido una nueva entidad ahora
+tengo que irme a la última entidad que
+tenía aquí y hacer que este puntero que
+apuntaba a null ahora apunte aquí a
+nueva entidad
+vale y así tengo una entidad que apunta
+a la primera y la primera que ahora
+apunta a la segunda que acabo de meter
+esto que acabo de hacer ahora de hacer
+que la última entidad apunte a la
+siguiente tiene un potencial problema y
+es que si yo no sé cuál es mi última
+entidad me toca recorrer todas las
+entidades para buscar la última y hacer
+que apunte vale yo podría tener dos
+punteros un puntero a la primera entidad
+y en contra la última para que eso fuera
+más sencillo se podría hacer
+y si no la otra opción es que cuando yo
+añado una entidad nueva en vez de
+añadirla al final la añada al principio
+que es más fácil que es lo mismo que
+estoy haciendo con los free si yo añado
+una nueva entidad y dañado al principio
+en vez de haber hecho que este puntero
+apuntará aquí ese seguiría apuntando a
+null yo haría que mi entidad o sea mi
+puntero a entidades apunte a la que
+acabo de crear y esa apunte a donde
+estaba apuntando vale entonces la meto
+al principio en vez de al final son dos
+opciones pero hasta aquí se queda claro
+meto entidades cambio los punteros para
+que yo tenga una lista con las entidades
+que metido y sigo apuntando a la lista
+de libres vale entonces ahora esta
+primera entidad se destruye
+si yo destruyó esta primera entidad lo
+que puedo hacer más fácil de todo es
+hacer que ahora free apunte a esa
+entidad que se ha destruido y el puntero
+de esa entidad que se ha destruido sea
+el que apunte a donde estaba apuntando
+free vale me queda este espacio libre ya
+lo he destruido como he destruido esa
+entidad ahora esta entidad tiene que
+apuntar a donde estaba apuntando la que
+he destruido ahí vale tengo que cambiar
+el puntero para que apunte para que está
+arriba se destruye una entidad apuntó a
+la siguiente entonces esto es el esto es
+básicamente lo que imagino que osen
+serie os enseñaría en el que da no sé si
+os acordáis de edad vale pero me imagino
+que os enseñarían a usar listas
+enlazadas verdad yo esto que estoy
+explicando ahora mismo es uso básico de
+listas enlazadas sólo que en vez de
+tener una tengo dos sobre el mismo
+espacio porque tengo la lista de los
+elementos y la lista de los huecos
+entonces juego con que cuando meto algo
+en la lista de los elementos lo quito de
+la de los huecos y cuando eliminó algo
+de la lista de los elementos lo meto en
+la de los huecos
+para saber siempre dónde tengo los
+huecos y dónde tengo los elementos esto
+es diferente a lo que se enseña de neda
+porque neda os enseñan que cuando vais a
+crear un elemento nuevo hacéis new y
+vendrá la memoria de algún sitio vale
+pero aquí en la memoria no viene de
+ningún sitio es nuestra y somos nosotros
+quienes tenemos que decir lo tengo poner
+aquí aquí o aquí soy yo quien tiene
+hacer esa gestión
+vale por eso lo hago así una vez esta es
+la diferencia de trabajo a bajo nivel el
+a bajo nivel te toca hacerlo a ti cuando
+lo hacéis a alto nivel dejáis que sea
+otro el que haga el trabajo del bajo
+nivel decís a new dame memoria y tú ya
+te apañas de donde la coges a mí eso no
+me importa vale queda clara la
+diferencia aquí no podemos hacer eso
+porque ni uno existe ni un somos
+nosotros vale
+muy bien
+no sé si esto te ha aclarado las dudas y
+van
+más o menos se ve más claro ahora que he
+hecho un pequeño ejemplo si podéis
+imaginar cómo iría desde después es
+complicado porque esto que acabo de
+hacer aquí con los dibujitos se ve muy
+guay y con los dibujitos vienen bien
+para que sepáis lo que queréis hacer en
+cada momento os hacéis él es que mitad
+de lo que toca hacer pero hay que
+implementarlo y a la hora de
+implementarlo hay que respirar hondo que
+con calma porque comentáis la pata en
+alguno de estos luego después pasan
+efectos extraños y entonces los efectos
+extraños no son nada agradables de
+encontrarse los así que esto hay que
+implementarlo me voy a centrar a
+implementar listas y hacer sesión de
+mindfulness primero voy a conectar con
+el mundo y con la tierra y luego lo
+implementó para que salga bien

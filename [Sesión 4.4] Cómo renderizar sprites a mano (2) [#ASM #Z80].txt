@@ -1,0 +1,796 @@
+[Música]
+y podríamos seguir la misma estrategia
+en este caso no voy a seguir la misma
+estrategia vale porque podríamos adaptar
+el spray pero la gracia es crear el
+propio otro sprite adaptado es decir
+crear nuestra propia función que dibuje
+un sprite es lo que voy a hacer con esto
+es que voy a iniciar esa función de
+creación de sprite y os lo voy a dejar
+también como ejercicio porque quiero que
+hagáis esa función de dibujado de
+sprites vale ya habéis visto lo fácil
+que es cambiar la geometría y sólo
+tenéis que cambiar la geometría y hacer
+la función adaptada dibuja el sprite y
+podéis poner un spray cualquiera como
+este que tengo aquí vale podéis poner
+este podéis poner uno cualquiera del
+mismo tamaño incluso inventando los
+colores vale podéis hacer una pelota
+sencilla plan de poner ff es donde
+creéis que pinte y ceros donde no y ya
+está
+y entonces tenéis un spray chungo pero
+un spray vale sirve para dibujarlo
+entonces vamos con otro sprite
+pero sprite
+de 32 x 16
+como el red de la función y primero para
+dibujar un spray que es lo que hago yo
+para dibujar un spray
+lo que hago es estos bytes de aquí
+que son los del sprite uno a uno y
+copiarlos a memoria la memoria de vídeo
+en este caso solamente necesito copiar
+esos países
+uno a uno nada más eso es todo lo que
+hago pues para copiar esos bytes
+necesito saber dónde están estos bytes y
+saber a dónde los tengo que copiar esta
+vez existe un puntero al principio de
+estos bytes y un puntero para la memoria
+de vídeo entonces normalmente se utiliza
+hl como fuente y de como destino vale
+entonces aquí lo que vamos a hacer es
+que como parámetros tendremos hl el
+puntero al sprite
+y de el puntero
+memoria de vida
+entonces tengo estos bytes y la memoria
+de vídeo pero necesito dos detalles más
+porque yo de estos bytes recordad que
+aunque yo los pongo así es seguido en
+memoria
+hasta a continuación de éste
+y yo está esta geometría de los bytes el
+hecho de que estén divididos en grupos
+de cuatro indios yo no lo sé cuando voy
+a copiar la única forma que tengo de
+saber que el ancho del sprites 4 y el
+alto es 10 en este caso 16 10 en
+hexadecimal es que lo tenga en un
+parámetro si no me lo dan en un
+parámetro yo no puedo saber que el ancho
+es 4 y el alto 16 no sabría cuándo
+terminar de copiar bytes vale entonces
+necesito otro parámetro y para eso voy a
+utilizar b y c y entonces en b pondré el
+alto
+y el pse pondré el ancho
+con esos parámetros yo ya puedo hacer
+una función que copia de lo que hay en
+hl a lo que allende teniendo en cuenta
+la geometría de la pantalla porque así
+tendré que copiar filas y cuando copio
+una fila salto a la fila siguiente y
+otra fila salto a la fila siguiente y
+toda la gracia del algoritmo está en que
+tengo que hacer para saltar a la fila
+siguiente que lo del salto a la fila
+siguiente es cuando estoy en esta fila
+salto a esta con más 800 cuando estoy en
+esta salto más 800 más 800 800 800
+cuando llegó a esta tengo que volver a
+ponerme aquí y saltar a esta con más 40
+eso es el cómo yo pinto un sprite sí
+estoy en una fila siguiente siguiente
+siguiente siguiente y la siguiente a
+esta es esa con lo cuales me pongo aquí
+y sumo aquí vale esto es todo lo que
+tengo que hacer ahora de pintar un spray
+del resto es copiar simplemente la parte
+fácil es copiar
+la parte fácil la hago con una
+instrucción
+igual algunos conocéis cuántos conocéis
+la instrucción para copiar lo que está
+apuntando a hl a lo que está apuntando
+en d es decir si h l tiene la dirección
+4000 y de la 5000 leer el byte que hay
+en 4000 y copiarlo a la dirección 5000
+hay una instrucción que hace es cuál es
+y lo que he dicho exactamente no es esa
+miguelángel casi cero
+la instrucción que hace eso es el ede
+ld y es una instrucción que mete en la
+dirección de de el contenido de hl y a
+continuación hace más más h l
++ d
+y menos menos veces
+es decir me incrementa para copiar el
+siguiente byte y me resta 1 a veces que
+hace de contador por eso se llama el
+'dique slot indirecta vale entonces con
+eso copio un byte de donde está
+apuntando hl a donde está apuntando de y
+tengo otra instrucción que es una
+extendida de esta que se le dé a repeat
+l y r que es repetir ld y cuántas veces
+repiten
+pues hasta que veces vale 0 va
+descontando en vez de hasta que valga
+hacer básicamente vale con esto si yo
+antes de hacer el ldl tengo hl y
+apuntando que los tengo bien aquí arriba
+vale y si ahora lo que lo que hago es
+que tengo
+bc justamente al ancho del sprite se
+copiará una línea bc ahora mismo no
+desea ahora mismo tiene las dos cosas
+tiene el alto y el ancho pero si veces
+aquí cuando hago ldr tuviera solamente
+el ancho entonces sí que lo que estaría
+haciendo es copiar supongamos que yo
+puedo ponerle a mano el ancho vale desee
+al que todavía no lo voy a poner pero se
+queda si yo puedo hacer esto
+vale con estas dos cosas esto repetiría
+el ld y cuatro veces que es el ancho del
+y sprite entonces cogería el primer byte
+y lo copiaría memoria de vídeo movería
+los dos punteros cogería el segundo lo
+copian en el tercero no copiaría y así
+copiar y a 4 bytes en una línea cogiendo
+los 11 y poniéndolos en memoria de vídeo
+cuando ya he terminado que es lo que
+decía antes tengo que si he copiado aquí
+4 bytes ahora tengo que saltar aquí
+abajo a la siguiente fila como salto a
+la siguiente fila
+y ya he terminado aquí de copiar 4 bytes
+como salto a la siguiente fila de
+pantalla para copiar los siguientes 4
+es decir
+como lo hago
+inc h no tiene mucho sentido
+h
+más 800 de correctamente es más 800 sabe
+porque lo que tengo apuntando a la
+memoria de vídeos de 1h l ojo con eso
+pero no es más 800 lo que tengo que
+sumar porque si sumo 800 no me voy a
+poner en el sitio correcto es decir si
+yo estaba en una posición en memoria de
+vídeo y supongamos que yo estoy pintando
+en memoria de vídeo y entonces pintó el
+vice
+1el byte 2 el 23 y el 24 vale que son
+mis 4 bytes y ahora quiero saltar a la
+fila de abajo y sumó más 800 y bajarse a
+la fila de abajo y bajaría aquí
+no donde quiero que es donde me tengo
+que poner para pintar que es aquí el
+primer byte de la segunda fila
+tengo que bajar 800 menos el ancho
+efectivamente entonces aquí tendré que
+hacer una suma de vale entonces tendría
+que hacer de más 800 menos anchos
+eso es lo que tendría que hacer
+cómo puedo sumar a d supongamos que solo
+quiero sumar 800 como le sumo de 800
+como sumaríamos 800 de que haríais para
+sumar 800 de bucle inc por 8 nos en la
+que analices es eso y demás igual a 8
+y no puedo hacerlo necesito
+instrucciones de ensamblados
+no quiero decir quiero decir bucles
+incrementar
+[Música]
+simplemente se repita
+5
+qué
+es cutre pero si sólo tuviera que ser
+800 me vale pero como yo tenemos
+nosotros ciento menos ganchos
+app de 8 no existen ensamblador las
+instrucciones de app de 8 bits solamente
+se aplican al acumulador
+si yo quisiera sumar 800 haciendo lo que
+decís haría esto
+porque la suma hay que hacer en el
+acumulador entonces nuevo a lo que
+allende le sumó 8 y luego vale eso sería
+para sumar 18 a d pero como no voy a
+sumar 800 supongamos que lo que tengo
+que sumar en realidad fuera lo que tengo
+aquí que es 7
+s
+y costumbres 7 f c
+4 estos 16 mil 412 7 c
+ya no me vale la estrategia de sumarle
+ochoa de cómo le sumó a de 7 etc
+como hago de más 7
+ideas estrategias como sumó eso a ver
+poder poder meter el van a poder meter
+177 fcc si le pongo el 0 16 bits
+puedes utilizar los comandos de añadirán
+y añades la añade añade de forma
+separada
+vale tú lo que dices es que puedo hacer
+una suma de 8 bits y luego otra suma de
+8 bits que no son comandos ni
+instrucciones cuidado
+entonces tú lo que dices es que sume
+vale pues que es un primero si hago eso
+a ver tendrían que hacer la suma con
+acarreo
+sumar empecé
+cómo
+necesita mirar la tabla para sumar a los
+registros por separado y ya de que
+ganando
+para que digan
+sería sería cargar
+ld a como fn como a veces y así supongo
+no
+y luego
+añadir con agarre graves porque voy a
+añadir con la carrera ahora es que puedo
+tener a carrió ahora anormal
+siempre
+es que ahora yo tampoco quiero que te
+mande el valor de la ciudad en la que
+esté bien
+no necesito saber lo que tengo en d para
+hacer una suma si no estaríamos apañados
+y necesitaba saber lo que tengo
+bueno
+ate comas y coma
+esto es lo que significa
+qué significa eso
+no puedes añadir el valor de acabo de
+deciros lo que las operaciones en 8 bits
+solamente funcionan sobre el acumulador
+sobre a no podéis sumarle a y lo único
+que podéis hacer con él en operaciones
+de este estilo son operaciones de inc o
+tec pero sumar no las aritméticas de 8
+bits son sólo sobre av
+lo que sí que puedo hacer es esto que
+esto lo que va a hacer es sumarle a a el
+valor de e
+pero la gracia que tenemos por suerte es
+que la suma es una operación conmutativa
+da igual que sume
+o que sume a haber chicos esto es lo
+mismo que hacer una suma de toda la vida
+si yo tengo que sumar 78 y
+27
+yo tengo dos dígitos es lo mismo que si
+tuviera dos registros el dl por ejemplo
+tengo dos dígitos entonces sumo este con
+este sumo los dígitos 1 a 1 entonces 7 y
+8
+me da 5 porque no puedo representarlo
+con un solo dígito necesito otro y de
+ahí viene el acarreo el acarreo es que
+necesitaría un segundo dígito a dónde va
+a parar el 1 que me sobra y este acarreo
+es el que le sumo a estos 2
+si yo tengo que hacer la operación de
+sumar una cosa a day en realidad estoy
+sumando uno de dos dígitos con uno de un
+dígito vale o en este caso de y lo sumo
+con 0 x 0 7 efe esto es 8 bits esto es 8
+bits esto es 8 bits y estos 8 bits
+con lo cual aquí necesito efe
+y si hay acarreo el acarreo se sumará a
+key card y acarreo
+y entonces aquí arriba tendré de 0 7
+más el carril
+esta es la operación que hay que hacer
+primero sumo los dos dígitos de abajo y
+luego sumó los dos de arriba más el
+acarreo que me puede haber causado los
+dos dígitos de abajo
+no es tan diferente de lo que hacemos
+toda la vida entonces primero sumó los
+dos dígitos de abajo
+efe que es lo que acabo de hacer aquí en
+el puesto efe sf s
+vale
+esto así y entonces ahora en el puesto
+ofreces
+y aquí tengo efe y si hago esto
+significa igual a c
+o si lo queréis ver a más iguala es esto
+lo que significa el arte vale así que ya
+tengo en a la suma de los dos dígitos de
+abajo y ahora como por haber hecho esa
+suma el carry ya se habrá activado si es
+que me he pasado de un de un dígito
+de 8 bits si necesito 9 tendrá el carry
+activado vale entonces ahora el problema
+ojo es que la suma está en a no en la
+suma debería guardarla en e
+por tanto
+básicamente esto es
+igual
+en este caso es igual a la anterior más
+0 x etc
+ahora tengo que hacer la operación con d
+tengo las operaciones las hago en el
+acumulador por tanto nuevo al acumulador
+lo que vale de no
+es igual a 10
+y ahora puedo sumarle la parte de arriba
+el 07 que es el segundo dígito
+directamente haciendo así a 0 7
+si lo pongo bien el hexadecimal
+más igual a 07
+en esta décima antes de su madre ahora
+somos siete pero éste a solos 107 yo
+necesito sumar 07 y el carril
+porque ya lo veis arriba que para el
+dígito de arriba si la operación de
+abajo ha necesitado acarreo ese carry
+hay que sumarlo al dígito superior
+entonces esto tiene otra operación que
+es adc que es a mascardi
+así le estoy sumando a de 0 7 más el
+carril que es la operación justo que
+tengo arriba y ahora el resultado que se
+queda en nada
+lo nuevo de
+hola
+esta es cómo se hace la operación en 8
+bits
+cogiendo y sumando los primeros 8 y
+sumando los segundos 8 más en la carrera
+hay otra forma de hacerlo que lo estabas
+diciendo en el chat porque tenemos una
+instrucción que no suma directamente a d
+pero sí que suma a hl entonces si
+queremos sumar todo esto usando sumas en
+16 bits tenemos otra opción
+yo puedo intercambiar de hl
+entonces algo así los cambios ahora lo
+que tenían de lo tengo una cl y h l sí
+que le puedo sumar cosas vale entonces
+que hago me todo el bc
+0 2 x 7 s 6
+y se lo sumo
+y entonces cuando ya he hecho la suma
+vuelvo a poner las cosas donde estaban
+me llevo lo que hay en dhl y viceversa
+sumo en hd le lo que quería sumar y
+luego lo vuelvo a su sitio
+se podría hacer con y x también
+correctamente pero ojo que la suma se
+meterían y equis y no existe la
+instrucción ld de coma y equis esa no
+existe aparte y x es un registro
+extendido es más lento vale cuidado con
+eso vale esto podría valer cualquiera de
+las dos opciones hay más opciones vale
+se puede hacer más pero estos son cosas
+que necesitaréis porque vais a tener que
+mover velocidades en vuestro juego sumar
+cosas vais a tener que multiplicar vais
+a tener que hacer cosas de sumas restas
+multiplicaciones divisiones hay que
+hacer operaciones matemáticas para mover
+las cosas por el mundo sino no vais a
+poder mover a vuestros personajes no
+vais a poder hacer nada
+he perdido veces efectivamente de
+momento no me estoy preocupando de que
+registros estoy sobre escribiendo ya
+veré qué hago con ellos después vale
+pero de momento esto y ojo esto de aquí
+tengo que poner una nota porque aquí he
+asumido que el ancho es 4 que recordemos
+yo aquí tengo que poner 0 x 800 menos el
+ancho
+mi ancho no es constante es variable me
+pueden llamar con un ancho de 4 o con un
+ancho de 7 y entonces cambia el valor
+que tengo que poner aquí es distinto
+vale
+entonces esto de momento sería saltar a
+la siguiente línea pero ojo este saltar
+a la siguiente línea solamente funciona
+si yo estoy dentro de todas estas líneas
+si estoy en esta al sumar 800 ya me
+salgo de la zona de memoria donde estoy
+al sumar 800 a la última me voy más
+abajo
+si os dais cuenta y entonces necesito de
+alguna manera detectar que yo me he
+pasado y me ha salido es decir yo ahora
+tendría que hacer alguna comprobación de
+para ver si me he salido fuera de mi
+rango de memoria si me he pasado de la
+fila 7
+más allá y entonces tendría que volver a
+restar 8 por 800 para colocarme arriba
+bueno
+se entiende si yo aquí 1 800 800 800 800
+me he salido tengo que volver a la
+primera es restando 8 por 800 para luego
+sumar 40
+como detecto si me he salido
+flash es porque el flash eh
+no controlar la anchura con ce con
+anchura te refieres a la anchura con el
+registro ce no con el flash
+efectivamente la anchura la tengo en ce
+pero ojo que estoy haciendo las
+operaciones todavía sin prestar mucha
+atención a lo que sobre escribo vale
+luego eso ya le presta de atención para
+salvarlo y evitar perderlo de momento
+sólo estoy pensando lo que tengo que
+hacer
+como me entero cuando esta suma ha ido
+más allá
+vale supongamos que yo he empezado en
+000 vale
+supongamos que empezado en 000 voy
+sumando 800 y en un momento dado estoy
+en 800 y sigo sumando 800 y en un
+momento dado llegó a efe 000 en nuestro
+momento tengo efe 800 y cuando sumó 10
+he ido al ser totalmente
+tienes que si tienes la anchura en ce
+puedes guardarlo en aya cercp anchura
+qué tiene que ver la anchura con esto
+esto no tiene nada que ver con la
+anchura
+yo estoy bajando líneas no son de
+anchura
+yo estoy bajando línea si en algún
+momento estaré en la frontera entre un
+carácter y el siguiente vale porque eso
+es lo que pasa con la memoria de vídeo
+recordad que toda la memoria de vídeo es
+una ristra muy larga de caracteres y yo
+estoy pintando en un carácter y estoy
+pintando en líneas hasta que terminó de
+pintar en ese carácter y tengo que
+pintar el siguiente estoy pintando en un
+carácter y luego tendré que pintar en el
+siguiente
+acordaos de eso
+vale que una vez más esto no sé si lo
+estáis visualizando
+pero lo tengo aquí yo estoy pintando mis
+líneas y estoy pintando aquí pintó 4
+pasa un pelín pero voy a hacer un poco
+mejor pintó 4 bajo aquí pintó 4 bajo
+aquí pintó 4 abajo aquí pintó 4 abajo
+aquí pintó 4 bajo aquí pintó 4 y ahora
+cuando bajo aquí ya no es ahí ahora el
+siguiente es
+el siguiente carácter aquí tendría que
+pintar cuatro aquí y cuatro aquí y
+cuatro aquí
+porque es este carácter de aquí vale
+todo este carácter de aquí tiene un
+ancho de 40 en hexadecimal y el
+siguiente carácter empieza aquí hasta
+los siguientes 40 en hexadecimal y yo
+tengo que pintar las filas en este
+carácter y las filas en este carácter y
+yo lo que tengo que detectar es cuando
+si sumo 800 me bajó de aquí me pasó de
+las direcciones de memoria y ya no estoy
+dentro del carácter eso es lo que tengo
+que detectar
+vale que eso es lo que representa esto
+de aquí vale todo esto es una fila con
+los 40 caracteres estoy pintando uno de
+ellos
+a ver como decía
+mis direcciones vamos a hacer una
+técnica muy básica que es mirar esto
+ordinario esto es 1 1 0 0 0 0 0
+si me bajo a 800
+esto qué es la e
+ahora mismo la es esta y 800 es esto
+000 es esto
+cientos es
+os pongo más a ver si veis algún patrón
+hace 800
+de 800
+es esto
+0 0
+y este
+de 800 cuestiones
+800 después saltado el de 0 0
+de 0 0 de 800
+de 800 y a continuación el f 00 800
+con el flash pero esto quede soltáis
+cosas el planeta mismo este mes y no
+habrá otro flag quisiera de vídeo 1
+habrá un flash
+el nombre no
+son las líneas simplemente dónde están
+veis algún patrón entre estos números de
+algo que me permitiera saber cuando
+estoy yo
+una fila concreta si estoy en la fila 8
+en la fila 7 en la fila 6 cosas así
+porque estos son las filas del acero a
+la 8
+si pongo el siguiente que es el 00 esta
+de aquí
+pero sería está claro lógicamente veis
+algún patrón o no veis ningún patrón
+vamos a suponer que en vez de esto lo
+pongo también
+en sus versiones sumándole 40 por
+ejemplo sí
+si le sumó 40
+estos estos números de aquí
+en binario son los mismos
++ 40 y más 40 exponer el dígito 4 aquí
+que en todos estos sería es
+notáis algún patrón
+notáis algo particularmente que cambie
+lo notáis nada qué es lo que me permite
+identificar en qué fila estoy si es la
+fila 1 la fila 8 las filas 5
+de caracteres
+los cuatro primeros bien serán cero no
+los cuatro primeros bis no serán cero
+porque los cuatro primeros bits depende
+de donde empiece la memoria de vídeo
+básicamente
+si la memoria de vídeo empieza en 8 mil
+24 bits no serán 0 si empiezan 4000 no
+serán 0
+no no te has rallado es lógico quiero
+decir aquí todos estos guisos uno y de
+repente aquí son cero pero por ahí van
+los tiros del patrón está en otro sitio
+si os fijáis al haber dividido la
+pantalla en 32 x 16
+para poder representar los 32 caracteres
+en posiciones
+necesitamos un número concreto de bits
+hay un número concreto de bits con el
+cual podemos representar cualquier
+posición en el espacio
+en el que nos de las posiciones
+de un carácter que son estos de aquí
+ya sabéis algo si lo divido así
+y a lo mejor si lo junto a sí
+veis algo
+después de dos horas y media no vio nada
+frank lo hace
+en 0 1 2 3 4 5 6 7 que dice la posición
+exacta en la que estaba
+estos tres bits de aquí
+me están diciendo exactamente en qué
+fila de caracteres estoy dentro de un
+carácter
+y lo page fila 0 y la 1 y la 2 fila tres
+fila cuatro fila cinco fila seis fila 7
+y vuelvo a la fila cero
+y ahí tengo la forma de adivinar cuando
+estoy en una fila cero de caracteres
+la forma de adivinar cuando está en una
+fila cero de caracteres es cuando esos
+tres bits son cero si esos tres bis son
+cero estoy en una fila cero de
+caracteres y siempre como veis cuando yo
+paso de una fila siete y sumo 800 llego
+a una fila cero pero de otro banco de
+memoria porque lo que pasa es que me
+cambian estos dos
+básicamente
+vale
+entonces si yo esto lo quiero arreglar y
+detectar cuando me he salido es muy
+sencillo si yo tras hacer la suma estos
+tres bit se me han puesto a cero me he
+salido vale así que unan con esos tres
+bits y si de acero el resultado
+efectivamente me he pasado vale esto
+este tipo este análisis es el que tenéis
+que hacer análisis de bits para analizar
+las cosas y los patrones que necesitáis
+detectar en las cosas vale porque
+trabajamos a nivel débil entonces voy a
+de text
+outside carácter
+parís
+vale entonces ahora para detectar eso
+tengo que hacer un andy con como está
+diciendo 0 0 1 1 1 0 0 0 0 que eso
+básicamente es en esa decimal 38
+vale 0 0 1 1 1 0 0 0 0
+vale y eso lo tengo que hacer con que a
+quién le tengo que hacer un halcón esto
+mientras tanto
+con que tengo que hacer yo ando de eso
+que cojo para hacer el and con eso
+vale qué valor tengo yo donde tengo yo
+esos a los que tengo que hacer es sean
+donde están esos bits
+si es lo que estoy mirando que este
+patrón que estoy mirando aquí que son
+donde lo guardo
+no tengo muchos otros sitios donde
+guardarlo
+estoy guardando en vez de hl pero no me
+quedan más ya que no si decís si decidís
+aleatoriamente ellos tenéis un tercio de
+posibilidad de casa
+qué es lo que yo tengo que comprobar
+para saber si me he pasado
+hemos cambiado de aquí porque estamos
+usando la dirección de memoria destino
+esa es la que hemos movido hacia abajo y
+al moverla hacia abajo puede que se haya
+salido es que comprobar entonces tengo
+que comprobar esa dirección si ahora
+mismo tiene esos tres bits de arriba a
+cero por eso he puesto ese 38 que es 0 0
+1 1 1 0 0 0
+para comprobarlo con uno de los
+registros de esa dirección con cuál
+con d así que aún han con la parte alta
+dirección con d para comprobar si estos
+tres bits que están almacenados en de
+vale porque de almacena esta parte de la
+dirección vale lo otro es que vale la
+parte de la derecha s esto es de y en
+esa parte tengo que esos tres bits
+para ver si son 0 si son 0 al hacer este
+and esto dará 0 si da a 0 es que me he
+salido si no da cero
+entonces puedo continuar con la
+siguiente línea
+por ejemplo
+que sería volver aquí
+ahora me quedan sólo dos comprobaciones
+por hacer y luego ajustar todo para no
+sobreescribir variables y todas estas
+cosas para lo que tengo empecé no
+perderlo todo este tipo de cosas que
+habéis dicho que había que hacerlas pero
+me quedan dos cosas por hacer todavía no
+estoy teniendo en cuenta que cada vez
+que escribo una fila de ir restando la
+para ver si ya he terminado vale porque
+mi sprite puede tener cuatro filas 2060
+diez siete filas entonces necesitaría
+tener mi alto del spray que en algún
+sitio vale una forma fácil de tener el
+alto del sprite es ponerlo en un
+registro vale supongamos que tengo un
+registro pero claro estoy sobre
+escribiendo todos los registros
+vale entonces tendría que poner el alto
+alto en un registro
+y entonces antes de hacer esto
+y de hacer todo esto lo que tendría que
+hacer es
+- menos alto
+salir si es cero
+en algún momento yo tengo que tener el
+alto guardado en algún sitio cada vez
+que escribo una fila menos uno alto y si
+es cero ya terminado
+sí y si no el resto que tenéis aquí es
+lo que exaltó a la siguiente fila miro a
+ver si me ha salido de los caracteres
+para pasar a la siguiente y sí me he
+salido que eso es aquí vale
+vale tengo que saltar al principio del
+siguiente carácter vale como habíamos
+dicho esto es
+estoy aquí he pintado esta fila ha
+pintado esta fila esta fila esta fila
+esta fila
+he llegado aquí y ahora que hay que
+hacer saltar al siguiente carácter
+saltar al siguiente caracteres si yo
+estoy apuntando aquí yo en realidad
+tendré que escribir a esta altura pero
+en el siguiente carácter con lo cual de
+aquí basta con que es reste 800 por 8
+para llegar aquí
+y de aquí para llegar al siguiente
+carácter es el ancho en caracteres que
+tengo son los bytes que ocupa que antes
+era más 0 50 ahora es más 0 40 vale
+entonces esto de aquí consistiría en
+hacer una operación como esta de aquí
+porque tengo que volver a modificar
+vale puede hacer la misma técnica sólo
+que ahora lo que le tengo que sumar a de
+esto de aquí será menos 8 por 800
+sí supongo bien menos 8 x 800 vale que
+es lo que tengo que subir hacia arriba
+más 40
+se entiende esto
+- 8 x 800 me lleva otra vez a la primera
+línea del carácter en el que estoy
+dibujando y el más 40 me salta al mismo
+carácter pero de la siguiente fila de
+caracteres
+y una vez pusiera esto aquí tendría que
+ir a la siguiente línea
+j r next line
+con esto tendría hecho lo más importante
+de la función de dibujado de sprites
+dibujo línea salto a la siguiente línea
+compruebo si la línea es correcta y si
+no la justo para irme al siguiente
+carácter todo eso es lo que hace esto y
+ahora falta dos detallitos estoy sobre
+escribiendo registros y estoy perdiendo
+los valores del ancho y tengo que contar
+el alto
+bueno pues eso os lo dejo a vosotros
+os dejo la función medio hecha no tenéis
+casi está a punto
+con unos retoques esta función ya os
+sirve para dibujar en el modo de 32 x 16
+con la de arriba ya tenéis para calcular
+la posición del goethe skype spring
+counter en 32 x 16 así que con eso ya
+podríais usar ese modo y tenéis toda la
+técnica de 100 veces 32 por 16 usáis
+otro modo podéis usar el modo que
+queráis con más filas con menos filas
+con más ancho con menos ancho vale
+podéis usar el modo que queráis
+seguir los mismos pasos que hemos
+seguido tis realmente una vez hecha esta
+función de aquí si la tenéis y funciona
+bien ajustarlo a otro modo es tan fácil
+como cambiar los desplazamientos
+el resto va igual
+pero eso es permitirá renderizar más
+caracteres gastar menos memoria en vídeo
+y tener por ejemplo más memoria para
+otras cosas hacer un doble buffer sin
+gastar 32 cargas tanto solo 16 que
+veremos más adelante cómo hacer el doble
+buffer vale que ya habéis visto no es
+más es más simple que simplemente
+cambiando los registros 12 y 13 igual
+que hemos cambiar los otros es decir yo
+pinto en un sitio y cuando he terminado
+de pintar cambio los registros 2 y 3
+para que se vea es ya habéis visto cómo
+los he cambiado a mano y entonces se
+veían otras cosas sólo el puntero y eso
+es instantáneo con eso mismo se puede
+hacer scroll de hecho eso es lo que
+hacen los ejemplos de scroll de cpc era
+que tenéis en la carpeta de ejemplos
+mover el puntero
+hay algún detallito más del scroll que
+veremos más adelante ojo que el scroll
+tiene su miga esta parte es fácil pero
+tiene unos detallitos que no lo hacen
+tan fácil
+y ya os digo con esto podéis
+verdaderamente distinguir vuestros
+fuegos y hacer cosas
+y cuando entendáis esto podéis hacer
+también como he dicho podéis hacer
+pruebas para hacer efectos gráficos como
+el temple que en caso de que os maten y
+queráis hacer que agassi la pantalla o
+que cuando os den un disparo pues
+tiemble un poco cosas así lo podéis
+hacer con estos efectos sin dibujar nada
+solo moviendo un pelín la pantalla

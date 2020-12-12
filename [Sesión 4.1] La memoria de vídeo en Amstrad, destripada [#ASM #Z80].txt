@@ -1,0 +1,889 @@
+[Música]
+lo que me voy a plantear a hacer con
+vosotros es ya empezar la chicha la cosa
+interesante la cosa importante el que
+empecemos a hacer cosas especiales cosas
+que no hace todo el mundo y en
+particular aquí nos vamos a empezar en
+esta primera parte nos vamos a centrar
+en el render porque la parte del render
+es la parte digamos esencial en una
+máquina como la nuestra la mayor parte
+del rendimiento que vayáis a conseguir
+en cuanto a velocidad en vuestro juego
+la fluidez a movimiento dependerá muy a
+menudo de lo bien o mal que hayáis hecho
+el sistema de render la capacidad de
+dibujar sprays más rápido más sprites
+menos sprites el hecho de que tengáis
+fondo no tengáis fondo el hecho de que
+utilicéis la memoria de una manera de
+otra manera hace que podáis hacer un
+render mejor render peor más rápido más
+lento y eso es esencial así que vamos a
+intentar hoy dominar un poquito más la
+memoria de vídeo porque la memoria de
+vídeo
+a mostrar vosotros ya sabéis lo básico
+vale pero hoy vamos a intentar
+profundizar en ella porque vamos a ver
+qué podemos hacer con amstrad muchas
+cosas más allá de lo básico donde se
+pueden hacer cosas muy potentes con la
+memoria de la maestra cpc y eso es lo
+que vamos a empezar hoy la memoria de
+vídeo en amstrad es muy particular y de
+hecho tengo aquí algo que voy a abrir
+les voy a enseñar esto
+esto de aquí es una imagen del juego
+astro marine corps de hámster
+en modo 0 y estos son 160 x 200 píxeles
+que es lo que ocupa una imagen en modo 0
+en amstel
+este esta imagen vosotros ya sabéis que
+en memoria de vídeo no se guarda tal
+como la veis es decir nosotros cuando
+abrimos por ejemplo el we make si abro
+win
+ya sabéis que cuando tenéis el wing
+eight y sacáis el depurador
+vosotros aquí no hace falta que veáis el
+contenido es lo de menos pero aquí en la
+memoria sabéis que veis una fila de 16
+bytes y que este byte que hay aquí abajo
+es el siguiente es decir realmente la
+memoria nosotros la vemos aquí como una
+matriz pero es una línea la memoria vale
+esta es la posición 0 esta es la
+posición 15 y esta de aquí va a ser la
+posición 16
+y esta de aquí será la 31 y esta la 32 y
+así todo seguido vale por eso nosotros
+cuando miramos a una imagen de esta
+esperaríamos y es lo que choca cuando
+trabajamos en amstrad esperaríamos que
+la primera fila de píxeles estuviera
+servida en memoria y que el siguiente
+pixel fuera el primero de la segunda
+fila pero esto no es así en astra y no
+es así y entonces es cuando vosotros
+veis los vídeos al principio de memoria
+de vídeo y hayes quien es el disléxico
+que ha diseñado esta memoria porque no
+lo ha hecho todo seguido que era tan
+difícil
+esto tiene un porqué y es porque en la
+época del austral todavía lo que son las
+memorias de vídeo tipo frame buffer que
+es el bufete todo continuo de memoria de
+los píxeles no se hacían porque se
+hacían muchos dispositivos que no eran
+pantallas como las que tenemos ahora las
+pantallas de entonces eran algo caro no
+habían muchas y tal y entonces lo que
+había es que se hacían dispositivos de
+caracteres que se llama y de hecho era
+habitual tener alguna pantallita de ésta
+ser que fueran tipo display en las que
+solamente habían líneas de caracteres
+crc que es el que en amstrad implementa
+la memoria de vídeo ese chip está
+pensado para memorias de ese estilo para
+el tipo display que son como caracteres
+que van seguidos vale como un típico
+ticket que va diciendo cosas todo
+seguido vale sabéis lo que estoy
+diciendo pues eso es como está pensada
+realmente la memoria de vídeo la memoria
+de vídeo tiene ese formato que vosotros
+imaginaría es el de todo seguido pero no
+con las líneas de píxeles sino con las
+líneas de caracteres
+y eso lo vamos a ver ahora que la voy a
+poner esta esta memoria de vídeo la voy
+a poner en el formato en el que se ve el
+aspecto que tiene vale voy a crear un
+nuevo
+una nueva imagen y esta nueva imagen lo
+que voy a hacerla es
+a lo largo como si fuera solamente una
+ristra de caracteres de modo que tendrá
+8 píxeles de alto que es el alto que
+tiene un carácter pero va a tener de
+largo 4 mil 96 píxeles o lo que es lo
+mismo 2048 bytes vale así que voy a
+poner 4 mil 96 píxeles y 8 de alto
+esa línea que se ve de lejos que tiene 8
+píxeles de alto en realidad esto es
+ahora si la memoria de vídeo y diréis
+porque 2048 bytes alguien puede decirme
+porque 2048 bytes a ver si alguien me lo
+dice 2048 vice corresponde algo que
+conozcáis os suena
+múltiplo de 2 si es múltiplo de 2 y
+también además de múltiplo de 2 es
+potencia de 2
+2k
+alguien me puede decir cuántos son 2048
+en hexadecimal
+en cuanto lo veáis en hexadecimal ya
+sabréis lo que son 2048 y aquí porque
+tiene que ver esta línea con lo que
+lleváis haciendo cuando habéis pintado
+sprites
+porque básicamente 2048 en hexadecimal
+es 800
+qué es exactamente lo que tenéis que
+sumar para pasar de una fila a la
+siguiente porque cada una de estas ocho
+filas largas ocupa 800 en hexadecimal de
+modo que si estoy y voy a subir para que
+lo veáis voy a hacer zoom me voy al
+principio
+y aquí que tengo ocho filas de
+caracteres
+y yo estuviera en la primera fila
+a ver si puedo pararlo
+vale si yo estuviera aquí en la sb se ve
+esto que hago no sé si se llega a ver
+porque está muy blanco
+vale esto está muy sobre expuesto voy a
+intentar ponerlo con un lápiz
+y así se verá en esta primera fila de
+aquí
+eso es la fila 0 si yo estoy en este
+píxel de aquí y quiero bajar a este
+píxel de aquí como tengo que recorrer
+toda la fila para llegar hasta ahí sumo
+800 y eso es lo que hemos estado
+haciendo en memoria de vídeo pero al
+ponerla así todas seguidas se ve claro
+porque en realidad la memoria de vídeo
+es como si fuera una ristra de
+caracteres no una ristra de píxeles
+entonces claro este primer pixel está en
+la posición pues si esto es de 0 0 0
+este de aquí puede ser c 0 20 y si
+quiero bajar al de abajo este 0
+c 820 y si bajó al de abajo es de 0 20
+porque tengo que ir sumando 800
+y ahora que tengo este formato si cojo
+la imagen de memoria de vídeo y yo me
+hago aquí
+para recortar una fila de caracteres que
+una fila de caracteres van a ser los 160
+de ancho por 8 de alto y entonces cojo
+una fila de caracteres no sé si llegáis
+a ver el selector vale
+pero yo me vengo aquí y cojo una fila de
+caracteres la corto
+me la llevo aquí la pego
+luego la fila de caracteres y esto es el
+aspecto que tiene en memoria mi fila de
+caracteres
+mi primer píxel está aquí mi último
+píxel está aquí y este píxel de aquí
+000
+este píxel de aquí es de 0 49 y claro el
+0 50 es el siguiente que no es el de
+abajo porque el de abajo es 800 más
+de modo que ahora si me vuelvo a mi
+imagen principal y cojo la segunda fila
+correcto es verdad muy muy buena la
+correccional es este 04 efe para que
+veáis que a mí también se me escapa a
+veces buena corrección el último este 04
+efe no c 0 40 y muy bien visto
+si soy capaz de quitar esto y me pongo
+aquí y pego el siguiente así vale y
+ahora es como veis cómo quedan las dos
+primeras filas de caracteres de la
+pantalla en memoria de vídeo como decía
+000 aquí tenemos más o menos no sé dónde
+lo he puesto ya que ver porque si no lo
+veo visualmente ahí el rojo está ahí es
+donde está el 04 efe se 0 50 hasta aquí
+al final que nos vamos a 0
+efe efe no efe efe no es 1050 sería en
+la 0 el último pues el anterior 9 efe
+vale 09 efe
+y entonces cualquiera de los siguientes
+de las 8 primeras filas de caracteres
+hay que sumar 800 pero claro ahora es
+cuando veis el por qué el 800 y el 50
+porque si yo estoy en el primer píxel
+estas son las primeras 8 filas y las
+segundas 8 filas de carácter de osea de
+píxeles vale están así en memoria de
+vídeo de modo que cuando yo me vengo
+aquí al principio
+esta primera fila de píxeles la primera
+de arriba ya ver si lo marcó
+esta primera fila de píxeles
+vale está ahora si lo veis
+primera fila de píxeles
+esta primera yo estoy en 000 la segunda
+de 800 de 00 de 800 00 y 800 f 00 f 800
+pero cuando bajó de aquí ya no hay más
+nada memoria de vídeo y la siguiente
+fila de píxeles está a partir de este
+primer píxel negro que tenéis al
+principio es sumando 50 hacia aquí que
+es aquí
+este es el siguiente pixel sumando 50
+porque me tengo que desplazar al
+siguiente carácter y como tengo los
+primeros 80 caracteres aquí al principio
+el siguiente está ahí y es el primer
+píxel de ese segundas filas de
+caracteres así que lo que tengo es como
+si dijéramos
+una ristra muy larga de bloques de
+caracteres y tengo que bajar dentro de
+cada bloque de caracteres irme al
+siguiente bloque bajar dentro del calor
+que es irme al siguiente bloque bajar
+vale con esta imagen estoy seguro de que
+ahora veis un poco mejor que antes la
+estructura de la memoria de vídeo porque
+ahora sí que veis que puesta así la
+memoria lineal
+pero es lineal respecto a los caracteres
+no respecto a los píxeles vale entonces
+cuando esto que lo tengo hecho si yo
+cojo esa imagen y voy poniendo enteros
+todos los caracteres de la pantalla es
+decir cojo como ha ido haciendo las dos
+primeras filas y voy cogiendo las 25
+filas de caracteres que hay en memoria
+de vídeo y las pongo todas seguidas
+tengo esto que vais a ver aquí vale esto
+es la imagen entera vale donde los
+caracteres
+están todos seguidos vale en memoria lo
+vais viendo que hay siete trozos de la
+cara un poco más abajo de la cara que lo
+vais viendo y ahora me voy hasta el
+final y al final del todo vais a ver que
+pasa algo curioso ahora y veis el logo
+de dynamic en esta zona que es la
+penúltima fila de caracteres y al final
+justo ahí esto
+y al final tenemos un trozo
+de 48 bytes en el que no hay nada
+porque la memoria de vídeos son bloques
+de 2048 vale pero en realidad si
+multiplicamos los
+hay una fila los píxeles que hay tenemos
+sabéis que tenéis 80 bytes al principio
+tenéis 25 caracteres
+y cada carácter tiene 8 son 160 x 25
+multiplicase todo y sale 16.000 pero 16
+casas son 16 mil 384
+estos son los 384 bytes que faltan y que
+no están siendo usados por la memoria de
+vídeo a esto se le llama la memoria
+súper vale lo veréis en los diagramas
+como zona expert memory que es memoria
+que no se está usando ahora mismo por la
+pantalla pero que forma parte de ese
+banco de 16 casas porque aquí es donde
+terminan nuestros caracteres y sobra
+todo esto y esto normalmente se utiliza
+para hacer scroll porque básicamente lo
+que nosotros hacemos es desplazar el
+puntero y entonces podemos seguir
+pintando caracteres aquí si yo digo que
+la memoria en vez de empezar en 000 va a
+empezar en 0 0 2 me he saltado el primer
+carácter y entonces se verán todos los
+caracteres desplazados hacia la
+izquierda 1 todos porque todo esto lo
+habré desplazado hacia la izquierda
+de carácter que ahora mismo no se está
+usando pasará a verse justo al final el
+último vale esto es lo que pasa cuando
+hago scroll con eso bien esta es la
+estructura real de la memoria de vídeo
+pero esa estructura nosotros podemos
+alterar la la memoria de vídeo no es
+fija y su geometría tampoco es decir
+nosotros podemos decir que en vez de
+querer tener como tenemos aquí 25 filas
+de 40 caracteres o 25 filas de 20 en
+modo en modo 0 en el modo 0 tenemos 25
+filas de 20 caracteres porque cada
+carácter son 2 bytes entonces
+son 4 bytes perdón de dicho mal último
+20 son cada carácter 4 bytes una vez
+tenemos 20 x 480 60 bytes y 25 filas
+pero yo puedo y decir en vez de
+que cada fila tenga 20 caracteres de
+ancho o lo que es equivalente 40
+caracteres de modo 1 yo puedo decir que
+quiero la mitad o puedo querer más eso
+se puede ajustar y también puedo decir
+que en 20 en vez de 25 filas quiero 16
+eso se puede ajustar y vais a ver como
+lo justo de hecho voy a abrir
+voy a abrir white way rv m y con rv m
+vais a ver algunas cositas interesantes
+para ello ahora rv m y lo primero que
+hago es que voy a poner el borde a cero
+para que se vea hasta dónde llega a la
+pantalla vale todo esto es lo mismo los
+ahora mismo son 320 x 200 porque estoy
+en modo 1 vale modo estándar es el modo
+1
+voy a sacar de aquí de las herramientas
+hay una arriba que pone cpc y le doy a
+la que pone el cpc y aquí lo que sale
+que lo vais a ver muy chiquitito vale
+pero no importa
+esto que vais a ver muy chiquitito
+arriba veis que pone etc esto son 16
+registros que son lo mismo que los
+registros de la cpu son registros
+decisión variables de 8 bits que tiene
+de 8 bits de dicho de 16 bits
+10 de 8 estoy diciendo lo más de 8 son
+dos dígitos hexadecimal es de 8 bits 16
+registros que lo que tienen es un valor
+cada uno que lo que nos dice es
+exactamente esto que estábamos hablando
+cuánto de largo tiene que ser una fila
+cuánto de alto tiene que ser la pantalla
+como colocó la pantalla más a la
+izquierda o más a la derecha lo vais a
+ver por ejemplo el registro 1 que van
+del 0 al 15 el registro 1 lo que
+controla es cuántos caracteres del modo
+1 vale tiene esta pantalla de ancho y
+ahí pone 28 que se hexadecimal 28
+hexadecimal en decimal cuánto es
+40 correcto bueno pues vamos a ver qué
+pasa si pongo 20 que es 32 120 y le doy
+al entro
+y fijaos lo que sucede que ahora mis
+filas son de 32 en vez de 40 caracteres
+y eso hace que toda la memoria de vídeo
+sean los cachos que ocupaban 40 todos
+ocupan 32 y por tanto toda hecho sin red
+y se ha venido para adelante le acabo de
+quitar 8 caracteres a cada una de las 25
+filas con lo cual he quitado 200
+caracteres de la pantalla que ahora
+hacen que la memoria esper sea más
+grande y la memoria que yo tengo para
+vídeo más pequeña con lo cual ahorro
+mucha memoria de vídeo para hacer la
+pantalla más pequeña pero claro ya veis
+que ahora tiene otro formato porque
+porque antes para saltar de una fila a
+la siguiente cuando había que cambiar de
+carácter había que saltar 80 o lo que es
+50 en hexadecimal pero ahora cuando he
+hecho este cambio ya no tengo que saltar
+50 ahora tengo que saltar ya no tengo
+que saltar 80 ahora es 64 porque tengo
+32 caracteres de 8 64 bytes no 80 como
+antes
+y por tanto esto se desplaza porque el
+basic está pensado para tener 40
+columnas y entonces ahora como hay 32
+veis que dibuja bien todo un carácter
+porque siguen habiendo 800 de 1 la
+siguiente pero cuando tengo que saltar
+de carácter estoy sumando demás en vez
+de poner el cuadrado aquí lo pongo aquí
+porque está sumando 50 en hexadecimal en
+vez de 40 está sumando 16 bytes más vale
+por eso se ve la pantalla desplazada y
+la pantalla además se ha ido hacia allá
+porque y esto os lo voy a enseñar
+mirando una web vale que además la voy a
+buscar para que veáis cómo buscarla a la
+web se llama green where punto org
+no voy a poner aunque la que está ahora
+online tiene un fallo y lo vais a ver
+esta web green wear punto hereje tiene
+algunas cositas muy interesantes y
+particularmente tienen documentación muy
+buena sobre cómo funciona el chip sé rtc
+de la maestra y estos registros que os
+acabo de enseñar que controlan los
+tamaños de la memoria vale entonces aquí
+se le da hasta el cpc veréis que tiene
+desde los distintos me voy aquí en las
+informaciones técnicas del 4 6 4 y
+entonces pasa esto que la web está un
+poco tocada del ala vale podríamos
+intentar ponernos a mano y arreglar esto
+pero en vez de hacerlo hay un truco con
+esto y es que me cojo la url de la web y
+me voy a una web que se llama arkaitz
+punto hereje archivo punto org
+que tienen una cosa que se llama el
+wayback machine que es la máquina del
+tiempo para las webs entonces ponemos la
+url aquí en el wayback machine entonces
+me salen los snapshots que tienen de esa
+web de versiones anteriores
+después puedo ir a una versión anterior
+de esta web
+donde eso que ahora falla funcionaba
+bien vale por ejemplo esta supongo que
+irá bien le doy y me va a abrir la misma
+web de link were punto hereje
+pero el snapshot de hace tiempo
+y aquí veréis que explica un montón de
+cosas y entre ellas aquí hay un punto en
+el que dice
+cr tc que lo veréis ahí crc 68 45 que es
+el chip vale el chip controla la memoria
+de vídeo vale bueno aquí veis que tiene
+formato vale si os sale bien pero esto
+es la lista de todos los registros que
+tiene el ser etc y os he enseñado cómo
+he cambiado el registro 1 y el registro
+1 aquí pone número de caracteres
+mostrados horizontalmente que veis que
+pone 40 vale pues hay cuatro registros
+destinados a lo horizontal cuatro
+registros destinados a lo vertical y de
+los cuatro siguientes hay dos que nos
+interesan particularmente que son el 12
+y el 13 que los usaremos en su momento
+que veréis que pone
+dirección de comienzo del display que es
+donde empieza la memoria de vídeo y ahí
+indica dónde empieza la memoria de vídeo
+si fue cambiar de modo que le podemos
+decir oye tú la memoria de vídeo que la
+tienes para empezar en 3000 ahora quiero
+que empiece en 4000 o ahora quiero que
+empiece en 8000 eso sirve para hacer la
+técnica del doble bajo de modo que yo
+utilizo por ejemplo la zona de memoria
+de 8000 como si fuera la memoria de
+vídeo pero como se está mostrando 11000
+yo escribo en 8000 y no se ve nada en
+pantalla cuando ya he terminado de
+dibujar todo simplemente cambio esos dos
+registros para que la memoria de vídeo
+pase de ser 0 0 0 a 0 8000 y en el
+siguiente fotograma se va a ver lo que
+yo había escrito y si yo tenía que haber
+dibujado mucho me ahorro todos los
+problemas de flickr in the ting y demás
+que ocurren cuando el raster me pilla a
+mitad de dibujado vale
+todo eso lo veremos si en algún momento
+consigo que esté
+nos muestre el otro porque lo que quiero
+que veáis es la imagen
+que es donde se ve todo esto que estoy
+explicando de la memoria de vídeo y que
+nos vendrá bien porque hoy lo que
+queremos hacer es hacer un render con
+una memoria de vídeo distinta de la
+original vale aquí parece que sí que no
+vamos a ver
+para bebés las fotos del chip
+queréis que se ve esto un poco más
+bonito vales una tabla y las tablas se
+ven un poco más molón las que como
+estaba hace un momento y aquí debajo
+estará
+esta imagen que es la que nos interesa
+ver
+así así se verá mejor
+esta imagen es de cómo se dibuja la
+pantalla
+y veis que la pantalla esto es cómo se
+dibuja un carácter vale esa es la
+pantalla de la memoria de vídeo que la
+veis y esto es la zona que no se ve que
+hay fuera de la pantalla porque
+realmente la pantalla tiene todo esto
+que es borde y todo esto que es visible
+y todo esto de aquí abajo que es borde y
+todo esto que es visible y ahí veis el
+famoso zinc que es la zona de todo el
+borde exterior donde está el ub cinc
+activo es decir ahí se activa la señal
+de uve zinc permanece activa hasta aquí
+y aquí se desactiva y ésta es h5 para
+qué sirven esas señales de vih zinc
+estas señales aparte de que la asociamos
+nosotros para detectar cuando estamos en
+una zona de la memoria de vídeo o
+esperarnos hasta aquí para empezar a
+hacer cosas ahí esto de aquí nos sirve
+para que la pantalla
+cuando tiene que hacer cosas y me
+explico esto es importantísimo esto
+nosotros el chip le está enviando al
+monitor ahora es sincronismo horizontal
+y entonces el monitor sabe que tiene que
+empezar a dibujar otra línea
+y eso se puede retocar pero hay que
+tener cuidado yo os voy a dar unas
+pautas para que retoque jce de momento
+sólo lo básico porque si se retocan las
+cosas esto puede hacer por ejemplo
+nosotros podemos cambiar y decir aquí
+veréis que hay de 0 a 38 líneas de
+caracteres en total incluyendo las que
+no se ven las no visibles y si nosotros
+decimos hoy en vez de 38 voy a poner 30
+pues tendréis un problema con los
+monitores porque los monitores están
+ajustados para un estándar que se llama
+el estándar pal y el estándar pal tiene
+que dibujar 312 líneas en total si
+nosotros lo ajustamos para un tamaño
+distinto lo que va a ocurrir es que
+vamos a empezar a ver efectos raros en
+la pantalla de que se desajusta vale
+pero esto de aquí si le cambiamos
+solamente el ancho por ejemplo podemos
+provocar una cosa fijaos que si yo estoy
+aquí lo hago más estrecho lo que va a
+ocurrir es que voy a tener el borde a un
+lado más grande que él
+y es este borde de aquí es el que se ve
+a la izquierda vale y este borde de aquí
+es el que se ve arriba si os fijáis
+entonces yo ahora esta señal dh5 me voy
+a ir a cambiar su tamaño el ancho que lo
+puedo cambiar
+y esto lo cambio
+aquí en el registro bueno voy a enseñar
+los registros para que lo veáis mejor
+aquí tenemos la tabla de registros
+veréis no sé sí
+llegáis a leer la letra
+si así bajo más gente
+r 1 número de caracteres mostrados
+horizontalmente r2 posición del pulso de
+sincronismo horizontal y ahora esto
+cuando lo veis en la imagen veis que
+aquí arriba pone r2 lo veis
+entonces yo puedo este rededor
+llevármelo para acá o llevármelo para
+allá y hago este borde más grande o más
+pequeño y ahora lo veréis que pasa
+cuando hago es
+r2 que pone 2 y vale y s2 y que si me
+decís cuánto es vamos bien cuánto es 12
+en hexadecimal
+cuánto es 2 en esa decimal
+46 os parece bien
+bien en 46 muy bien voy a que lo hago
+más pequeño o más grande decirme si
+quiero llevarme esa pantalla hacia la
+derecha quiero llevarme esto hacia acá
+qué hago con el pulso horizontal lo hago
+más tarde o más pronto
+fijaos en eso y fijaos en esto
+vale yo mi pantalla está la hecha más
+pequeña hasta aquí sí y ahora esto de
+aquí me lo llevo más para acá o me lo
+llevo más para allá
+pongo más de 12 o menos de 12 para que
+la pantalla se vea más centrada
+porque si cambio la señal del pulso haré
+que baje antes o baje después
+el monitor él
+menos o más
+nadie tiene una respuesta a nadie tiene
+una idea alguien que se arriesgue son
+mis riesgos no pasa nada si os
+equivocáis pues no pasa nada
+la lógica me dice que antes dice álex
+menor valor alguien que me diga más
+respuestas alguien se atreve a pensar
+que es mayor menor yo ahora si me votáis
+un poco yo elijo lo que mas votéis
+si no lo que diga alex porque es la
+única que ha hablado
+alguien más que me diga sólo por llevar
+la contraria mayor y es para llevar la
+contraria que llamamos uno y otro vale
+entonces alguien que me diga juan carlos
+piensa como álex muy bien vale pues
+tenemos dos a uno
+votamos por menos tenemos doce a cuánto
+lo bajo
+os recuerdo el diagrama esto de aquí es
+46 que es 2 y esto de aquí era 40 que lo
+hemos bajado a 32 vale aquí sí entonces
+ahora este 46 a donde me lo llevo
+cuanto queréis que ponga en vez de 46
+112
+dando una cifra luego más pequeñas 26
+estás hexadecimal 3 decimal 8 menos de 2
+y 26
+vamos a probar 26
+en hexadecimal
+como veis la pantalla se mueve hacia
+allá aunque nos hemos pasado un pelín
+pero efectivamente lo que hemos hecho al
+reducir esto de aquí
+al mover esto para acá este borde que lo
+habíamos hecho más grande lo hemos
+vuelto hacer más pequeño el borde de la
+derecha vale es lo que hemos hecho
+simplemente el borde se hace más pequeño
+la señal de sincronismo horizontal llega
+antes y baja antes a la siguiente fila
+donde tiene que pintar el otro borde
+vale eso es lo que hemos hecho
+26 igual es mucho vamos a poner 2
+por ejemplo que estará más centrado vale
+y ahora me voy a tocar las cosas que son
+verticales en vez de las horizontales me
+voy a las verticales y entonces veréis
+que aquí en las verticales que son estas
+4
+con alguna cosa más del 4 al 7
+el número total de líneas verticales que
+como decía mejor no tocarlo porque estas
+son las que se ven sino las totales
+incluyendo el borde que es 38 esa es la
+que nos está garantizando de momento que
+cuando lleguemos abajo estamos pintando
+312 líneas y eso va a asegurarnos que
+funcionamos en el modo pal aquí hay un
+registro que nos permite ajustarnos un
+poquito para mover la pantalla un
+poquito de abajo a arriba metiendo unas
+cuantas líneas más vale y esto de aquí
+son los que nos interesan esto es el
+número de caracteres mostrados
+verticales que como veis os suena 25 es
+el número total y el de abajo que nos
+dice la posición donde empieza el v
+cívica que lo podemos poner más arriba o
+más abajo se muestra en 25 y en el 30 es
+el v 5 si en vez de 25 que es el que
+tengo ahí y que efectivamente esto es
+decimal y cuando me venga aquí ese 25 es
+19 lo voy a poner por ejemplo en 16 que
+es 10
+y tengo una pantallita más pequeña como
+veis y ahora voy a cambiar donde empieza
+el v sing que igual que antes
+si yo este borde de aquí me llega al v
+sing tengo que traer un poco para arriba
+con lo cual lo pongo un poco antes el v
+5 ahora mismo está en el 30 que es 1 y
+lo voy a bajar vale pues si he bajado 5
+pues aquí me voy a poner por ejemplo
+igual que antes me voy a ir al 1 a ver
+qué tal
+habéis visto que ha hecho un momento del
+porque se ha tenido que reajustar el
+monitor a los nuevos settings
+pero ahora tengo una pantalla que es de
+32 caracteres de ancho y 16 de alto y
+esta pantalla ahora tiene la ventaja de
+que en vez de ocupar como nos ocupaba la
+de antes 16.000 bytes está ocupa
+particularmente una cifra que nos
+interesa mucho que es 32 x 32 x 16 con
+lo que viene siendo lo mismo 8 casas
+exactamente 8 casas de pantalla
+con ocho caras de pantalla significa que
+la zona que hemos visto antes que era
+espera que quedaba al final es también
+de ocho casas de modo que con una
+pantalla como ésta si quisiéramos hacer
+una técnica de doble buffer podríamos
+hacerlo sin necesidad de comernos como
+siempre nos hemos comido para hacer
+doblar 32 casas al cambiar de un sitio a
+otro sino que aquí con los 16 cast de
+memoria de vídeo tenemos dos pantallas
+enteras podemos dibujar en una y mover
+el puntero ahí y luego dibujar en la
+otra y mover el puntero ahí vale que
+como veis me lo de mover el puntero
+eran los registros 12 y 13 en los
+registros 12 y 13 veréis que pone 3000
+este 3000 es porque en realidad no
+utiliza los dos registros enteros para
+la posición de la memoria de vídeo sino
+que el registro r12 sólo se usa en 6
+bits entonces cuando movemos un solo
+byte la memoria con un solo número de
+aquí la memoria de vídeo en realidad eso
+está multiplicado por cuatro
+fijaos que si yo ahora cambio esto que
+pone 0 0 y lo pongo por 0 1 que es mover
+la memoria de vídeo hacia adelante 1 en
+estos registros lo que hace es mover un
+carácter entero como veis habéis visto
+la r
+esta de red y habéis visto como ha
+pasado para allá porque porque en esta
+línea vale
+vamos a volver al dibujito que tenía yo
+aquí en esta línea larga de caracteres
+mi memoria de vídeo antes empezaba aquí
+que esto esté 000 y yo ahora le he dicho
+cambiando el registro r13 le dicho que
+en vez de empezar en cero empieza en uno
+pero ese uno está x 4 con lo cual este
+es un byte este es otro byte este es
+otro byte este es otro byte y ahora
+empiezo aquí este es el 1 que en
+realidad en bytes esto es 300 000 100
+200 300 4 aquí por eso he movido un
+carácter entero la memoria de vídeo este
+carácter que antes se veía ahora queda
+fuera de la memoria de vídeo este es el
+primero que se ve y todos los demás
+están emplazados uno hacia la izquierda
+vale eso es lo que he hecho al cambiar
+este registro todo se ha desplazado uno
+al elegirla y veréis que si pongo dos
+y luego no puede ir poniendo dos hay
+pero momento en el puesto
+veréis cuando dos que se vuelve a
+desplazar pongo tres y vais viendo cómo
+va haciendo scroll vale
+porque voy desplazando la memoria de
+vídeo
+con esto se vuelve a poner como estaba
+yo puedo mover la memoria de vídeo pero
+siempre en múltiplos de 4 paso de 00 00
+a 6 004 y aquí por ejemplo si lo veis
+como esto es 30 30 si yo lo multiplicó
+por 4 me sale 0 que es donde empieza la
+memoria de vídeo vale porque está x 4
+solo 16 bits es decir yo quiero que esto
+en vez de estar en ce 000 esté por
+ejemplo en 8000 aquí que tendría yo que
+poner
+pero si quiero que la memoria empieza en
+8000 en 20 000 que pongo ahí
+porque hay ahora mismo pone 30
+y treinta por ocho por cuatro digo yo
+por cuatro este 000
+pero ahora quiero
+que empiece en 8.000 que tengo que poner
+para que al multiplicarlo por cuatro de
+ocho mil en este caso la parte de arriba
+80
+20
+en juan carlos lo dice tímidamente con
+preguntas 20 vamos a ver
+voy a ponerlo aquí para que lo veáis
+6000
+en binario es esto 11 000 000
+esto es te 000 vale estar aquí enlace y
+los siguientes 000 sí
+vale como yo he dicho que esto solo
+utilizó 6 bits y no 8 los dos primeros
+están a cero los dos últimos se pierden
+y por eso todo esto está como dividido
+por cuatro de hecho cuando yo le pongo
+uno aquí en realidad es como que
+estuviera poniendo por cuatro por esto
+esto de aquí
+en el registro r 12
+y haré 13 esto que se ve así en realidad
+es 3000 vale porque no uso los dos
+primeros bits solo uso los seis
+siguientes y tengo una dirección que
+está multiplicada por cuatro los dos
+últimos bits los siempre van a ser
+considerados cero porque no los usa
+entonces si yo ahora quiero pasar a
+poner la dirección ocho mil ocho mil en
+esa decimal sería esto
+si hago la misma operación y me lo llevo
+2 bits
+a la izquierda a la derecha
+esto de aquí
+2000
+lo véis ahora
+ahí tenéis el 2000 y que al
+multiplicarlo por 82 por 8 que manía por
+4 sería como desplazar dos veces hacia
+allá y quedarían 8000 vale así que yo lo
+que tengo que poner aquí es un 20 para
+que sea 2000 y entonces veremos en
+memoria de vídeo en cuanto le de a litro
+lo que hay en la memoria en 8000 pero lo
+veremos en píxeles
+esto en 8000 hay cosas en memoria porque
+están ocupando y como yo ahora estoy
+mostrando lo que hay en 8000 veo y de
+hecho no sé si veis hay un parpadeo
+veis un parpadeo aquí y otro aquí arriba
+por ahí está la pila y entonces puedo
+ver la pila cómo se ponen cosas y se
+quitan como lo está cambiando los
+valores cambian píxeles porque yo lo
+estoy mostrando como si fuera
+información visual aunque sean datos
+vale y entonces ahí el firmware está
+cambiando cosas por zonas
+particularmente como veis está cambiando
+los colores de la paleta el firmware qué
+es lo que hace el 14 y el 15 parpadean
+porque los cambia con cierta frecuencia
+y entonces está cambiando esa
+información ahí
+es vemos lo que hay en 8000 directamente
+que yo quiero ver lo que hay en 4000
+pues sigue la misma lógica y pongo aquí
+un 10
+y veo lo que hay en 4000 nada
+motivo por el cual usamos 4000 para
+escribir las cosas por defecto
+habitualmente porque no hay nada vale si
+pongo 0 0 veré lo que hay al principio
+de la memoria y gracias al principio de
+la memoria veréis que hay unas cuantas
+cositas y luego está vacío
+esas cuantas cositas que hay ahí son los
+primeros 64 bytes que son los que tienen
+el vector de interrupción hasta 0 040
+vale
+bueno con esto ya veis que se puede
+cambiar la memoria de vídeo se puede
+jugar con ella y esto tiene ventajas
+porque podemos reducir la memoria que
+ocupa podemos también hacer jugadas
+porque si habéis visto yo puedo hacer
+cositas como mover la pantalla entonces
+si queréis podéis hacer efectos gráficos
+que no cuestan redibujar por ejemplo
+cuando te dan un golpe o te dan un algo
+simplemente haciendo dos cambios rápidos
+de la posición del v si no cambia un par
+de veces y esto hará un tembleque vale
+yo lo puedo hacer lateral también
+cambiando el h sing pero cambio eso y
+sin pintar en pantalla nada lo cambio en
+un fotograma y lo cambio en otro y la
+pieza así y tiembla la pantalla vale
+también puedo hacer efectos para pasar
+de una pantalla a otra en la que el
+ancho de lo que se ve en pantalla el
+ancho visible lo voy haciendo más
+pequeño y luego lo vuelvo a hacer más
+grande y entonces algo como un efecto de
+la pantalla se encoge y luego se vuelve
+a deseen vale y esto no requiere
+pintar solamente cambiar la janda teoría
+de la pantalla durante un tiempo con eso
+se pueden hacer efectos gráficos de ese
+estilo
+vale
+pero lo que más nos interesa a nosotros
+es ahora esto como lo hago programando

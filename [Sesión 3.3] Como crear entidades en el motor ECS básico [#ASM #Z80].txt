@@ -1,0 +1,881 @@
+[Música]
+sí
+[Música]
+el código que tengo aquí ahora mismo
+tiene ya una estructura esto ya tiene
+una forma de game engine si os fijáis no
+sé si lo podréis ver en el lateral ahora
+cuando lo
+o minimice veréis que aquí
+tengo en la carpeta fuentes
+esto no sé si lo llega a saber
+aquí en la carpeta fuentes tengo una
+carpeta man que es para el manager de
+entidades ahí está el punto ese 23 punto
+ese y aquí pone sis y estos son los
+sistemas físicos y render vale son
+cuatro ficheros y aquí un main punto es
+algunos me habéis preguntado sobre el
+tema
+de cómo gestionar la programación multi
+ficheros
+con cpc telera esto está resuelto os lo
+hace solo os lo comenté en la semana
+pasada cuando se explicaba lo de que
+varios ficheros se compilan por separado
+y luego la salida de todos ellos se
+junta con el link er y produce un
+binario
+todo eso lo decimos a mano con un único
+fichero pero repetirlo para varios
+ficheros es lo mismo es ensambló uno
+ensambló otro ensambló otro ensambló
+otro cojo los punto red que generan
+todos y lincoln los puntos red en un
+único binario vale eso es la diferencia
+entre un fichero y varios es ensamblar
+varios juntar el resultado en uno solo
+pero eso nosotros no tenemos que hacerlo
+a mano solo tenemos que entender bien el
+proceso para que luego no nos hagan
+errores sepamos de dónde vienen y que
+está haciendo el proceso lo hace cpc
+telera automático fijaos los ficheros
+que tengo aquí vale que tengo un montón
+entonces todos los ficheros punto s que
+están dentro de la carpeta source
+psc-cpc telera los trata como que deben
+ser ensamblados y los ensambla todos y
+luego link a todos los todos ellos vale
+lo hace automático si creáis 235 20
+ficheros punto s dentro de src veréis lo
+que vais a ver ahora cuando yo ensamble
+voy a hacer un clic all vale que esto
+elimina todos los ficheros generados y
+ahora voy a poner make y veréis que
+cuando pongo make salen un montón de
+líneas pero todas estas líneas de aquí
+si las veis son el fichero main punto s
+siendo ensamblado a continuación el
+siguiente es el fichero entities h punto
+s siendo ensamblado el siguiente es
+entities punto s siendo ensamblado
+physics punto a punto s siendo
+ensamblado physics punto s siendo
+ensamblado uno a uno coge todos y los
+ensambla cada una de estas líneas de
+ejecución genera un fichero punto red
+bueno y genera también los lst los rs
+todo lo que vimos la semana pasada y lo
+que usamos para ver las traducciones de
+cada ensamblado saber los ficheros
+objeto de ese ensamblado cuando todo eso
+termina en render punto ese entonces
+sale aquí link 'no y entonces veis que
+para linkar hace lo que hicimos la
+semana pasada que es llamar a ese de cc
+que es el link er con menos 30 80 nos rt
+0 en la localización del código a la
+localización de los datos y aquí veis
+que le pasa a la librería de cpc tel era
+como un objeto para ensamblar que ya os
+dije que un punto live no es más que
+todos los puntos red y juntarlos
+en un fichero sólo lo que hay ahí como
+un montón de puntos reales pero sólo en
+un fichero y a continuación veis mail.ru
+entities h punto red gen titís punto red
+physics h red
+extender el fihsin sobre él todos estos
+conjunto todos en un link ado y produjo
+como salida el fichero binario hx que
+vimos la semana pasada el punto i hx a
+continuación se convierte en bing
+utilizando el ex touring que vimos la
+semana pasada se convierte en bing y
+esto ya me genera el binario
+que a continuación de generar os
+acordáis de esto que salía la semana
+pasada ya lo meto en el cdt lo meto en
+el de seca pero ese es el proceso se
+hace solo es decir vosotros metéis en
+src de fichero punto ese y todos se
+compilan o no se ensamblan y celine can
+sin más queréis un nuevo fichero lo
+creáis y ya está automáticamente fp7 era
+cuando cumplí seis lo pillara nos
+hablara
+se entiende alguna duda respecto a este
+proceso
+vale aquí lo vemos un poquito mejor en
+el otro lado de la estructura que tengo
+ahora
+como veis tengo un mail y en la carpeta
+mal el manejador de entidades y en la
+carpeta así es dos sistemas vale es lo
+que tengo los ficheros punto a punto s
+aunque se ensamblan lo que tienen en
+general aunque se ensamblan los ficheros
+punto h punto s voy a poner este primero
+que es más sólo tienen cosas como ésta
+este es el punto h punto s de physics y
+esto solamente es una directiva punto
+global esto no genera código no genera
+ningún byte en el binario final para qué
+sirve esto esto es lo que nosotros
+estamos utilizando para decirle al
+ensamblador oye en este fichero que vas
+a ensamblar esto es un símbolo global
+que significa que este símbolo puede que
+aquí no exista pero tú en san blas como
+si existiese y luego el link er cuando
+junto ya lo encontrará dónde está vale
+esa es la idea de punto global es una
+directiva para el ensamblador no genera
+código pero claro esto si usamos el
+physics desde varios ficheros tendríamos
+que estar poniendo este punto global en
+todos los ficheros donde haga falta
+entonces para eso en vez de ponerlo en
+todas partes este global lo definimos en
+un fichero punto h punto ese entonces
+donde necesitemos s global definido
+hacemos incluye y así nos ahorramos
+tener que teclear lo que aquí pongamos
+que bueno aquí sólo es un global no pasa
+nada pero claro si en vez de ser un
+global es como él entities que veis aquí
+que tiene más cosas definidas claro si
+tenemos que eso ponerlo en 20 ficheros
+donde se usa identities pues el problema
+ya no es que haya por qué ponerlo 20
+veces es que si requerimos cambiarlo
+haber que cambiarlo en 20 sitios
+entonces en vez de hacer eso para eso
+hacemos un fichero de incluye para que
+todos los que lo usan hacen incluye y lo
+tengo definido bueno esto no es una
+definición exactamente es una
+declaración vale porque no genera código
+no tengo declarado en un solo sitio con
+lo que tenéis que tener cuidado es con
+no poner en un fichero punto h cosas que
+generen bytes al ser ensambladas por
+ejemplo si yo pongo esto
+esto que pongo aquí vale
+así se verá mejor he puesto un punto de
+p
+a esto va a tener un problema como éste
+es un fichero h y punto s ya habéis
+visto que el ensamblador lo pilla es
+decir cpc tele de acoje y esto lo
+ensambla por tanto generará un byte que
+va a ir al binario pero es que todos los
+ficheros que hagan incluye de esto todos
+tendrán eso también y por tanto todos
+generarán aa
+en 20 sitios vale de hecho voy a poner
+otra cosa para que se vea más claro
+así
+se verá más claro
+ahora mismo hay 4 bytes
+4 bytes ahí que yo simplemente le estoy
+diciendo el ensamblador oye genera 4
+bytes voy a ensamblar y veréis lo que
+pasa
+a no que estoy dentro de sauces
+a gómez
+y ahora
+sí
+qué
+[Música]
+si edito el binario
+fijaos en el binario lo que tiene nada
+más empezar
+os suena
+no hay nada más empezar luego hay un
+montón de ceros además que van a ser
+básicamente nuestros 100 bytes que he
+puesto en el array pero mirad aquí
+lo veis
+eso se debe a que varios ficheros han
+generado los bytes de dif en su propio
+punto real y luego cuando se enlazan
+todos están generados en todas partes
+vale y si seguir buscando en el binario
+vais a encontrar más
+a salir
+entonces lo veis que esto es
+problemático si metemos en un punto h
+eso porque todos los que lo incluyen
+incluir es copiar y pegar ese código
+copiar y pegar ese código es como si
+hubiéramos escrito eso en todos los que
+hagan incluye texto vale así que no
+podemos en todos generar bytes de salida
+porque los replicamos sin embargo esto
+solo son constantes del ensamblador que
+no existen en código máquina son
+declaraciones al no existir en código
+máquina podemos redefinir las por así
+decirlo en cada uno de los ficheros cada
+vez que se ensamblan porque es queremos
+que existan mientras el ensamblador
+ensambla qué es lo que pasa con esto
+queremos que mientras el ensamblador
+ensambla sepa que x vale 1 y eso yo lo
+uso en 20 sitios hay 20 sitios donde
+pongo es subrayado x en vez de poner 1
+pero eso es información para ensamblador
+que no termina en el código máquina lo
+otro sí que son bytes que se generan y
+que van al código máquina y que si lo
+generan 20 ficheros pues genera 20 veces
+el mismo bytes
+se entiende la diferencia
+si hay algo de lo que estoy contando
+decirlo porque esto es muy relevante que
+lo tengamos claro vale
+si habéis entendido esto vamos a la
+estructura
+la directiva punto module para qué sirve
+la buena pregunta que no lo he dicho la
+directiva punto module no es más que
+información para el propio ensamblador y
+para los ficheros que se usan como
+depuración cualquier fichero que
+vosotros com py les pertenece digamos
+intelectualmente o conceptualmente a un
+módulo si le ponéis una directiva punto
+module si un fichero encuentra varias
+veces la directiva punto module se queda
+con la primera y esto pasa porque si
+usáis include es los ficheros que
+incluimos pueden tener otras directivas
+punto module así que yo siempre pongo
+punto module al principio de un punto h
+y aquí veis que es module en ti te
+manager y esto sirve para que cuando yo
+abra el punto map vale me voy al vj y
+abro el fichero punto map o cuando me dé
+esto un error vale que el link quer
+cuando da errores te dicen que módulo ha
+sido pero si aquí me voy abajo veréis
+que los símbolos al lado me indican
+a qué módulo pertenecen si lo más
+pequeño se verá
+todos estos símbolos son del módulo en
+tití manager si bajo un poco más abajo
+estos son de él el physique system
+render system cpc de vídeo así se que
+este símbolo en qué módulo está definido
+y eso ya me da una información de dónde
+está vale simplemente sólo es
+información vale no hace más nada pero
+esa información es útil y sirve también
+para lo que digo cuando el link que da
+un error te dicen no encuentro este
+símbolo que está en este módulo entonces
+si tú le has puesto el módulo y está
+bien definido cuando el link es de del
+error de as avales ya sea donde está
+porque si no el interno te puede dar
+fichero y línea linker no sabe eso
+vale
+como decía vamos a la estructura
+en esta estructura tengo un game manager
+que es lo que ya habéis visto en la
+parte del start field
+tengo un game manager un sistema de
+física y un sistema de render muy básico
+vale no tengo más nada casi
+prácticamente igual que en el starter
+film el entities vale el manager de
+entidades como veis aquí tiene unas
+cuantas funciones que me permiten
+inicializar lo crear crear una entidad
+destruir una entidad a todas ellas
+aplicarles algo algunas funciones más
+que veréis en el siguiente en el en el
+game engine estándar vale aquí tengo
+para obtener una entidad partido de un
+índice para decir que una entidad va a
+ser destruida puede destruir la marcarla
+para destruir y actualizar el mal
+identidades son una serie de funciones
+con las que yo me apaño
+todo eso es lo que hace el manager de
+entidades que es el componente principal
+como veis physics systems solamente
+tiene un update y render tiene una
+inicialización y un update en render
+como veis la inicialización aquí tengo
+alguna cosa más que hablar lo cuento
+pero la inicialización es cambiar el
+modo de vídeo simplemente pongo en ce el
+modo que quiero y llamó a cpc set vídeo
+mode esto cambia el modo de vídeo a
+continuación utilizo esta macro para
+cambiar el color del borde para ponerlo
+en el color gris que aunque se llama
+white es el gris vale y a continuación
+esto es llamada la función que me cambia
+la paleta vale que ahora lo veremos le
+pasó a la paleta le digo que son 16
+colores y se la pasó con esto es la
+inicialización del render poner el modo
+poner la paleta red vale hasta ahí se
+entiende supongo fácil
+una duda la macro cps tcr border hay que
+declararla como global o algo en
+principio la forma de declarar la macro
+como global
+es simplemente con esto cuando tú haces
+incluye que el tema es que estás
+incluyendo todas las macros por tanto la
+macro existe en este fichero porque aquí
+está declarada entonces ya la puede usar
+está en tu fichero porque has copiado y
+pegado lo que hace el cpc telera h punto
+s todo esto de aquí que ponemos punto
+global no son macros son funciones no
+están definidas aquí porque si
+estuvieran definidas con el mero hecho
+de poner el incluye automáticamente se
+crearía el código de todas las funciones
+y tú no quieres eso tú lo que le dices
+es esto está definido en otro sitio en
+cpc telera punto lip vale que es donde
+están los puntos red de todas estas
+funciones y yo solamente pongo lo global
+de las que uso porque en cuanto ponga es
+un punto global de una función de cpc
+tel era el link er lavalín card te
+meterá el código de esa función aunque
+no la uses si tú pones el global le está
+diciendo este símbolo global existe el
+link er llega y dice esto existe donde
+está aquí en el dip
+lo añado
+vale cpc tener a lo que la librería
+ocupa más de 100 casas no podrías meter
+todas las funciones no cabrían en
+memoria solamente puedes meter las que
+uses entonces por eso pones punto global
+de las que quieres usar ya vale
+no sé si entiende la diferencia bien
+esto que tengo aquí es un spray de un
+guerrero es un spray de de 8 píxeles de
+ancho en modo 02 píxeles por byte por
+eso tiene 4 bytes de ancho y 16 píxeles
+de alto 16 bytes entonces simplemente
+son los píxeles definidos todos seguidos
+en memoria
+esto es la paleta que como veis la
+defino a mano arriba tengo puesto estos
+colores que tengo aquí puestos los
+valores que son del firmware y yo
+simplemente utilizó las constantes que
+están definidas en cpc telera esto al
+final son números pero yo uso las
+constantes que me ven más claro el plan
+el blu-ray blue vale 2 esos 16 colores
+una raíz de 16 bytes con los 16 colores
+esto es lo que le estoy pasando
+al ser paleta esos 16 le digo que son 16
+y él ya los inicia
+a continuación veréis el sis render
+update esto es la actualización del
+render que como habéis visto en el start
+field utiliza el mecanismo de inversión
+de control que hago meto en hl un
+puntero a la función que va a hacer de
+actualización de entidades una una esto
+es un puntero a la función si es render
+one en tití porque sin render uar en
+tití no es más que una etiqueta la tengo
+aquí definida que está vacía
+ahora mismo vale si os render 43 una
+etiqueta una dirección de memoria la
+meto en hl llamo a la función for all
+vale aquí como veis manenti for all
+manenti for all recibirá en h l
+el puntero este que le he pasado y
+entonces producirá calls uno detrás de
+otro a esta dirección de memoria pasando
+en el en el registro x el valor de la
+dirección de memoria de la entidad sobre
+la que yo tengo que operar
+de modo que a mí después de hacer esto
+me van a venir llamadas aquí
+así es render one en tití en las que
+cada llamada que yo reciba ahí tendrá
+dirección de memoria en el registro y x
+de la entidad que estoy manejando o de
+la que tengo que rendir izar en este
+caso porque esto es el render vale
+así que si os parece vamos a crear un
+par de entidades y renderizar las para
+empezar algo que ya hemos hecho con
+píxeles vamos a hacerlo con este warrior
+que he declarado ahí arriba vale así que
+en el mail
+que en principio no es donde debería
+hacer esto pero como ahora estoy
+haciéndolo todavía de pruebas y de
+principio lo hago ahí en el main voy a
+hacer eso pero esto ya debería de ir a
+un manager de juego que sería el que se
+encargue de gestionar cuando empieza una
+partida y creo las entidades entonces
+empieza y así puedo empezar partidas
+jugar partidas terminar partidas sólo
+haría un manager de juego ahora de
+momento lo hago en main como siempre en
+mail lo primero que hago es deshabilitar
+el firmware estoy ya deberíais de saber
+lo que es mientras hago otras cosas lo
+voy a preguntar y quiero que me digáis
+que hace exactamente deshabilitar el
+firmware vale el siguiente cosa que voy
+a hacer es voy a inicializar el sistema
+de render claro yo tengo que hacer call
+qué decís vender in it
+y esto está definido en otro fichero
+esto es main punto s easy rider y dit
+está definido en render punto s pero
+como sabrá el ensamblador porque yo aquí
+veis que tengo un incluye decís render
+punto a punto s
+isis render punto a punto s
+tiene estos puntos global
+de modo que como eso va a hacer que aquí
+en esta posición de aquí
+ponga punto global 6 render in it cuando
+yo llego aquí abajo el ensamblador sabe
+que si es render in it es un símbolo
+global ensambla este fichero y cuando el
+link que recoja los dos dirá en este
+está definido si es render init en este
+se llama así es render init los junto y
+la llamada la pongo
+álvaro sirven dice lo del firmware no es
+para que no se produzcan parones por los
+saltos de la dirección donde comprueba
+no no es para eso
+me tenéis que decir si alguien lo sabe
+para qué sirve lo de deshabilitar el
+firmware y qué pasa si no lo hacemos que
+es el firmware que está haciendo el
+firmware para que nosotros queramos
+deshabilitar lo vale pero yo lo voy a
+deshabilitar a ver quién me da una
+respuesta siguiente como digo llamo a la
+inicialización del render qué es lo que
+me va a poner en modo 0 y la paleta vale
+así que si yo ahora mismo solamente con
+pilas y ejecutas esto
+vale
+vamos a poner
+ejecutó debería de tener la paleta
+cambiada y nada en pantalla porque como
+veis tengo el borde que es el que puesto
+en white me habéis visto la pantalla
+nada ahora mismo la paleta cambiada
+supuestamente porque el borde sí que ha
+cambiado que eso se produce en el render
+in it vale pues ahora que inicial izado
+el render tengo que hacer mi bucle
+principal pero antes tendrá que crear
+algunas entidades
+a ver antonio dice que deshabilita el
+firmware es para tener pleno control de
+la memoria de vídeo si lo deshabilita si
+no se hace de la roma no exactamente
+como veo que no lo tenéis claro el
+firmware sí yo creo que en el firmware
+es para que cuando inicias la máquina no
+sacarle lo que todo de 21-1 y todos los
+carga principios y además que luego cada
+vez que recargar la pantalla creo que
+había como una llamada que no lo sé
+explicar también no había ninguna
+llamada aún el controlador de enviársela
+de electrones y en trata de facilitar
+tanto llamadas pero no sé cómo explicar
+vale tenéis algunas ideas vagas lo cual
+es bueno que lo aclaremos un poquito y
+que deberíais investigar sobre ello el
+firmware es un conjunto de programas que
+están en rome son programas como lo que
+estamos escribiendo nosotros ahora es
+código pero estándar lo y lo que ocurre
+firmware es el que hace las veces aquí
+de sistema operativo y es el que hace
+que cuando encendamos la máquina
+efectivamente se ponga un modo de vídeo
+concreto unos colores concretos salga
+todo el texto de bienvenido del basic
+1.0 red y nos haga el intérprete de
+comandos con lo que podemos escribir
+comandos en beige y interactuar con la
+máquina todo eso está en el firmware y
+el firmware además controla todos los
+procesos de la máquina porque hay dos
+roms una es la que tiene el intérprete
+de basic y otra es la que tiene todos
+los procesos del firmware que controlan
+la memoria de vídeo el disco la casete
+todo eso es firme el proceso del
+firmware lo que ocurre es que para que
+todo se funcione el firmware se está
+ejecutando de fondo 300 veces por
+segundo
+300 veces por segundo porque la cpu
+recibe 300 interrupciones por segundo
+como ya sabéis y lo que ocurre es que
+cada vez que la cpu recibe una
+interrupción lo que provoca es un salto
+a la posición de memoria 38
+concretamente a la 0 038 esto lo hace en
+el modo por defecto en el que está la
+máquina que es el modo 1 de
+interrupciones que se llama se alta la
+dirección 38 en la dirección 38 hay un
+pequeño código muy chiquitito que lo que
+hace es básicamente habilitar la rom del
+firmware y saltar al código de la rom
+del firmware para que se ejecute con eso
+el firmware su programa se está
+ejecutando de fondo vale 300 veces por
+segundo
+esta función de aquí lo único que hace
+es parchear la dirección de memoria 38
+en la dirección de memoria 38 cambia el
+contenido para que en vez de saltar al
+código del firmware lo que haga sea
+volver a habilitar las interrupciones
+y a continuación red de 9 eso es lo que
+hace esto pone en la dirección 38 las
+instrucciones de red que es habilitar
+instrucciones habilitar interrupciones
+porque cuando se produce una
+interrupción y salta sa y estan
+deshabilitadas se habilitan de nuevo red
+ya está así cada vez que se produce una
+interrupción solamente hacemos un red
+nos saltamos al código del firmware y
+por tanto no entran en funcionamiento
+los programas que están gestionando la
+memoria de vídeo que están gestionando
+los colores que están gestionando los
+temporizadores todo lo que tiene el
+basic de fondo vale evitamos que se
+ejecute ese código y nos ocupe tiempo
+pero también evitamos otra cosa y es que
+como él gestiona la memoria de vídeo si
+yo en este sitio render init lo que hago
+es poner el modo a cero
+la siguiente vez que el firmware saltase
+y se ejecuta se diría uy si yo estaba en
+el modo 1 me vuelvo a poner modo 1 y nos
+fastidiaría lo que estamos haciendo no
+queremos esos programas ejecutando de
+fondo por eso deshabilitamos y lo
+deshabilitamos así parcheando el punto
+de salto porque luego ya veremos más
+adelante y lo tenéis en vídeos del año
+pasado podréis utilizar las
+interrupciones para vosotros para
+reproducir música de fondo para hacer
+cosas que se hagan con frecuencia o para
+hacer cosas en la ram de vídeo vale
+vale el llamado a límite
+ya tenemos init ahora lo que quiero es
+crear una entidad crear una entidad es
+fácil yo hago con amar entity create y
+ya está que es crear una entidad en este
+caso ya lo habéis visto yo en realidad
+en el manager de entidades tengo
+reservado un espacio para entidades y
+ese espacio para entidades si lo abro en
+el manager de entidades veréis que es
+esto de aquí vale una etiqueta entities
+y simplemente tengo aquí una variable en
+la que guardo el puntero a la primera
+entidad libre en mi espacio de entidades
+aquí esto se llama entities storage que
+simplemente es el punto de s con el
+tamaño que yo tengo reservado que lo
+tengo calculado ahí arriba como una
+constante vez máximas entidades por el
+tamaño de una entidad más uno de esos
+entities stories
+y a continuación aquí tengo simplemente
+un byte para indicar el el final eso es
+lo que tengo en mi en tití manager y la
+función create que por cierto tendré que
+llamar antes al manager sentit init que
+si no llamó a init pues difícilmente va
+a estar inicializa do vale estas cosas
+hay que inicializar las
+para poner todos los punteros al
+principio la memoria cero ese tipo de
+cosas
+vale entonces me vengo aquí a crear
+nueva entidad y como veis tengo un
+comentario que me dice crear una nueva
+entidad reserva espacio para una nueva
+entidad simplemente yo tengo el espacio
+para todas mis entidades y digo bueno
+pues a partir de ahora este lo uso por
+entidad y entonces me dice que devuelve
+de un puntero a la nueva entidad y en
+vez el tamaño de una entidad vale así
+que cuando yo llame aquí
+sé que a la vuelta tengo en d
+el puntero a la entidad que acaba de
+crear y en vez el tamaño de esa entidad
+pero en esa entidad no ha puesto ningún
+valor solamente me ha dicho aquí puedes
+escribir una entidad y este es el tamaño
+que tiene y ahí puede que haya lo que
+sea en la memoria porque si yo estado
+jugando con mis entidades creando la
+destruyéndola pues a lo mejor ahí hay
+bytes que tienen un valor vale entonces
+yo ahora tengo que ver qué estructura
+tengo para mis entidades porque tengo la
+red esto fuera tengo esto vale ahora mis
+entidades tienen cuatro bytes que son
+el tipo x y velocidad de ni simplemente
+parecido al star field 4 bites para una
+entidad que como veis aquí lo he puesto
+tamaño de una entidad 4 máximo entidades
+10 vale entonces qué hago pues voy a
+definirme una entidad y si os fijáis
+además tengo aquí otras constantes como
+el tipo de entidad no válida y el tipo
+de entidad por defecto que simplemente
+es todos los bits del tipo a1 vale
+entonces voy a crear me en mail una
+entidad
+con sus valores por defecto
+y hago punto de ver y entonces digo
+tengo que poner 4 bytes de lo que sería
+mi entidad cuando la cree
+primero el tipo que voy a poner tipo por
+defecto ahora tengo que poner posición
+xy posición y pues por ejemplo la
+posición x 20 la posición y 60 y a
+continuación la velocidad en y que le
+voy a poner por ejemplo velocidad 4 por
+ejemplo
+entonces esto son cuatro valores para
+una entidad por defecto
+sí
+aquí manent y create me devuelve
+el puntero a la entidad
+la que acaba de crear y en bc
+me devuelve el tamaño
+el tamaño de una entidad
+qué puedo hacer aquí
+en esa entidad que me acaba de crear
+copiar estos valores estos cuatro
+valores quiero que esos cuatro valores
+se copien a la entidad que el manager de
+entidades acaba de reservar lo juro
+quién me dice cómo lo hago
+le pongo en h l hay por ahí álvaro dice
+con el edil cuantos conocéis la
+instrucción el edil
+sus clases
+habéis visto el edil es una instrucción
+muy útil vale porque existen dos
+instrucciones vale una es el de iu y la
+otra se le di ere
+y esa eres de repeat de repetir l d i
+y el ede y lo que veis es en las islas
+de loud indirect vale que es básicamente
+lo que hace el ede y es tú tienes hdl
+apuntando a un sitio de apuntando a otro
+y él coge lo que hay en hl en la
+dirección a la que apunta hl y lo copia
+a donde estaba apuntando d
+de modo que yo por ejemplo si aquí
+en default lo que hago
+es que aquí a esta posición de aquí
+apunte h l cojo la dirección de memoria
+de este byte lo pongo en h l cojo en de
+la dirección de memoria dónde está el
+primer byte de la entidad que acabó de
+crear porque este es el primer país de
+una entidad que simplemente una entidad
+modelo un template vale ese primer by lo
+quiero copiar al primer by de una
+entidad por tanto aquí apuntó con h l al
+otro lado apuntó conde y entonces si yo
+hago eso con él
+voy a hacerlo a mano y luego luego a
+máquina por así decirlo ld h l coma la
+dirección default
+y ojo la pregunta es cuál tengo que
+poner este oeste
+opción 1 opción 2
+jorge dice uno
+carlos dice uno así quien vota por dos
+11 4 1
+alguien dice uno ensambladora en el
+salvador
+decimal
+alguien vota por 2
+pobre opción 2 nadie vota por ella
+diferencia alguien que me explica esta
+diferencia y por qué la uno
+no lo sé
+sí pero me resulta un poco incompleta tu
+explicación
+no no me gusta empezar por porque el
+huevo
+se supone que lo que yo tengo que poner
+en h l
+es la dirección de memoria donde se
+encuentra el primer byte que yo quiero
+copiar
+default es una etiqueta y las etiquetas
+son por definición el nombre que le
+ponemos a una dirección de memoria
+de modo que esta es la dirección de
+memoria donde está lo que viene a
+continuación y eso es lo que yo quiero
+poner ayer esa dirección de memoria si
+yo lo pongo entre paréntesis paso de la
+instrucción 21 que es estar aquí a la
+instrucción 2 a que se está de aquí que
+en vez de meter en h l la dirección de
+memoria default el valor que tenga lo
+que va a es los dos bytes que
+hayan en esa dirección de memoria y
+localmente en hd y eso no es la
+dirección de memoria son los dos bytes
+time default que es ff y 20 con lo cual
+nos metería en h l 20 f f que como
+dirección de memoria no tiene nada que
+ver con lo que queremos que es la
+dirección está donde se encuentra ese
+primer byte vale hay que diferenciar eso
+vale si yo pongo esto sin hacer nada más
+tengo en hl la dirección de memoria
+dónde está este byte ende ya tengo
+porque lo me lo ha dado magnífico
+manenti create la dirección de memoria
+donde empieza la entidad y en vez de
+tengo el tamaño de la entidad cuando yo
+pongo este l de y de aquí éste ld y hace
+lo siguiente
+hace asterisco de igual a l
++ + h l
++ d
+- - bc
+miramos en ce esto es lo que hacemos con
+esa instrucción solo de instrucción hace
+todo eso el contenido de hl lo copia en
+el contenido de es decir hl está
+apuntando a y esto el contenido es
+efe efe que es lo que vale y time
+default y time default lo copia a donde
+está apuntando de y a continuación
+actualiza h l lo hace apuntar a la
+siguiente aquí y de lo hace apuntar a la
+siguiente al siguiente vice de la
+entidad y abc le resta 1 de modo que usa
+a veces como contador de ésta está a
+veces el tamaño de la entidad menos 1
+porque acabo de copiar un byte de modo
+que si mi entidad ocupa 4 bytes yo puedo
+hacer esto
+entonces el primer byte se copia al
+primer byte se mueven los dos punteros
+el segundo by se copia el segundo byte
+se mueven los dos punteros el tercer by
+se copia el tercer byte se mueven los
+dos punteros el cuarto by se copió al
+cuarto by y al final de todo esto pc
+vale cero porque le he restado 14 veces
+esto con el edil y esto se resume en
+poner l de hierro que es hacer ld y
+repetidas veces hasta que bc valga 0
+vale es copio dhl a de resto 1 a abc
+copio dhl de resto una vez copio dhl de
+resto una vez efectivamente esto es l de
+ere es repetir
+ld y hasta que valga cero
+vale pues sólo con estas dos
+instrucciones como veis
+llamó a crear una entidad y copio los
+valores por defecto a mi nueva entidad
+que quiero crear una segunda entidad si
+quiero que tenga los mismos valores que
+la primera
+ya creó una segunda entidad y le pongo
+los mismos valores que la primera si
+esto lo hago con pilot y ejecutó
+voy a compilar con gwyneth
+voy a ejecutar con gwyneth y ahora
+técnicamente yo puedo comprobar si se me
+han creado esas dos entidades y si están
+los valores cuantos 20 y 60 en
+hexadecimal
+es decir me 20 y 60 en hexadecimal voy a
+sacar él
+el de mujer
+valemos
+esto para que se amplíen y ahora antes
+de ampliar eso lo que voy a necesitar es
+hacer un cut
+para ver dónde está no bj asterisco
+punto del fichero map aún cree en ti
+tease
+y entonces veréis que tengo
+mis entities en la 4.023 lo veis 4.026
+vale 14 y 13 es lo que debería de ver
+bueno pues me voy a memoria hago un gol
+tú
+el go to es a la dirección 4.023 y en la
+4.023 o sea ahí que es donde están mis
+entidades
+vamos a ver si encontramos los valores
+que esperamos
+vale lo primero estos son los el puntero
+a la siguiente entidad libre y ahora
+tengo 4 bytes que son la primera entidad
+4 bytes que son la segunda entidad y
+como veis tengo ahí tipo f f 20 que es
+14 y 60 que es 13 y este 4 que se lo he
+puesto a mano que es la velocidad vale
+así que vemos que efectivamente sí creo
+dos entidades hay dos entidades creadas
+y luego un montón de ceros por tanto
+está funcionando bien mi creador de
+entidades
+vale me va a dejar esto así abierto
+con eso ya compruebo esto solamente
+mirando los datos ya sé que funciona
+ahora quiero dos entidades distintas voy
+a hacer una segunda entidad
+voy a hacerme un segundo tipo default
+tipo 1 y default tipo 2
+y este tipo dos simplemente la voy a
+poner en la posición x en vez de la 20
+la voy a poner la 70 y en la y 20
+y con velocidad y 2 por ejemplo vale
+entonces aquí hago tipo el tipo 1 y fue
+el tipo 2 y así ya creó dos entidades
+vale ya las tengo creadas ya están en
+memoria ahora siguiente cosa que tengo
+que hacer con esto ahora tengo que hacer
+algo con las entidades ya existen mis
+entidades voy a hacer un bucle que haga
+algo con ellas para eso tengo que rendir
+izar las y tengo que hacer algo físico
+por ejemplo para moverlas
