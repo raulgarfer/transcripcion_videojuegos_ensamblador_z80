@@ -1,53 +1,8 @@
-Bien pues, vamos a la siguiente parte que es el hexadecimal.Tenemos que entender que esa es la única realidad que existe,es decir nosotros podemos programar ensamblador para un programa de ence podemos programar en césar en python
-pero el hexadecimal y en última
-instancia código máquina en binario es
-la única realidad que existe es lo único
-que auténticamente se ejecuta en
-nuestras máquinas por eso es importante
-el paso que hemos hecho de conocerlo en
-detalle de trabajarlo de entendernos con
-él porque ahora cuando trabajemos más
-arriba que nos vamos a ensamblador no
-vamos a dejar de imaginar y de entender
-que eso se traduce a código máquina y ya
-sabemos cómo es el código máquina eso
-nos va a permitir ahora en el primer
-paso entender el proceso de traducción
-del ensamblador porque si entendemos
-bien cómo el ensamblador funciona lo
-podremos usar mejor y esto os lo digo
-por experiencia esto que voy a contaros
-ahora y lo mismo que os he contado hasta
-el momento puede parecer mucha teoría
-rollo pero es que realmente hay una
-cuestión súper importante que lo noto
-todos los años y es que hay
-errores de concepción en cómo funciona
-la traducción de ensamblador a código
-máquina
-eso es lo que quiero que paguemos en
-esta clase porque si no luego a lo largo
-del curso se ven muchos problemas del
-hecho de que pensáis que se traduce de
-una manera pero en realidad no es eso lo
-que está pasando y entonces programas
-pensando que pasa una cosa y eso no
-sucede y por tanto lo que ocurre hace
-que no funcione como queréis vale por
-eso esto es tan importante entender el
-yo voy a programar el salvador- sí pero
-como eso llega hasta donde hemos llegado
-ahora cuál es el proceso que sigue como
-lo hace vale para hacerlo a mano sabemos
-pero nos lo van a hacer a máquina
-si hay un ensamblado por detrás que lo
-va a hacer el cómo lo hace
-bien vamos a ello cuando yo ya quiero
-programar ensamblador ya usó un editor
-normal y corriente a un sublime a una
-cosa de este estilo vale entonces ya la
-cosa es un poco más amable poco menos
-gruesa
+  Bien pues, vamos a la siguiente parte que es el hexadecimal.
+  Tenemos que entender que esa es la única realidad que existe,es decir nosotros podemos programar en ensamblador,podemos programar en C, podemos programar en césar,en python,pero el hexadecimal y en última instancia código máquina (en binario) es la única realidad que existe es lo único que auténticamente se ejecuta en nuestras máquinas.Por eso es importante el paso que hemos hecho de conocerlo en detalle, de trabajarlo, de entendernos con él porque ahora cuando trabajemos más arriba, que nos vamos a ensamblador ,nos vamos a dejar de imaginar y de entender que eso se traduce a código máquina.Y ya sabemos cómo es el código máquina.Eso nos va a permitir ahora,en el primer paso entender el proceso de traducción del ensamblador.Porque si entendemos bien cómo el ensamblador funciona lo podremos usar mejor, y esto os lo digo por experiencia.Esto que voy a contaros ahora , y lo mismo que os he contado hasta  el momento puede parecer mucha teoría,rollo, pero es que realmente hay una cuestión súper importante que lo noto todos los años y es que hay errores de concepción en cómo funciona la traducción de ensamblador a código máquina.
+  Eso es lo que quiero que paliemos en esta clase, porque si no luego a lo largo del curso se ven muchos problemas del hecho de que pensáis que se traduce de una manera,pero en realidad no es eso lo que está pasando. Entonces programas pensando que pasa una cosa y eso no sucede, y por tanto lo que ocurre hace que no funcione como queréis ¿vale? por eso esto es tan importante entender el "yo voy a programar ensamblador". Sí pero,¿como eso llega hasta donde hemos llegado?.¿ahora cuál es el proceso que sigue?,¿como lo hace vale?
+  Pero hacerlo a mano sabemos, pero nos lo van a hacer a máquina.Si, hay un ensamblado por detrás que lo va a hacer el ¿cómo lo hace?
+  Bien vamos a ello. Cuando yo ya quiero programar ensamblador ya usó un editor normal y corriente, a un sublime ,a una cosa de este estilo. Entonces ya la cosa es un poco más amable, poco menos gruesa
 y ahora por ejemplo tengo mi game bin
 pero yo quiero programar en ensamblador
 ya uso un archivo de texto y entonces
