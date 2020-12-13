@@ -1,61 +1,62 @@
-[Música]
-sí
-[Música]
-algo que os estoy comentando a todos y
+
+Algo que os estoy comentando a todos, y
 quiero que tengáis en cuenta para los
-juegos de amstrad como un primer
-experimento de game design ya os lo he
-comentado a todos que cuando hacéis un
-juego uno de los puntos más esenciales
+juegos de amstrad ,como un primer
+experimento de game design:ya os lo he
+comentado a todos ,que cuando hacéis un
+juego ,uno de los puntos más esenciales
 del juego es el control de vuestros
-propios personajes el control del
+propios personajes.
+ el control del
 personaje depende de cómo diseñen las
-físicas del movimiento el movimiento del
-personaje los tipos de movimiento los
-tipos de acciones todo eso que son las
+físicas del movimiento. el movimiento del
+personaje, los tipos de movimiento ,los
+tipos de acciones, todo eso que son las
 acciones de un personaje y el como
-vosotros interactuamos para conseguirlas
+vosotros interactuamos para conseguirlas.
 eso es esencial que tenga un feeling
 bueno que el jugador juegue y lo note
-suave lo note que responde a lo que el
-jugador quiere hacer note que puede
-controlar al personaje bien que a lo
+suave ,lo note que responde a lo que el
+jugador quiere hacer, note que puede
+controlar al personaje bien ,que a lo
 mejor requiere habilidad controlar al
-personaje pero que es una cuestión de
-hacerse al mando pero que se nota suave
-se nota que funciona bien por lo digo
+personaje ...pero que es una cuestión de
+hacerse al mando. pero que se nota suave,
+se nota que funciona bien . lo digo
 porque esto es es uno de los lastres
 mayores la mayoría
-juegos que he visto la mayoría de juegos
+juegos que he visto .
+la mayoría de juegos
 que he visto que se han hecho en años
 anteriores un principal lastre es hacer
-saltos ortopédicos es hacer movimientos
-lineales es no tener inercias no tener
-rozamientos no tener aceleraciones no
-tener velocidades no tener determinadas
-cosas todo este tipo de cosas hacen que
+saltos ortopédicos, es hacer movimientos
+lineales, es no tener inercias, no tener
+rozamientos, no tener aceleraciones ,no
+tener velocidades ,no tener determinadas
+cosas .todo este tipo de cosas hacen que
 el control del personaje se resienta y
 que estamos acostumbrados a juegos que
-tienen muchas cosas de estas muy pulidas
+tienen muchas cosas de estas muy pulidas,
 y vamos a tocar un juego que lo hacemos
 nosotros y resulta que esto está sin
-pulir que está está cómo sale del horno
-que esto está pues pongo ya se mueve ya
-está si lo dejáis así dará mala
-sensación si la mala sensación del
+pulir ,que está está cómo sale del horno,
+que esto está pues ...pongo 'ya se mueve ya
+está' .si lo dejáis así dará mala
+sensación. la mala sensación del
 control del personaje con el resto del
 juego
 no vale para nada y esto lo vais a ver
-ahora que os he pedido ya que la semana
-que viene tengáis un juego elegido
+ahora que os he pedido, ya que la semana
+que viene tengáis un juego elegido.
 los juegos de años anteriores y probad
-los ahí saber que hay juegos donde el
+los .saber que hay juegos donde el
 control del personaje va bien y otros
-donde el control no va bien no responde
-como debería no se siente suave no
-pensad en analizarlos y en ver qué pasa
-y cómo queréis que es el vuestro porque
-es el punto esencial y la semana que
+donde el control no va bien, no responde
+como debería ,no se siente suave ,no.
+pensad en analizarlos y en ver qué pasa,
+y cómo queréis el vuestro, porque
+es el punto esencial. 
+la semana que
 viene cuando empecemos el game engine en
 equipo deberéis recoger la mecánica
 principal de vuestro juego y vuestro
@@ -65,22 +66,21 @@ juego e implementarla y eso implica la
 interacción entre vosotros y el jugador
 del juego que esa parte esencial la
 semana que viene tenemos que intentar
-conseguir que sea buena que sea de esas
-que dicen si hago un salto siente
-natural si hago un movimiento o se
-siente natural se siente como yo quiero
-que se sienta y si no pulirlo hasta que
-se siente añadiendo inercias
-aceleraciones rozamientos saltos
-gravedad cosas de este estilo vale
+conseguir que sea buena, que sea de esas
+que dicen "si hago un salto siente
+natural ,si hago un movimiento se
+siente natural ,se siente como yo quiero
+que se sienta", y si no pulirlo hasta que
+se siente ,añadiendo inercias,
+aceleraciones ,rozamientos ,saltos,
+gravedad ,cosas de este estilo.
 tenéis que experimentar con eso porque
-es esencial os imagináis un mario bros
-donde el personaje salta se cayese
-linealmente así
+es esencial¿ os imagináis un mario bros
+donde el personaje salta, se cayese,
+linealmente ?así
 no imagináis
 quiero decir si yo me siento a jugar a
 mario y cuando saltó hace
-[Música]
 es como
 qué juego tan bonito clic voy a poner
 otro vale
