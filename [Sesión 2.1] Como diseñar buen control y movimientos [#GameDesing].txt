@@ -78,6 +78,10 @@ tenéis que experimentar con eso porque
 es esencial¿ os imagináis un mario bros
 donde el personaje salta, se cayese,
 linealmente ?así
+
+
+
+
 no imagináis
 quiero decir si yo me siento a jugar a
 mario y cuando saltó hace
