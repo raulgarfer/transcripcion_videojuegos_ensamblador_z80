@@ -1,34 +1,10 @@
   Hasta ahora lo que hemos hecho es directamente código máquina. o sea yo abro el WinApe aquí seguramente se verá chiquitito como los probamos la semana pasada se ve bastante chiquitín pero bueno tampoco es muy relevante que se vea más grande o más pequeño ahora mismo sino que esta parte del WinApe que es el depurador ya la conocéis vale aunque no se vea se vea pequeño no me importa sabéis que vosotros os venís aquí y os vais a la posición 4000 vale por eso que no hace falta que se vea mucho y aquí escribís directamente a mano en la memoria es lo que hemos hecho en el curso de código máquina esto es como si tuviéramos la máquina real delante y nosotros la tuviéramos pinchada en la rama y tuviéramos desde fuera algo que nos permitiera modificar la rama es lo que estamos haciendo aquí en modificar la rama a mano venimos a dar 4000 el clásico programa.
   4000  13 88 32 00 00 18 ff
-  pongoel pc en 4000 nuestro clásico programa y f9 ejecutó y ahí el chiquitín está mi píxel vale básicamente pixel de color rojo hasta aquí dominad y ximo esto lo hemos hecho todos muy bien.
-  Pero es que la realidad no funciona así nosotros cuando nos dan un juego no nos
-dan una hoja con un montón de líneas de
-código máquina y nos vamos a nuestro
-ordenador y lo escribimos en ram para
-poder jugar o no esto no lo hacemos sino
-que lo que ocurre es que cargamos
-cargar es básicamente leer de disco y
-poner en ram es lo mismo que acabo de
-hacer yo a mano pero he hecho de forma
-automática por un programa que un
-programa ejecuta y al ejecutar lee
-y copia a la rama y cuando termina de
-copiar en rama lo que hace es hacer un
-jump a una posición eso es cargar
-simplemente y nosotros queremos que
-nuestros juegos carguen no tienen que
-cargar de algún sitio es decir no hemos
-aprendido todavía cómo podemos crear
-algo físico fichero que la máquina pueda
-leer y acordaos que os dije que estas
-máquinas no tienen como nuestras
-máquinas modernas un disco duro sino que
-se les mete una casete eso significa que
-lo que nosotros queramos cargar en la
-máquina real tiene que estar en una
-casete y la máquina real tiene que leer
-de esa casete y copiar a ram y luego
-saltar así que nosotros cuando queramos
+  Pongo el 'PC' en 4000 nuestro clásico programa y 'f9' ejecutó y ahí el chiquitín está mi píxel vale básicamente pixel de color rojo hasta aquí dominad y ximo esto lo hemos hecho todos muy bien.
+  Pero es que la realidad no funciona así nosotros cuando nos dan un juego no nos dan una hoja con un montón de líneas de código máquina y nos vamos a nuestro ordenador y lo escribimos en ram para poder jugar o no esto no lo hacemos sino que lo que ocurre es que cargamos.
+  cargar es básicamente leer de disco y poner en ram es lo mismo que acabo de hacer yo a mano pero he hecho de forma automática por un programa que un programa ejecuta y al ejecutar lee y copia a la RAM y cuando termina de copiar en rama lo que hace es hacer un jump a una posición.
+  eso es cargarsimplemente, y nosotros queremos que nuestros juegos carguen no tienen que cargar de algún sitio es decir no hemos aprendido todavía cómo podemos crear algo físico fichero que la máquina pueda
+leer y acordaos que os dije que estas máquinas no tienen como nuestras máquinas modernas un disco duro sino que se les mete una casete eso significa que lo que nosotros queramos cargar en la máquina real tiene que estar en una casete y la máquina real tiene que leer de esa casete y copiar a ram y luego saltar así que nosotros cuando queramos
 ahora crear un juego lo que tenemos que
 crear es un fichero
 no tenemos que escribirlo en ram vale
