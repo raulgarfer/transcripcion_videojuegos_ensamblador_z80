@@ -1,38 +1,7 @@
-
-hasta ahora
-lo que hemos hecho es directamente
-código máquina o sea yo abro el gwinnett
-aquí seguramente se verá chiquitito
-como los probamos la semana pasada se ve
-bastante chiquitín
-pero bueno tampoco es muy relevante que
-se vea más grande o más pequeño ahora
-mismo sino que esta parte del wing eight
-que es el depurador ya la conocéis vale
-aunque no se vea se vea pequeño no me
-importa
-sabéis que vosotros os venís aquí y os
-vais a la posición 4000 vale
-por eso que no hace falta que se vea
-mucho y aquí escribís directamente a
-mano en la memoria es lo que hemos hecho
-en el curso de código máquina esto es
-como si tuviéramos la máquina real
-delante y nosotros la tuviéramos
-pinchada en la rama y tuviéramos desde
-fuera algo que nos permitiera modificar
-la rama es lo que estamos haciendo aquí
-en modificar la rama a mano
-venimos a dar 4000 el clásico programa
-4000 y pongo 13 88 32 00 00 18 efe pongo
-el pc en 4000 nuestro clásico programa
-y f9 ejecutó y ahí el chiquitín está mi
-píxel vale
-básicamente pixel de color rojo hasta
-aquí dominad y ximo esto lo hemos hecho
-todos muy bien pero es que la realidad
-no funciona así
-nosotros cuando nos dan un juego no nos
+  Hasta ahora lo que hemos hecho es directamente código máquina. o sea yo abro el WinApe aquí seguramente se verá chiquitito como los probamos la semana pasada se ve bastante chiquitín pero bueno tampoco es muy relevante que se vea más grande o más pequeño ahora mismo sino que esta parte del WinApe que es el depurador ya la conocéis vale aunque no se vea se vea pequeño no me importa sabéis que vosotros os venís aquí y os vais a la posición 4000 vale por eso que no hace falta que se vea mucho y aquí escribís directamente a mano en la memoria es lo que hemos hecho en el curso de código máquina esto es como si tuviéramos la máquina real delante y nosotros la tuviéramos pinchada en la rama y tuviéramos desde fuera algo que nos permitiera modificar la rama es lo que estamos haciendo aquí en modificar la rama a mano venimos a dar 4000 el clásico programa.
+  4000  13 88 32 00 00 18 ff
+  pongoel pc en 4000 nuestro clásico programa y f9 ejecutó y ahí el chiquitín está mi píxel vale básicamente pixel de color rojo hasta aquí dominad y ximo esto lo hemos hecho todos muy bien.
+  Pero es que la realidad no funciona así nosotros cuando nos dan un juego no nos
 dan una hoja con un montón de líneas de
 código máquina y nos vamos a nuestro
 ordenador y lo escribimos en ram para
