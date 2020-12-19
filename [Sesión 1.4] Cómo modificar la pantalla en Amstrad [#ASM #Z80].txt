@@ -1,54 +1,7 @@
-[Música]
-sí
-[Música]
-en próximas clases aprenderemos una cosa
-adicional que no he contado otros años
-pero esto ya va a ser para la siguiente
-vale porque todo esto
-nos va a servir para este año hacer
-cosas más especiales si queréis que
-además valdrán puntos podéis elegir por
-esta parte técnica una de las partes
-técnicas que podéis hacer es que la
-memoria de vídeo vale si yo pongo el
-border 0
-la memoria de vídeo ahora mismo estáis
-viendo lo que se dibuja estos son los
-en este caso 320 x 200 píxeles que tiene
-el modo 1
-pero esto es como la memoria de vídeo
-viene configurada por defecto el
-firmware la configura así amstrad tiene
-flexibilidad para definir toda la
-memoria de vídeo como nosotros queramos
-que sea y me explico lo vais a ver de
-forma práctica rápido y el próximo día
-veremos cómo se programa esto que veis
-aquí que son las herramientas de debut
-de
-de rv m nos muestra aquí es muy
-pequeñito vale no lo vais a ver desde
-casa no lo puedo ampliar fácilmente sino
-ahora veré pero lo que muestra aquí es
-el crf esto de aquí es el valor de los
-16 registros que tiene dentro del chip
-de rtc y que controlan la geometría de
-la pantalla
-y esto de aquí es el contenido del gate
-array que entre otras cosas controla
-como veis la paleta de colores no esto
-es la paleta de colores
-si yo estos registros de aquí los
-cambios
-o cambiar la geometría de esa pantalla
-de ahí de la memoria de vídeo esa
-memoria de vídeo que habéis visto que
-tiene más 800 y más 50 y todo eso se
-puede cambiar se puede hacer que los
-caracteres en vez de tener ocho líneas
-de alto tengan una se pueden hacer que
-tengan siete que tengan cuatro se puede
-hacer que el ancho sea más estrecho por
+  En próximas clases aprenderemos una cosa adicional que no he contado otros años.Pero esto ya va a ser para la siguiente, porque todo esto nos va a servir para este año: hacer cosas más especiales si queréis que ,además, valdrán puntos.
+  Podéis elegir por esta parte técnica.Una de las partes técnicas que podéis hacer es que la memoria de vídeo.Si yo pongo el "border 0", la memoria de vídeo, ahora mismo, estáis viendo lo que se dibuja.Estos son los ,en este caso, 320 x 200 píxeles que tiene el "modo 1" .
+  Esto es como la memoria de vídeo viene configurada por defecto, el firmware la configura así. Amstrad tiene flexibilidad para definir toda la memoria de vídeo como nosotros queramos que sea.
+  Me explico lo vais a ver de forma práctica rápido y el próximo día veremos cómo se programa esto que veis aquí que son las herramientas de debug de de RVM nos muestra aquí es muy pequeñito vale no lo vais a ver desde casa no lo puedo ampliar fácilmente sino ahora veré pero lo que muestra aquí es el CRT esto de aquí es el valor de los 16 registros que tiene dentro del chip de rtc y que controlan la geometría de la pantalla y esto de aquí es el contenido del gate array que entre otras cosas controla como veis la paleta de colores no esto es la paleta de colores si yo estos registros de aquí los cambios o cambiar la geometría de esa pantalla de ahí de la memoria de vídeo esa memoria de vídeo que habéis visto que tiene más 800 y más 50 y todo eso se puede cambiar se puede hacer que los caracteres en vez de tener ocho líneas de alto tengan una se pueden hacer que tengan siete que tengan cuatro se puede hacer que el ancho sea más estrecho por
 ejemplo hay un registro que es este de
 aquí que desde casa no lo veis pero lo
 digo esto es el registro r uno de los 16
